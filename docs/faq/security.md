@@ -1,0 +1,79 @@
+# Security
+
+One of the great things about ENS names is that they're entirely decentralized, meaning that you hold full ownership of the name and, *no one* whether it's ENS or anyone else can take it from you.
+
+But this also comes with a certain degree of responsibility because ***if you lose your name, we can't recover it for you.***
+
+Therefore it's a good idea to adopt proper security practices to make sure that you don't lose your name to scammers and thieves.
+
+| Wallet type        | Details                                                                                   |
+|--------------------|-------------------------------------------------------------------------------------------|
+| `Cold wallet`      | *A wallet you use to keep funds in, but don't use day-to-day*                             |
+| `Hot wallet`       | *A wallet you use day-to-day and just transfer funds into when needed*                    |
+| `Hardware wallet`  | *A physical hardware device that protects your wallet's private keys*                     |
+| `Multi-Sig wallet` | *A smart contract wallet requiring approval from several wallets to perform transactions* |
+| `Multiple wallets` | *Using multiple wallets of any of the above types*                                        |
+
+# Cold wallet
+Interacting with contracts can be risky, but necessary. A good idea is to keep a `Cold wallet` where you store assets you want to keep safe while using a `Hot wallet` for your day-to-day contract interactions.
+
+ENS names have unique properties that make holding them in cold wallets easy, namely that you can have one wallet be the *owner* `Registrant` of it while having another wallet be its record administrator.
+
+By pointing the `ETH Address` and `Controller` records to your hot wallet, you can use the ENS name from your day-to-day hot wallet just as if it was in that wallet, except if that wallet is compromised, you won't lose your ENS name.
+
+Cold wallets don't *directly* protect against interacting with a malicious contract or token approval scams, they only do so indirectly by not using them to interact with them.
+
+# Hardware wallet
+A `Hardware wallet` is a device that improves your wallet security by keeping your private keys off your phone and computer. The keys are kept on the external device itself, and for each transaction you make you'll have to connect and approve the transaction on the device.
+
+This gives *added protection*[^note1] against many *(but not all)* types of scams and security issues:
+* [x] Viruses[^note2]
+* [x] Fake metamask login websites
+* [x] Fake wallets
+* [ ] Token approval scams / interacting with malicious contracts
+* [ ] Compromised seed phrase
+* [ ] Physical access[^note3]
+
+[^note1]: Added protection does not mean *total protection* and there are caveats listed below.
+
+[^note2]: It's possible for a virus to target the hardware device software itself, even though it's more difficult and less common. 
+
+[^note3]: Hardware wallets are not always *physically* secure, meaning that someone might be able to compromise them with physical access to the hardware device.
+
+# Multi-Sig wallet
+A `Multi-Sig wallet` is a smart contract wallet that provides security by only allowing transactions to be performed if they're approved by several different wallets, thereby distributing the security responsibility between different keys or even different people.
+
+:::tip
+[Gnosis Safe](https://gnosis-safe.io) provides a very popular multi-sig wallet.
+:::
+
+# Common scams
+## The fake NFT mint
+One of the most common scams I come across is the Fake NFT mint website, a site that's set up to look like an NFT project where you connect your wallet, press a button to mint, and approve a transaction to "get your NFT".
+
+*Except,* what the website does is spawn a transaction that either directly transfers one of your NFT's out or adds a `Token Approval` which gives another wallet full access to one of your NFT collections.
+
+:::caution
+*Always* review the transaction that appears in your wallet and make sure that it does what you expect it to.
+:::
+
+## The fake Metamask login
+A website designed to look like Metamask's login screen can sometimes be extremely convincing. What differentiates them from the metamask password screen is that it will ask you for your `seed phrase` instead of your password.
+
+:::warning
+Never give out your seed phrase to *anyone*, *no one* from ENS will ask for it.
+:::
+
+## The fake airdrop claim
+There is an abundance of fake airdrop claim pages, especially when a real airdrop is going on. During the real ENS airdrop, we dealt with at least one fake airdrop claim website per week claiming to be from us.
+
+:::caution
+Any official ENS airdrop will always be at <https://claim.ens.domains> and nowhere else.
+:::
+
+## The fake token scam
+A strange token sent to your wallet out of the blue, sometimes with a value that will steal funds when you go to exchange it.
+
+:::warning
+Never interact with strange tokens sent to your wallet out of the blue.
+:::

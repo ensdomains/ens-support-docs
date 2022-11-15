@@ -1,0 +1,37 @@
+---
+sidebar_position: 2
+---
+# ENS Names
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```
+
+## An easy-to-remember name for all your wallet addresses
+The first and most common use case for an ENS name is to use it as an easy-to-remember name for your cryptocurrency addresses.
+
+ENS supports many different cryptocurrencies which can be added to it from the [ENS Manager App](https://app.ens.domains) allowing you to receive payments in more cryptocurrencies than just Ethereum.
+
+This alleviates the confusion associated with remembering your hexadecimal wallet address and provides easy payment options.
+
+## Point to decentralized websites
+By coupling your decentralized ENS name with a service for hosting decentralized websites, it's possible to have an entirely decentralized website suitable for Web3. The protocols currently supported are:
+
+|Protocol    |Description                      |
+|------------|---------------------------------|
+|IPFS & IPNS |InterPlanetary FileSystem        |
+|Arweave     |PermaWeb Hard drive              |
+|Onion 2 & 3 |Tor Project                      |
+|Sia         |Sia Decentralized Datastorage    |
+|Swarm (bzz) |Swarm decentralized data storage |
+
+## Connect metadata to the Ethereum blockchain
+* **Social media**  
+*ENS Names support numerous text records which can be used to provide on-chain metadata to connect to your social media accounts. For example, you can add your Twitter or discord handles to your ENS records.*
+  
+* **URLs and E-Mail**  
+*Your ENS name can store your e-mail and website so people can easily find them.*
+  
+* **Custom Text records**  
+*Your ENS name is also capable of storing custom records to can contain nearly anything you want to display or integrate into your services.*

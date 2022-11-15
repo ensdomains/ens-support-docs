@@ -1,0 +1,31 @@
+# OpenSea
+OpenSea is a third-party marketplace run by a separate private company and is unaffiliated with Ethereum Name Service, as such we don't have any access to their systems to fix problems that are isolated to their platform.
+
+## ENS name doesn't show
+
+While ENS names appear and start working immediately in the ENS app, it can sometimes take a much longer time for them to show on third-party marketplaces because they only update their internal databases every once in a while.
+
+When you're experiencing this issue the ENS names will show up either as a series of digits or as "Unknown ENS name". To fix this refresh the metadata:
+> [**Refresh metadata**](#refresh-metadata)
+
+
+## Refresh metadata
+
+![Picture 1](/img/opensea-unknown1.webp)
+
+This schedules a refresh of the metadata in OpenSea's internal databases and usually resolves the issue in the next few hours.
+
+:::note
+If the ENS name still doesn't show up correctly after 24 hours you need to contact OpenSea's support for assistance, see [**OpenSea:** Support](#support)
+:::
+
+
+## Support
+
+If the problem isn't listed on this page or the solutions don't work OpenSea needs to be contacted directly:
+
+ * [**OpenSea Support**](https://support.opensea.io)
+   *OpenSea's Support ticket system with answers to most questions*
+
+ * [**OpenSea Discord**](https://discord.gg/opensea)
+   *OpenSea's Discord chat server with support mods for live help*

@@ -1,0 +1,43 @@
+# Metamask
+Metamask suffers from several known bugs documented below.
+
+## Clearing stuck transactions
+Sometimes transactions in Metamask can get stuck without being performed. You can verify whether a transaction is stuck in Metamask or not by looking up your wallet on [etherscan](https://etherscan.io) and comparing the transactions there to the ones visible in your wallet.
+
+:::caution
+Transactions can get stuck in Metamask due to a bug in the UI. This is not the same as transactions that have stalled due to too low gas fees.
+:::
+
+To clear transactions stuck in Metamask you'll have to reset the wallet:
+Open up Metamask and select the multi-coloured circle to bring up settings  
+![Picture 1](/img/metamask-stuck1.webp)
+
+Go to `Settings` **→** `Advanced` **→** `Reset Account` and confirm.
+
+## Unknown ENS name
+MetaMask gets its ENS name metadata from OpenSea, which sometimes experiences delays in updating the metadata of names which can cause ENS names in MetaMask to show up as unknown.
+
+To fix this follow the instructions in:
+> [**OpenSea:** ENS Name Doesn't Show](../marketplaces/opensea.md#ens-name-doesnt-show)
+
+## Doesn't show ENS tokens
+Metamask doesn't yet show ENS tokens in your wallet by default, but the good news is that we're able to import the token into Metamask.
+  
+Go to the [Etherscan](https://etherscan.io/token/0xc18360217d8f7ab5e7c516566761ea12ce7f9d72)-page for the ENS voting token *or* the [ENS Domain token](https://etherscan.io/token/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85).
+Next to `Profile Summary` on the right-hand side, press *more* to bring up its sub-menu.
+![Picture 1](/img/metamask-unknown1.webp)
+
+Select `Add token to Metamask (Web3)`
+![Picture 2](/img/metamask-unknown2.webp)
+
+Confirm adding the token in Metamask  
+![Picture 3](/img/metamask-unknown3.webp)
+
+Now your ENS voting tokens and/or ENS domain tokens should be visible in your Metamask wallet.
+
+## Exaggerated gas costs
+Metamask has a [known bug](https://github.com/MetaMask/metamask-extension/issues/13135) where users are shown an incredibly high gas fee estimate if there isn't enough ETH in the wallet to cover the actual transaction costs.
+
+![Picture 1](/img/metamask-exaggerated1.webp)
+
+This can be solved by transferring more ETH into the wallet to cover the actual transaction cost which should be a lot less than what Metamask shows when it's encountering this bug.
