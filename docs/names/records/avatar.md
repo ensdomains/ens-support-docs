@@ -21,6 +21,10 @@ Make sure to right-click the image on the page and select `Copy Image Link` to g
 
 It should look something like this: `https://i.imgur.com/MO1wCsI.jpg`
 
+```note
+Keep in mind that you can't just append `.jpg` to the end of your link. You need to follow the instructions above to get the *actual* image link.
+```
+
 ![Picture 3](/img/avatar_set3.webp)
 
 
