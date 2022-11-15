@@ -13,6 +13,7 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: '/img/enssite_logo.svg',
+  plugins: ['@docusaurus/plugin-ideal-image'],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

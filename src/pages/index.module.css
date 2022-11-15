@@ -16,6 +16,17 @@
   background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
 }
 
+.body {
+  background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;

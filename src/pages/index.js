@@ -3,8 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageBody from '@site/src/components/HomepageBody';
-
+import {HomepageInfoCardsRow} from '@site/src/components/HomepageInfo';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -48,8 +47,10 @@ export default function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="ENS Support Docs">
-      <HomepageHeader />
       <main>
+    <section className={styles.body}>
+	  <HomepageInfoCardsRow />
+    </section>
       </main>
     </Layout>
   );
