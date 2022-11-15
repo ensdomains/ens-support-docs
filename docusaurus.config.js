@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'cthulu-dot-eth', // Usually your GitHub org/user name.
-  projectName: 'support-docs', // Usually your repo name.
+  projectName: 'ens-supportdocs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -83,6 +83,24 @@ const config = {
 	    label: 'Governance Docs',
 	    position: 'right',
 	  },
+    {
+      href: 'https://chat.ens.domains',
+      position: 'right',
+      className: 'header-discord-link',
+      'aria-label': 'Discord link',
+    },
+    {
+      href: 'https://twitter.com/ensdomains',
+      position: 'right',
+      className: 'header-twitter-link',
+      'aria-label': 'Twitter link',
+    },
+    {
+      href: 'https://github.com/cthulu-dot-eth/ens-supportdocs',
+      position: 'right',
+      className: 'header-github-link',
+      'aria-label': 'GitHub  repository',
+    },
           {to: '/blog', label: 'Support Updates', position: 'left'},
         ],
       },
