@@ -1,0 +1,48 @@
+.header {
+}
+
+.table {
+    border-width: 0px;
+}
+
+.tr {
+    color: white;
+    width: 500px;
+    border-width: 0px;
+    font-size: 14px;
+}
+
+.tr a:link {
+    color: white;
+}
+
+.tr a:visited {
+    color: white;
+}
+
+.tr2 {
+    color: white;
+    width: 500px;
+    border-width: 0px;
+    font-size: 24px;
+}
+
+.td {
+    color: white;
+    width: 500px;
+    border-width: 0px;
+}
+
+.th {
+    color: white;
+    width: 500px;
+    border-width: 0px;
+    font-size: 18px;
+}
+
+.thead {
+    border-width: 0px;
+}
+
+.tbody {
+}

@@ -3,8 +3,9 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import {HomepageInfoCardsRow} from '@site/src/components/HomepageInfo';
 import styles from './index.module.css';
+import {HomepageInfoCardsRow} from '@site/src/components/HomepageInfo';
+import {HomepageTextLinks} from '@site/src/components/HomepageTextLinks';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -13,6 +14,9 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="ENS Support Docs">
       <main>
+        <section className={styles.textLinks}>
+          <HomepageTextLinks />
+        </section>
         <section className={styles.body}>
           <HomepageInfoCardsRow />
         </section>
