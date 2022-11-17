@@ -32,4 +32,9 @@
   .heroBanner {
     padding: 2rem;
   }
+
+  .body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
