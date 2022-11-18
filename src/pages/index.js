@@ -14,10 +14,10 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="ENS Support Docs">
       <main>
-        <section className={styles.textLinks}>
+        <section class={styles.textLinks}>
           <HomepageTextLinks />
         </section>
-        <section className={styles.body}>
+        <section className={styles.infoCards}>
           <HomepageInfoCardsRow />
         </section>
       </main>
