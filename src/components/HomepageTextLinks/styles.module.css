@@ -1,27 +1,23 @@
-.header * {
-    border-width: 0px;
+.table {
+    border-radius: 2em;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+.table td, .table tr {
+    width: 500px;
     color: white;
-}
-
-.header td {
-    width: 500px;
-}
-
-.header tr {
-    width: 500px;
-    font-size: 24px;
-}
-
-.tbody * {
-    border-width: 0px;
-    color: white;
-}
-
-.tbody td {
-    width: 500px;
-}
-
-.tbody tr {
-    width: 500px;
+    text-align: center;
     font-size: 14px;
+    border-width: 0px;
+}
+
+.table a:link, .table a:visited {
+    color: white;
+}
+
+.thead th {
+    font-size: 24px;
+    color: white;
+    border-width: 0px;
 }

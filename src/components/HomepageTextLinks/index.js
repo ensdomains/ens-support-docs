@@ -4,51 +4,37 @@ import styles from './styles.module.css'
 
 export function HomepageTextLinks() {
   return (
-    <header class={styles.header}>
-      <table>
-        <center>
+    <table class={styles.table}>
+      <thead class={styles.thead}>
+        <th>🛈 Getting Started</th>
+        <th>🗪 FAQ</th>
+        <th>🖺 Tutorials</th>
+      </thead>
+      <tbody>
+        <tr>
           <td>
-          <tr>🛈 Getting Started</tr>
+            <a href="docs/intro">Introduction</a>
+            <br></br>
+            <a href="docs/names">Records & Registration</a>
+            <br></br>
+            <a href="docs/names/avatar">The Avatar Record</a>
           </td>
           <td>
-          <tr>🗪 Frequently Asked Questions</tr>
+            <a href="docs/faq/marketplaces/opensea#ens-name-doesnt-show">Why doesn't my name show on OpenSea?</a>
+            <br></br>
+            <a href="docs/faq/wallets/metamask#exaggerated-gas-costs">Why is the gas fee so high?</a>
+            <br></br>
+            <a href="docs/faq/wallets/metamask#exaggerated-gas-costs">Is this airdrop link real?</a>
           </td>
           <td>
-          <tr>🖺 Tutorials</tr>
+            <a href="docs/tutorials/registration">How to register an ENS name</a>
+            <br></br>
+            <a href="docs/tutorials/registration">How to transfer an ENS name</a>
+            <br></br>
+            <a href="docs/tutorials/registration">How to set an Avatar</a>
           </td>
-    </center>
-        <tbody class={styles.tbody}>
-          <tr>
-            <td>
-            <center>
-              <a href="docs/intro">Introduction</a>
-              <br></br>
-              <a href="docs/names">Records & Registration</a>
-              <br></br>
-              <a href="docs/names/avatar">The Avatar Record</a>
-            </center>
-            </td>
-            <td>
-              <center>
-                <a href="docs/faq/marketplaces/opensea#ens-name-doesnt-show">Why doesn't my name show on OpenSea?</a>
-                <br></br>
-                <a href="docs/faq/wallets/metamask#exaggerated-gas-costs">Why is the gas fee so high?</a>
-                <br></br>
-                <a href="docs/faq/wallets/metamask#exaggerated-gas-costs">Is this airdrop link real?</a>
-              </center>
-            </td>
-            <td>
-              <center>
-                <a href="docs/tutorials/registration">How to register an ENS name</a>
-                <br></br>
-                <a href="docs/tutorials/registration">How to transfer an ENS name</a>
-                <br></br>
-                <a href="docs/tutorials/registration">How to set an Avatar</a>
-              </center>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </header>
+        </tr>
+      </tbody>
+    </table>
   );
 }
