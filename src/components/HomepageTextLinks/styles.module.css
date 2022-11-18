@@ -1,48 +1,27 @@
-.header {
-}
-
-.table {
+.header * {
     border-width: 0px;
+    color: white;
 }
 
-.tr {
-    color: white;
+.header td {
     width: 500px;
-    border-width: 0px;
-    font-size: 14px;
 }
 
-.tr a:link {
-    color: white;
-}
-
-.tr a:visited {
-    color: white;
-}
-
-.tr2 {
-    color: white;
+.header tr {
     width: 500px;
-    border-width: 0px;
     font-size: 24px;
 }
 
-.td {
+.tbody * {
+    border-width: 0px;
     color: white;
+}
+
+.tbody td {
     width: 500px;
-    border-width: 0px;
 }
 
-.th {
-    color: white;
+.tbody tr {
     width: 500px;
-    border-width: 0px;
-    font-size: 18px;
-}
-
-.thead {
-    border-width: 0px;
-}
-
-.tbody {
+    font-size: 14px;
 }
