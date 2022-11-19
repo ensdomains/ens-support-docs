@@ -1,3 +1,9 @@
+---
+draft: true
+last_update:
+    date: 11/19/2022
+---
+
 # Create a decentralized website
 One of the most interesting and powerful features of ENS names is the ability to point them to webpages hosted on the decentralized web, creating a website where both the hosting and the domain name is *entirely* decentralized.
 
@@ -30,3 +36,7 @@ Go to [Fleek's website](https://fleek.co) and `Sign Up` for an account.
 
 ## Set the `Content` record on your ENS name
 
+### Step 1: Go to the ENS Manager App
+Go to the [ENS Manager App](https://app.ens.domains) and connect your wallet.
+
+Click on `My Account` to go to a list of your ENS names.

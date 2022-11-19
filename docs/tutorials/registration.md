@@ -1,3 +1,9 @@
+---
+last_update:
+    date: 11/19/2022
+    author: cthulu
+---
+
 # How to register a name
 
 ## Go to the ENS Manager App
