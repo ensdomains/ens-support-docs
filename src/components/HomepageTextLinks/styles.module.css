@@ -19,5 +19,6 @@
 .thead th {
     font-size: 24px;
     color: white;
+    background: rgba(255, 255, 255, 0.25);
     border-width: 0px;
 }
