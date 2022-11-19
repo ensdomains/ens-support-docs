@@ -10,8 +10,8 @@ const config = {
   tagline: 'Home of the Support Mod Squad',
   url: 'https://docusaurus.ensmods.xyz',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: '/img/enssite_logo.svg',
   plugins: ['@docusaurus/plugin-ideal-image'],
 
