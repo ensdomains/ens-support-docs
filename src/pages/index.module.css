@@ -5,20 +5,23 @@
 
 /** Background gradient/colour tests
 *
+* background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
 *  background: linear-gradient(90deg,#513eff 0%,#52e5ff 100%);
 *  background: #f4f5f7 */
+
+body {
+}
 
 .textLinks {
   padding-top: 40px;
   padding-bottom: 20px;
   padding-left: 100px;
   padding-right: 100px;
-  background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
   overflow: hidden;
+  background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
 }
 
 .infoCards {
-  background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 20px;
@@ -26,6 +29,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
 }
 
 @media screen and (max-width: 996px) {
