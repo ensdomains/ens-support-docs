@@ -172,7 +172,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        disableSwitch: true,
+        disableSwitch: false,
         respectPrefersColorScheme: false,
       },
     }),
