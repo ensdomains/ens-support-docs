@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import {HomepageInfoCardsRow} from '@site/src/components/HomepageInfo';
 import {HomepageTextLinks} from '@site/src/components/HomepageTextLinks';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -14,8 +15,8 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="ENS Support Docs">
       <main>
-        <section class={styles.textLinks}>
-          <HomepageTextLinks />
+        <section class={styles.features}>
+          <HomepageFeatures />
         </section>
         <section className={styles.infoCards}>
           <HomepageInfoCardsRow />

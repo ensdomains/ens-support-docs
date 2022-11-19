@@ -9,28 +9,52 @@
 *  background: linear-gradient(90deg,#513eff 0%,#52e5ff 100%);
 *  background: #f4f5f7 */
 
-body {
+.features {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
 }
 
 .textLinks {
   padding-top: 40px;
-  padding-bottom: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-bottom: 0px;
+  padding-left: 150px;
+  padding-right: 150px;
   overflow: hidden;
   background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
 }
 
 .infoCards {
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
   text-align: center;
   position: relative;
   overflow: hidden;
   width: 100%;
   background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
 }
+
+/*
+[data-theme='light'] .textLinks {
+  background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
+}
+
+[data-theme='dark'] .textLinks {
+  background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
+}
+
+[data-theme='light'] .infoCards {
+  background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
+}
+
+[data-theme='dark'] .infoCards {
+  background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
+}
+*/
 
 @media screen and (max-width: 996px) {
   .textLinks {
