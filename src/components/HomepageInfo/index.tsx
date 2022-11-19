@@ -31,7 +31,7 @@ const HomepageInfo = [
     name: 'Safeguard your ENS names',
     image: require('@site/static/img/cards/security.png'),
     url: 'docs/faq/security',
-    description: 'Improve the security of your Ethereum wallets and safeguard your ENS names.'
+    description: 'Improve the security of your Ethereum wallets.'
   },
 ];
 
@@ -44,7 +44,7 @@ interface Props {
 
 function HomepageInfoCard({name, image, url, description}: Props) {
   return (
-    <div className="col col--6 margin-bottom--lg">
+    <div className="col margin-bottom--lg">
       <div className={clsx('card')}>
         <div className={clsx('card__image')}>
           <Link to={url}>
@@ -52,15 +52,16 @@ function HomepageInfoCard({name, image, url, description}: Props) {
           </Link>
         </div>
         <div className="card__body">
-          <h3>{name}</h3>
-          <p>{description}</p>
+          <div className={styles.cardstyle}>
+            <a href={url}>
+              <h3>{name}</h3>
+              <div className={styles.carddescr}>
+                <p>{description}</p>
+              </div>
+            </a>
+      </div>
         </div>
         <div className="card__footer">
-          <div className="button-group button-group--block">
-            <Link className="button button--secondary" to={url}>
-              <Translate id="playground.tryItButton">Read this article</Translate>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
