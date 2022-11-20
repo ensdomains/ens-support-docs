@@ -15,8 +15,14 @@
   padding-left: 0px;
   padding-right: 0px;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
+  background: #f4f5f7;
 }
+
+[data-theme='dark'] .features {
+  background: #221800;
+}
+
+
 
 .textLinks {
   padding-top: 40px;
