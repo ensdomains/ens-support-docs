@@ -5,7 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import {HomepageInfoCardsRow} from '@site/src/components/HomepageInfo';
-import {HomepageTextLinks} from '@site/src/components/HomepageTextLinks';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 export default function Home() {
