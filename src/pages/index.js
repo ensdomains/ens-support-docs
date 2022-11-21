@@ -18,7 +18,9 @@ export default function Home() {
           <HomepageFeatures />
         </section>
         <section className={styles.infoCards}>
+          <center>
           <HomepageInfoCardsRow />
+          </center>
         </section>
       </main>
     </Layout>
