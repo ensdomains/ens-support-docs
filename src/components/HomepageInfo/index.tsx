@@ -33,6 +33,24 @@ const HomepageInfo = [
     url: 'docs/faq/security',
     description: 'Improve the security of your Ethereum wallets.'
   },
+  {
+    name: 'Safeguard your ENS names',
+    image: require('@site/static/img/cards/security.png'),
+    url: 'docs/faq/security',
+    description: 'Improve the security of your Ethereum wallets.'
+  },
+  {
+    name: 'Safeguard your ENS names',
+    image: require('@site/static/img/cards/security.png'),
+    url: 'docs/faq/security',
+    description: 'Improve the security of your Ethereum wallets.'
+  },
+  {
+    name: 'Safeguard your ENS names',
+    image: require('@site/static/img/cards/security.png'),
+    url: 'docs/faq/security',
+    description: 'Improve the security of your Ethereum wallets.'
+  },
 ];
 
 interface Props {
@@ -56,7 +74,7 @@ function HomepageInfoCard({name, image, url, description}: Props) {
             <a href={url}>
               <h3>{name}</h3>
               <div className={styles.carddescr}>
-                <p>{description}</p>
+      <p style={{textAlign: 'center'}}>{description}</p>
               </div>
             </a>
       </div>

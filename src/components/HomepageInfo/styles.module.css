@@ -5,6 +5,13 @@
 
 .cardstyle {
     vertical-align: top;
+    width: 300px;
+    height: 100px;
+}
+
+.testcard a:link {
+    text-align: center;
+    display:block;
 }
 
 [data-theme='light'] .cardstyle a:link,[data-theme='light'] .cardstyle a:visited {
