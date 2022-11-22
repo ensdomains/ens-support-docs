@@ -21,12 +21,12 @@
 }
 */
 
-
 :root {
   --ifm-color-primary-lightest: #6ea1f7;
   --ifm-color-primary-lighter: #4787f5;
   --ifm-color-primary-light: #3a7ff4;
-  --ifm-color-primary: #206ef3;
+  --ifm-color-primary: #19346b#
+  /* --ifm-color-primary: #206ef3; */
   --ifm-color-primary-dark: #0d5feb;
   --ifm-color-primary-darker: #0c5ade;
   --ifm-color-primary-darkest: #0a4ab7;
@@ -40,7 +40,7 @@ html[data-theme='light'] {
 
 /* Light theme footer overrides */
 html[data-theme='light'] footer {
-  --ifm-footer-background-color: #ffffff;
+  --ifm-footer-background-color: #efefef;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
