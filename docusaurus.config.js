@@ -62,6 +62,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
+        hideOnScroll: true,
         title: 'ENS Support',
         logo: {
           alt: 'ENS Logo',
