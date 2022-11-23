@@ -6,52 +6,32 @@
 
 /* You can override the default Infima variables here. */
 
-/* default primary colours and various tests
 :root {
-  --ifm-color-primary: #2e8555; 50b3f2;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-footer-background: linear-gradient(90deg,#513eff 0%,#52e5ff 100%);
-}
-*/
-
-:root {
-  --ifm-color-primary-lightest: #6ea1f7;
-  --ifm-color-primary-lighter: #4787f5;
-  --ifm-color-primary-light: #3a7ff4;
+  --ifm-color-primary-lightest: #21448b;
+  --ifm-color-primary-lighter: #1d3c7b;
+  --ifm-color-primary-light: #1c3976;
   --ifm-color-primary: #19346b#
   /* --ifm-color-primary: #206ef3; */
-  --ifm-color-primary-dark: #0d5feb;
-  --ifm-color-primary-darker: #0c5ade;
-  --ifm-color-primary-darkest: #0a4ab7;
+  --ifm-color-primary-dark: #172f60;
+  --ifm-color-primary-darker: #152c5b;
+  --ifm-color-primary-darkest: #12244b;
   --ifm-code-font-size: 95%;
-}
-
-
-/* Light theme overrides */
-html[data-theme='light'] {
 }
 
 /* Light theme footer overrides */
 html[data-theme='light'] footer {
-  --ifm-footer-background-color: #efefef;
+  --ifm-footer-background-color: #ffffff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  --ifm-color-primary-lightest: #b7d9ff;
+  --ifm-color-primary-lighter: #85bfff;
+  --ifm-color-primary-light: #74b6ff;
   --ifm-color-primary: #52a4ff;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary-dark: #3092ff;
+  --ifm-color-primary-darker: #1f89ff;
+  --ifm-color-primary-darkest: #0070ec;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
