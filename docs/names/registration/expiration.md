@@ -8,9 +8,9 @@ After the registration period is over, it will begin the process towards normal 
 If you want to extend your registration period, this can be done from the [ENS Manager App](https://app.ens.domains) -->
 ```mermaid
 graph LR;
-A(<b>Available</b>);
+A(Available);
 B(Registered);
-C(Expired);
+C(<b>Expired</b>);
 D(Grace Period);
 E(Premium Auction);
 
