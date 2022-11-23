@@ -1,4 +1,12 @@
-# Name Lifecycle
+---
+id: lifecycle
+title: Name Lifecycle
+tags:
+  - expiration
+  - lifecycle
+---
+
+# The Lifecycle of an ENS Name
 <!--
 ## Registration period
 **Registration period** **→** `Expiration` **→** `Grace period` **→** `Premium auction` **→** `Normal availability`  
