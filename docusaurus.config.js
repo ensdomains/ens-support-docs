@@ -14,6 +14,10 @@ const config = {
   onBrokenMarkdownLinks: 'throw',
   favicon: '/img/enssite_logo.svg',
   plugins: ['@docusaurus/plugin-ideal-image'],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
