@@ -1,3 +1,17 @@
+---
+id: metamask
+title: Metamask
+tags:
+  - wallet
+  - metamask
+last_update:
+  date: 11/25/2022
+  author: cthulu
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+
 # Metamask
 Metamask suffers from several known bugs documented below.
 
@@ -10,7 +24,9 @@ Transactions can get stuck in Metamask due to a bug in the UI. This is not the s
 
 To clear transactions stuck in Metamask you'll have to reset the wallet:
 Open up Metamask and select the multi-coloured circle to bring up settings  
-![Picture 1](/img/metamask-stuck1.webp)
+<BrowserWindow>
+  <Image img="/img/metamask-stuck1.webp"/>
+</BrowserWindow>
 
 Go to `Settings` **→** `Advanced` **→** `Reset Account` and confirm.
 
@@ -25,19 +41,27 @@ Metamask doesn't yet show ENS tokens in your wallet by default, but the good new
   
 Go to the [Etherscan](https://etherscan.io/token/0xc18360217d8f7ab5e7c516566761ea12ce7f9d72)-page for the ENS voting token *or* the [ENS Domain token](https://etherscan.io/token/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85).
 Next to `Profile Summary` on the right-hand side, press *more* to bring up its sub-menu.
-![Picture 1](/img/metamask-unknown1.webp)
+<BrowserWindow>
+  <Image img="/img/metamask-unknown1.webp"/>
+</BrowserWindow>
 
 Select `Add token to Metamask (Web3)`
-![Picture 2](/img/metamask-unknown2.webp)
+<BrowserWindow>
+  <Image img="/img/metamask-unknown2.webp"/>
+</BrowserWindow>
 
 Confirm adding the token in Metamask  
-![Picture 3](/img/metamask-unknown3.webp)
+<BrowserWindow>
+  <Image img="/img/metamask-unknown3.webp"/>
+</BrowserWindow>
 
 Now your ENS voting tokens and/or ENS domain tokens should be visible in your Metamask wallet.
 
 ## Exaggerated gas costs
 Metamask has a [known bug](https://github.com/MetaMask/metamask-extension/issues/13135) where users are shown an incredibly high gas fee estimate if there isn't enough ETH in the wallet to cover the actual transaction costs.
 
-![Picture 1](/img/metamask-exaggerated1.webp)
+<BrowserWindow>
+  <Image img="/img/metamask-exaggerated1.webp"/>
+</BrowserWindow>
 
 This can be solved by transferring more ETH into the wallet to cover the actual transaction cost which should be a lot less than what Metamask shows when it's encountering this bug.
