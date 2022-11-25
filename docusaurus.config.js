@@ -65,6 +65,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+        algolia: {
+          appId: 'USIPAE8OD4',
+          apiKey: '79429ecc4d7578b000968889c03de4b0',
+          indexName: 'INDEX_NAME',
+        },
       navbar: {
         hideOnScroll: true,
         title: 'ENS Support',
@@ -79,15 +84,20 @@ const config = {
             position: 'left',
             label: 'Support Docs',
           },
+    {
+      to: '/blog',
+      label: 'Support Updates',
+      position: 'left'
+    },
 	  {
 	    href: 'https://docs.ens.domains',
 	    label: 'Developer Docs',
-	    position: 'right',
+	    position: 'left',
 	  },
 	  {
 	    href: 'https://docs.ens.domains/v/governance',
 	    label: 'Governance Docs',
-	    position: 'right',
+	    position: 'left',
 	  },
     {
       href: 'https://chat.ens.domains',
@@ -107,7 +117,6 @@ const config = {
       className: 'header-github-link',
       'aria-label': 'GitHub  repository',
     },
-          {to: '/blog', label: 'Support Updates', position: 'left'},
         ],
       },
       footer: {
