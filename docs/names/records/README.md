@@ -8,14 +8,14 @@ import DocCardList from '@theme/DocCardList';
 
 ## Main records
 | Name         | Details                    |
-|--------------|----------------------------|
+| ------------ | -------------------------- |
 | `Registrant` | *Owner of the ENS name*    |
 | `Controller` | *Administrator of records* |
 | `Resolver`   | *ENS Public Resolver*      |
 
 ## Address records
 | Name   | Blockchain          | Details                     |
-|--------|---------------------|-----------------------------|
+| ------ | ------------------- | --------------------------- |
 | `ETH`  | Ethereum            | *Where the ENS name points* |
 | `BSC`  | Binance Smart Chain |                             |
 | `DOGE` | Dogecoin            |                             |
@@ -24,7 +24,7 @@ import DocCardList from '@theme/DocCardList';
 
 ## Text records
 | Name               | Details                |
-|--------------------|------------------------|
+| ------------------ | ---------------------- |
 | `email`            | *E-Mail Address*       |
 | `url`              | *Additional url*       |
 | `description`      | *ENS name description* |

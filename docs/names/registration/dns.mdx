@@ -1,17 +1,37 @@
+---
+id: dns
+title: DNS Names
+tags:
+  - dns
+  - domain
+  - .com
+  - .net
+  - .org
+  - .xyz
+last_update:
+  date: 11/25/2022
+  author: cthulu
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+
 # DNS Names
 ENS supports importing DNS names into ENS, which makes it possible to use, for example, your `.com` `.net` or `.org` DNS name with ENS.
   
 There are a few pre-requisites to importing a DNS name into ENS:
 
- * The DNS name must have DNSSEC enabled with `RSA/SHA-256` or `ECDSA` keys
+ - The DNS name must have DNSSEC enabled with `RSA/SHA-256` or `ECDSA` keys
    
- * An `_ens` `TXT record` must be created on the DNS name containing the wallet address to prove ownership of it.
+ - An `_ens` `TXT record` must be created on the DNS name containing the wallet address to prove ownership of it.
 
 ## Hosting providers
-A list of popular hosting providers and which DNSSEC key types they support
+A list of popular hosting providers and which DNSSEC key types they support[^1]
+
+[^1]: The key-types hosting providers support may have changed since this list was last verified on `June 22nd, 2022`.
 
 | Hosting providers | DNSSEC | RSA/SHA-256 | ECDSA | Details                                                        |
-|-------------------|--------|-------------|-------|----------------------------------------------------------------|
+| ----------------- | ------ | ----------- | ----- | -------------------------------------------------------------- |
 | easyDNS           | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://kb.easydns.com/knowledge/dnssec/)     |
 | Google Cloud DNS  | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://cloud.google.com/dns/docs/registrars) |
 | Bluehost          | `Yes`  | `Yes`       | `Yes` |                                                                |
@@ -20,19 +40,17 @@ A list of popular hosting providers and which DNSSEC key types they support
 | GoDaddy           | `Yes`  | `No`        | `Yes` |                                                                |
 | Wordpress         | `No`   | -           | -     |                                                                |
 
-:::note
-*(Support may have changed since this was last verified on 2022-05-22)*
-:::
-
 ## Step 1: Enable DNSSEC
 
 Go to the [ENS Manager App](https://app.ens.domains) and search for your DNS name. You should see a screen like this:
-
-![Picture 1](/img/import_dnsname_img1.webp)
+<BrowserWindow>
+  <Image img="/img/import_dnsname_img1.webp"/>
+</BrowserWindow>
 
 If your DNS provider supports DNSSEC, all you do is enable the option in their DNS manager:
-
-![Picture 2](/img/import_dnsname_img2.webp)
+<BrowserWindow>
+  <Image img="/img/import_dnsname_img2.webp"/>
+</BrowserWindow>
 
 If they don’t, you’ll need to migrate to a DNS provider that does. See:
 > [**Hosting providers**](#hosting-providers)
@@ -40,19 +58,20 @@ If they don’t, you’ll need to migrate to a DNS provider that does. See:
 ## Step 2: Add the TXT-record
 The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
 
-|          |                         |
-|----------|-------------------------|
-| Type     | `TXT`                   |
-| Name     | `_ens`                  |
-| Contents | `a=wallet address`      |
-| TTL      | `36000`                 |
+|          |                    |
+| -------- | -------------------|
+| Type     | `TXT`              |
+| Name     | `_ens`             |
+| Contents | `a=wallet address` |
+| TTL      | `36000`            |
 
 To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
-
-![Picture 3](/img/import_dnsname_img3.webp)
+<BrowserWindow>
+  <Image img="/img/import_dnsname_img3.webp"/>
+</BrowserWindow>
 
 ## Step 3: Linking the name with ENS
 Now you should be able to go back to the [ENS Manager App](https://app.ens.domains) and finish linking the DNS name with ENS by pressing `Register`.
-
-![Picture 4](/img/import_dnsname_img4.webp)
-
+<BrowserWindow>
+  <Image img="/img/import_dnsname_img4.webp"/>
+</BrowserWindow>

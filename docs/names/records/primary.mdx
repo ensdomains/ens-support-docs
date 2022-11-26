@@ -1,10 +1,19 @@
-# Primary name
+---
+id: primary
+title: Primary Name
+tags:
+  - Primary Name
+  - identity
+last_update:
+  date: 11/25/2022
+  author: cthulu
+---
 
-<!--
+# The Primary name
+
 | With Primary name set | Without Primary name set |
-|-----------------------|--------------------------|
+| --------------------- | ------------------------ |
 |                       |                          |
--->
 
 ## How name resolution works
 
@@ -15,18 +24,41 @@ The easiest way to understand it is to consider that name resolution works in tw
 ### Forward resolution
 Forward resolution is simply where your name points to and is determined by the `ETH Address` record set on your ENS name.
 
-| Forward resolution                                                      |
-|-------------------------------------------------------------------------|
-|`Your ENS Name` **➞** `Your wallet address`, or for a practical example: |
-|`snowowl.eth` **➞** `0xa19A7ae868eDe64C6C5256A64BCD3bf3a9F2d615`         |
+```mermaid
+%%{
+  init: {
+    'flowchart': {
+      'curve': 'linear'
+      } } }%%
+      
+graph LR;
+A(Your ENS Name);
+B(Your wallet address);
+C(snowowl.eth)
+D(0xa19A7ae868eDe64C6C5256A64BCD3bf3a9F2d61)
+
+A-->B;
+C-->D;
+```
 
 ### Reverse resolution
 Reverse resolution is where your wallet points to and is determined by the `Primary name` record set in your wallet.
+```mermaid
+%%{
+  init: {
+    'flowchart': {
+       'curve': 'linear'
+      } } }%%
+      
+graph LR;
+A(Your ENS Name);
+B(Your wallet address);
+C(snowowl.eth)
+D(0xa19A7ae868eDe64C6C5256A64BCD3bf3a9F2d61)
 
-| Reverse resolution                                                       |
-|--------------------------------------------------------------------------|
-| `Your wallet address` **➞** `Your ENS name`, or for a practical example: |
-| `0xa19A7ae868eDe64C6C5256A64BCD3bf3a9F2d615` **➞** `snowowl.eth`         |
+B-->A;
+D-->C;
+```
 
 ## Set the Primary record
 
