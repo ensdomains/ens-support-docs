@@ -1,113 +1,163 @@
 ---
 draft: true
 ---
-
+import BrowserWindow from '@site/src/components/BrowserWindow';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Image from '@theme/IdealImage';
 
 # Create a decentralized website
 One of the most interesting and powerful features of ENS names is the ability to point them to webpages hosted on the decentralized web, creating a website where both the hosting and the domain name is *entirely* decentralized.
 
 In this tutorial we'll show you how to deploy a basic website to IPFS and point your ENS name to it.
-:::note
-ENS supports several decentralized protocols apart from IPFS, but this tutorial only covers IPFS (for now)
-:::
+ENS supports several decentralized protocols apart from IPFS, but this tutorial only covers IPFS (for now).
 
 ## Build a website
 In this section we'll create a basic website to deploy to IPFS using [Heaven's Tools](https://heavens.tools) excellent Web3 website builder.
-:::note
+:::tip
 If you already have a website you'd like to upload, proceed to [**Set up a GitHub repository**](#set-up-a-github-repository)
 :::
 
 ### Create the website
 Go to [Heaven's Tools](https://heavens.tools) website and use the drag and drop building blocks to create your site.
-![Picture 1](/img/tutorials/decentralized_website_1.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_1.png" />
+</BrowserWindow>
 
 ### Download the website
 Once you're happy with the site you've created click the `Download` button to download a compressed `.zip` archive of your website. 
-![Picture 2](/img/tutorials/decentralized_website_2.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_2.png" />
+</BrowserWindow>
 
 ### Extract the compressed archive
 <Tabs>
-    <TabItem value="windows" label="Windows" default>
-             Instructions for Windows
-    </TabItem>
-    <TabItem value="macos" label="Mac OS">
-             <img
-             src={require('/img/tutorials/extract_file_macos_1.png').default}
-             alt="Extract File 1"
-             />
-             <img
-             src={require('/img/tutorials/extract_file_macos_2.png').default}
-             alt="Extract File 1"
-             />
-    </TabItem>
-    <TabItem value="linux" label="Linux">
-             Navigate to the file folder and use `unzip` to unzip the archive.
-             <img
-             src={require('/img/tutorials/extract_file_linux.png').default}
-             alt="Extract File 1"
-             />
-    </TabItem>
+  <TabItem value="windows" label="Windows" default>
+    Instructions for Windows
+  </TabItem>
+  <TabItem value="macos" label="Mac OS">
+    <BrowserWindow>
+      <img
+        src={require('/img/tutorials/extract_file_macos_1.png').default}
+        alt="Extract File 1"
+      />
+    </BrowserWindow>
+    <BrowserWindow>
+      <img
+        src={require('/img/tutorials/extract_file_macos_2.png').default}
+        alt="Extract File 1"
+      />
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    <p>Navigate to the file folder and use <b>unzip</b> to unzip the archive.</p>
+
+    [cthulu@carbon ~]$ unzip template.zip
+    Archive:  template.zip
+     extracting: editor.css
+     extracting: narrow-jumbotron.css
+     extracting: aos.css
+     extracting: vvvebjs-editor-helpers.css
+     extracting: aos.js
+     extracting: ?format=json
+     extracting: index.html
+    [cthulu@carbon ~]$ 
+    
+  </TabItem>
 </Tabs>
+
+---
 
 ## Set up a GitHub repository
 Go to [GitHub](https://github.com) and create an account.
 
 ### Create a repository
 Click `New` to create a new GitHub repository for your website.
-![Picture 3](/img/tutorials/decentralized_website_3.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_3.png" />
+</BrowserWindow>
 
 Then choose a name for the repository.
-![Picture 4](/img/tutorials/decentralized_website_4.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_4.png" />
+</BrowserWindow>
 
 Then scroll down and click on `Create`.
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_4.png" />
+</BrowserWindow>
 ![Picture 5](/img/tutorials/decentralized_website_5.png)
 
 ### Upload your files to the repository
 On the next screen, click the link `Uploading an existing file`
-![Picture 6](/img/tutorials/decentralized_website_6.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_6.png" />
+</BrowserWindow>
 
 Upload your files to GitHub
-![Picture 7](/img/tutorials/decentralized_website_7.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_7.png" />
+</BrowserWindow>
 
 After that's done, scroll down and click `Commit`.
-![Picture 7](/img/tutorials/decentralized_website_8.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/decentralized_website_8.png" />
+</BrowserWindow>
 
-## Upload it to IPFS (using Fleek)
+---
+
+## Upload to IPFS
 
 ### Create an account with Fleek
 Go to [Fleek's website](https://fleek.co) and `Sign Up` for an account.
 
 ### Upload your site to Fleek
 After logging into [Fleek](https://fleek.co), at the dashboard select `Add new site`.
-![Picture 3](/img/tutorials/create_website_fleek_1.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_1.png" />
+</BrowserWindow>
 
 Choose `Connect with GitHub` and connect your GitHub account. 
-![Picture 4](/img/tutorials/create_website_fleek_2.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_2.png" />
+</BrowserWindow>
 
 Click `Install & Authorize`
-![Picture 5](/img/tutorials/create_website_fleek_3.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_3.png" />
+</BrowserWindow>
 
 When asked which repository to create the website from, select the repository you created earlier in [](#step-1-create-a-repository)
-![Picture 6](/img/tutorials/create_website_fleek_4.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_4.png" />
+</BrowserWindow>
 
 For the hosting service, make sure IPFS is selected and press `Continue`.
-![Picture 7](/img/tutorials/create_website_fleek_5.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_5.png" />
+</BrowserWindow>
 
 On the next screen no changes are necessary, so just scroll down and click `Deploy site`.
-![Picture 8](/img/tutorials/create_website_fleek_6.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_6.png" />
+</BrowserWindow>
 
 Fleek will now deploy the website to IPFS, which might take a little while.
-![Picture 9](/img/tutorials/create_website_fleek_7.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_7.png" />
+</BrowserWindow>
 
 When the site has been deployed, it will look like this:
-![Picture 10](/img/tutorials/create_website_fleek_8.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_8.png" />
+</BrowserWindow>
 
 Select the `IPFS CID` *(marked in blue below)* and press `CTRL + C` to copy it into the clipboard or write it down.
-![Picture 11](/img/tutorials/create_website_fleek_9.png)
+<BrowserWindow>
+  <Image img="/img/tutorials/create_website_fleek_9.png" />
+</BrowserWindow>
 
-## Set the `Content` record on your ENS name
+## Configure your ENS name
 
 ### Go to the ENS Manager App
 Go to the [ENS Manager App](https://app.ens.domains) and connect your wallet.
