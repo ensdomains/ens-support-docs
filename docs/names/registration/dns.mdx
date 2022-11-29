@@ -43,12 +43,12 @@ A list of popular hosting providers and which DNSSEC key types they support[^1]
 ## Step 1: Enable DNSSEC
 
 Go to the [ENS Manager App](https://app.ens.domains) and search for your DNS name. You should see a screen like this:
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/import_dnsname_img1.webp"/>
 </BrowserWindow>
 
 If your DNS provider supports DNSSEC, all you do is enable the option in their DNS manager:
-<BrowserWindow>
+<BrowserWindow url="support.ensmods.xyz">
   <Image img="/img/import_dnsname_img2.webp"/>
 </BrowserWindow>
 
@@ -66,12 +66,12 @@ The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the dom
 | TTL      | `36000`            |
 
 To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
-<BrowserWindow>
+<BrowserWindow url="support.ensmods.xyz">
   <Image img="/img/import_dnsname_img3.webp"/>
 </BrowserWindow>
 
 ## Step 3: Linking the name with ENS
 Now you should be able to go back to the [ENS Manager App](https://app.ens.domains) and finish linking the DNS name with ENS by pressing `Register`.
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/import_dnsname_img4.webp"/>
 </BrowserWindow>

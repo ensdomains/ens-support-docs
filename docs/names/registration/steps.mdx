@@ -16,21 +16,7 @@ import Image from '@theme/IdealImage';
 
 # Registration steps
 
-There are three steps involved in registering an ENS name that is intended to solve the problem of front-running:
-```mermaid
-%%{
-  init: {
-    'flowchart': {
-      'curve': 'linear'
-    } } }%%
-      
-graph LR;
-A(Request to Register);
-B(Wait 60 Seconds);
-C(Register);
-
-A-->B-->C;
-```
+There are three steps involved in registering an ENS name that is intended to solve the problem of front-running.
 
 ## Step 1: Request to register
 ```mermaid
@@ -61,7 +47,7 @@ Once you've performed the `Request to Register` you have 7 days to complete Step
 Keep in mind that while you have 7 days to complete the name registration, the name is ***not*** reserved for you during this time.
 :::
 
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/registration_3steps_img1.webp"/>
 </BrowserWindow>
 
@@ -88,7 +74,7 @@ A-->B-->C;
 ```
 
 A 1 minute waiting period begins to prevent the front-running of the ENS name registration.
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/registration_3steps_img2.webp"/>
 </BrowserWindow>
 
@@ -115,7 +101,7 @@ A-->B-->C;
 ```
 
 The registration transaction is performed and the ENS name is registered; the ERC-721 NFT for the ENS name is minted and transferred into the registrant's wallet.
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/registration_3steps_img3.webp"/>
 </BrowserWindow>
 

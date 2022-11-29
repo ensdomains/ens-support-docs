@@ -17,12 +17,12 @@ import Image from '@theme/IdealImage';
 Go to the [ENS Manager App](https://app.ens.domains) and connect your wallet.
 
 ## Search for the ENS name you want
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/register_name_img3.webp"/>
 </BrowserWindow>
 
 Provided that the name you searched for is available, click on it to continue to the registration.
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/register_name_img4.webp"/>
 </BrowserWindow>
 
@@ -86,7 +86,7 @@ While this transaction does not have a transaction value, it still incurs a gas 
 * You have ***7 days*** to complete Step 3 before the `Request to Register` transaction expires. *However,* the ENS name is ***not reserved for you*** during this time.
 :::
 
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/register_name_img5.webp"/>
 </BrowserWindow>
 
@@ -108,12 +108,13 @@ C(Register);
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
 
+class A inactive;
 class B active;
 
 A-->B-->C;
 ```
 After the Step 1 transaction completes there's a 60-second waiting period to prevent front running.
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/register_name_img6.webp"/>
 </BrowserWindow>
 
@@ -133,16 +134,17 @@ C(Register);
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
 
+class A,B inactive;
 class C active;
 
 A-->B-->C;
 ```
 Now it's time to `Register` your ENS name. Click the register button and confirm the transaction in your wallet.
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/register_name_img7.webp"/>
 </BrowserWindow>
 
 Congratulations! If all transactions went through successfully you should now be the proud owner of your very own ENS name!
-<BrowserWindow>
+<BrowserWindow url="app.ens.domains">
   <Image img="/img/register_name_img8.webp"/>
 </BrowserWindow>
