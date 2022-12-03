@@ -1,29 +1,21 @@
 ---
-id: dns
-title: DNS Names
+draft: false
+last_update:
+  date: 12/03/2022
+  author: cthulu
 tags:
+  - link
   - dns
-  - domain
   - .com
   - .net
   - .org
   - .xyz
-last_update:
-  date: 11/25/2022
-  author: cthulu
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage';
 
-# DNS Names
-ENS supports importing DNS names into ENS, which makes it possible to use, for example, your `.com` `.net` or `.org` DNS name with ENS.
-  
-There are a few pre-requisites to importing a DNS name into ENS:
-
- - The DNS name must have DNSSEC enabled with `RSA/SHA-256` or `ECDSA` keys
-   
- - An `_ens` `TXT record` must be created on the DNS name containing the wallet address to prove ownership of it.
+# Link a DNS name
 
 ## Hosting providers
 A list of popular hosting providers and which DNSSEC key types they support[^1]
@@ -44,12 +36,12 @@ A list of popular hosting providers and which DNSSEC key types they support[^1]
 
 Go to the [ENS Manager App](https://app.ens.domains) and search for your DNS name. You should see a screen like this:
 <BrowserWindow url="app.ens.domains">
-  <Image img="/img/import_dnsname_img1.webp"/>
+  <Image img="/img/howto/link-dns-name-1.webp"/>
 </BrowserWindow>
 
 If your DNS provider supports DNSSEC, all you do is enable the option in their DNS manager:
 <BrowserWindow url="support.ensmods.xyz">
-  <Image img="/img/import_dnsname_img2.webp"/>
+  <Image img="/img/howto/link-dns-name-2.webp"/>
 </BrowserWindow>
 
 If they don’t, you’ll need to migrate to a DNS provider that does. See:
@@ -67,11 +59,11 @@ The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the dom
 
 To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
 <BrowserWindow url="support.ensmods.xyz">
-  <Image img="/img/import_dnsname_img3.webp"/>
+  <Image img="/img/howto/link-dns-name-3.webp"/>
 </BrowserWindow>
 
 ## Step 3: Linking the name with ENS
 Now you should be able to go back to the [ENS Manager App](https://app.ens.domains) and finish linking the DNS name with ENS by pressing `Register`.
 <BrowserWindow url="app.ens.domains">
-  <Image img="/img/import_dnsname_img4.webp"/>
+  <Image img="/img/howto/link-dns-name-4.webp"/>
 </BrowserWindow>

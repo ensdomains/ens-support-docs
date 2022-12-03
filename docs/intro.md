@@ -18,17 +18,20 @@ If you have any questions about ENS feel free to reach out for help:
 
 # Articles
 
-Articles in the ENS Support Docs are divided into three different categories:
+Articles in the ENS Support Docs are divided into four different categories:
 
 :::info Support Doc Categories
- 1. **Names & Registrations**  
-   *For information on Records, Registrations, and Renewals*
+ 1. [**Names & Registrations**](names/)  
+   *The Names & Registrations secton contains concise reference information on Records, Registrations, and Renewals*
    
- 1. **Support**  
+ 1. [**Frequently Asked Questions**](faq/)  
    *The Support FAQ answers common support questions received in the ENS Discord and ENS Twitter Support accounts.*
 
- 1. **Tutorials**  
-    *Easy to follow step-by-step tutorials*
+ 1. [**How-To**](howto/)  
+   *The How-To section contains task-based guides assuming a basic knowledge of computers and ENS.*
+
+ 1. [**Tutorials**](tutorials/)  
+    *The Tutorials section contains step-by-step guides that are easy to follow.*
 :::
 
 # Community

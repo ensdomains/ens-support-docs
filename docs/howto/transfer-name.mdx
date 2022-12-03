@@ -1,0 +1,77 @@
+---
+title: Transfer an ENS Name
+last_update:
+  date: 11/30/2022
+  authors: cthulu
+tags:
+  - transfer
+  - gift
+---
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+
+# Transfer an ENS name
+The owner of an ENS name is called the `Registrant` in the [ENS Manager App](https://app.ens.domains). This is the wallet the ENS name NFT resides in.
+In order to transfer an ENS name you must therefore transfer the `Registrant`.
+
+However, an ENS name contains more records than just `Registrant` which can be set to different wallets. There are three central records involved in name transfers: 
+
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/transfer_name_1.png"/>
+</BrowserWindow>
+
+:::info
+ 1. **Registrant** the owner of the ENS name, the wallet the ENS name NFT resides in.
+ 1. **Controller** *The administrator of records, the wallet allowed to make changes to its records (but not transfer the name)*
+ 1. **ETH Address** *The wallet address the ENS name points to, where funds sent to it will arrive.*
+:::
+
+When transferring an ENS name, only the `Registrant` record is automatically updated to reflect the new owner wallet.
+Depending on your specific use-case it's therefore a good idea to take a moment and think about what additional records you want to transfer.
+
+## Completely transfer a name
+If you want to completely transfer a name to a wallet you'll need to set three records to the new wallet in a specific order because only the wallet set as `Controller` is allowed to change the `ETH Address` and only the `Registrant` is allowed to change the `Controller`.
+:::info For example
+ - If you were to change `Controller` first, you wouldn't be able to set the `ETH Address` without switching to the new wallet.
+ - If you were to transfer `Registrant` first, you wouldn't be able to set the `Controller` without switching to the new wallet.
+:::
+
+In order to set everything to the new wallet easily from the wallet that currently owns the ENS name you'd follow this specific order:
+
+:::info Order
+ 1. **ETH Address** *The wallet address the ENS name points to, where funds sent to it will arrive.*
+ 1. **Controller** *The administrator of records, the wallet allowed to make changes to its records (but not transfer the name)*
+ 1. **Registrant** *The owner of the ENS name, the wallet the ENS name NFT resides in.*
+ 
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/transfer_name_1.png"/>
+</BrowserWindow>
+:::
+
+### Go to the Manager App
+First go to the [ENS Manager App](https://app.ens.domains) and connect your wallet
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/transfer_name_2.png"/>
+</BrowserWindow>
+
+Click on ***My Account***
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/transfer_name_3.png"/>
+</BrowserWindow>
+
+In the list of ENS names click on the one you want to transfer to go to it
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/transfer_name_4.png"/>
+</BrowserWindow>
+
+Click the `Transfer` button next to the Registrant field
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/transfer_name_5.png"/>
+</BrowserWindow>
+
+Fill in the ENS name or Ethereum address of the wallet you want to transfer it to and press `Transfer`.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/transfer_name_6.png"/>
+</BrowserWindow>
+
+Then approve the transaction in your wallet.
