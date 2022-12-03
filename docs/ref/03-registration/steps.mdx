@@ -1,0 +1,109 @@
+---
+id: steps
+title: Registration Steps
+tags:
+  - registration
+  - step
+  - commit
+  - request to register
+last_update:
+  date: 11/25/2022
+  author: cthulu
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+
+# Registration steps
+
+There are three steps involved in registering an ENS name that is intended to solve the problem of front-running.
+
+## Step 1: Request to register
+```mermaid
+%%{
+  init: {
+    'flowchart': {
+      'curve': 'linear'
+    } } }%%
+      
+graph LR;
+A(Request to Register);
+B(Wait 60 Seconds);
+C(Register);
+
+classDef active stroke-width:4px;
+classDef inactive stroke-dasharray: 5 5;
+
+class A active;
+
+A-->B-->C;
+```
+
+The commit in Step 1 hashes a secret key generated and stored in your browser's local storage and hashes it with your wallet address and ENS name so that you can later register it without revealing it publicly.
+
+Once you've performed the `Request to Register` you have 7 days to complete Step 3 until the `Request to Register` becomes invalid.
+
+:::caution
+Keep in mind that while you have 7 days to complete the name registration, the name is ***not*** reserved for you during this time.
+:::
+
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/registration_3steps_img1.webp"/>
+</BrowserWindow>
+
+## Step 2: Wait for 1 minute
+```mermaid
+%%{
+  init: {
+    'flowchart': {
+      'curve': 'linear'
+    } } }%%
+      
+graph LR;
+A(Request to Register);
+B(Wait 60 Seconds);
+C(Register);
+
+classDef active stroke-width:4px;
+classDef inactive stroke-dasharray: 5 5;
+
+class A inactive;
+class B active;
+
+A-->B-->C;
+```
+
+A 1 minute waiting period begins to prevent the front-running of the ENS name registration.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/registration_3steps_img2.webp"/>
+</BrowserWindow>
+
+## Step 3: Register
+```mermaid
+%%{
+  init: {
+    'flowchart': {
+      'curve': 'linear'
+    } } }%%
+      
+graph LR;
+A(Request to Register);
+B(Wait 60 Seconds);
+C(Register);
+
+classDef active stroke-width:4px;
+classDef inactive stroke-dasharray: 5 5;
+
+class A,B inactive;
+class C active;
+
+A-->B-->C;
+```
+
+The registration transaction is performed and the ENS name is registered; the ERC-721 NFT for the ENS name is minted and transferred into the registrant's wallet.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/registration_3steps_img3.webp"/>
+</BrowserWindow>
+
+## In conclusion
+If a miner wanted to try and front-run this process, they would have to send their own hashed secret, wait 1 minute and then register the name. Since they can't hold back your transaction for one minute, they will fail to do so, and the miner can't use the secret compared to the earlier hash.

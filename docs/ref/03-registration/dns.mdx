@@ -1,0 +1,45 @@
+---
+title: DNS Names
+tags:
+  - dns
+  - domain
+  - .com
+  - .net
+  - .org
+  - .xyz
+last_update:
+  date: 12/03/2022
+  author: cthulu
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+
+# DNS Names
+ENS supports importing DNS names into ENS, which makes it possible to use, for example, your `.com` `.net` or `.org` DNS name with ENS.
+  
+There are a few pre-requisites to importing a DNS name into ENS:
+
+ - The DNS name must have DNSSEC enabled with `RSA/SHA-256` or `ECDSA` keys
+   
+ - An `_ens` `TXT record` must be created on the DNS name containing the wallet address to prove ownership of it.
+
+## Hosting providers
+A list of popular hosting providers and which DNSSEC key types they support[^1]
+
+[^1]: The key-types hosting providers support may have changed since this list was last verified on `June 22nd, 2022`.
+
+| Hosting providers | DNSSEC | RSA/SHA-256 | ECDSA | Details                                                        |
+| ----------------- | ------ | ----------- | ----- | -------------------------------------------------------------- |
+| easyDNS           | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://kb.easydns.com/knowledge/dnssec/)     |
+| Google Cloud DNS  | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://cloud.google.com/dns/docs/registrars) |
+| Bluehost          | `Yes`  | `Yes`       | `Yes` |                                                                |
+| Hostinger         | `Yes`  | `Yes`       | `Yes` |                                                                |
+| Hostgator         | `Yes`  | `Yes`       | `Yes` |                                                                |
+| GoDaddy           | `Yes`  | `No`        | `Yes` |                                                                |
+| Wordpress         | `No`   | -           | -     |                                                                |
+
+## How to link a DNS name
+:::info
+For information on how to link a DNS name with ENS, see: [**How to: Link a DNS name**](/docs/howto/link-dns-name)
+:::

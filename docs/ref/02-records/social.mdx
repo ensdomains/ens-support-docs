@@ -1,0 +1,41 @@
+---
+id: social
+title: Social
+tags:
+  - Social media
+  - Discord
+  - Twitter
+  - GitHub
+  - Reddit
+  - Telegram
+last_update:
+  date: 11/25/2022
+  author: cthulu
+---
+
+# Social media records
+
+ENS provides several text records which you can use to provide your various social accounts, development accounts as well as custom records to anyone who looks up your ENS name:
+
+| Service  | Record name    | Example username | Details                |
+| -------- | -------------- | ---------------- | ---------------------- |
+| Discord  | `com.discord`  | *username#1234*  | Remove the leading `@` |
+| Twitter  | `com.twitter`  | *username*       | Remove the leading `@` |
+| GitHub   | `com.github`   | *username*       |                        |
+| Reddit   | `com.reddit`   | *username*       |                        |
+| Telegram | `org.telegram` | *username*       |                        |
+
+**These services do not yet have ENS integration, so changing the records will only affect certain custom services that look this information up.**  
+*For example, the verification site used in the official [ENS Discord](https://chat.ens.domains) uses the `com.discord` and `com.twitter` records to verify that the Discord user is the owner of both the ENS name and Twitter account.*
+
+:::tip
+**If you want to change the name that's *displayed* on Twitter see: [Changing my Twitter name](#changing-my-twitter-name)**
+:::
+
+## Changing my Twitter name
+Twitter does not *yet* have ENS integration, so to change your Twitter name to display your ENS name you'd simply go to your profile and change your name to your ENS name.
+
+## Changing my Discord name
+ENS provides a Discord record: `com.discord` which can be used to provide your Discord username to anyone who looks up your ENS name. An example use case is to verify that the ENS name is owned by a specific Discord user.
+
+To set it, enter your username excluding the *@* but including the digits at the end. For example `User#1234`
