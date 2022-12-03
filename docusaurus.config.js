@@ -8,15 +8,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'ENS Support',
   tagline: 'Home of the Support Mod Squad',
-  url: 'https://docusaurus.ensmods.xyz',
+  url: 'https://support.ensmods.xyz',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
   favicon: '/img/enssite_logo.svg',
   plugins: ['@docusaurus/plugin-ideal-image'],
   markdown: {
     mermaid: true,
   },
+	// docusaurus-theme-search-typesense theme needs to be added to use typesense search
   themes: ['@docusaurus/theme-mermaid'],
 
   // GitHub pages deployment config.
@@ -65,10 +66,26 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+	    /*
+      typesense: {
+        typesenseCollectionName: 'ens-supportdocs',
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'ef8x0poclr65yb2ip-1.a1.typesense.net',
+              port: 443,
+              protocol: 'https',
+            },
+          ],
+          apiKey: 'Bcdow1fCZdOEUz7UX5MOZtlkP0LSrgQr',
+        },
+        typesenseSearchParameters: {},
+      },
+      */
         algolia: {
-          appId: 'USIPAE8OD4',
-          apiKey: '79429ecc4d7578b000968889c03de4b0',
-          indexName: 'INDEX_NAME',
+          appId: 'NDEZSZ5DVQ',
+          apiKey: '019821478403538a5fe9ada9e424a320',
+          indexName: 'supportindex',
         },
       navbar: {
         hideOnScroll: true,
@@ -86,9 +103,10 @@ const config = {
           },
     {
       to: '/blog',
-      label: 'Support Updates',
+      label: 'Updates',
       position: 'left'
     },
+		/*
 	  {
 	    href: 'https://docs.ens.domains',
 	    label: 'Developer Docs',
@@ -99,6 +117,7 @@ const config = {
 	    label: 'Governance Docs',
 	    position: 'left',
 	  },
+	  */
     {
       href: 'https://chat.ens.domains',
       position: 'right',
