@@ -35,6 +35,33 @@ html[data-theme='light'] footer {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+[data-theme='light'] .DocSearch {
+}
+
+[data-theme='dark'] .DocSearch {
+}
+
+[data-theme='light'] .DocSearch-button {
+}
+
+[data-theme='dark'] div[class^=searchBox] button {
+   /* border-radius: 8px; */
+  /* border: 1px solid #85bfff; */
+}
+
+[data-theme='light'] div[class^=searchBox] button {
+  /* border-radius: 8px; */
+  /* border: 1px solid #12244b; */
+}
+
+/* Attempts to override searchBox button hover box shadow, doesn't work due to an open Docusaurus bug */
+[data-theme='dark'] div[class^=searchBox] button.DocSearch-Button:hover {
+}
+
+button.DocSearch-Button:hover {
+}
+
+
 /* GitHub Icon for NavBar */
 .header-github-link:hover {
   opacity: 0.6;

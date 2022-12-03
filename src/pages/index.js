@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import {HomepageInfoCardsRow} from '@site/src/components/HomepageInfo';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import SearchBar from '@site/src/components/SearchBar';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -16,12 +17,13 @@ export default function Home() {
       <main>
         <section class={styles.features}>
           <HomepageFeatures />
+          <SearchBar />
         </section>
-        <section className={styles.infoCards}>
-          <center>
-          <HomepageInfoCardsRow />
-          </center>
-        </section>
+        {/*<section className={styles.infoCards}>
+            <center>
+              <HomepageInfoCardsRow />
+            </center>
+            </section>*/}
       </main>
     </Layout>
   );

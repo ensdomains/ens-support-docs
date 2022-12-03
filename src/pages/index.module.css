@@ -16,13 +16,23 @@
   padding-right: 0px;
   overflow: hidden;
   background: #f4f5f7;
+  background: linear-gradient(90deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
 [data-theme='dark'] .features {
   background: #221800;
+  background: linear-gradient(90deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
+  color: white;
 }
 
-
+[data-theme='dark'] a:link {
+  color: white;
+}
+[data-theme='dark'] a:visited {
+  color: white;
+}
 
 .textLinks {
   padding-top: 40px;

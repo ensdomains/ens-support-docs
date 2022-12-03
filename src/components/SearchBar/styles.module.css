@@ -1,0 +1,20 @@
+styles.searchbar input {
+  padding: 20px 0 20px 55px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: Overpass;
+  font-weight: 100;
+}
+
+styles.searchbar button {
+    color: white;
+    font-size: 22px;
+    font-family: Overpass;
+    padding: 20px 0;
+    height: 90px;
+    width: 162px;
+    border: none;
+    display: none;
+}

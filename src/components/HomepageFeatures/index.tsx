@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '🛈 Getting Started',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/homepagefeatures/undraw_helpful_sign.svg').default,
     description: (
       <>
         <a href="docs/intro">Introduction</a>
@@ -18,7 +18,7 @@ const FeatureList = [
   },
   {
     title: '🗪 Frequently Asked Questions',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/homepagefeatures/undraw_active_support.svg').default,
     description: (
       <>
         <a href="docs/faq/marketplaces/opensea#ens-name-doesnt-show">Why doesn't my name show on OpenSea?</a>
@@ -31,7 +31,7 @@ const FeatureList = [
   },
   {
     title: '🖺 Support Updates',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/homepagefeatures/undraw_tutorial_video.svg').default,
     description: (
       <>
         <a href="docs/tutorials/registration">How to register an ENS name</a>
@@ -48,6 +48,7 @@ function Feature({Svg, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
+        <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <div className={styles.stylez}>
