@@ -1,3 +1,11 @@
+---
+last_update:
+  date: 12/05/2022
+  author: cthulu
+---
+
+import Link from '@docusaurus/Link';
+
 # Security
 
 One of the great things about ENS names is that they're entirely decentralized, meaning that you hold full ownership of the name and, *no one* whether it's ENS or anyone else can take it from you.
@@ -6,6 +14,7 @@ But this also comes with a certain degree of responsibility because ***if you lo
 
 Therefore it's a good idea to adopt proper security practices to make sure that you don't lose your name to scammers and thieves.
 
+:::info Wallet types
 | Wallet type        | Details                                                                                   |
 | ------------------ | ----------------------------------------------------------------------------------------- |
 | `Cold wallet`      | *A wallet you use to keep funds in, but don't use day-to-day*                             |
@@ -13,6 +22,7 @@ Therefore it's a good idea to adopt proper security practices to make sure that 
 | `Hardware wallet`  | *A physical hardware device that protects your wallet's private keys*                     |
 | `Multi-Sig wallet` | *A smart contract wallet requiring approval from several wallets to perform transactions* |
 | `Multiple wallets` | *Using multiple wallets of any of the above types*                                        |
+:::
 
 # Cold wallet
 Interacting with contracts can be risky, but necessary. A good idea is to keep a `Cold wallet` where you store assets you want to keep safe while using a `Hot wallet` for your day-to-day contract interactions.
@@ -44,31 +54,31 @@ This gives *added protection*[^note1] against many *(but not all)* types of scam
 A `Multi-Sig wallet` is a smart contract wallet that provides security by only allowing transactions to be performed if they're approved by several different wallets, thereby distributing the security responsibility between different keys or even different people.
 
 :::tip
-[Gnosis Safe](https://gnosis-safe.io) provides a very popular multi-sig wallet.
+<Link to="https://gnosis-safe.io"><b>Gnosis Safe</b></Link> provides a very popular multi-sig wallet.
 :::
 
 # Common scams
 ## The fake NFT mint
 One of the most common scams I come across is the Fake NFT mint website, a site that's set up to look like an NFT project where you connect your wallet, press a button to mint, and approve a transaction to "get your NFT".
 
-*Except,* what the website does is spawn a transaction that either directly transfers one of your NFT's out or adds a `Token Approval` which gives another wallet full access to one of your NFT collections.
+<i>Except,</i> what the website does is spawn a transaction that either directly transfers one of your NFT's out or adds a `Token Approval` which gives another wallet full access to one of your NFT collections.
 
 :::caution
-*Always* review the transaction that appears in your wallet and make sure that it does what you expect it to.
+<i>Always</i> review the transaction that appears in your wallet and make sure that it does what you expect it to.
 :::
 
 ## The fake Metamask login
 A website designed to look like Metamask's login screen can sometimes be extremely convincing. What differentiates them from the metamask password screen is that it will ask you for your `seed phrase` instead of your password.
 
 :::warning
-Never give out your seed phrase to *anyone*, *no one* from ENS will ask for it.
+Never give out your seed phrase to <i>anyone</i>, <i>no one</i> from ENS will ask for it.
 :::
 
 ## The fake airdrop claim
 There is an abundance of fake airdrop claim pages, especially when a real airdrop is going on. During the real ENS airdrop, we dealt with at least one fake airdrop claim website per week claiming to be from us.
 
 :::caution
-Any official ENS airdrop will always be at <https://claim.ens.domains> and nowhere else.
+Any official ENS airdrop will always be at <Link to="https://claim.ens.domains"><b>https://claim.ens.domains</b></Link> and nowhere else.
 :::
 
 ## The fake token scam

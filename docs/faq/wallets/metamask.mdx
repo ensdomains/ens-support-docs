@@ -1,22 +1,21 @@
 ---
-id: metamask
-title: Metamask
 tags:
   - wallet
   - metamask
 last_update:
-  date: 11/25/2022
+  date: 12/05/2022
   author: cthulu
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
 
 # Metamask
 Metamask suffers from several known bugs documented below.
 
 ## Clearing stuck transactions
-Sometimes transactions in Metamask can get stuck without being performed. You can verify whether a transaction is stuck in Metamask or not by looking up your wallet on [etherscan](https://etherscan.io) and comparing the transactions there to the ones visible in your wallet.
+Sometimes transactions in Metamask can get stuck without being performed. You can verify whether a transaction is stuck in Metamask or not by looking up your wallet on <Link to="https://etherscan.io"><b>Etherscan</b></Link> and comparing the transactions there to the ones visible in your wallet.
 
 :::caution
 Transactions can get stuck in Metamask due to a bug in the UI. This is not the same as transactions that have stalled due to too low gas fees.
@@ -34,12 +33,24 @@ Go to `Settings` **→** `Advanced` **→** `Reset Account` and confirm.
 MetaMask gets its ENS name metadata from OpenSea, which sometimes experiences delays in updating the metadata of names which can cause ENS names in MetaMask to show up as unknown.
 
 To fix this follow the instructions in:
-> [**OpenSea:** ENS Name Doesn't Show](../marketplaces/opensea.mdx#ens-name-doesnt-show)
+:::info
+<Link to="/docs/marketplaces/opensea#ens-name-doesnt-show">
+  <b>OpenSea:</b> ENS Name Doesn't Show
+</Link>
+:::
 
 ## Doesn't show ENS tokens
 Metamask doesn't yet show ENS tokens in your wallet by default, but the good news is that we're able to import the token into Metamask.
-  
-Go to the [Etherscan](https://etherscan.io/token/0xc18360217d8f7ab5e7c516566761ea12ce7f9d72)-page for the ENS voting token *or* the [ENS Domain token](https://etherscan.io/token/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85).
+
+Go to the
+<Link to="https://etherscan.io/token/0xc18360217d8f7ab5e7c516566761ea12ce7f9d72">
+  <b>Etherscan-page for the ENS voting token</b>
+</Link>
+<i>or</i> the
+<Link to="https://etherscan.io/token/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85">
+  <b>ENS Domain token</b>
+</Link>
+
 Next to `Profile Summary` on the right-hand side, press *more* to bring up its sub-menu.
 <BrowserWindow url="support.ensmods.xyz">
   <Image img="/img/metamask-unknown1.webp"/>

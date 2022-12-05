@@ -4,17 +4,18 @@ title: How to Register a name
 tags:
   - registration
 last_update:
-    date: 11/24/2022
+    date: 12/05/2022
     author: cthulu
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
 
 # How to register a name
 
 ## Go to the ENS Manager App
-Go to the [ENS Manager App](https://app.ens.domains) and connect your wallet.
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and connect your wallet.
 
 ## Search for the ENS name you want
 <BrowserWindow url="app.ens.domains">
@@ -46,12 +47,13 @@ classDef inactive stroke-dasharray: 5 5;
 A-->B-->C;
 ```
 
+:::info Transaction details
 | Transaction           | Details                                             |
 | --------------------- | --------------------------------------------------- |
 | `Request to Register` | *A 0ETH commit transaction to prevent frontrunning* |
 | `Wait 60 seconds`     | *A 60 second waiting time*                          |
 | `Register`            | *The actual registration transaction*               |
-
+:::
 
 ### Step 1: Request to register
 ```mermaid

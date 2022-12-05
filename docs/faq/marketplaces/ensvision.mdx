@@ -1,26 +1,52 @@
+---
+tags:
+  - marketplace
+  - opensea
+last_update:
+  date: 12/05/2022
+  author: cthulu
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
+
 # ENS Vision
 The most common issues impacting users of ENS Vision and their solutions
+
+<BrowserWindow url="ens.vision">
+  <Image img="/img/faq/marketplaces/ens-vision-1.png"/>
+</BrowserWindow>
 
 ## Can't set as Primary name
 If you bought a name on ENS Vision that you can't set as your Primary name, this is caused by the `ETH Address` and `Resolver` records not being set. To fix it:
 
 ### Set the Resolver
 Set the Resolver to the `ENS Public Resolver` by following the instructions in
-> [**Resolver:** ENS Public Resolver](../../names/records/resolver.mdx#ens-public-resolver)
-
+:::info How-To
+<Link to="/docs/ref/records/resolver#ens-public-resolver">
+  <b>How-To:</b> Set the Resolver
+</Link>
+:::
 After this has been set refresh the page and a new `Addresses` section should appear.
 
 ### Set the ETH Address record
 Set the `ETH Address` record to your wallet address by following the instructions in
-> [**Address:** Set an Address record](../../names/records/address.mdx#set-an-address-record)
+:::info How-To
+<Link to="/docs/ref/records/address#set-an-address-record">
+  <b>How-To:</b> Set an Address record
+</Link>
+:::
 
 ### Set the Primary name
-Go back to *My Account* in the [ENS Manager App](https://app.ens.domains) and you should now be able to select the ENS name from the `Primary name` drop-down list.
+Follow this How-To in order to set the Primary name:
+:::info How-To
+<Link to="/docs/howto/set-primary-name">
+  <b>How-To:</b> Set a Primary name
+</Link>
+:::
 
 ## Lack of normalization
 ENS Vision does not perform normalization when registering names which means that it's possible to register invalid names that will not be possible to manage, use or trade on certain marketplaces like OpenSea. 
 
-Before registering a name on ENS Vision *always* make sure it is searchable in the official [ENS Manager App](https://app.ens.domains) first.
- 
- 
-
+Before registering a name on ENS Vision *always* make sure it is searchable in the official <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> first.

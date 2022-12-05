@@ -1,13 +1,14 @@
 ---
-id: primary
 title: Primary Name
 tags:
-  - Primary Name
+  - primary name
   - identity
 last_update:
-  date: 11/25/2022
+  date: 12/05/2022
   author: cthulu
 ---
+
+import Link from '@docusaurus/Link';
 
 # The Primary name
 
@@ -40,7 +41,7 @@ Forward resolution is simply where your name points to and is determined by the 
     'flowchart': {
        'curve': 'linear'
       } } }%%
-      
+
 graph LR;
 A(Your ENS Name);
 B(Your wallet address);
@@ -49,10 +50,10 @@ B-->A;
 ```
 Reverse resolution is where your wallet points to and is determined by the `Primary name` record set in your wallet.
 
-## Set the Primary record
-
-To set your ENS name as Primary in your wallet:
-
-1. Make sure the `ETH Address` record points to the wallet address
-
-1. Connect your wallet to the [ENS Manager App](https://app.ens.domains) and set the ENS name as `Primary`.
+## How to set a Primary name
+To learn how to set a Primary name, see:
+:::info How-to
+<Link to="/docs/howto/set-primary-name">
+  <b>How-to: Set a Primary name</b>
+</Link>
+:::
