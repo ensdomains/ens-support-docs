@@ -1,7 +1,6 @@
 ---
-draft: false
 last_update:
-  date: 12/03/2022
+  date: 12/05/2022
   author: cthulu
 tags:
   - link
@@ -14,6 +13,7 @@ tags:
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
 
 # Link a DNS name
 
@@ -22,6 +22,7 @@ A list of popular hosting providers and which DNSSEC key types they support[^1]
 
 [^1]: The key-types hosting providers support may have changed since this list was last verified on `June 22nd, 2022`.
 
+:::info Hosting providers
 | Hosting providers | DNSSEC | RSA/SHA-256 | ECDSA | Details                                                        |
 | ----------------- | ------ | ----------- | ----- | -------------------------------------------------------------- |
 | easyDNS           | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://kb.easydns.com/knowledge/dnssec/)     |
@@ -31,10 +32,11 @@ A list of popular hosting providers and which DNSSEC key types they support[^1]
 | Hostgator         | `Yes`  | `Yes`       | `Yes` |                                                                |
 | GoDaddy           | `Yes`  | `No`        | `Yes` |                                                                |
 | Wordpress         | `No`   | -           | -     |                                                                |
+:::
 
 ## Step 1: Enable DNSSEC
 
-Go to the [ENS Manager App](https://app.ens.domains) and search for your DNS name. You should see a screen like this:
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and search for your DNS name. You should see a screen like this:
 <BrowserWindow url="app.ens.domains">
   <Image img="/img/howto/link-dns-name-1.webp"/>
 </BrowserWindow>
@@ -50,12 +52,14 @@ If they don’t, you’ll need to migrate to a DNS provider that does. See:
 ## Step 2: Add the TXT-record
 The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
 
+:::info TXT record
 |          |                    |
 | -------- | -------------------|
 | Type     | `TXT`              |
 | Name     | `_ens`             |
 | Contents | `a=wallet address` |
 | TTL      | `36000`            |
+:::
 
 To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
 <BrowserWindow url="support.ensmods.xyz">
@@ -63,7 +67,7 @@ To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _en
 </BrowserWindow>
 
 ## Step 3: Linking the name with ENS
-Now you should be able to go back to the [ENS Manager App](https://app.ens.domains) and finish linking the DNS name with ENS by pressing `Register`.
+Now you should be able to go back to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and finish linking the DNS name with ENS by pressing `Register`.
 <BrowserWindow url="app.ens.domains">
   <Image img="/img/howto/link-dns-name-4.webp"/>
 </BrowserWindow>

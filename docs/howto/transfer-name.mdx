@@ -1,17 +1,19 @@
 ---
 title: Transfer an ENS Name
 last_update:
-  date: 11/30/2022
+  date: 12/05/2022
   authors: cthulu
 tags:
   - transfer
+  - transfer name
   - gift
 ---
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
 
 # Transfer an ENS name
-The owner of an ENS name is called the `Registrant` in the [ENS Manager App](https://app.ens.domains). This is the wallet the ENS name NFT resides in.
+The owner of an ENS name is called the `Registrant` in the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link>. This is the wallet the ENS name NFT resides in.
 In order to transfer an ENS name you must therefore transfer the `Registrant`.
 
 However, an ENS name contains more records than just `Registrant` which can be set to different wallets. There are three central records involved in name transfers: 
@@ -49,7 +51,7 @@ In order to set everything to the new wallet easily from the wallet that current
 :::
 
 ### Go to the Manager App
-First go to the [ENS Manager App](https://app.ens.domains) and connect your wallet
+First go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and connect your wallet
 <BrowserWindow url="app.ens.domains">
   <Image img="/img/howto/transfer_name_2.png"/>
 </BrowserWindow>

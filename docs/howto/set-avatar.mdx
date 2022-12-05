@@ -1,18 +1,20 @@
 ---
-id: set-avatar
 title: Set an Avatar
 tags:
-  - Avatar Record
+  - avatar record
+  - avatar
+  - set avatar
 last_update:
-  date: 11/29/2022
+  date: 12/05/2022
   author: cthulu
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
 
 # How to set an Avatar on your ENS name
-Connect to the [ENS Manager App](https://app.ens.domains) with the wallet set as `Controller` for the ENS name you want to manage and click `Add/Edit Record`
+Connect to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> with the wallet set as `Controller` for the ENS name you want to manage and click `Add/Edit Record`
 <BrowserWindow url="app.ens.domains">
   <Image img="/img/avatar_set1.webp"/>
 </BrowserWindow>
@@ -25,7 +27,7 @@ You have three options to set the image for the avatar record:
 :::
 
 ## **Web2 URL**
-Many users like to use a Web2 link to their avatar image and often use [imgur](https://imgur.com) for it. If you decide to use this method you need to make sure that you use a ***direct link*** to the image.
+Many users like to use a Web2 link to their avatar image and often use <Link to="https://imgur.com"><b>Imgur</b></Link> for it. If you decide to use this method you need to make sure that you use a ***direct link*** to the image.
 
 Make sure to right-click the image on the page and select `Copy Image Link` to get a direct link to the image instead of the default image landing page.
 <BrowserWindow url="imgur.com">
