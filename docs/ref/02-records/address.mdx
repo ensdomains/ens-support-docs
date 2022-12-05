@@ -2,25 +2,24 @@
 title: ETH Address
 tags:
   - Address
-  - BSC
   - DOGE
   - LTC
   - BTC
 last_update:
-  date: 11/25/2022
+  date: 12/04/2022
   author: cthulu
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
 
 # Address records
-ENS provides several address records for your various cryptocurrency wallets. By default five different wallet records are shown in the [ENS Manager App](https://app.ens.domains):
+ENS provides several address records for your various cryptocurrency wallets. By default four different wallet records are shown in the [ENS Manager App](https://app.ens.domains):
 
 | Name   | Blockchain          | Details                     |
 | ------ | ------------------- | --------------------------- |
 | `ETH`  | Ethereum blockchain | *Where the ENS name points* |
-| `BSC`  | Binance Smart Chain |                             |
 | `DOGE` | Doge blockchain     |                             |
 | `LTC`  | Litecoin blockchain |                             |
 | `BTC`  | Bitcoin blockchain  |                             |
@@ -30,14 +29,7 @@ But several other types of wallets can be added from the dropdown list in the ma
   <Image img="/img/address1.webp"/>
 </BrowserWindow>
 
-## Set an Address record
-
- 1. Go to the [ENS Manager App](https://app.ens.domains) and connect the wallet set as `Controller` for your ENS name.
- 
- 1. Look up your ENS name and go to its page.
- 
- 1. Scroll down to the `Address` section and click ***Add/Edit Record***
- 
- 1. Enter a wallet address in one of the address fields or add one from the dropdown list.
- 
- 1. Scroll down and press ***Confirm***
+:::info Add wallet address
+To find out how to add a wallet address to your ENS name, see: 
+- <Link to="/docs/howto/add-wallet-address"><b>How-To: Add a wallet address</b></Link>
+:::
