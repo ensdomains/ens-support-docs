@@ -1,0 +1,64 @@
+---
+draft: true
+last_update:
+  date: 12/06/2022
+  author: zadok7
+tags:
+  - V3 Manager
+  - Manager App
+  - Goerli
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
+
+# Test the V3 Manager App
+Soon to be released is the third version (V3) of the ENS Manager app. With this release comes many new features to streamline the registration process, as well as integrating new features such as the new NameWrapper contract permissions. You can read more about recent updates to the [NameWrapper on the ENS DAO governance forums](https://discuss.ens.domains/t/name-wrapper-update/12974). For more information on the NameWrapper and other front-end upgrades, be sure to watch the [ENS Town Hall stream where Jeff Lau explains the Name Wrapper](https://youtu.be/fPSvO5PV5Is?t=864) along with other upcoming changes. Let's get started testing out some new features.
+
+## Using Goerli (Görli) Testnet
+You'll need to first make sure you have a wallet setup with the option to switch over to the Goerli test network. Using a test network allows developers and others to test blockchain development before it is released on Ethereum Mainnet. If you'd like to read more about the contracts deployed on Testnet, you can find the deployed [ENS Goerli contract addresses and details in this post](https://discuss.ens.domains/t/deployment-of-new-contracts-inc-namewrapper-to-testnet-goerli/14505).
+
+ There are many wallets that support switching to the Goerli network. Metamask is a common one, along with Coinbase wallet. 
+
+To switch to the Goerli test network using Metamask, first open your wallet. It will most likely have test networks disabled by default. The first step is to enable test networks in the settings of Metamask under `Advanced`.
+
+<BrowserWindow>
+  <Image img="/img/tutorials/test-v3-manager-1.png"/>
+</BrowserWindow>
+
+For Coinbase wallet (not the Coinbase exchange app!), go into `settings` and look for the `Active dapp network` option. Scroll down until you see the `ETH TESTNETS` section. Now select `Görli` (yes it's the same are Goerli).
+
+<BrowserWindow>
+  <Image img="/img/tutorials/test-v3-manager-2.png"/>
+</BrowserWindow>
+
+### **Connect to the ENS Manager App v3**
+
+Visit [alpha.ens.domains](https://alpha.ens.domains) and connect with your wallet you've created on Goerli. If the app detects you haven't switched the network to Goerli, click `Change Network`.
+
+<BrowserWindow>
+  <Image img="/img/tutorials/test-v3-manager-3.png"/>
+</BrowserWindow>
+
+### **Getting Goerli test network tokens**
+
+You should now be successfully connected to the preview of the [new ENS Manager App (V3)](https://alpha.ens.domains) which has its contracts running on Goerli test network. In order to test things out you will first need to obtain Goerli Testnet tokens. You can receive Goerli tokens free through a Testnet "faucet". There are many places to receive these tokens for free. Some require social proof or other actions to prohibit bots from draining the faucets. Here are some common faucets where you can get Goerli (goeth).
+
+*   [https://goerlifaucet.com/](https://goerlifaucet.com/)
+*   [https://goerli-faucet.mudit.blog/](https://goerli-faucet.mudit.blog/)
+*   [https://goerli-faucet.pk910.de/](https://goerli-faucet.pk910.de/)
+
+Once you have access to a faucet to receive Testnet tokens on Goerli, send them to your Goerli wallet address. Be sure you use your Goerli wallet address and not your Ethereum Mainnet address, as they are different networks. The V3  preview of ENS Manager App is only functional on Goerli Testnet.
+
+### Let's Test the V3 ENS App Manager!
+
+Search for an ENS name you'd like to register in [ENS App Manager V3 preview site](https://alpha.ens.domains).
+
+<BrowserWindow>
+  <Image img="/img/tutorials/test-v3-manager-4.png"/>
+</BrowserWindow>
+
+From here, you can test the new registration process. You will be able to set up records, Primary address, and upload an avatar directly all during the registration process. You can also explore advanced features like setting up NameWrapper permissions. Have fun exploring!
+
+We'd love to hear feedback on your experience with the new ENS App Manager (V3). Feel free to leave us comments and feedback [here](#).

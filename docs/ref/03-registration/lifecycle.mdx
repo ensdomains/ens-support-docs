@@ -1,5 +1,4 @@
 ---
-id: lifecycle
 title: Name lifecycle
 tags:
   - expiration
@@ -10,13 +9,8 @@ last_update:
 ---
 
 # The Lifecycle of an ENS Name
-<!--
-## Registration period
-**Registration period** **→** `Expiration` **→** `Grace period` **→** `Premium auction` **→** `Normal availability`  
-This is the period of time you've registered the ENS name for.  
-After the registration period is over, it will begin the process towards normal availability going through the post-expiration stages.
-  
-If you want to extend your registration period, this can be done from the [ENS Manager App](https://app.ens.domains) -->
+ENS names goes through several stages from being available to being registered and expiring. A life cycle of sorts.
+This article tries to explain its life cycle in simple terms. As such, the diagrams are simplified.
 
 ## Normal availability
 ```mermaid
@@ -68,6 +62,13 @@ A-->B-->C-->D-->E;
 E -.-> A;
 ```
 
+<!--
+## Registration period
+**Registration period** **→** `Expiration` **→** `Grace period` **→** `Premium auction` **→** `Normal availability`  
+This is the period of time you've registered the ENS name for.  
+After the registration period is over, it will begin the process towards normal availability going through the post-expiration stages.
+  
+If you want to extend your registration period, this can be done from the [ENS Manager App](https://app.ens.domains) -->
 ## Expired
 ```mermaid
 %%{
