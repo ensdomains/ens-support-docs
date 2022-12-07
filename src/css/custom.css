@@ -35,13 +35,9 @@ html[data-theme='light'] footer {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-[data-theme='light'] .DocSearch {
-}
-
-[data-theme='dark'] .DocSearch {
-}
-
-[data-theme='light'] .DocSearch-button {
+[data-theme='light'] img[src$='#gh-dark-mode-only'],
+[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+  display: none;
 }
 
 [data-theme='dark'] div[class^=searchBox] button {
