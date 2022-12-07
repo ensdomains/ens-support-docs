@@ -13,7 +13,7 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: '/img/enssite_logo.svg',
-  plugins: ['@docusaurus/plugin-ideal-image'],
+  plugins: [require.resolve('docusaurus-plugin-image-zoom'), '@docusaurus/plugin-ideal-image'],
   markdown: {
     mermaid: true,
   },
@@ -42,10 +42,8 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          /*
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          */
+            'https://github.com/cthulu-dot-eth/ens-supportdocs/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -82,7 +80,14 @@ const config = {
         typesenseSearchParameters: {},
       },
       */
-        algolia: {
+    zoom: {
+      selector: '.markdown :not(em) > img',
+      background: {
+      light: 'rgb(255, 255, 255)',
+      dark: 'rgb(50, 50, 50)'
+      },
+    },
+    algolia: {
           appId: 'NDEZSZ5DVQ',
           apiKey: '019821478403538a5fe9ada9e424a320',
           indexName: 'supportindex',
