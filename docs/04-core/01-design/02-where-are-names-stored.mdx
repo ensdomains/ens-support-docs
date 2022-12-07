@@ -1,1 +1,50 @@
+---
+last_update:
+  date: 12/07/2022
+  author: serenae
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
+import Link from '@docusaurus/Link';
+
 # Where are ENS names stored?
+As explained in <Link to="how-ens-works"><b>Design & Implementation:</b></Link> How Does ENS Work, `the ENS Registry`, `.eth Registrar`, and `Resolvers` are all smart contracts on the Ethereum network.
+
+Every account in Ethereum has a persistent memory area called storage, and this is where the entries and records in ENS are stored. The ENS contracts will expose various methods to read that storage, and that is how lookups are made possible.
+
+Let’s go through an example with the name “ens.eth”. You can follow along here on Etherscan: https://etherscan.io/address/0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e#readContract
+
+The node (or namehash) for ens.eth is `0x4e34d3a81dc3a20f71bbdf2160492ddaa17ee7e5523757d47153379c13cb46df`.
+
+If you enter that node into the owner method and click on Query, it should return the Controller for that name:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/where-are-ens-names-stored-1.png"/>
+</BrowserWindow>
+
+Similarly, if you enter that node into the resolver method and click on Query, it should return the Resolver for that name:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/where-are-ens-names-stored-2.png"/>
+</BrowserWindow>
+
+Next, we can go to that resolver contract and look up records for the name: https://etherscan.io/address/0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41#readContract
+
+If you enter the node into the first addr method and click on Query, it should return the ETH address that the name resolves to:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/where-are-ens-names-stored-3.png"/>
+</BrowserWindow>
+
+Finally, we can try looking up a text record from the resolver.
+
+If you enter the node into the text method (use “url” for the key) and click on Query, it should return the URL text record that the name resolves to:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/where-are-ens-names-stored-4.png"/>
+</BrowserWindow>
+
+As you can see, methods like these can be exposed by smart contracts to allow users or other smart contracts to read / write data from its internal storage.
+
+When a website/app/wallet needs to look up your ETH address or other records for your ENS name, it is following the same steps we just went through above.

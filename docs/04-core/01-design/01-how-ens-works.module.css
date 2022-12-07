@@ -1,0 +1,6 @@
+[data-theme="light"] .test {
+	--theme-style: light;
+}
+[data-theme="dark"] .test {
+	--theme-style: dark;
+}
