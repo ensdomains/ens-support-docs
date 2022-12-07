@@ -1,0 +1,49 @@
+---
+last_update:
+  date: 12/07/2022
+  author: zadok7
+tags:
+  - text records
+  - custom records
+  - service keys
+---
+
+import Link from '@docusaurus/Link';
+import Image from '@theme/IdealImage';
+import BrowserWindow from '@site/src/components/BrowserWindow';
+
+# Coinbase wallet
+Coinbase Wallet is a self-custody wallet, which allows users to manage their own private keys to the wallet and crypto. This standalone wallet app does not require a Coinbase account and is not to be confused with the Coinbase Exchange app.
+
+## Connecting to the ENS Manager App
+You can use the built in dApp browser in Coinbase Wallet to visit the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link>
+
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/coinbase-wallet-1.png"/>
+</BrowserWindow>
+
+You can register ENS names and manage them within the Coinbase Wallet app just as you would a desktop.
+To instead use a desktop browser, visit app.ens.domains, and click connect. Select Coinbase Wallet, then scan the QR code on using your Coinbase Wallet app.
+
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/coinbase-wallet-2.png"/>
+</BrowserWindow>
+
+## ENS Names Coinbase wallet show as “Unknown”
+Coinbase Wallet may rely on OpenSea NFT data endpoints to display information about ENS names. If OpenSea does not have the latest metadata, try refreshing on their platform. See #OpenSea-refresh- metadata
+
+## What is the free cb.id web3 username Coinbase Wallet offers?
+Your cb.id username is an ENS name issued by Coinbase that is built upon the ENS decentralized identity infrastructure. Coinbase offers free usernames in the format of subnames (for example, username.cb.id). This is a great service offered by Coinbase but it does have limitations.
+
+ - Non-transferrable
+ - Can’t use the fuse permissions with the NameWrapper.
+ - Cannot create your own subdomains.
+ - Limited record setup. Not all the records and features are available as they are with .eth ENS names.
+
+:::info
+To learn about how Coinbase uses cb.id with ENS, see:
+ - <Link to="https://help.coinbase.com/en/wallet/managing-account/coinbase-ens-support"><b>Coinbase:</b> Decentralized ID (cb.id)</Link>
+
+To learn how to import your own DNS name into ENS, see:
+ - <Link to="/docs/howto/link-dns-name"><b>How-To:</b> Link a DNS name</Link>
+:::

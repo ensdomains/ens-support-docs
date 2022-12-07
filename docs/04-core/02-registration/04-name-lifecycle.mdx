@@ -25,7 +25,7 @@ A(Available);
 B(Registered);
 C(Expired);
 D(Grace Period);
-E(Premium Auction);
+E(Temporary Premium);
 
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
@@ -35,7 +35,7 @@ class A active;
 A-->B-->C-->D-->E;
 E -.-> A;
 ```
-If the `Premium auction` ends without a buyer the ENS name will become available normally again without a premium fee attached.
+If the `Temporary auction` ends without a buyer the ENS name will become available normally again without a temporary fee attached.
 
 ## Registered
 ```mermaid
@@ -50,7 +50,7 @@ A(Available);
 B(Registered);
 C(Expired);
 D(Grace Period);
-E(Premium Auction);
+E(Temporary Premium);
 
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
@@ -82,7 +82,7 @@ A(Available);
 B(Registered);
 C(Expired);
 D(Grace Period);
-E(Premium Auction);
+E(Temporary Premium);
 
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
@@ -112,7 +112,7 @@ A(Available);
 B(Registered);
 C(Expired);
 D(Grace Period);
-E(Premium Auction);
+E(Temporary Premium);
 
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
@@ -130,7 +130,7 @@ Keep in mind that the renewal period must be from when the name expired, otherwi
 :::
 
 
-## Premium auction
+## Temporary auction
 ```mermaid
 %%{
   init: {
@@ -143,7 +143,7 @@ A(Available);
 B(Registered);
 C(Expired);
 D(Grace Period);
-E(Premium Auction);
+E(Temporary Premium);
 
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
@@ -155,9 +155,9 @@ A-->B-->C-->D-->E;
 E -.-> A;
 ```
 After the grace period ends the ENS name will enter into what's called a `premium auction`.
-This is a 21-day period where the ENS name is available for anyone to register with a price premium attached.
+This is a 21-day period where the ENS name is available for anyone to register with a temporary premium attached.
 
-The price premium attached starts at $100 million and declines exponentially to $0 over the 21 days.
+The temporary price premium attached starts at $100 million and declines exponentially to $0 over the 21 days.
 
-# Why have a premium auction?
-The premium auction was conceived of as a way to prevent ENS names from being sniped by bots immediately when they expired, which was initially a significant problem.
+# Why have a temporary auction?
+The temporary auction was conceived of as a way to prevent ENS names from being sniped by bots immediately when they expired, which was initially a significant problem.

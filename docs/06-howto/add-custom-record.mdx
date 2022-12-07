@@ -1,0 +1,43 @@
+---
+last_update:
+  date: 12/07/2022
+  author: zadok7
+tags:
+  - custom records
+  - add custom record
+  - set custom record
+---
+
+import Link from '@docusaurus/Link';
+import Image from '@theme/IdealImage';
+import BrowserWindow from '@site/src/components/BrowserWindow';
+
+# Add a Custom Service Key
+In the ENS Manager app, there are default common services. For instance, `com.github` is the service key for a record that would contain a GitHub username. This field already exists in the ENS Manager app. What if you want to add your key-value pair? Let’s use the example of `youtube.com.`
+
+Click `Add/Edit Record`
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/add-custom-record-1.png"/>
+</BrowserWindow>
+
+Use the drop-down and select “text” for the type of key we will be adding for YouTube.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/add-custom-record-2.png"/>
+</BrowserWindow>
+
+Since YouTube is a service, we will create a service key. Service keys are in the reverse dot format. Therefore, in the key field type: `com.youtube` and click: create `com.youtube`.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/add-custom-record-3.png"/>
+</BrowserWindow>
+
+Next, input your YouTube.com username or channel and click “Save”. This will close the record editor, but there is still one more step!
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/add-custom-record-4.png"/>
+</BrowserWindow>
+
+The final step is to confirm the transaction. Scroll down until you see “Confirm”.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/add-custom-record-5.png"/>
+</BrowserWindow>
+
+Now a record for YouTube.com will exist under your ENS name! There is no limit to the amount or types of records you can use.

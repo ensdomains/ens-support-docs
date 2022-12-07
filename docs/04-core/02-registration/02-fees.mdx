@@ -6,12 +6,13 @@ tags:
   - costs
   - price
 last_update:
-  date: 11/25/2022
+  date: 12/07/2022
   author: cthulu
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import Image from '@theme/IdealImage'
+import Link from '@docusaurus/Link';
 
 # ENS Name Fees
 How much does it cost to register an ENS name?
@@ -25,7 +26,7 @@ How much does it cost to register an ENS name?
 Three and four-character names cost more to reflect the small number of these names available. If a name was recently released from the expiration grace period, a decaying price premium is also applied.
 
 ## Estimating costs
-When looking up an ENS name the [ENS Manager App](https://app.ens.domains) will display a *rough* estimate of your registration cost:
+When looking up an ENS name the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> will display a *rough* estimate of your registration cost:
 <BrowserWindow url="app.ens.domains">
   <Image img="/img/cost_to_register_img1.webp"/>
 </BrowserWindow>
@@ -33,7 +34,7 @@ When looking up an ENS name the [ENS Manager App](https://app.ens.domains) will 
 Gas prices might fluctuate after this estimate, especially if you don't complete the registration immediately.
 
 :::note
-The [ENS Manager App](https://app.ens.domains) charges 10% more than the estimate shown to guard against fluctuations in ETH value, the extra amount is returned to you in the same transaction.
+The <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> charges 10% more than the estimate shown to guard against fluctuations in ETH value, the extra amount is returned to you in the same transaction.
 :::
 
 ## Why are fees collected?
@@ -47,6 +48,7 @@ A secondary purpose is to provide enough revenue to the DAO to fund the ongoing 
 :::info
 For more information about ENS fees see:
 [**ENS DAO Constitution**](https://constitution.ens.domains)
+- <Link to="https://constitution.ens.domains"><b>ENS.Domains:</b> Constitution</Link>
 :::
 
 ## Gas fees
@@ -58,6 +60,8 @@ By using a [gas tracker](https://etherscan.io/gastracker) it's possible to pinpo
 ## Premium fee
 There's an additional premium fee attached to newly expired names which start at $100m and declines exponentially to $0 over 21 days.
 
+:::info Article
 For more information about the expiration of names, see:
 
-> [**ENS Name Lifecycle**](lifecycle.mdx)
+- <Link to="./name-lifecycle"><b>Registration & Fees: Name Lifecycle</b></Link>
+:::
