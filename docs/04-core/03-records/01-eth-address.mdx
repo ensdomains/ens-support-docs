@@ -1,12 +1,11 @@
 ---
 title: ETH Address
 tags:
-  - Address
-  - DOGE
-  - LTC
-  - BTC
+  - ETH Address
+  - Address record
+  - Forward resolution
 last_update:
-  date: 12/04/2022
+  date: 12/08/2022
   author: cthulu
 ---
 
@@ -15,9 +14,41 @@ import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
 
 # The ETH Address record
-The `ETH` Address record is one of the main records of your ENS name. As it not only affects where Ethereum funds sent to it ends up, but also provides the forward resolution required when setting up a `Primary name`.
+```mermaid
+%%{
+  init: {
+    'flowchart': {
+      'curve': 'linear'
+      } } }%%
+      
+graph LR;
+A(ETH Address Record);
+B(ENS Public Resolver);
+C(snowowl.eth);
 
-:::info Add wallet address
-To find out how to add a wallet address to your ENS name, see: 
-- <Link to="/docs/howto/add-wallet-address"><b>How-To: Add a wallet address</b></Link>
+classDef active stroke-width:4px;
+classDef inactive stroke-dasharray: 5 5;
+
+class A active;
+class B,C inactive;
+
+A --> B --> C;
+```
+## What does it do?
+The `ETH` Address record is one of the main records of your ENS name. It determines where Ethereum funds sent to it ends up, as well as providing the `forward resolution` required when setting up a <Link to="/docs/records/primary-name"><b>Primary name</b></Link>.
+
+If you find that an ENS name you own doesn't show up in the Primary Name drop-down list for your wallet, it's usually because the `ETH Address` record isn't set to it.
+
+:::info summary
+The ETH Address record...
+ - Determines to where funds sent to the ENS name ends up
+ - Provides the `Forward resolution` required to set a `Primary name` in a wallet 
 :::
+
+:::info Resources
+To find out how to set the `ETH Address` record or for more information about the Primary Name, see
+ - <Link to="/docs/howto/add-wallet-address"><b>How-To: </b>Add a wallet address</Link>
+ - <Link to="/docs/core/records/primary-name"><b>Records:</b> Primary Name</Link>
+:::
+
+

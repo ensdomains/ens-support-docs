@@ -2,7 +2,7 @@
 Title: Manager App/Site FAQ
 draft: true
 last_update:
-  date: 02/12/2022
+  date: 12/07/2022
   author: cthulu
 tags:
   - manager
@@ -42,36 +42,42 @@ Yes, you can *link* any DNS name with ENS provided it supports `DNSSEC and you c
 
 # Can I register a name with emojis?
 Yes.[^emoji1]
-[^emoji1]: Emoji from Emoji 14.0 are not yet supported.
+[^emoji1]: Emoji from Emoji 14.0 are not yet supported, but will be once the new name normalization rules are implemented.
 
 # Registration FAQ
 
 ## At Step 1, the transaction was slow so I speeded it up
 Our app cannot currently detect that you sped up the transaction. Please refresh the page and start from step 1 again.
 
-# I am stuck at Step 2
+## I am stuck at Step 2
 At times, the counter waits for up to a minute at the end of step 2 to make sure that the Ethereum blockchain has progressed. If this continues for more than 5 min after moving to step 2, please contact us on Discord.
 Note that if you leave it at step 2 for more than 7 days, it gets reset and you have to start from step 1 again.
 
-# My transaction at Step 3 failed
+## My transaction at Step 3 failed
 This happens occasionally when the USD price changes and you haven't registered with enough ETH. Please try again from step 3.
 Please also be noted that the registration step will expire if you don't complete within 24 hrs and you have to start from step 1 again.
 
-# I cannot see the names I registered on OpenSea nor on my wallet
+## I cannot see the names I registered on OpenSea nor on my wallet
 This occasionally happens when OpenSea is under a heavy load. You may also not find your name under the NFT section of your wallet, as many wallets fetch metadata from OpenSea.
 As long as you can see your registered name under "My Account" on our site or your ETH address under the name section, your name is registered successfully.
-Is it safe to refresh the page, close the browser, or switch to different browser/machine?
+
+:::info Support FAQ
+Fore more information on how to resolve issues with OpenSea, see:
+ - <Link to="/docs/faq/marketplaces/opensea"><b>Support FAQ: </b>OpenSea</Link>
+:::
+
+## Is it safe to refresh the page, close the browser, or switch to different browser/machine?
 
 It is safe to refresh the page or close the browser once step 1 transaction is complete. However you cannot switch to different devices or machines because it needs a locally stored “secret” which will be used at step 3. Please also do not delete browser history during the registration.
 After you register
 
-# What is the difference between the Registrant and Controller?
+## What is the difference between the Registrant and Controller?
 
 If your Ethereum address is set as the Controller you can change the resolver and add/edit records. Some dapps (eg: Fleek, OpenSea) set themselves as the Controller so they can update records on your behalf.
 The Registrant only exists on ".eth" names and it allows you to change the Controller. If you transfer the Registrant to an address you don't own, you lose the ownership of the name.
 
 
-# What is a Resolver?
+## What is a Resolver?
 
 A Resolver is a smart contract that holds records. Names are set by default to the Public Resolver managed by the ENS team and has all the standard ENS record types. You can set your Resolver to a custom resolver contract if you,d like.
 What is a Primary ENS Name record?
@@ -88,7 +94,7 @@ Note that transferring the ownership (aka the Registrant) of the name does not c
 For subdomains, there are no registrants unless the subdomain is customised to be ERC721 compliant. Simply set the controller to the new address (after setting the record to the new address).
 
 
-# Why are some of my subdomains shown as a jumble of characters?
+## Why are some of my subdomains shown as a jumble of characters?
 
 ENS names are stored as a hash on-chain so we have to decode the name using a list of possible names, and it shows in the hashed format if we don't have it on our list. You can still access and manage the name if you search for the name directly in the search bar.
 How do I find the labelhash/namehash of a name?
@@ -96,7 +102,7 @@ How do I find the labelhash/namehash of a name?
 Please refer to our developer documentation page.
 When you extend your registration
 
-# How do I receive an extension reminder?
+## How do I receive an extension reminder?
 
 Click the "Remind me" button on the name's page or your address page so that you can set a calendar reminder or email reminder. Note that you have to set calendar reminders per name, whereas you only need to set email reminders per the address of the owner. Also note that you can register a name for multiple years, removing the need to extend each year.
 What happens if I forget to extend the registration of a name?
@@ -107,8 +113,12 @@ Where can I see the list of names to be released
 You can see the list at the "ENS Names to be released" section of the Dune Analytics dashboard .
 
 
-# I lost access to the Ethereum account that owns a name I registered. Can I still extend its registration period?
+## I lost access to the Ethereum account that owns a name I registered. Can I still extend its registration period?
 
 Any Ethereum account can pay to extend the registration of any ENS name, though doing so from an account that's not the owner will not change ownership of the name. Just go to the name's page and click "Extend".
-I registered names before 2019 May. Can I have my deposit back?Yes, you can get your deposit back from reclaim.ens.domains whether you extended the registration of the name or not.
+
+## I registered names before 2019 May. Can I have my deposit back?
+
+Yes, you can get your deposit back from reclaim.ens.domains whether you extended the registration of the name or not.
+
 Please remember that the amount you will receive is the amount of the second-highest bidder (unless you were the only bidder). For example, if you bid 1 ETH and the second highest bidder bid 0.1 ETH, you deposited 0.1 ETH and you have already received the remaining (0.9 ETH) when you finailsed the auction. Therefore you can now only reclaim 0.1 ETH back. Please read the the initial guide back in 2017 for more detail.
