@@ -11,12 +11,11 @@ import Image from '@theme/IdealImage'
 import Link from '@docusaurus/Link';
 
 # Temporary Premium
-90 days after an ENS name has expired, when it exits the `Grace Period` it will go into a `Temporary Premium Auction`
+90 days after an ENS name has expired, when it exits the `Grace Period` it will go into a `Temporary Premium Auction`.
 ```mermaid
 %%{
   init: {
     'flowchart': {
-      'curve': 'linear'
       } } }%%
       
 graph LR;
@@ -24,20 +23,16 @@ A(Available);
 B(Registered);
 C(Grace Period);
 D(Temporary Premium);
-E{Renew<br/>/<br/>Expire};
-F{Purchased<br/>/<br/>Not Purchased};
 
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
 
 class D active;
 
-A-->B-->C-->E-->D;
-E-.->B;
-D-.->A;
-D-->F;
-F-.->A;
-F-.->B;
+A-->B-->|expiration|C-->D;
+C-.->|renewal|B;
+D-.->|Purchased during auction|B;
+D-.->|Not purchased during auction|A;
 ```
 This is a public auction where anyone can buy the name with a `Temporary Premium Fee` attached to it that lasts for 21 days.
 

@@ -13,19 +13,28 @@ import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
 
 # Set a Primary name
-
-To set your ENS name as Primary in your wallet:
-
-:::info Instructions
-1. Make sure the `ETH Address` record points to the wallet address
-
-1. Connect your wallet to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and set the ENS name as `Primary`.
-:::
-
-# Set a Primary name 2
 :::caution Pre-requisites
  - The `ETH Address` record of the ENS name must first point to the wallet you want to set the `Primary Name` in
 
 If you haven't set the `ETH Address` record to your ENS name, see
  - <Link to="/docs/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address <i>(ETH Address)</i></Link>
 :::
+
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and connect your wallet.
+
+Click `My Account` on the upper right hand side to go to your Account page. Select an ENS name from the Primary drop-down list, click `Save` and confirm the transaction in your wallet.
+<BrowserWindow>
+  <Image img="/img/howto/set-primary-name-1.png"/>
+</BrowserWindow>
+
+:::tip
+If your ENS name doesn't show up in the Primary drop-down list it's usually because the ENS name's `ETH Address` record doesn't point to your ENS name. To resolve it, see
+ - <Link to="/docs/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address</Link>
+:::
+
+## Verify that your Primary name works
+Look up your wallet address on <Link to="https://etherscan.io"><b>Etherscan</b></Link> to check that the `Primary Name` works correctly.
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/howto/set-primary-name-2.png"/>
+</BrowserWindow>
