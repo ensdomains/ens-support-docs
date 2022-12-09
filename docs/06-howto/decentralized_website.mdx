@@ -28,51 +28,48 @@ If you already have a website you'd like to upload, proceed to [**Set up a GitHu
 ### Create the website
 Go to <Link to="https://heavens.tools"><b>Heaven's Tools</b></Link> website and use the drag and drop building blocks to create your site.
 <BrowserWindow url="heavens.tools">
-  <Image img="/img/tutorials/decentralized_website_1.png" />
+  <Image img="/img/howto/decentralized_website_1.png" />
 </BrowserWindow>
 
 ### Download the website
 Once you're happy with the site you've created click the `Download` button to download a compressed `.zip` archive of your website. 
 <BrowserWindow url="heavens.tools">
-  <Image img="/img/tutorials/decentralized_website_2.png" />
+  <Image img="/img/howto/decentralized_website_2.png" />
 </BrowserWindow>
 
 ### Extract the compressed archive
-<Tabs>
-  <TabItem value="windows" label="Windows">
-    <BrowserWindow url="app.ens.domains">
-    </BrowserWindow>
-  </TabItem>
-  <TabItem value="macos" label="Mac OS" default>
-    <BrowserWindow>
-      <img
-        src={require('/img/tutorials/extract_file_macos_1.png').default}
-        alt="Extract File 1"
-      />
-    </BrowserWindow>
-    <BrowserWindow>
-      <img
-        src={require('/img/tutorials/extract_file_macos_2.png').default}
-        alt="Extract File 1"
-      />
-    </BrowserWindow>
-  </TabItem>
-  <TabItem value="linux" label="Linux">
-    <p>Navigate to the file folder and use <b>unzip</b> to unzip the archive.</p>
+<details>
+  <summary>Extract compressed archive</summary>
+    <Tabs>
+      <TabItem value="windows" label="Windows" default>
+        <p>Navigate to the file folder and double-click the zip file</p>
+        <Image img="/img/howto/decentralized-website-extract-win-1.png"/>
+        <br/><p>Press `Extract all`</p>
+        <Image img="/img/howto/decentralized-website-extract-win-2.png"/>
+        <br/><p>Select a folder to extract the files to and click `Extract`</p>
+        <Image img="/img/howto/decentralized-website-extract-win-3.png"/>
+      </TabItem>
+      <TabItem value="macos" label="Mac OS">
+        <Image img="/img/howto/extract_file_macos_1.png"/>
+        <Image img="/img/howto/extract_file_macos_2.png"/>
+      </TabItem>
+      <TabItem value="linux" label="Linux">
+        <p>Navigate to the file folder and use <b>unzip</b> to unzip the archive.</p>
 
-    [cthulu@carbon ~]$ unzip template.zip
-    Archive:  template.zip
-     extracting: editor.css
-     extracting: narrow-jumbotron.css
-     extracting: aos.css
-     extracting: vvvebjs-editor-helpers.css
-     extracting: aos.js
-     extracting: ?format=json
-     extracting: index.html
-    [cthulu@carbon ~]$ 
+          [cthulu@carbon ~]$ unzip template.zip
+          Archive:  template.zip
+           extracting: editor.css
+           extracting: narrow-jumbotron.css
+           extracting: aos.css
+           extracting: vvvebjs-editor-helpers.css
+           extracting: aos.js
+           extracting: ?format=json
+           extracting: index.html
+          [cthulu@carbon ~]$ 
     
   </TabItem>
 </Tabs>
+</details>
 
 ---
 
@@ -82,36 +79,36 @@ Go to <Link to="https://github.com"><b>GitHub</b></Link> and create an account.
 ### Create a repository
 Click `New` to create a new GitHub repository for your website.
 <BrowserWindow url="github.com">
-  <Image img="/img/tutorials/decentralized_website_3.png" />
+  <Image img="/img/howto/decentralized_website_3.png" />
 </BrowserWindow>
 
 Then choose a name for the repository.
 <BrowserWindow url="github.com">
-  <Image img="/img/tutorials/decentralized_website_4.png" />
+  <Image img="/img/howto/decentralized_website_4.png" />
 </BrowserWindow>
 
 Then scroll down and click on `Create`.
 <BrowserWindow url="github.com">
-  <Image img="/img/tutorials/decentralized_website_4.png" />
+  <Image img="/img/howto/decentralized_website_4.png" />
 </BrowserWindow>
 <BrowserWindow url="github.com">
-  <Image img="/img/tutorials/decentralized_website_5.png" />
+  <Image img="/img/howto/decentralized_website_5.png" />
 </BrowserWindow>
 
 ### Upload your files to the repository
 On the next screen, click the link `Uploading an existing file`
 <BrowserWindow url="github.com">
-  <Image img="/img/tutorials/decentralized_website_6.png" />
+  <Image img="/img/howto/decentralized_website_6.png" />
 </BrowserWindow>
 
 Upload your files to GitHub
 <BrowserWindow url="github.com">
-  <Image img="/img/tutorials/decentralized_website_7.png" />
+  <Image img="/img/howto/decentralized_website_7.png" />
 </BrowserWindow>
 
 After that's done, scroll down and click `Commit`.
 <BrowserWindow url="github.com">
-  <Image img="/img/tutorials/decentralized_website_8.png" />
+  <Image img="/img/howto/decentralized_website_8.png" />
 </BrowserWindow>
 
 ---
@@ -124,47 +121,47 @@ Go to <Link to="https://fleek.co"><b>Fleek's website</b></Link> and `Sign Up` fo
 ### Upload your site to Fleek
 After logging into <Link to="https://fleek.co"><b>Fleek</b></Link>, at the dashboard select `Add new site`.
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_1.png" />
+  <Image img="/img/howto/create_website_fleek_1.png" />
 </BrowserWindow>
 
 Choose `Connect with GitHub` and connect your GitHub account. 
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_2.png" />
+  <Image img="/img/howto/create_website_fleek_2.png" />
 </BrowserWindow>
 
 Click `Install & Authorize`
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_3.png" />
+  <Image img="/img/howto/create_website_fleek_3.png" />
 </BrowserWindow>
 
 When asked which repository to create the website from, select the repository you created earlier in [](#step-1-create-a-repository)
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_4.png" />
+  <Image img="/img/howto/create_website_fleek_4.png" />
 </BrowserWindow>
 
 For the hosting service, make sure IPFS is selected and press `Continue`.
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_5.png" />
+  <Image img="/img/howto/create_website_fleek_5.png" />
 </BrowserWindow>
 
 On the next screen no changes are necessary, so just scroll down and click `Deploy site`.
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_6.png" />
+  <Image img="/img/howto/create_website_fleek_6.png" />
 </BrowserWindow>
 
 Fleek will now deploy the website to IPFS, which might take a little while.
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_7.png" />
+  <Image img="/img/howto/create_website_fleek_7.png" />
 </BrowserWindow>
 
 When the site has been deployed, it will look like this:
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_8.png" />
+  <Image img="/img/howto/create_website_fleek_8.png" />
 </BrowserWindow>
 
 Select the `IPFS CID` *(marked in blue below)* and press `CTRL + C` to copy it into the clipboard or write it down.
 <BrowserWindow url="fleek.co">
-  <Image img="/img/tutorials/create_website_fleek_9.png" />
+  <Image img="/img/howto/create_website_fleek_9.png" />
 </BrowserWindow>
 
 ## Configure your ENS name
@@ -172,21 +169,21 @@ Select the `IPFS CID` *(marked in blue below)* and press `CTRL + C` to copy it i
 ### Go to the ENS Manager App
 Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and connect your wallet.
 <BrowserWindow url="app.ens.domains">
-  <Image img="/img/tutorials/create_website_ens_1.png"/>
+  <Image img="/img/howto/create_website_ens_1.png"/>
 </BrowserWindow>
 
 Click on `My Account` to go to a list of your ENS names.
 <BrowserWindow url="app.ens.domains">
-  <Image img="/img/tutorials/create_website_ens_2.png"/>
+  <Image img="/img/howto/create_website_ens_2.png"/>
 </BrowserWindow>
 
 Go to your ENS name and click `Add/Edit Record`, scroll down and enter the `IPFS CID` you saved earlier into the `Content` field, then scroll down and click `Save`
 <BrowserWindow url="app.ens.domains">
-  <Image img="/img/tutorials/create_website_ens_3.png"/>
+  <Image img="/img/howto/create_website_ens_3.png"/>
 </BrowserWindow>
 
 <BrowserWindow url="app.ens.domains">
-  <Image img="/img/tutorials/create_website_ens_4.png"/>
+  <Image img="/img/howto/create_website_ens_4.png"/>
 </BrowserWindow>
 
 Congratulations! That's it!

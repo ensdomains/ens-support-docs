@@ -9,7 +9,7 @@ import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
 // Disabled while evaluating whether the CSS solution is better than the React component
 // import ThemedImage from '@site/src/components/Cthulu';
-// <ThemedImage lightImage="/img/how-ens-works-light-1.png" darkImage="/img/how-ens-works-dark-1.png"/>
+// <ThemedImage lightImage="/img/how-ens-works-light-1.jpg" darkImage="/img/how-ens-works-dark-1.jpg"/>
 
 # How does ENS work?
 ## The ENS Registry
@@ -17,7 +17,7 @@ At the heart of the ENS protocol lies the Registry, which is where all ENS looku
 
 The Registry is a smart contract on Ethereum which keeps track of the Controller and the Resolver for all names.
 
-![Docusaurus themed image](/img/how-ens-works-light-1.png#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-1.png#gh-dark-mode-only)
+![Docusaurus themed image](/img/how-ens-works-light-1.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-1.jpg#gh-dark-mode-only)
 
 As you can see, the Registry can have entries not just for .eth names, but all DNS names (like domain.com or domain.xyz) and subnames too (like sub.name.eth or sub.domain.xyz).
 
@@ -35,14 +35,14 @@ For more information on the various records that can be set, see:
  - <Link to="/docs/core/records/"><b>Core Concepts:</b> Records</Link>
 :::
 
-![Docusaurus themed image](/img/how-ens-works-light-2.png#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-2.png#gh-dark-mode-only)
+![Docusaurus themed image](/img/how-ens-works-light-2.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-2.jpg#gh-dark-mode-only)
 
 So together, the Registry and the Resolver allow records to be looked up for an ENS name. It is a two-step process. For example, to look up the ETH address for “name.eth”:
 
  1. Retrieve the Resolver from the Registry for node “name.eth”.
  1. Call the Resolver contract to retrieve the ETH address record for node “name.eth”.
  
-![Docusaurus themed image](/img/how-ens-works-light-3.png#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-3.png#gh-dark-mode-only)
+![Docusaurus themed image](/img/how-ens-works-light-3.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-3.jpg#gh-dark-mode-only)
 
 If no Resolver is set in the Registry for the name, then it does not resolve or point to any records.
 
@@ -51,7 +51,7 @@ A `Registrar` is a smart contract that is given control of a name and issues sub
 
 The `.eth Registrar` owns the “eth” node and issues subnames such as “name.eth”. This is also commonly referred to as the “NFT contract” for ENS names, because when a .eth name is registered, the contract will issue an NFT to the registrant.
 
-![Docusaurus themed image](/img/how-ens-works-light-4.png#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-4.png#gh-dark-mode-only)
+![Docusaurus themed image](/img/how-ens-works-light-4.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-4.jpg#gh-dark-mode-only)
 
 The `Registrant` is the owner of the .eth name, and the owner of the issued NFT.
 
