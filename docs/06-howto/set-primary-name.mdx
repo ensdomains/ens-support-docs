@@ -4,10 +4,12 @@ tags:
   - identity
   - did
 last_update:
-  date: 12/05/2022
+  date: 12/09/2022
   author: cthulu
 ---
 
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
 
 # Set a Primary name
@@ -18,4 +20,12 @@ To set your ENS name as Primary in your wallet:
 1. Make sure the `ETH Address` record points to the wallet address
 
 1. Connect your wallet to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and set the ENS name as `Primary`.
+:::
+
+# Set a Primary name 2
+:::caution Pre-requisites
+ - The `ETH Address` record of the ENS name must first point to the wallet you want to set the `Primary Name` in
+
+If you haven't set the `ETH Address` record to your ENS name, see
+ - <Link to="/docs/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address <i>(ETH Address)</i></Link>
 :::

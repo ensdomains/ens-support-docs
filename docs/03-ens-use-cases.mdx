@@ -1,1 +1,72 @@
-# ENS Use cases
+---
+last_update:
+  date: 12/09/2022
+  author: zadok7
+tags:
+ - how to use ENS
+ - ENS use cases
+ - use cases
+---
+
+import Link from '@docusaurus/Link';
+
+# ENS Use Cases
+When most people think about ENS, what comes to mind is being able to have a .eth name that functions as an easy label for their long Ethereum wallet address. However, this is just scratching the surface of what ENS names can be used for. Let’s take a look at some of the other use cases for ENS.
+
+# Easy Readable Naming for Everything
+ENS can name not only wallet addresses, but also content hashes, metadata, and even smart contract addresses. ENS names can even contain emojis, along with global language characters. ENS is built to name everything and anything.
+
+# Resolve to Cryptocurrency Wallets
+ENS names can point to multiple crypto wallet addresses. It is not limited to only Ethereum blockchain addresses. ENS records can hold the wallet addresses for Bitcoin, DOGE, and any other numbers of coin types. Owning an ENS name does not give access into a wallet’s contents, only names it in a human-readable way.
+:::info Resources
+For more information on how to add a wallet address to your name, see
+ - <Link to="/docs/howto/add-wallet-address"><b>How-To: </b>Add a Wallet Address</Link>
+:::
+
+# Identity
+ENS names are a great use case for identity purposes across the blockchain ecosystem. On-chain attestations can be derived from ENS names. For instance, a history of contributing to Gitcoin grants can be identified by an ENS name instead of a long unidentifiable wallet address. Another example is collecting POAPs (Proof of Attendance). Easily find all POAPs associated with a wallet address that is in turn linked to an ENS name by indicating your <Link to="/docs/core/records/primary-name"><b>Records: </b>Primary Name</Link>
+:::info Resources
+For more information on the `Primary Name`, see
+ - <Link to="/docs/core/records/primary-name"><b>Records: </b>Primary Name</Link>
+:::
+
+# Decentralized Website Content
+Build decentralized websites using stored content record hashes. No “hosting” servers are required. Instead, the content location is saved in the ENS name’s content record by referencing an IPFS or Arweave storage location. The content can be looked up on-chain, with some browsers like Brave already resolving .eth content without the need of extensions like Metamask. Also, appending .limo to any .eth name will resolve the content in any browser. See vitalik.eth.limo as a good example of a decentrally hosted blog.
+:::info Resources
+For more information on how to set the `Content Record` or create a Decentralized Website, see
+ - <Link to="/docs/howto/set-content-record"><b>How-To: </b>Set the Content Record</Link>
+ - <Link to="/docs/howto/decentralized-website"><b>How-To: </b>Create a Decentralized Website</Link>
+:::
+
+# Multiple Text Records
+ENS names can store multiple records including social media links, blockchain wallet addresses, GitHub user names, Avatar location, and more. There is no limit to the number of records that can be created and stored.
+:::info Resources
+For more information on the various records, see
+ - <Link to="/docs/core/records"><b>Core Concepts: </b>Records</Link>
+:::
+
+# Set an Avatar
+The avatar record stores an image location for a PFP (Profile Picture). This record can be set to an http(s) location, or even an NFT image. Decentralized apps can query this standard record, and the same PFP can be used across the blockchain without needing to add a profile picture to each platform. All is referenced in a standard way by using the ENS avatar record.
+:::info Resources
+For more information on the Avatar record and how to set it, see
+ - <Link to="/docs/core/records/avatar"><b>Records: </b>Avatar</Link>
+ - <Link to="/docs/howto/set-avatar"><b>How-To: </b>Set the Avatar</Link>
+:::
+
+# Transfer Names
+ENS (.eth) names are NFTs, and can be transferred to other wallets. They are ERC-721 tokens, and soon will be able to be wrapped to ERC-1155 tokens. They appear on NFT marketplaces like OpenSea, LooksRare, ENS.vision and more.
+:::info Resources
+For more information on how to transfer a name, see
+ - <Link to="/docs/howto/transfer-name"><b>How-To: </b>Transfer a Name</Link>
+:::
+
+# Create Unlimited Subdomains
+Any amount of subdomains can be created off of an ENS name. There are no registration fees to create subnames, only gas fees to transact on the Ethereum blockchain. With the release of the Name Wrapper contract, it will be possible for ENS name owners to allow “leasing” of their own subnames off of the parent name they own. Subnames have their own set of records separate and apart from the parent name’s records.
+
+# Use DNS names with ENS
+DNS names such as a .com can be imported and used with the ENS protocol. Imported names gain blockchain functionality, such as being able to receive cryptocurrency sent to mywebsite.com as well as utilizing record storage. There are no registration or renewal fees on DNS imported names.
+:::info Resources
+For more information on how to integrate DNS names with ENS, see
+ - <Link to="/docs/core/registration/dns"><b>Registration & Renewals: Integrate DNS</b></Link>
+ - <Link to="/docs/howto/link-dns-name"><b>How-To: </b>Integrate a DNS name</Link>
+:::
