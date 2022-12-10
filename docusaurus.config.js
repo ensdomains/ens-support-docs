@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ENS Support',
-  tagline: 'Home of the Support Mod Squad',
+  tagline: 'ENS Support Documentation',
   url: 'https://support.ensmods.xyz',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -40,19 +40,13 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/cthulu-dot-eth/ens-supportdocs/tree/main/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          /*
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          */
+            'https://github.com/cthulu-dot-eth/ens-supportdocs/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -94,23 +88,24 @@ const config = {
         },
       navbar: {
         hideOnScroll: true,
-        title: 'ENS Support',
+        /* title: 'ENS Support', */
         logo: {
           alt: 'ENS Logo',
-          src: 'img/enssite_logo.svg',
+          src: 'img/newsite-logo-light.svg',
+          srcDark: 'img/newsite-logo-dark.svg',
         },
         items: [
-          {
+        /*{
             type: 'doc',
             docId: 'intro',
             position: 'left',
             label: 'Support Docs',
           },
-    {
-      to: '/blog',
-      label: 'Updates',
-      position: 'left'
-    },
+          {
+            to: '/blog',
+            label: 'Updates',
+            position: 'left'
+          }, */
 		/*
 	  {
 	    href: 'https://docs.ens.domains',
