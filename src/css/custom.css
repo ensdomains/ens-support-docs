@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-background-color: #ffffff;
+  --ifm-background-color: #fefefe;
   --ifm-color-primary: #000000;
   --ifm-color-primary-inverse: white;
   --ifm-color-primary-dark: #3092ff;
@@ -23,6 +23,33 @@
   /* Override this */
   --ifm-link-color: var(--ifm-color-primary-dark);
 }
+
+h2, h3, h4 {
+  --ifm-heading-color: transparent;
+  background-color: #000000;
+  background-image: linear-gradient(180deg, rgba(81,97,255,1) 35%, rgba(82,193,255,1) 100%);
+  background-image: linear-gradient(180deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
+  background-image: linear-gradient(180deg, rgba(127,149,255,1) 35%, rgba(61,172,235,1) 100%);
+  background-clip: text;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  /*text-shadow: 0 .25rem .25rem rgba(0,0,0,.1)!important;*/
+}
+[data-theme='dark'] h2, h3, h4 {
+  --ifm-heading-color: transparent;
+  background-color: #000000;
+  background-image: linear-gradient(180deg, rgba(132,152,251,1) 35%, rgba(76,181,241,1) 100%);
+  background-clip: text;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 html[data-theme='dark'] {
@@ -267,10 +294,23 @@ b.navbar__title{
   min-width: 0;
   word-wrap: break-word;
   background-color: rgb(255 255 255 / 10%);
+  background-color: rgb(178 159 159 / 3%);
   background-clip: border-box;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 0.65rem;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+[data-theme='light'] .theme-admonition {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+[data-theme='light'] .browserWindow_src-components-BrowserWindow-styles-module {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.10)!important;
+}
+
+[data-theme='dark'] .card {
+  background-color: rgb(43 46 46 / 40%);
 }
 
 .card-no-border {

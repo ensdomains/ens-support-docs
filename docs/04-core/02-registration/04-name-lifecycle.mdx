@@ -13,6 +13,9 @@ ENS names goes through several stages from being available to being registered a
 This article tries to explain its life cycle in simple terms. As such, the diagrams are simplified.
 
 ## Normal availability
+
+:::info Normal availability
+
 ```mermaid
 %%{
   init: {
@@ -36,8 +39,10 @@ A-->B-->C-->D-->E;
 E -.-> A;
 ```
 If the `Temporary auction` ends without a buyer the ENS name will become available normally again without a temporary fee attached.
-
+:::
 ## Registered
+
+:::info Registered
 ```mermaid
 %%{
   init: {
@@ -61,6 +66,7 @@ class B active;
 A-->B-->C-->D-->E;
 E -.-> A;
 ```
+:::
 
 <!--
 ## Registration period
@@ -70,6 +76,7 @@ After the registration period is over, it will begin the process towards normal 
   
 If you want to extend your registration period, this can be done from the [ENS Manager App](https://app.ens.domains) -->
 ## Expired
+:::info Expired
 ```mermaid
 %%{
   init: {
@@ -94,12 +101,13 @@ A-->B-->C-->D-->E;
 E -.-> A;
 ```
 This is when your ENS name expires. After an ENS name has expired, it will still point to your records until it's released. However:
-
+:::
 :::caution
 An ENS name cannot be sold, transferred, or changed after this point. To regain control of it you must extend the registration period.
 :::
 
 ## Grace period
+:::info Grace Period
 ```mermaid
 %%{
   init: {
@@ -124,7 +132,7 @@ A-->B-->C-->D-->E;
 E -.-> A;
 ```
 After an ENS name expires it enters into what's called a *Grace period*. This is a 90-day window provided as a courtesy where the owner can renew it and keep it at the regular renewal cost.
-
+:::
 :::note
 Keep in mind that the renewal period must be from when the name expired, otherwise the grace period will just be moved up.
 :::
