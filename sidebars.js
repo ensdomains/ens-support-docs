@@ -22,7 +22,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Core Concepts",
+      value: "Reference Information",
     },
     {
       type: "category",
@@ -42,8 +42,8 @@ const sidebars = {
             "core/design/where-are-names-stored",
             "core/design/terminology",
           ],
-        },
-        {
+         },
+         {
           type: "category",
           label: "Registration",
           link: { type: "doc", id: "core/registration/index" },
@@ -57,8 +57,8 @@ const sidebars = {
             "core/registration/temporary-premium",
             "core/registration/integrating-dns",
           ],
-        },
-        {
+         },
+         {
           type: "category",
           label: "Records",
           link: { type: "doc", id: "core/records/index" },
@@ -76,12 +76,12 @@ const sidebars = {
             "core/records/content-hash",
           ],
         },
-      ]
+      ],
     },
     {
       type: "html",
       className: "sidebar-title",
-      value: "Support",
+      value: "Support Resources",
     },
     {
       type: "category",
