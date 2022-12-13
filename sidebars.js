@@ -22,7 +22,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Reference Information",
+      value: "Core Concepts",
     },
     {
       type: "category",
@@ -81,7 +81,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Support Resources",
+      value: "Support",
     },
     {
       type: "category",
