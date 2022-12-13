@@ -74,6 +74,11 @@ const config = {
         typesenseSearchParameters: {},
       },
       */
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     zoom: {
       selector: '.markdown :not(em) > img',
       background: {
@@ -91,8 +96,8 @@ const config = {
         /* title: 'ENS Support', */
         logo: {
           alt: 'ENS Logo',
-          src: 'img/newsite-logo-light.svg',
-          srcDark: 'img/newsite-logo-dark.svg',
+          src: 'img/enslogotext_gradient.svg',
+          /* srcDark: 'img/newsite-logo-dark.svg', */
         },
         items: [
         /*{
