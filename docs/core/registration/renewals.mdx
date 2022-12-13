@@ -3,20 +3,28 @@
 ## Renewal fees
 Both registration and renewal fees help fund the continued development of the ENS protocol. The cost for renewal of your .eth name is currently the same fee structure as registering a new .eth name. In addition to the renewal fee, the Ethereum network will require a small gas fee to update the data on the blockchain.
 
-:::info Fees
-| Name length (number of characters) | Renewal cost per year |
-|------------------------------------|-----------------------|
-| 3 characters                       | $640                  |
-| 4 characters                       | $160                  |
-| 5+ characters                      | $5                    |
+:::note Fees
+The cost of an ENS name is dependent on how many characters it contains:
+
+| Number of characters | Annual fee  |
+| -------------------- | ----------- |
+| 5+ characters        | $5          |
+| 4 characters         | $160        |
+| 3 characters         | $640        |
+
+3 and 4 character names have a higher pricing to reflect the small number of these names available.
 :::
 
 All .eth names have an expiration date, and in order to maintain ownership of the name, it must be renewed so that it has a valid expiration date. Any Ethereum wallet can pay the renewal fees to extend the expiration of a 2LD (eg. name.eth); it does not have to be the owner of the name.
 
+:::caution
+When obtaining an existing ENS name on a secondary market like OpenSea, the expiration date remains the same upon transfer. Be sure to check the expiration date of a name if it is already owned!
+:::
+
 Additionally, once a .eth name expires there is a 90 day grace period that the name can still be renewed and the owner not lose the name.
 :::info Resources
 For more information on name expiration, see
- - <Link to="/docs/registration/name-lifecycle#grace-period"><b>Registration & Renewals: </b>Name Lifecycle <i>(Grace period)</i></Link>
+ - [**Registration:** Name Lifecycle (Grace Period)](/docs/core/registration/name-lifecycle#grace-period)
 :::
 
 The Name Wrapper contract makes it possible for parent .eth owners to create their own subname registrar and have their own renewal fees they set themselves as the owners. ENS does not dictate renewal fees on subnames, only renewal fees of 2LD names (eg. name.eth).

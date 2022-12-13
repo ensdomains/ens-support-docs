@@ -6,7 +6,7 @@ tags:
   - costs
   - price
 last_update:
-  date: 12/07/2022
+  date: 12/13/2022
   author: cthulu
 ---
 
@@ -17,13 +17,17 @@ import Link from '@docusaurus/Link';
 # ENS Name Fees
 How much does it cost to register an ENS name?
 
-| Name length *(number of characters)* | Cost per year |
-|--------------------------------------|---------------|
-| 3 characters                         | US $640       |
-| 4 characters                         | US $160       |
-| 5+ characters                        | US $5         |
+:::note Fees
+The cost of an ENS name is dependent on how many characters it contains:
+
+| Number of characters | Annual fee  |
+| -------------------- | ----------- |
+| 5+ characters        | $5          |
+| 4 characters         | $160        |
+| 3 characters         | $640        |
 
 Three and four-character names cost more to reflect the small number of these names available. If a name was recently released from the expiration grace period, a decaying price premium is also applied.
+:::
 
 ## Estimating costs
 When looking up an ENS name the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> will display a *rough* estimate of your registration cost:
@@ -47,7 +51,7 @@ A secondary purpose is to provide enough revenue to the DAO to fund the ongoing 
 
 :::info
 For more information about ENS fees see:
-[**ENS DAO Constitution**](https://constitution.ens.domains)
+[**ENS DAO Constitution**](https://docs.ens.domains/v/governance/ens-dao-constitution)
 - <Link to="https://constitution.ens.domains"><b>ENS.Domains:</b> Constitution</Link>
 :::
 
@@ -63,5 +67,5 @@ There's an additional premium fee attached to newly expired names which start at
 :::info Article
 For more information about the expiration of names, see:
 
-- <Link to="./name-lifecycle"><b>Registration & Fees: Name Lifecycle</b></Link>
+- <Link to="./name-lifecycle"><b>Registration: Name Lifecycle</b></Link>
 :::
