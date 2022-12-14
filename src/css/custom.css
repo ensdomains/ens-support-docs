@@ -285,6 +285,11 @@ b.navbar__title{
   font-weight: 600;
 }
 
+
+.sidebarLogo_isFC a:link {
+ color: red;
+}
+
 .card {
   position: relative;
   display: flex;
