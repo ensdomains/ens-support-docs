@@ -16,7 +16,7 @@ Early on the need was known to create a naming system for the blockchain. The Et
 
 In May of 2017, the first ENS names were minted, starting with rilxxlir.eth. The TLD or Top-Level Domain is .eth, a reserved “special use domain” within the ICANN or (Internet Corporation for Assigned Names and Numbers) namespace organization. Since the .eth TLD is already reserved for the country of Ethiopia, though not in use, it will prevent future naming collisions with DNS and help ensure integration with pre-existing DNS systems.
 
-In 2018, ENS branched off from the Ethereum Foundation into its own project with the help of a grant from the EF to continue development and building of the protocol. It adheres to the concept of the <Link to="https://ethereum.foundation/infinitegarden"><b>Infinite Garden</b></Link>. ENS is part of that <Link to="https://ethereum.foundation/infinitegarden"><b>Infinite Garden</b></Link> ethos, reflecting the “nurture and grow, but do not control”. The core team at ENS Labs was funded through grants, and had no VC investors.
+In 2018, ENS branched off from the Ethereum Foundation into its own project with the help of a grant from the EF to continue development and building of the protocol. It adheres to the concept of the <Link to="https://ethereum.foundation/infinitegarden"><b>Infinite Garden</b></Link>. ENS is part of that <i>Infinite Garden</i> ethos, reflecting the “nurture and grow, but do not control”. The core team at ENS Labs was funded through grants, and had no VC investors.
 
 # From DNS to ENS
 In the early days of the Internet, information was queried by using IP (Internet Protocol) addresses. To find information, a set of machine readable addresses had to be known in order to locate where that information resided on computer network servers. IP addresses are made of 4 sets of numbers separated by dots, using the numbers 0 through 255. It is a numerical label such as 142.250.64.142.  This particular  IP address is assigned to Google servers. This numerical format is easy for computers to work with, but not so much for humans to easily remember and reference. 
@@ -26,6 +26,12 @@ Eventually, DNS or Domain Name Servers were created to bridge the gap between wh
 Similar to how DNS maps a domain name to an IP address, ENS was created to map blockchain addresses to human readable labels. As a simple example, Vitalik.eth is an ENS name that maps to `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045`, an Ethereum blockchain address. One could send crypto currency to `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045`, or instead send the same using Vitalik.eth which will resolve to the same blockchain address!
 
 DNS names can contain multiple records that point to various locations that Internet services use. For example, a DNS mail record, or MX record may point to the location of an email server used to deliver email to the correct servers. Similarly, ENS stores data in records, but these records are not limited to only Ethereum addresses. Any number of records can be created, and resolved by smart contracts on the blockchain to find the location of those resources. ENS records could contain a Bitcoin address, a content record, social media account handles, or profile images like avatars. Once those records are stored, developers can resolve these records programmatically using resolvers on the blockchain.
+
+:::info Resources
+For more information on ENS records, see
+ - <Link to="/docs/core/records/eth-address"><b>Records: </b>ETH Address</Link>
+ - <Link to="/docs/howto/set-record"><b>How-To: </b>Set a Record</Link>
+:::
 
 It is important to note that ENS does not seek to replace DNS. Instead, ENS builds on the groundwork DNS has already established, but using decentralized, secure, and censorship-resistant blockchain technology. By design, ENS is forward-compatible with DNS. This is to prevent name collision with the existing DNS namespace. In fact, ENS extends beyond the .eth TLD. It is possible to import a DNS name into ENS, so that a .com can make use of the blockchain. Imported DNS names can be used to store records on the blockchain which in turn can be resolved by smart contracts. As a simple example, if mywebsite.com was imported into ENS, then it would be possible to send cryptocurrency or digital assets like NFTs to mywebsite.com!
 :::info Resources
@@ -38,5 +44,11 @@ For more information on integrating DNS names with ENS, see
 ENS is based on a set of decentralized smart contracts on the Ethereum blockchain. As such, there is no need for centralized operators and systems that DNS relies upon. The mapping of DNS names rely on root servers to answer queries for records stored in the root zone. This is how queries are performed using DNS lookups, which then find the TLD servers, which in turn locate the resources. There are a maximum total of 13 root name server addresses used for this.
 
 In contrast, instead of relying on centralized root servers, ENS uses immutable and transparent smart contracts stored on the Ethereum blockchain to resolve records. Resolver contracts handle translating names to addresses and or other data points. Because of the decentralized technology Ethereum is built on, ENS is able to avoid relying on centralized root servers as with DNS. The code is stored on a decentralized network and that code is visible and transparent. In this way, ENS names are censorship-resistant. Geographical restrictions do not apply, as the information is securely stored on the global distributed blockchain.
+
+:::info Resources
+To view the ENS Contracts GitHub repo, visit
+ - <Link to="https://github.com/ensdomains/ens-contracts"><b>Records: </b>GitHub: ens-contracts</Link>
+ - <Link to="https://github.com/ensdomains/name-wrapper"><b>How-To: </b>GitHub: namewrapper</Link>
+:::
 
 ENS is an important set of infrastructure, built as a public good for humanity and not for profit. Its development is driven by the community and for the community. No single entity or organization controls the protocol. It is not possible for ownership of an ENS name to be infringed or censored as outlined in the <Link to="https://docs.ens.domains/v/governance/ens-dao-constitution"><b>ENS DAO Constitution</b></Link>. Changes to the protocol are governed by the ENS DAO, a Decentralized Autonomous Organization, by way of <Link to="https://docs.ens.domains/v/governance/process"><b>governance voting</b></Link>. 
