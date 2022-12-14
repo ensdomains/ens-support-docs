@@ -20,11 +20,17 @@ const sidebars = {
     "what-is-ens",
     "ens-use-cases",
     {
+      type: "html",
+      className: "sidebar-divider",
+      value: "<div/>"
+    },
+    {
       type: "category",
       label: "Core Concepts",
       link: { type: "doc", id: "core/index" },
       collapsible: false,
       collapsed: false,
+      className: "CoreClass",
       items: [
         {
           type: "category",
@@ -74,6 +80,11 @@ const sidebars = {
       ],
     },
     {
+      type: "html",
+      className: "sidebar-divider",
+      value: "<div/>"
+    },
+    {
       type: "category",
       label: "Support FAQ",
       link: { type: "doc", id: "faq/index" },
@@ -110,8 +121,13 @@ const sidebars = {
       ]
     },
     {
+      type: "html",
+      className: "sidebar-divider",
+      value: "<div/>"
+    },
+    {
       type: "category",
-      label: "LEARNING RESOURCES",
+      label: "Learning Resources",
       link: { type: "doc", id: "howto/index" },
       collapsible: false,
       collapsed: false,
