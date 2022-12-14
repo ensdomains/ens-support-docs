@@ -32,13 +32,12 @@ When transferring an ENS name, only the `Registrant` record is automatically upd
 Depending on your specific use-case it's therefore a good idea to take a moment and think about what additional records you want to transfer.
 
 ## Completely transfer a name
-If you want to completely transfer a name to a wallet you'll need to set three records to the new wallet in a specific order because only the wallet set as `Controller` is allowed to change the `ETH Address` and only the `Registrant` is allowed to change the `Controller`.
+If you want to completely transfer a name to a wallet you'll need to set three records to the new wallet in a specific order because only the wallet set as `Controller` is allowed to change the `ETH Address`.
 :::info For example
  - If you were to change `Controller` first, you wouldn't be able to set the `ETH Address` without switching to the new wallet.
- - If you were to transfer `Registrant` first, you wouldn't be able to set the `Controller` without switching to the new wallet.
 :::
 
-In order to set everything to the new wallet easily from the wallet that currently owns the ENS name you'd follow this specific order:
+In order to set everything to the new wallet easily from the wallet that currently owns the ENS name, you'd follow this specific order:
 
 :::info Order
  1. **ETH Address:** *The wallet address the ENS name points to, where funds sent to it will arrive.*
