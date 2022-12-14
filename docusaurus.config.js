@@ -147,12 +147,8 @@ const config = {
         style: 'light',
         links: [
           {
-            title: 'Docs',
+            title: 'External Docs',
             items: [
-              {
-                label: 'Support Docs',
-                to: '/docs/intro',
-              },
               {
                 label: 'Developer Docs',
                 href: 'https://docs.ens.domains',
