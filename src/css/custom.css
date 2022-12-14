@@ -273,16 +273,16 @@ footer.footer > div.container-fluid {
 }
 
 .navbar__logo {
-  width: 96px;
+  /*width: 96px;*/
 }
 
 .navbar__logo img {
-  width:100%;
+  /*width:100%;*/
 }
 
 b.navbar__title{
-  font-size: 1.6rem;
-  font-weight: normal;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .card {

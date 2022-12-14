@@ -93,10 +93,10 @@ const config = {
         },
       navbar: {
         hideOnScroll: true,
-        /* title: 'ENS Support', */
+        title: 'ENS Support',
         logo: {
           alt: 'ENS Logo',
-          src: 'img/enslogotext_gradient.svg',
+          src: 'img/enssite_logo.svg',
           /* srcDark: 'img/newsite-logo-dark.svg', */
         },
         items: [
