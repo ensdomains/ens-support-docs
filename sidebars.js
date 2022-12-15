@@ -74,7 +74,6 @@ const sidebars = {
             "core/records/content-hash",
             "core/records/custom-records",
             "core/records/resolver",
-            "core/records/content-hash",
           ],
         },
       ],
