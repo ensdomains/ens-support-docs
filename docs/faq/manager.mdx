@@ -19,7 +19,7 @@ No, you can store the addresses of over 100 blockchains, decentralized website, 
 ## Can I point an ENS name to my regular website?
 Though ENS can technically store anything, there aren't many third-party tools and applications which resolve IP addresses attached to ENS.
 
-Instead, we suggest hosting your static html/css/images on IPFS and put the hash in your ENS Name's [Content record](/docs/names/records/content).
+Instead, we suggest hosting your static html/css/images on IPFS and put the hash in your ENS Name's [Content record](/docs/core/records/content-hash).
 
 Then it can be resolved by ENS-aware browsers:
  - Brave
@@ -31,7 +31,7 @@ Metamask
 Or in any browser by appending `.link` or `.limo` to the end of the ENS name. For example: `snowowl.eth.limo`
 
 ## Redirect to a Web2 page
-If you want to redirect your ENS name to a web2 website you could write a simple html-file containing a redirect to your web2 website address and upload it to IPFS. Then you can put the IPFS CID of the html file your ENS Name's [Content record](/docs/names/records/content)
+If you want to redirect your ENS name to a web2 website you could write a simple html-file containing a redirect to your web2 website address and upload it to IPFS. Then you can put the IPFS CID of the html file your ENS Name's [Content record](/docs/core/records/content-hash)
 
 # What is the maximum length of a name I can register?
 There is no limit on the name length. Technically speaking the transaction would have to fit within an Ethereum block, but it would take *a lot* to reach that size.
