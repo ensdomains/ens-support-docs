@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'ENS Support',
   tagline: 'ENS Support Documentation',
-  url: 'https://support.ensmods.xyz',
+  url: 'https://support.ens.domains',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
