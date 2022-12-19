@@ -91,7 +91,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 html[data-theme='dark'] {
-  --ifm-background-color: #121616;
+  /*--ifm-background-color: #121616;*/
   --ifm-color-primary: #ffffff;
   --ifm-color-primary-inverse: rgba(59,69,78,1.00);
   --ifm-color-primary-dark: #3092ff;
@@ -110,15 +110,17 @@ html[data-theme='dark'] {
   display: none;
 }
 
+/*
 [data-theme='dark'] div[class^=searchBox] button {
 	border-radius: 8px;
-   /* border: 1px solid #85bfff; */
+  border: 1px solid #85bfff;
 }
 
 [data-theme='light'] div[class^=searchBox] button {
 	border-radius: 8px;
-  /* border: 1px solid #12244b; */
+  border: 1px solid #12244b;
 }
+*/
 
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
@@ -272,23 +274,26 @@ footer.footer > div.container-fluid {
   }
 }
 
+/*
 .navbar__logo {
-  /*width: 96px;*/
+  width: 96px;
 }
 
 .navbar__logo img {
-  /*width:100%;*/
+  width:100%;
 }
+*/
 
 b.navbar__title{
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-
+/*
 .sidebarLogo_isFC a:link {
  color: red;
 }
+*/
 
 .card {
   position: relative;
@@ -444,7 +449,6 @@ b.navbar__title{
   color: #212529;
  /* background-color: #ebedf0; */
 }
-
 
 .list-group-item {
   position: relative;
@@ -1240,6 +1244,7 @@ html[data-theme='dark'] .sidebar-divider {
   margin: 0.7rem;
   /* background-color: var(--ifm-menu-color-background-active);
 }*/
+
 html[data-theme='dark'] .sidebar-divider {
   color: var(--ifm-color-gray-200);
 }
@@ -1312,8 +1317,4 @@ html[data-theme='dark'] .sidebar-divider {
 
 
 @media only screen and (max-width: 998px) {
-  .sidebar-title,
-  .powered-by-banner {
-    margin-left: 1rem;
-  }
 }
