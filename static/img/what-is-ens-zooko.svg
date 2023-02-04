@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="554.25623"
+   height="480"
+   viewBox="0 0 146.64696 127"
+   version="1.1"
+   id="svg2436"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="what-is-ens-zooko.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2438"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.5251403"
+     inkscape:cx="163.59151"
+     inkscape:cy="237.68305"
+     inkscape:window-width="1884"
+     inkscape:window-height="1017"
+     inkscape:window-x="16"
+     inkscape:window-y="43"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2440"
+       spacingx="8.4666666"
+       spacingy="8.4666666"
+       originx="-53.676517"
+       originy="-42.333336" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2433" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-53.676517,-42.333336)">
+    <path
+       sodipodi:type="star"
+       style="fill:#006680;stroke-width:0.264583"
+       id="path2558"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="127"
+       sodipodi:cy="127"
+       sodipodi:r1="84.666664"
+       sodipodi:r2="42.333332"
+       sodipodi:arg1="-1.5707963"
+       sodipodi:arg2="-0.52359878"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 127,42.333336 73.32348,126.999994 -146.646963,0 z"
+       inkscape:transform-center-x="1.6000019e-06"
+       inkscape:transform-center-y="-21.166668" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Text"
+     transform="translate(-53.676517,-42.333336)">
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;fill:#dbe3de;stroke-width:0.264583"
+       x="60.619228"
+       y="166.25357"
+       id="text2667"><tspan
+         sodipodi:role="line"
+         id="tspan2665"
+         style="font-size:6.35px;fill:#dbe3de;stroke-width:0.264583"
+         x="60.619228"
+         y="166.25357">Decentralized</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;fill:#dbe3de;stroke-width:0.264583"
+       x="171.36295"
+       y="166.22183"
+       id="text2667-6"><tspan
+         sodipodi:role="line"
+         id="tspan2665-5"
+         style="font-size:6.35px;fill:#dbe3de;stroke-width:0.264583"
+         x="171.36295"
+         y="166.22183">Secure</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;fill:#dbe3de;stroke-width:0.264583"
+       x="127.50544"
+       y="73.369476"
+       id="text2667-6-6"><tspan
+         sodipodi:role="line"
+         id="tspan2665-5-9"
+         style="font-size:6.35px;text-align:center;text-anchor:middle;fill:#dbe3de;stroke-width:0.264583"
+         x="127.50544"
+         y="73.369476">Human</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:6.35px;text-align:center;text-anchor:middle;fill:#dbe3de;stroke-width:0.264583"
+         x="127.50544"
+         y="81.306976"
+         id="tspan2723">Meaningful</tspan></text>
+  </g>
+</svg>
