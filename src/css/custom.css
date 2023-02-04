@@ -23,9 +23,29 @@
   --ifm-font-family-base: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --text-color: rgba(59,69,78,1.00);
   --ifm-color-black: rgba(59,69,78,1.00);
+  --ifm-link-color: var(--ifm-color-primary-dark);
+}
 
+[data-theme='light'] {
+  --ifm-heading-color: rgba(59,69,78,1.00);
+}
 
-  /* Override this */
+.card-link h2 {
+  color: unset;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+html[data-theme='dark'] {
+  --ifm-color-primary: #ffffff;
+  --ifm-color-primary-inverse: rgba(59,69,78,1.00);
+  --ifm-color-primary-dark: #3092ff;
+  --ifm-color-primary-darker: #1f89ff;
+  --ifm-color-primary-darkest: #0070ec;
+  --ifm-color-primary-lightest: #b7d9ff;
+  --ifm-color-primary-lighter: #85bfff;
+  --ifm-color-primary-light: #74b6ff;
+  --ifm-color-primary: #52a4ff;
+  --ifm-color-primary-custom-lightest: #c2ffff;
   --ifm-link-color: var(--ifm-color-primary-dark);
 }
 
@@ -81,30 +101,6 @@
 }
 */
 
-[data-theme='light'] {
-  --ifm-heading-color: rgba(59,69,78,1.00);
-}
-
-.card-link h2 {
-  color: unset;
-}
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-html[data-theme='dark'] {
-  /*--ifm-background-color: #121616;*/
-  --ifm-color-primary: #ffffff;
-  --ifm-color-primary-inverse: rgba(59,69,78,1.00);
-  --ifm-color-primary-dark: #3092ff;
-  --ifm-color-primary-darker: #1f89ff;
-  --ifm-color-primary-darkest: #0070ec;
-  --ifm-color-primary-lightest: #b7d9ff;
-  --ifm-color-primary-lighter: #85bfff;
-  --ifm-color-primary-light: #74b6ff;
-  --ifm-color-primary: #52a4ff;
-  --ifm-color-primary-custom-lightest: #c2ffff;
-  --ifm-link-color: var(--ifm-color-primary-dark);
-}
-
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
 [data-theme='dark'] img[src$='#gh-light-mode-only'] {
   display: none;
@@ -115,12 +111,19 @@ html[data-theme='dark'] {
 	border-radius: 8px;
   border: 1px solid #85bfff;
 }
+*/
 
 [data-theme='light'] div[class^=searchBox] button {
-	border-radius: 8px;
+	/*
   border: 1px solid #12244b;
+  */
+  border-radius: 8px;
+  background-color: #ffffff;
 }
-*/
+
+.table-of-contents {
+  font-size: 1rem;
+}
 
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
@@ -260,11 +263,15 @@ footer.footer > div.container-fluid {
 .navbar {
   background:var(--ifm-background-color);
   height:60px;
-  border-bottom:1px solid var(--ifm-toc-border-color);
   /*
+  border-bottom:1px solid var(--ifm-toc-border-color);
   padding-left:1.5rem;
   padding-right:1.5rem;
   */
+}
+
+[data-theme='light'] .navbar {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 35%, rgba(240,240,244,1) 100%);
 }
 
 @media (min-width: 640px) {
@@ -761,6 +768,11 @@ b.navbar__title{
   /* flex: 1 1 auto; */
   padding: 1rem 1rem;
 }
+
+[data-theme='light'] .card-body {
+  background: linear-gradient(129deg, rgba(255,255,255,1) 35%, rgba(240,240,244,1) 100%);
+}
+
 .d-flex {
   display:flex!important;
 }
