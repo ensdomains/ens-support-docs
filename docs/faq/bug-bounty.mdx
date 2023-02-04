@@ -1,0 +1,112 @@
+# Bug Bounty Program
+
+The ENS bug bounty program rewards anyone who finds a bug in covered ENS smart contracts.
+
+## Rules and Rewards
+
+- Issues that have already been submitted by another user or are already known to the ENS team are not eligible for bounty rewards.
+- Public disclosure of a vulnerability makes it ineligible for a bounty. This includes exploiting the bug on mainnet or any public test network.
+- The ENS team, employees and all other people paid by ENS project, directly or indirectly, are not eligible for rewards.
+- Only the smart contracts listed below are eligible for rewards. Websites and other infrastructure are not covered by the bounty program.
+- The ENS bounty program considers a number of variables in determining rewards. Determinations of eligibility, score and all terms related to an award are at the sole and final discretion of the ENS team.
+
+:::info OWASP Risk Rating Model
+
+The value of rewards paid out will vary depending on `Severity`. The severity is calculated according to the **OWASP Risk Rating Model** based on `Impact` and `Likelihood`:
+<p align="center">
+    <Image img="/img/owasp.svg"/>
+</p>
+
+:::
+
+:::note Reward size
+Reward sizes are _guided_ by the rules below, but are in the end, determined at the sole discretion of the ENS team
+
+<table style={{borderRadius: '4px'}}>
+    <thead>
+        <tr>
+            <th width="500px"><p>Severity</p></th>
+            <th width="500px"><p>Reward size (up to)</p></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><p>Critical</p></td>
+            <td><p>>$250,000 USD</p></td>
+        </tr>
+        <tr>
+            <td><p>High</p></td>
+            <td><p>>$150,000 USD</p></td>
+        </tr>
+        <tr>
+            <td><p>Medium</p></td>
+            <td><p>>$100,000 USD</p></td>
+        </tr>
+        <tr>
+            <td><p>Low</p></td>
+            <td><p>>$20,000 USD</p></td>
+        </tr>
+        <tr>
+            <td><p>Note</p></td>
+            <td><p>>$5,000 USD</p></td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
+:::caution Reservation of Rights
+The ENS team reserves the right to adjust bounty amounts at any time in the future.
+:::
+
+Where the contract in our GitHub repository differs from the one deployed on Ethereum, due to changes having been made since the last deployment, the following rules apply:
+
+:::info Rules and Considerations
+1. **If the bug exists in the contract deployed on Ethereum**  
+The full bounty amount is payable.
+1. **If the bug is only in the version on GitHub**  
+The ENS team will decide at is discretion an appropriate proportion of the bounty to award based on the state of the code (from 0% for code that was never intended to be deployed, to 100% for code that is considered final).
+
+In addition to `Severity`, other variables are also considered when the ENS team decides the score,  
+including _(but not limited to)_:
+
+- **Quality of Description**  
+Higher rewards are paid for clear, well-written submissions.
+- **Quality of Reproducibility**  
+Please include test code, scripts and detailed instructions. The easier it is for us to reproduce and verify the vulnerability, the higher the reward.
+- **Quality of Fix**  
+If included. Higher rewards are paid for submissions with clear description of how to fix the issue.
+
+:::
+
+## Covered Contracts
+
+The following smart contracts are covered by the bounty:
+
+:::info Covered contracts
+* All non-test contracts in [ensdomains/ens-contracts](https://github.com/ensdomains/ens-contracts).
+* [ensdomains/name-wrapper](https://github.com/ensdomains/name-wrapper).
+
+:::
+
+## Important Legal Information
+:::caution Legal information
+The bug bounty program is a discretionary rewards program for the ENS community to encourage and reward those who are helping to improve the platform. It is not a competition.  
+  
+You should know that we can cancel the program at any time, and awards are at the sole discretion of the ENS team.  
+  
+In addition
+ - We are not able to issue awards to individuals who are on sanctions lists or who are in countries on sanctions lists (e.g. North Korea, Iran, etc).  
+ - You are responsible for all taxes.
+ - All awards are subject to applicable law.
+ - Any patches must be offered under the same license as the repository they affect.
+ - Finally, your testing must not violate any law or compromise any data that is not yours.
+:::
+
+## Submitting a Bug
+
+:::info Submissions
+Bugs should be submitted either via either of these options:
+ - **Email** to `bugs@ens.domains`
+ - **Keybase** to `@arachnid`.
+:::

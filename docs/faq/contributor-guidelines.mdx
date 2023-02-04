@@ -1,0 +1,81 @@
+---
+draft: true
+last_update:
+  author: cthulu
+tags:
+  - contribution
+  - contributor guidelines
+  - guidelines
+---
+
+# Contributor Guidelines
+
+## Changes
+:::info
+- If the changes are *objective* *(i.e. correcting spelling mistakes, punctuation, code mistakes etc)* they can be PR’ed without prior discussion
+- If the changes are *subjective* *(i.e. changing a confusing sentence to another one)* post about it and your suggested change in the User Docs Chat so we can brainstorm it and come to a consensus before the PR
+:::
+
+## Formatting
+:::info
+ - All articles should be in the `MDX` file format and written by hand *(as opposed to using a WYSIWYG-tool)*
+ since they produce results that are difficult to work with.
+ - Word wrapping must be turned off in your editor and done manually for the site generator to produce the expected results.
+:::
+
+## Arrows & Indicators
+:::info
+ - We use [Flameshot](https://flameshot.org) as the official tool to capture screenshots and add arrows, indicators etc.
+ - Use colour: `#ff6500` for arrows and indicators and a thickness of `30%`  
+
+ <Image img="/img/contributor-guidelines-arrow.png"/>
+:::
+
+## Diagrams
+:::info
+ - Diagrams should be in `Mermaid` code where possible, for example:
+
+```mermaid
+%%{
+  init: {
+    'flowchart': {
+      'curve': 'linear'
+      } } }%%
+      
+graph LR;
+A(I);
+B(Am);
+C(A);
+D(Simple);
+E(Mermaid Diagram);
+
+classDef active stroke-width:4px;
+classDef inactive stroke-dasharray: 5 5;
+
+class A inactive;
+class B active;
+
+A-->B-->C-->D-->E;
+E -.-> A;
+```
+
+:::
+
+## Images
+:::info
+ - Images should be in the `PNG` file format and at least `1024x768` large if used within a browser component
+ - For any images used outside of a browser component there should be dark and light versions (for theme switching)
+ - Prefix the name of your article to any images associated with it. For example: If your article is named **ens-names.mdx** then name images associated with it **“ens-names-description”**.
+
+This helps keep the static image folder structure easy to navigate.
+*(In the near future, all images will be moved into sub-folders of articles to remove this requirement, currently this folder structure exists to make batch image compression fine tuning simpler)*
+
+:::
+
+## Git PR process
+
+:::info
+- Direct commits are not allowed, make sure to commit your files from a branch descriptive of your changes, such as bugfix-1, patch-1, etc.
+- If the changes are minor, consider bundling them into a larger commit to avoid PR overload (there’s no need for one PR per spelling error per page)
+- Ensure that your changes are staged properly, and commits accurately describe their changes (i.e. don’t commit “adding images” with 4 images attached, but also an unrelated code fix)
+:::
