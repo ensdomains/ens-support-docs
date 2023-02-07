@@ -1,0 +1,82 @@
+---
+last_update:
+  author: cthulu
+tags:
+  - transfer
+  - transfer name
+  - gift
+draft: true
+---
+
+# Transfer an ENS name (V3)
+
+:::info
+ 1. **Owner:** *The owner of the ENS name, the wallet the ENS name NFT resides in.*
+ 1. **Manager:** *The manager of records, the wallet allowed to make changes to its records (but not transfer the name)*
+ 1. **ETH Address:** *The wallet address the ENS name points to, where funds sent to it will arrive.*
+:::
+
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-transfer-name-records.png"/>
+</BrowserWindow>
+
+When transferring an ENS name, only the `Owner` record is automatically updated to reflect the new owner wallet.
+Depending on your specific use-case it's therefore a good idea to take a moment and think about what additional records you want to transfer.
+
+## Completely transfer a name
+If you want to completely transfer a name to a wallet you'll need to set three records to the new wallet in a specific order because only the wallet set as `Manager` is allowed to change the `ETH Address`.
+:::info For example
+ - If you were to change `Manager` first, you wouldn't be able to set the `ETH Address` without switching to the new wallet.
+:::
+
+In order to set everything to the new wallet easily from the wallet that currently owns the ENS name, you'd follow this specific order:
+
+:::info Order
+ 1. **ETH Address:** *The wallet address the ENS name points to, where funds sent to it will arrive.*
+ 1. **Manager:** *The manager of records, the wallet allowed to make changes to its records (but not transfer the name)*
+ 1. **Owner:** *The owner of the ENS name, the wallet the ENS name NFT resides in.*
+:::
+
+### Go to the Manager App
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> with the wallet set as `Owner` & `Manager` for the ENS name you want to manage and click `Names` to bring up a list
+of your ENS names *or* search for an ENS name you own directly from the main page.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-transfer-name-1.png"/>
+</BrowserWindow>
+
+Click the ENS name you want to transfer.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-transfer-name-2.png"/>
+</BrowserWindow>
+
+Go to the `More` tab.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-transfer-name-3.png"/>
+</BrowserWindow>
+
+Click `Send`.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-transfer-name-4.png"/>
+</BrowserWindow>
+
+When sending a name you have the optional ability to set the recipient as `Manager` of the ENS name.
+:::info
+1. `Owner` *The owner can send to a new owner and change the manager*
+1. `Manager` *The manager can change and set records*
+:::
+
+Toggle the suitable options and click `Next`.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-transfer-name-5.png"/>
+</BrowserWindow>
+
+## Gift a Name with ENSFairy
+If you would like to register a name on behalf of another wallet, <Link to="https://ensfairy.xyz"><b>ENSFairy</b></Link> is a great way to do that. This is because you can register a name with one wallet, but set up the ownership and address records to point to a different wallet.
+
+<BrowserWindow url="ensfairy.xyz">
+  <Image img="/img/howto/ensfairy-gifting.gif"/>
+</BrowserWindow>
+
+:::info TIP
+ If the ENS name recipient does not yet have a wallet address, the name can be sent to the ENSFairy vault for safekeeping. Read more here: <Link to="https://ensfairy.xyz"><b>ensfairy.xyz/deposit</b></Link>
+ :::

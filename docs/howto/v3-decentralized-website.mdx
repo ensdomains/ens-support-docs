@@ -1,0 +1,236 @@
+---
+last_update:
+  author: cthulu
+tags:
+  - decentralized website
+  - website
+  - web3
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create a decentralized website (V3)
+One of the most interesting and powerful features of ENS names is the ability to point them to webpages hosted on the decentralized web, creating a website where both the hosting and the domain name is *entirely* decentralized.
+
+In this tutorial we'll show you how to deploy a basic website to IPFS and point your ENS name to it.
+ENS supports several decentralized protocols apart from IPFS, but this tutorial only covers IPFS (for now).
+
+## Build a website
+In this section we'll create a basic website to deploy to IPFS using <Link to="http://heavens.tools"><b>Heaven's Tools</b></Link> excellent Web3 website builder.
+:::tip
+If you already have a website you'd like to upload, proceed to [**Set up a GitHub repository**](#set-up-a-github-repository)
+:::
+
+### Create the website
+Go to <Link to="http://heavens.tools"><b>Heaven's Tools</b></Link> website and use the drag and drop building blocks to create your site.
+<BrowserWindow url="heavens.tools">
+  <Image img="/img/howto/decentralized_website_1.png" />
+</BrowserWindow>
+
+### Download the website
+Once you're happy with the site you've created click the `Download` button to download a compressed `.zip` archive of your website. 
+<BrowserWindow url="heavens.tools">
+  <Image img="/img/howto/decentralized_website_2.png" />
+</BrowserWindow>
+
+### Extract the compressed archive
+<details>
+  <summary>Extract compressed archive</summary>
+    <Tabs>
+      <TabItem value="windows" label="Windows" default>
+        <p>Navigate to the file folder and double-click the zip file</p>
+        <Image img="/img/howto/decentralized-website-extract-win-1.png"/>
+        <br/><p>Press `Extract all`</p>
+        <Image img="/img/howto/decentralized-website-extract-win-2.png"/>
+        <br/><p>Select a folder to extract the files to and click `Extract`</p>
+        <Image img="/img/howto/decentralized-website-extract-win-3.png"/>
+      </TabItem>
+      <TabItem value="macos" label="Mac OS">
+        <Image img="/img/howto/extract_file_macos_1.png"/>
+        <Image img="/img/howto/extract_file_macos_2.png"/>
+      </TabItem>
+      <TabItem value="linux" label="Linux">
+        <p>Navigate to the file folder and use <b>unzip</b> to unzip the archive.</p>
+
+          [cthulu@carbon ~]$ unzip template.zip
+          Archive:  template.zip
+           extracting: editor.css
+           extracting: narrow-jumbotron.css
+           extracting: aos.css
+           extracting: vvvebjs-editor-helpers.css
+           extracting: aos.js
+           extracting: ?format=json
+           extracting: index.html
+          [cthulu@carbon ~]$ 
+    
+  </TabItem>
+</Tabs>
+</details>
+
+---
+
+## Set up a GitHub repository
+Go to <Link to="https://github.com"><b>GitHub</b></Link> and create an account.
+
+### Create a repository
+Click `New` to create a new GitHub repository for your website.
+<BrowserWindow url="github.com">
+  <Image img="/img/howto/decentralized_website_3.png" />
+</BrowserWindow>
+
+Then choose a name for the repository.
+<BrowserWindow url="github.com">
+  <Image img="/img/howto/decentralized_website_4.png" />
+</BrowserWindow>
+
+Then scroll down and click on `Create`.
+<BrowserWindow url="github.com">
+  <Image img="/img/howto/decentralized_website_4.png" />
+</BrowserWindow>
+<BrowserWindow url="github.com">
+  <Image img="/img/howto/decentralized_website_5.png" />
+</BrowserWindow>
+
+### Upload your files to the repository
+On the next screen, click the link `Uploading an existing file`
+<BrowserWindow url="github.com">
+  <Image img="/img/howto/decentralized_website_6.png" />
+</BrowserWindow>
+
+Upload your files to GitHub
+<BrowserWindow url="github.com">
+  <Image img="/img/howto/decentralized_website_7.png" />
+</BrowserWindow>
+
+After that's done, scroll down and click `Commit`.
+<BrowserWindow url="github.com">
+  <Image img="/img/howto/decentralized_website_8.png" />
+</BrowserWindow>
+
+---
+
+## Upload to IPFS
+
+### Create an account with Fleek
+Go to <Link to="https://fleek.co"><b>Fleek's website</b></Link> and `Sign Up` for an account.
+
+### Upload your site to Fleek
+After logging into <Link to="https://fleek.co"><b>Fleek</b></Link>, at the dashboard select `Add new site`.
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_1.png" />
+</BrowserWindow>
+
+Choose `Connect with GitHub` and connect your GitHub account. 
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_2.png" />
+</BrowserWindow>
+
+Click `Install & Authorize`
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_3.png" />
+</BrowserWindow>
+
+When asked which repository to create the website from, select the repository you created earlier in [](#step-1-create-a-repository)
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_4.png" />
+</BrowserWindow>
+
+For the hosting service, make sure IPFS is selected and press `Continue`.
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_5.png" />
+</BrowserWindow>
+
+On the next screen no changes are necessary, so just scroll down and click `Deploy site`.
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_6.png" />
+</BrowserWindow>
+
+Fleek will now deploy the website to IPFS, which might take a little while.
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_7.png" />
+</BrowserWindow>
+
+When the site has been deployed, it will look like this:
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_8.png" />
+</BrowserWindow>
+
+Select the `IPFS CID` *(marked in blue below)* and press `CTRL + C` to copy it into the clipboard or write it down.
+<BrowserWindow url="fleek.co">
+  <Image img="/img/howto/create_website_fleek_9.png" />
+</BrowserWindow>
+
+## Configure your ENS name
+
+### Go to the ENS Manager App
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> with the wallet set as `Manager` for the ENS name you want to manage and click `Names` to bring up a list
+of your ENS names *or* search for an ENS name you own directly from the main page.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-1.png"/>
+</BrowserWindow>
+
+Click the ENS name you want to add the content record to.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-2.png"/>
+</BrowserWindow>
+
+Go to the `Records` tab
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-3.png"/>
+</BrowserWindow>
+
+Click `Edit Records`
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-4.png"/>
+</BrowserWindow>
+
+Then go to the `Other` tab
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-5.png"/>
+</BrowserWindow>
+
+Type in the `IPFS CID` you saved earlier into the `Content` field and then click `Save`
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-6.png"/>
+</BrowserWindow>
+
+Click `Open Wallet` and confirm the transaction in your wallet.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-7.png"/>
+</BrowserWindow>
+
+Wait for the transaction to complete.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-8.png"/>
+</BrowserWindow>
+
+Once the transaction has completed you should see a screen like this, it means that the changes to the content record is now
+stored on-chain. Click `Done` to go back to the Manager.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-9.png"/>
+</BrowserWindow>
+
+You should now see the `Content Hash` record populated with the IPFS CID you entered.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-decentralized-website-ensmanager-10.png"/>
+</BrowserWindow>
+
+Congratulations! That's it! Now you can try visiting your website!
+
+:::info Compatible Browsers
+For ENS resolution in the browser address bar to work, the browser needs to be compatible with ENS or have the Metamask extension installed.
+
+### ENS Compatible browsers
+Some browsers which are more oriented towards Web3 support ENS right out of the box:
+ - <Link to="https://brave.com"><b>Brave Browser</b></Link>
+ - <Link to="https://www.opera.com"><b>Opera Browser</b></Link>
+ 
+Other browsers will need to have an extension installed for it to work, such as the Metamask browser extension:
+ - <Link to="https://www.google.com/chrome"><b>Google Chrome</b></Link>
+ - <Link to="https://www.mozilla.org"><b>Mozilla Firefox</b></Link>
+:::
+
+:::info ETH.limo proxy
+You can also use the `eth.limo web3 proxy` by entering in your-ens-name.eth.limo into any browser address bar, regardless of if it supports
+ENS names natively or not.
+:::

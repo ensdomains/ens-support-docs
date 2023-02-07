@@ -1,0 +1,136 @@
+---
+last_update:
+  author: cthulu
+tags:
+  - integrate
+  - dns
+  - .com
+  - .net
+  - .org
+  - .xyz
+draft: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Integrate a DNS name (V3)
+Apart from using ENS names like `snowowl.eth`, ENS also allows you to integrate existing DNS domain names with ENS
+to supercharge them with ENS functionality.
+
+:::info
+You can only integrate existing DNS domain names that you own with ENS. You *cannot* create new domain names with non-existing
+TLD's this way.
+:::
+
+## Integrating a DNS name
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link>, connect your wallet, search for your DNS domain name and click on it to continue.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-integrate-dns-1.png"/>
+</BrowserWindow>
+
+### 1. Enable DNSSEC
+Before you can integrate an existing DNS domain name with ENS you'll need to enable DNSSEC for the domain name.
+Not all registrars or hosting providers support DNSSEC, and some only support it as an additional paid service.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-integrate-dns-3.png"/>
+</BrowserWindow>
+
+Once you've enabled DNSSEC press `Check` to continue.
+
+:::info
+In order for your registrars or hosting providers DNSSEC to work with ENS it must use either `RSA/SHA-256` or `ECDSA` keys.  
+
+If they don’t, you’ll need to migrate to a DNS provider that does. See `Hosting providers` below.
+
+<details>
+  <summary>Hosting providers</summary>
+
+#### Hosting providers
+A list of popular hosting providers and which DNSSEC key types they support[^1]
+
+[^1]: The key-types hosting providers support may have changed since this list was last verified on `June 22nd, 2022`.
+
+| Hosting providers | DNSSEC | RSA/SHA-256 | ECDSA | Details                                                        |
+| ----------------- | ------ | ----------- | ----- | -------------------------------------------------------------- |
+| easyDNS           | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://kb.easydns.com/knowledge/dnssec/)     |
+| Google Cloud DNS  | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://cloud.google.com/dns/docs/registrars) |
+| Bluehost          | `Yes`  | `Yes`       | `Yes` |                                                                |
+| Hostinger         | `Yes`  | `Yes`       | `Yes` |                                                                |
+| Hostgator         | `Yes`  | `Yes`       | `Yes` |                                                                |
+| GoDaddy           | `Yes`  | `No`        | `Yes` |                                                                |
+| Wordpress         | `No`   | -           | -     |                                                                |
+| Namecheap         | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://www.namecheap.com/support/knowledgebase/article.aspx/9722/2232/managing-dnssec-for-domains-pointed-to-custom-dns/) |
+
+</details>
+
+:::
+
+---
+
+### 2. Add the TXT-record
+In this step you'll need to add a TXT-record to your domain name to provide ownership of it, using your registrar or hosting provider's management interface.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-integrate-dns-2.png"/>
+</BrowserWindow>
+
+The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
+
+|          |                    |
+| -------- | -------------------|
+| Type     | `TXT`              |
+| Name     | `_ens`             |
+| Contents | `a=wallet address` |
+| TTL      | `36000`            |
+
+<Tabs>
+  <TabItem value="Google DNS" default>
+    <BrowserWindow url="support.ensmods.xyz">
+      <Image img="/img/howto/link-dns-name-3.webp"/>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="GoDaddy">
+    Test 1 2 3
+  </TabItem>
+  <TabItem value="Namecheap">
+    Test 1 2 3
+  </TabItem>
+</Tabs>
+
+To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
+
+
+---
+
+### 3. Claim the DNS domain
+Now you should be able to go back to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and finish linking the DNS name with ENS by pressing `Register`.
+
+<BrowserWindow url="support.ensmods.xyz">
+  <Image img="/img/howto/v3-integrate-dns-4.png"/>
+</BrowserWindow>
+
+<BrowserWindow url="support.ensmods.xyz">
+  <Image img="/img/howto/v3-integrate-dns-5.png"/>
+</BrowserWindow>
+
+<BrowserWindow url="support.ensmods.xyz">
+  <Image img="/img/howto/v3-integrate-dns-6.png"/>
+</BrowserWindow>
+
+<BrowserWindow url="support.ensmods.xyz">
+  <Image img="/img/howto/v3-integrate-dns-7.png"/>
+</BrowserWindow>
+
+<BrowserWindow url="support.ensmods.xyz">
+  <Image img="/img/howto/v3-integrate-dns-8.png"/>
+</BrowserWindow>
+
+---
+
+## Troubleshooting
+
+### I’ve updated the DNS records, but it’s not proceeding to the next steps.
+It can take time for record changes in DNS to propagate throughout the Internet. If you are sure the records are set properly, try waiting for some amount of time and refreshing the DNS import page.
+
+### I've set up DNSSEC but the ENS Manager App doesn't detect it
+Use a [DNSSEC Analyzer tool](https://dnssec-debugger.verisignlabs.com/) to look for errors.

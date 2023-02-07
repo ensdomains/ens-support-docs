@@ -1,0 +1,46 @@
+---
+title: Set a Primary Name (V3)
+tags:
+  - primary name
+  - identity
+  - did
+last_update:
+  author: cthulu
+draft: true
+---
+
+# Set a Primary name
+:::caution Pre-requisites
+ - The `ETH Address` record of the ENS name must first point to the wallet you want to set the `Primary Name` on
+
+If you haven't set the `ETH Address` record to your ENS name, see
+ - <Link to="/docs/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address <i>(ETH Address)</i></Link>
+:::
+
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> with the wallet set as `Manager` for the ENS name you want to manage and click `Names` to bring up a list
+of your ENS names *or* search for an ENS name you own directly from the main page.
+<BrowserWindow>
+  <Image img="/img/howto/v3-set-primary-name-1.png"/>
+</BrowserWindow>
+
+Click the ENS name you want to set as `Primary` in your wallet.
+<BrowserWindow>
+  <Image img="/img/howto/v3-set-primary-name-2.png"/>
+</BrowserWindow>
+
+Click `Set as Primary name`
+<BrowserWindow>
+  <Image img="/img/howto/v3-set-primary-name-3.png"/>
+</BrowserWindow>
+
+:::tip
+If your ENS name doesn't show up in the Primary drop-down list, it's usually because the ENS name's `ETH Address` record doesn't point to your ENS name. To resolve it, see
+ - <Link to="/docs/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address</Link>
+:::
+
+## Verify that your Primary name works
+Look up your wallet address on <Link to="https://etherscan.io"><b>Etherscan</b></Link> to check that the `Primary Name` works correctly.
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/howto/set-primary-name-2.png"/>
+</BrowserWindow>

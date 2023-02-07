@@ -1,0 +1,101 @@
+---
+title: Set an Avatar (V3)
+tags:
+  - avatar record
+  - avatar
+  - set avatar
+last_update:
+  author: cthulu
+draft: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# How to set an Avatar on your ENS name
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> with the wallet set as `Manager` for the ENS name you want to manage and click `Names` to bring up a list
+of your ENS names *or* search for an ENS name you own directly from the main page.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-1.png"/>
+</BrowserWindow>
+
+Click the ENS name you want to set the Avatar on.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-2.png"/>
+</BrowserWindow>
+
+Then click `Edit profile`
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-3.png"/>
+</BrowserWindow>
+
+Click the *"Camera"*-button to bring up a sub-menu of options to set your Avatar.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-4.png"/>
+</BrowserWindow>
+
+## Select how to set your avatar
+
+:::info
+In the sub-menu you have two options to set the NFT:
+ 1. Upload an image from your computer
+ 1. Select an NFT from your wallet
+:::
+
+<Tabs>
+<TabItem value="Upload an image from your computer">
+To upload an image file from your computer, click `Upload Image` and select an image file from your computer to upload.
+<BrowserWindow url="app.ens.domains">
+<Image img="/img/howto/v3-set-avatar-5.png"/>
+</BrowserWindow>
+Use the slider to crop the image to your liking and click `Continue`
+<BrowserWindow url="app.ens.domains">
+<Image img="/img/howto/v3-set-avatar-6-upload-image-1.png"/>
+</BrowserWindow>
+Then click `Sign and Upload` to start the upload process.
+<BrowserWindow url="app.ens.domains">
+<Image img="/img/howto/v3-set-avatar-6-upload-image-2.png"/>
+</BrowserWindow>
+</TabItem>
+<TabItem value="Select an NFT from your wallet">
+<p>Navigate to the file folder and double-click the zip file</p>
+</TabItem>
+</Tabs>
+
+Click `Save` to save the changes
+:::info
+Note that this only saves them locally, and the next steps are required to publish it to the blockchain
+:::
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-7.png"/>
+</BrowserWindow>
+
+Confirm that the changes are correct, and then click `Open Wallet` and sign the transaction with your wallet
+to modify the ENS name on-chain.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-8.png"/>
+</BrowserWindow>
+
+Once you've signed the transaction in your wallet, wait for the transaction to complete.
+:::info
+The speed of your transaction depends on Ethereum network congestion and the values set for gas on the transaction.
+The higher you set the gas, the faster it will be performed.
+If you set the gas too low, the transaction might stall and never complete.
+:::
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-9.png"/>
+</BrowserWindow>
+
+When the transaction has completed your avatar is set. Click `Done` to go back to the ENS name page.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-10.png"/>
+</BrowserWindow>
+
+Congratulations! Your avatar is now set and should be visible from the ENS name page.
+<BrowserWindow url="app.ens.domains">
+  <Image img="/img/howto/v3-set-avatar-11.png"/>
+</BrowserWindow>
+
+## The image on the avatar doesn't cover the entire background
+In order for the image set as the avatar to cover the entire background it needs to be square.
+If the image appears on your avatar with a border on sides or on the top, that's because you've set an image that isn't square (of equal width and height).
