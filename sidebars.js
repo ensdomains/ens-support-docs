@@ -138,6 +138,7 @@ const sidebars = {
         "howto/add-wallet-address",
         "howto/v3-add-wallet-address",
         "howto/decentralized_website",
+        "howto/v3-decentralized-website",
         "howto/link-dns-name",
         "howto/v3-integrate-dns",
         "howto/registration",
