@@ -86,6 +86,14 @@ const config = {
       dark: 'rgb(50, 50, 50)'
       },
     },
+    mermaid: {
+      options: {
+        mirrorActors: false,
+        messageAlign: 'center',
+        messageFontWeight: 'bold',
+        messageMargin: 0,
+      },
+    },
     algolia: {
           appId: 'NDEZSZ5DVQ',
           apiKey: '019821478403538a5fe9ada9e424a320',
