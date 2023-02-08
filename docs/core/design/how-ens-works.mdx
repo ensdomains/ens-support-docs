@@ -39,6 +39,27 @@ So together, the Registry and the Resolver allow records to be looked up for an 
  
 ![Docusaurus themed image](/img/how-ens-works-light-3.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-3.jpg#gh-dark-mode-only)
 
+```mermaid
+sequenceDiagram
+    rect rgb(236, 236, 255)
+    note right of User Code: 1. Retrieve Resolver from Registry
+    User Code->>ENS Registry: resolver('foo.eth')
+    activate User Code
+    activate ENS Registry
+    ENS Registry->>User Code: 0x12342...
+    deactivate ENS Registry
+    end
+
+    rect rgb(236, 236, 255)
+    note right of User Code: 2. Retrieve Address from Resolver
+    User Code->>Resolver @ 0x1234...: addr('foo.eth)
+        activate Resolver @ 0x1234...
+    Resolver @ 0x1234...->>User Code: 0x2345...
+    deactivate Resolver @ 0x1234...
+    deactivate User Code
+    end
+```
+
 If no Resolver is set in the Registry for the name, then it does not resolve or point to any records.
 
 ## The .eth Registrar
