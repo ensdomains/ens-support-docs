@@ -1,0 +1,37 @@
+---
+id: fuses
+title: Fuses
+tags:
+  - namewrapper
+last_update:
+  date: 02/08/2023
+  author: serenae
+description: Explaining the various fuses for the Name Wrapper and what they do
+---
+
+# Fuses
+
+A "fuse" is a permission or perk that can be granted/revoked on a name.
+
+As the name implies, once the fuse is "burned", it cannot be unburned. Fuses will only reset when the **expiry** is reached.
+
+There are **parent-controlled** and **owner-controlled** fuses:
+
+## Parent-Controlled Fuses
+Only the owner of the parent name can burn one of these fuses on a name. These can generally be thought of as "perks" that can be granted to a name, though they can be used in other ways.
+
+* **PARENT_CANNOT_CONTROL:** Allows a parent owner to **Emancipate** a child name. After this is burned, the parent will no longer be able to burn any further fuses, and will no longer be able to replace/delete the child name. This fuse must be burned in order for any owner-controlled fuses to be burned on the name.
+* **IS_DOT_ETH:** This fuse cannot be burned by users of the Name Wrapper, it is only set internally when a .eth 2LD is wrapped.
+* **CAN_EXTEND_EXPIRY:** The owner of the child name will be able to extend their own expiry. Normally, only the parent owner can extend the expiry of a child name.
+* **Custom Fuses:** There are 13 other parent-controlled fuses that are not reserved, and can be used in any custom way you want!
+
+## Owner-Controlled Fuses
+Either the owner of the name *or* the owner of the parent name can burn one of these fuses. These can generally be thought of as "permissions" that can be revoked on a name, though they can be used in other ways.
+
+* **CANNOT_UNWRAP:** The name will now be **Locked**, and can no longer be unwrapped. This fuse must be burned in order for any other owner-controlled fuses to be burned on the name.
+* **CANNOT_BURN_FUSES:** No further fuses can be burned on the name.
+* **CANNOT_TRANSFER:** The name (wrapped NFT) can no longer be transferred.
+* **CANNOT_SET_RESOLVER:** The resolver contract for the name can no longer be updated.
+* **CANNOT_SET_TTL:** The TTL for the name can no longer be updated.
+* **CANNOT_CREATE_SUBDOMAIN:** New subdomains can no longer be created.
+* **Custom Fuses:** There are 10 other owner-controlled fuses that are not reserved, and can be used in any custom way you want!

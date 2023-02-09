@@ -1,0 +1,26 @@
+---
+id: wrapperexpiry
+title: Expiry
+tags:
+  - namewrapper
+last_update:
+  date: 02/08/2023
+  author: serenae
+description: Explaining the expiry inside the Name Wrapper
+---
+
+# Expiry
+
+In order to burn any fuses on a name, you must also set an **expiry** on it. If the name is a .eth 2LD, then the expiry will automatically be set to the same expiry in the .eth Registrar. But for all other names, the parent can choose what expiry to set for a child name.
+
+The expiry for a name can only be at **max** the same as the parent expiry, it cannot expire after the parent name. So if the parent expires in 2 years, then you can only set the expiry of the child name up to a max of 2 years (though you could also choose to set it to something less like 1 year).
+
+When you renew a wrapped .eth 2LD, the expiry is automatically updated in the Name Wrapper as well.
+
+For all other names:
+* The parent owner can always extend the expiry for a child name.
+* If the **CAN_EXTEND_EXPIRY** fuse is burned, then the owner of the name can extend their own expiry as well.
+
+When a name is merely **Wrapped** but not **Emancipated** or **Locked**, parent-controlled fuses can still be burned. This means that the parent can burn a custom fuse for a limited amount of time. When the expiry is reached, all fuses will be reset, but the name will otherwise be unaffected.
+
+When a name is **Emancipated** or **Locked**, the expiry has an important additional effect. In this scenario, when the expiry has been reached, **the name itself will expire**, and the owner **loses ownership** of the name.
