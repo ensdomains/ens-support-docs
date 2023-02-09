@@ -41,24 +41,20 @@ So together, the Registry and the Resolver allow records to be looked up for an 
 
 ```mermaid
 sequenceDiagram
-    activate User Code
-    activate ENS Registry
-
     rect rgba(0,255,0,0.1)
-    note over User Code,ENS Registry: 1. Retrieve Resolver from Registry
-    User Code->>ENS Registry: resolver('foo.eth')
+    User Code->>+ENS Registry: resolver('foo.eth')
+    activate User Code
     ENS Registry->>User Code: 0x12342...
     deactivate ENS Registry
+    note over User Code,ENS Registry: 1. Retrieve the Resolver from<br>the Registry for node "name.eth"
     end
 
-    activate Resolver @ 0x1234...
-
     rect rgba(0,255,255,0.1)
-    note over User Code,Resolver @ 0x1234...: 2. Retrieve Address from Resolver
-    User Code->>Resolver @ 0x1234...: addr('foo.eth)
+    User Code->>+Resolver @ 0x1234...: addr('foo.eth)
     Resolver @ 0x1234...->>User Code: 0x2345...
     deactivate User Code
     deactivate Resolver @ 0x1234...
+    note over User Code,Resolver @ 0x1234...: 2. Call the Resolver contract to retrieve<br>the ETH address record for node “name.eth”
     end
 ```
 
