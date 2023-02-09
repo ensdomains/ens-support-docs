@@ -1,0 +1,144 @@
+---
+id: namehash
+title: Namehash, Labelhash, and Token IDs
+tags:
+  - namehash
+  - labelhash
+last_update:
+  date: 02/08/2023
+  author: serenae
+description: Explaining how Token IDs are created and used in ENS
+---
+
+# Namehash, Labelhash, and Token IDs
+
+## Overview
+
+When working with ENS from a technical side, you'll almost certainly encounter one of these long decimal or hexadecimal numbers that represent different pieces of an ENS name:
+
+* **Namehash:** A <Link to="https://en.wikipedia.org/wiki/Hash_function">hash</Link> value that uniquely identifies a single ENS name.
+* **Labelhash:** A <Link to="https://en.wikipedia.org/wiki/Hash_function">hash</Link> value that identifies only a single part or "label" of an ENS name.
+* **Token ID:** This is a unique identifier for an ENS NFT.
+
+For example, take the name `ens.eth`.
+
+* The **namehash** of `ens.eth` is:
+  * Decimal: `35373739037748002394990259860942348737703776167876918520233297406984196933343`
+  * Hexadecimal: `0x4e34d3a81dc3a20f71bbdf2160492ddaa17ee7e5523757d47153379c13cb46df`
+* The **labelhash** of `ens` is:
+  * Decimal: `42033647921836720708986079437023664695436352815832009766988496528855301124570`
+  * Hexadecimal: `0x5cee339e13375638553bdf5a6e36ba80fb9f6a4f0783680884d92b558aa471da`
+
+For an unwrapped .eth 2LD (second-level domain), the **token ID** for the ERC-721 NFT is the same as the labelhash for the second-level part of the domain.
+
+Looking at `ens.eth`, the top-level part is `eth` and the second-level part is `ens`, which is also usually referred to as the label.
+
+So the token ID for the NFT is the same as the labelhash listed above. It's the same number, just represented either in decimal or hexadecimal form. For NFT token IDs, in many cases you'll work with the decimal form.
+
+For example, you will see that token ID in the URL of public explorers or marketplaces:
+
+Etherscan: <Link to="https://etherscan.io/nft/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85/42033647921836720708986079437023664695436352815832009766988496528855301124570">https://etherscan.io/nft/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85/42033647921836720708986079437023664695436352815832009766988496528855301124570</Link>
+OpenSea: <Link to="https://opensea.io/assets/ethereum/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85/42033647921836720708986079437023664695436352815832009766988496528855301124570">https://opensea.io/assets/ethereum/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85/42033647921836720708986079437023664695436352815832009766988496528855301124570</Link>
+
+Those URLs can vary, but they usually contain the **NFT contract address** (hexadecimal) and the **NFT token ID** (usually in decimal form). For the ERC-721 NFTs that represent .eth 2LDs, the contract address is <Link to="https://etherscan.io/address/0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85">`0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85`</Link>.
+
+## Generating a Labelhash
+
+The **labelhash** is just the <Link to="https://en.wikipedia.org/wiki/SHA-3">Keccak-256</Link> output for the label.
+
+For a .eth 2LD, the label you're usually going to be concerned with is the first one that appears (in other words the lowest level of the name).
+
+So for `ens.eth`, the label you care about is going to be `ens`. Take that value `ens` and plug it into the Keccak-256 function, and the output is the labelhash.
+
+Here's an example, using Node.js:
+```
+'0x' + require('js-sha3').keccak_256('ens')
+```
+
+If you don't have a local Node.js environment, you can try it out yourself here: <Link to="https://npm.runkit.com/js-sha3">https://npm.runkit.com/js-sha3</Link>
+
+Enter the above code, and it'll spit out the labelhash in hexadecimal format:
+
+<BrowserWindow url="npm.runkit.com/js-sha3">
+  <Image img="/img/namehash-1.png"/>
+</BrowserWindow>
+
+To get the labelhash in decimal format, use this code:
+```
+require('big-integer')(require('js-sha3').keccak_256('ens'), 16).toString()
+```
+
+<BrowserWindow url="npm.runkit.com/js-sha3">
+  <Image img="/img/namehash-2.png"/>
+</BrowserWindow>
+
+## Generating a Namehash
+
+The **namehash** is a custom algorithm that *uses* the labelhash for each label in the name. The specification is here: <Link to="https://eips.ethereum.org/EIPS/eip-137#namehash-algorithm">https://eips.ethereum.org/EIPS/eip-137#namehash-algorithm</Link>
+
+It's a recursive algorithm that works its way down until you hit the root domain. For `ens.eth`, the algorithm works like so:
+
+* `namehash('ens.eth')` = `keccak256(namehash('eth') + labelhash('ens'))`
+* `namehash('eth')` = `keccak256(namehash('') + labelhash('eth'))`
+* `namehash('')` = `0x0000000000000000000000000000000000000000000000000000000000000000`
+
+That last line is a special case: The namehash for an empty string (representing the root domain) is 32 null bytes.
+
+If you plug everything in above, you'll end up with the final namehash value:
+
+* `namehash('')` =
+  * `0x0000000000000000000000000000000000000000000000000000000000000000`
+* `labelhash('eth')` = 
+  * `keccak256('eth')` =
+  * `0x4f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0`
+* `namehash('eth')` = 
+  * `keccak256(namehash('') + labelhash('eth'))` =
+  * `keccak256(0x00000000000000000000000000000000000000000000000000000000000000004f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0)` =
+  * `0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae`
+* `labelhash('ens')` =
+  * `keccak256('ens')` =
+  * `0x5cee339e13375638553bdf5a6e36ba80fb9f6a4f0783680884d92b558aa471da`
+* `namehash('ens.eth')` =
+  * `keccak256(namehash('eth') + labelhash('ens'))` =
+  * `keccak256(0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae5cee339e13375638553bdf5a6e36ba80fb9f6a4f0783680884d92b558aa471da)` =
+  * **`0x4e34d3a81dc3a20f71bbdf2160492ddaa17ee7e5523757d47153379c13cb46df`**
+
+Luckily, you do **not** need to go through all those steps every time, as there are libraries that have this function built-in.
+
+For Node.js, you can use this code:
+```
+require("@ensdomains/eth-ens-namehash").hash('ens.eth')
+```
+
+If you don't have a local Node.js environment, you can try it out yourself here: <Link to="https://npm.runkit.com/%40ensdomains%2Feth-ens-namehash">https://npm.runkit.com/%40ensdomains%2Feth-ens-namehash</Link>
+
+Enter the above code, and it'll spit out the namehash in hexadecimal format:
+
+<BrowserWindow url="npm.runkit.com/%40ensdomains%2Feth-ens-namehash">
+  <Image img="/img/namehash-3.png"/>
+</BrowserWindow>
+
+To get the namehash in decimal format, use this code:
+```
+var hexNamehash = require("@ensdomains/eth-ens-namehash").hash('ens.eth')
+require('big-integer')(hexNamehash.substr(2), 16).toString()
+```
+
+<BrowserWindow url="npm.runkit.com/%40ensdomains%2Feth-ens-namehash">
+  <Image img="/img/namehash-4.png"/>
+</BrowserWindow>
+
+## NFT Token IDs
+
+There are two separate official NFT contracts for ENS:
+
+* The ERC-721 NFTs for .eth 2LDs (second-level domains, like `ens.eth`)
+* The ERC-1155 NFTs for wrapped names (could be any .eth or DNS name, subdomains included)
+
+For .eth 2LDs, the ERC-721 NFT token ID is the **labelhash** for the first (or lowest) label in the domain. So for `ens.eth`, the token ID is the labelhash for `ens`:
+* Decimal: `42033647921836720708986079437023664695436352815832009766988496528855301124570`
+* Hexadecimal: `0x5cee339e13375638553bdf5a6e36ba80fb9f6a4f0783680884d92b558aa471da`
+
+For names wrapped in the Name Wrapper, the ERC-1155 NFT token ID is the **namehash** for the entire name. So for `ens.eth`, the wrapped token ID would be the namehash for `ens.eth`:
+* Decimal: `35373739037748002394990259860942348737703776167876918520233297406984196933343`
+* Hexadecimal: `0x4e34d3a81dc3a20f71bbdf2160492ddaa17ee7e5523757d47153379c13cb46df`
