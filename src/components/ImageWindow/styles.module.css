@@ -1,0 +1,78 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.imageWindow {
+  border: 3px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  margin-bottom: var(--ifm-leading);
+}
+
+.imageWindowHeader {
+  align-items: center;
+  background: var(--ifm-color-emphasis-200);
+  display: flex;
+  padding: 0.5rem 1rem;
+}
+
+.row::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.right {
+  align-self: center;
+  width: 10%;
+}
+
+[data-theme='light'] {
+  --ifm-background-color: #fff;
+}
+
+.imageWindowAddressBar {
+  flex: 1 0;
+  margin: 0 1rem 0 0.5rem;
+  border-radius: 12.5px;
+  color: var(--ifm-color-gray-800);
+  padding: 5px 15px;
+  font: 400 13px Arial, sans-serif;
+  font-weight: bold;
+  user-select: none;
+  text-align: center;
+}
+
+[data-theme='dark'] .imageWindowAddressBar {
+  color: var(--ifm-color-gray-300);
+}
+
+.bar {
+  width: 17px;
+  height: 3px;
+  background-color: #aaa;
+  margin: 3px 0;
+  display: block;
+}
+
+.imageWindowBody {
+  background-color: var(--ifm-color-emphasis-200);
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  /* padding: 1rem; */
+}
+
+.imageWindowBody img {
+  border: 1px solid black;
+}
+
+[data-theme='dark'] .imageWindowBody {
+  background-color: var(--ifm-color-gray-800);
+}
+
+.imageWindowBody *:last-child {
+  margin-bottom: 0;
+}
