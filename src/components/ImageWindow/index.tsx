@@ -5,6 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/**
+ * This component is based on Facebook's "BrowserWindow" component
+ * and modified for use with images where a BrowserWindow might not be suitable.
+ * - cthulu.eth
+ */
+
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 
