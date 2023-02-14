@@ -19,15 +19,38 @@ tags:
 :::info
  - All articles should be in the `MDX` file format and written by hand *(as opposed to using a WYSIWYG-tool)*
  since they produce results that are difficult to work with.
- - Word wrapping must be turned off in your editor and done manually for the site generator to produce the expected results.
+   - [**Docusaurus:** How to Create a Doc](https://docusaurus.io/docs/create-doc)
+   - [**Docusaurus:** Markdown Features](https://docusaurus.io/docs/markdown-features)
+ - Code blocks should use the correct type to make use of syntax highlighting where possible, for example:  
+    
+    **This is a codeblock without syntax highlighting enabled**
+    ```
+    // Code block without syntax highlighting
+    console.log('Hello World');
+    ```
+
+    **And here it is with syntax highlighting enabled**
+    ```js
+    // Code block with syntax highlighting
+    console.log('Hello World');
+    ```
+ - Keep in mind to double space where needed.
+ - Word wrapping must be turned off in your editor for the site generator to produce the expected results.
+
 :::
 
 ## Arrows & Indicators
 :::info
  - We use [Flameshot](https://flameshot.org) as the official tool to capture screenshots and add arrows, indicators etc.
  - Use colour: `#ff6500` for arrows and indicators and a thickness of `30%`  
+  <ImageWindow title="Example arrow">
+  <p align="center">
 
- <Image img="/img/contributor-guidelines-arrow.png"/>
+  <Image img="/img/contributor-guidelines-arrow.png"/>
+
+  </p>
+  </ImageWindow>
+
 :::
 
 ## Diagrams
@@ -58,11 +81,45 @@ A-->B-->C-->D-->E;
 E -.-> A;
 ```
 
+is generated using this code:
+
+```js
+%%{
+  init: {
+    'flowchart': {
+      'curve': 'linear'
+      } } }%%
+      
+graph LR;
+A(I);
+B(Am);
+C(A);
+D(Simple);
+E(Mermaid Diagram);
+
+classDef active stroke-width:4px;
+classDef inactive stroke-dasharray: 5 5;
+
+class A inactive;
+class B active;
+
+A-->B-->C-->D-->E;
+E -.-> A;
+```
+
 :::
 
 ## Images
 :::info
  - Images should be in the `PNG` file format and at least `1024x768` large if used within a browser component
+ - For the V3 Manager App's small widgets submit images of it with the background cut out in an alpha-layer enabled PNG. For example:
+  <ImageWindow title="Remove the background and make sure that the background layer is an alpha-layer">
+  <p align="center">
+
+  ![image](/img/contributor-guidelines-v3-widget-remove-bg.png)
+  
+  </p>
+  </ImageWindow>
  - For any images used outside of a browser component there should be dark and light versions (for theme switching)
  - Prefix the name of your article to any images associated with it. For example: If your article is named **ens-names.mdx** then name images associated with it **“ens-names-description”**.
 
