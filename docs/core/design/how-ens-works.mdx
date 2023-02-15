@@ -9,13 +9,17 @@ description: The Registry, where all ENS lookups start.
 ## The ENS Registry
 At the heart of the ENS protocol lies the Registry, which is where all ENS lookups start.
 
-The Registry is a smart contract on Ethereum which keeps track of the Controller and the Resolver for all names.
+The Registry is a smart contract on Ethereum which keeps track of the `Manager` and the Resolver for all names.
+
+<p align="center">
 
 ![Docusaurus themed image](/img/how-ens-works-light-1.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-1.jpg#gh-dark-mode-only)
 
+</p>
+
 As you can see, the Registry can have entries not just for .eth names, but all DNS names (like domain.com or domain.xyz) and subnames too (like sub.name.eth or sub.domain.xyz).
 
-The `Controller`, as the name implies, is the account that controls that name. By interacting with the Registry contract, the Controller can update the Resolver, create or update subnames, or transfer the Controller to a new account.
+The ``Manager``, as the name implies, is the account that controls that name. By interacting with the Registry contract, the `Manager` can update the Resolver, create or update subnames, or transfer the `Manager` to a new account.
 
 The first step in making an ENS lookup is to retrieve the resolver from the Registry.
 
@@ -42,8 +46,8 @@ So together, the Registry and the Resolver allow records to be looked up for an 
 ```mermaid
 sequenceDiagram
     rect rgba(0,255,0,0.1)
-    User Code->>+ENS Registry: resolver('foo.eth')
     activate User Code
+    User Code->>+ENS Registry: resolver('foo.eth')
     ENS Registry->>User Code: 0x12342...
     deactivate ENS Registry
     note over User Code,ENS Registry: 1. Retrieve the Resolver from<br>the Registry for node "name.eth"
@@ -63,15 +67,15 @@ If no Resolver is set in the Registry for the name, then it does not resolve or 
 ## The .eth Registrar
 A `Registrar` is a smart contract that is given control of a name and issues subnames for it. A registrar can be created with custom rules around registration, like what fees to charge or how many characters a subname is limited to.
 
-The `.eth Registrar` owns the “eth” node and issues subnames such as “name.eth”. This is also commonly referred to as the “NFT contract” for ENS names, because when a .eth name is registered, the contract will issue an NFT to the registrant.
+The `.eth Registrar` owns the “eth” node and issues subnames such as “name.eth”. This is also commonly referred to as the “NFT contract” for ENS names, because when a .eth name is registered, the contract will issue an NFT to the `Owner`.
 
 ![Docusaurus themed image](/img/how-ens-works-light-4.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-4.jpg#gh-dark-mode-only)
 
-The `Registrant` is the owner of the .eth name, and the owner of the issued NFT.
+The ``Owner`` is the owner of the .eth name, and the owner of the issued NFT.
 
 The `Expiry` or `Expiration Date` is the date and time at which the .eth name will expire.
 
-When a new .eth name is registered, the Registrar will also set the Controller in the Registry to the desired address. Usually this is the same address as the registrant (the owner of the NFT). However, the Controller may be set to a different address, or perhaps the NFT is later transferred to a different address. If the Registrant of a .eth name is different from the Controller, then the .eth Registrar allows the Registrant to reclaim (in other words, overwrite) the Controller in the Registry.
+When a new .eth name is registered, the Registrar will also set the `Manager` in the Registry to the desired address. Usually this is the same address as the `Owner` (the owner of the NFT). However, the `Manager` may be set to a different address, or perhaps the NFT is later transferred to a different address. If the `Owner` of a .eth name is different from the `Manager`, then the .eth Registrar allows the `Owner` to reclaim (in other words, overwrite) the `Manager` in the Registry.
 
 The .eth Registrar currently allows names of at least 3 characters to be registered, and has a custom fee structure based on the length of the name. It also allows names to be renewed (in other words, extending the expiration date).
 

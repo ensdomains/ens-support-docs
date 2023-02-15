@@ -10,8 +10,8 @@ description: Terms used throughout these documents.
  - <Link to="/docs/core/design/how-ens-works#the-ens-registry"><b>Registry:</b></Link> The core contract at the heart of ENS that all lookups start from.
  - **Registrar:** A contract that owns a name and issues subnames for it.
  - **.eth Registrar:** The owner of the `eth` name. This contract issues .eth second-level names (like `name.eth`) in the form of an ERC-721 NFT.
- - **Registrant:** The owner of a .eth second-level name. If the Registrant is transferred to another account, then you lose ownership of the name.
- - **Controller:** The account that can edit records for an ENS name.
+ - **Owner:** The owner of a .eth second-level name. If the Owner is transferred to another account, then you lose ownership of the name.
+ - **Manager:** The account that can edit records for an ENS name.
  - <Link to="/docs/core/records/resolver"><b>Resolver:</b></Link> A contract that determines how your ENS name "resolves" or "points to" records such as an ETH address. Usually this is done by storing the records on-chain.
  - <Link to="/docs/core/registration/name-lifecycle#expired"><b>Expiration Date:</b></Link> The date and time at which a .eth ENS name expires. If you want to keep the name, then renew it before it expires.
  - <Link to="/docs/core/registration/name-lifecycle#grace-period"><b>Grace Period:</b></Link> This is a short window of time after an ENS name expires, in which the owner can still renew and retain the name. Currently this window is 90 days.

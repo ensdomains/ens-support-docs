@@ -85,20 +85,18 @@ The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the dom
 
 <Tabs>
   <TabItem value="Google DNS" default>
-    <BrowserWindow url="support.ensmods.xyz">
+    <BrowserWindow url="cloud.google.com">
       <Image img="/img/howto/link-dns-name-3.webp"/>
     </BrowserWindow>
   </TabItem>
-  <TabItem value="GoDaddy">
-    Test 1 2 3
-  </TabItem>
   <TabItem value="Namecheap">
-    Test 1 2 3
+    <BrowserWindow url="namecheap.com">
+      <Image img="/img/howto/v3-integrate-dns-namecheap-1.png"/>
+    </BrowserWindow>
   </TabItem>
 </Tabs>
 
-To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
-
+To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
 
 ---
 

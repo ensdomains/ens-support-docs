@@ -1,6 +1,5 @@
 ---
 last_update:
-  date: 01/06/2023
   author: cthulu
 ---
 
@@ -25,9 +24,9 @@ Therefore it's a good idea to adopt proper security practices to make sure that 
 # Cold wallet
 Interacting with contracts can be risky, but necessary. A good idea is to keep a `Cold wallet` where you store assets you want to keep safe while using a `Hot wallet` for your day-to-day contract interactions.
 
-ENS names have unique properties that make holding them in cold wallets easy, namely that you can have one wallet be the *owner* `Registrant` of it while having another wallet be its record administrator.
+ENS names have unique properties that make holding them in cold wallets easy, namely that you can have one wallet be the *owner* `Owner` of it while having another wallet be its record administrator.
 
-By pointing the `ETH Address` and `Controller` records to your hot wallet, you can use the ENS name from your day-to-day hot wallet just as if it was in that wallet, except if that wallet is compromised, you won't lose your ENS name.
+By pointing the `ETH Address` and `Manager` records to your hot wallet, you can use the ENS name from your day-to-day hot wallet just as if it was in that wallet, except if that wallet is compromised, you won't lose your ENS name.
 
 Cold wallets don't *directly* protect against interacting with a malicious contract or token approval scams, they only do so indirectly by not using them to interact with them.
 

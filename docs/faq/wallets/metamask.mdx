@@ -18,9 +18,11 @@ Transactions can get stuck in Metamask due to a bug in the UI. This is not the s
 :::
 
 To clear transactions stuck in Metamask you'll have to reset the wallet. Do this by opening up Metamask and then click the multi-coloured circle to enter the settings panel.
-<BrowserWindow url="support.ensmods.xyz">
-  <Image img="/img/metamask-stuck1.webp"/>
-</BrowserWindow>
+<ImageWindow title="Metamask wallet browser extension">
+  <p align="center">
+    <Image img="/img/metamask-stuck1.webp" width={400}/>
+  </p>
+</ImageWindow>
 
 Go to `Settings` **→** `Advanced` **→** `Reset Account` and confirm.
 
@@ -35,10 +37,18 @@ To fix this follow the instructions in:
 
 ## Doesn't show ENS tokens
 Metamask may not show ENS governance tokens by default. To show them, click on Assets, and then Refresh list.
-<Image img="/img/metamask-refreshlist.png"/>
+<ImageWindow title="Metamask wallet browser extension">
+  <p align="center">
+    <Image img="/img/metamask-refreshlist.png"/>
+  </p>
+</ImageWindow>
 
 You will see a notification that Metamask has found a new token for the wallet. Next, click Import.
-<Image img="/img/metamask-unknown3.png"/>
+<ImageWindow title="Metamask wallet browser extension">
+  <p align="center">
+    <Image img="/img/metamask-unknown3.png"/>
+  </p>
+</ImageWindow>
 
 :::warning
 Be sure the imported ENS token address is: 0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72
@@ -53,6 +63,10 @@ Now your ENS voting tokens and/or ENS domain tokens should be visible in your Me
 ## Exaggerated gas costs
 Metamask has a [known bug](https://github.com/MetaMask/metamask-extension/issues/13135) where users are shown an incredibly high gas fee estimate if there isn't enough ETH in the wallet to cover the actual transaction costs.
 
-<Image img="/img/metamask-exaggerated1.webp"/>
+<ImageWindow title="Metamask wallet browser extension">
+  <p align="center">
+    <Image img="/img/metamask-exaggerated1.webp"/>
+  </p>
+</ImageWindow>
 
 This can be solved by transferring more ETH into the wallet to cover the actual transaction cost which should be a lot less than what Metamask shows when it's encountering this bug.
