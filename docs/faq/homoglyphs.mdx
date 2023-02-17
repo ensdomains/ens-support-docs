@@ -1,0 +1,33 @@
+---
+last_update:
+  author: cthulu
+tags:
+  - homoglyph
+  - fake name
+  - looks identical
+---
+
+# Homoglyphs
+One of the things to watch out for when sending crypto to an ENS name, or buying and trading them, are
+names with homoglyphs, meaning names that look identical or near-identical but are composed of different characters
+than the common ones.
+
+For example, `vita‍lik.eth` is not the same name as `vitalik.eth`.
+
+Confusing? Let's look at what's going on behind the scene!
+
+## Analyzing Unicode
+In situations like this it's a good idea to use a unicode analyzer to take a deeper look at what the string of text
+actually contains.
+
+ - [Unicode Analyzer](https://www.fontspace.com/unicode/analyzer#e=dml0YeKAjWxpay5ldGg)
+
+When analyzing `vita‍lik.eth` with the unicode analyzer we get this:
+
+<BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+  <p align="center">
+    <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+      <Image img="/img/faq/homoglyphs-analyze-1.png"/>
+    </div>
+  </p>
+</BrowserWindow>
