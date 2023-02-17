@@ -79,6 +79,10 @@ const config = {
         hideable: true,
       },
     },
+    metadata: [{
+      name: 'keywords',
+      content: 'ens, ens support, support docs, ens support docs, ens help, support, documentation, help, how-to, howto'
+    }],
     zoom: {
       selector: '.markdown :not(em) > img',
       background: {
@@ -88,7 +92,7 @@ const config = {
     },
     mermaid: {
       options: {
-        mirrorActors: false,
+        mirrorActors: true,
         messageAlign: 'center',
         messageFontWeight: 'bold',
         messageMargin: 0,
@@ -210,7 +214,7 @@ const config = {
         //copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
       },
       colorMode: {
