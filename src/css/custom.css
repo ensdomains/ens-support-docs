@@ -335,6 +335,13 @@ b.navbar__title{
 [data-theme='light'] .theme-admonition {
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
+
+/* Admonition test
+div.theme-admonition:nth-child(3) {
+  background: linear-gradient(170deg, rgba(238,249,253,1) 35%, rgba(218,232,237,1) 100%);
+}
+*/
+
 /*
 [data-theme='light'] .browserWindow_src-components-BrowserWindow-styles-module {
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.10)!important;
