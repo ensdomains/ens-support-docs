@@ -118,7 +118,8 @@ const sidebars = {
         "faq/secondary_market",
         "faq/security",
         "faq/contributor-guidelines",
-	"faq/bug-bounty",
+	      "faq/bug-bounty",
+        "faq/homoglyphs",
       ]
     },
     {
