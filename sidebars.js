@@ -129,7 +129,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Learning Resources",
+      label: "How-To",
       link: { type: "doc", id: "howto/index" },
       collapsible: false,
       collapsed: false,
