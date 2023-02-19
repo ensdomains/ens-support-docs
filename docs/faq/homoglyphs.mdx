@@ -17,17 +17,43 @@ For example, `vita‍lik.eth` is not the same name as `vitalik.eth`.
 Confusing? Let's look at what's going on behind the scene!
 
 ## Analyzing Unicode
+:::info
 In situations like this it's a good idea to use a unicode analyzer to take a deeper look at what the string of text
 actually contains.
 
  - [Unicode Analyzer](https://www.fontspace.com/unicode/analyzer#e=dml0YeKAjWxpay5ldGg)
+:::
 
-When analyzing `vita‍lik.eth` with the unicode analyzer we get this:
+When analyzing `vita‍lik.eth` with a unicode analyzer we get this:
 
-<BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
-  <p align="center">
-    <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
-      <Image img="/img/faq/homoglyphs-analyze-1.png"/>
-    </div>
-  </p>
-</BrowserWindow>
+_Click the Tab of each name to compare the two, can you spot the difference?_
+
+<Tabs>
+  <TabItem value="Real vitalik.eth" default>
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-analyze-1.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="Fake vitalik.eth">
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-analyze-2.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+</Tabs>
+
+When analyzing both ENS names one can see that one of the names is fake, containing an invisible character.
+A so called `Zero-Width Joiner` or `ZJW`
+
+## Zero-Width Joiners
+Zero-Width Joiners are invisible characters intended to be used to glue emoji together to alter their properties.
+
+Unfortunately, scammers have also used them to pass fake names off as real in order to trick people to send transactions to the wrong address, or to sell a fake name on secondary markets at a higher price to unsuspecting users.
+
