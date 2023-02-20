@@ -10,21 +10,23 @@ description: Terms used throughout these documents.
 
 # Terminology
 
- - <Link to="/docs/core/design/how-ens-works#the-ens-registry"><b>Registry:</b></Link> The core contract at the heart of ENS that all lookups start from.
- - **Registrar:** A contract that owns a name and issues subnames for it.
- - **.eth Registrar:** The owner of the `eth` name. This contract issues .eth second-level names (like `name.eth`) in the form of an ERC-721 NFT.
- - **Owner:** The owner of a .eth second-level name. If the Owner is transferred to another account, then you lose ownership of the name.
- - **Manager:** The account that can edit records for an ENS name.
- - <Link to="/docs/core/records/resolver"><b>Resolver:</b></Link> A contract that determines how your ENS name "resolves" or "points to" records such as an ETH address. Usually this is done by storing the records on-chain.
- - <Link to="/docs/core/registration/name-lifecycle#expired"><b>Expiration Date:</b></Link> The date and time at which a .eth ENS name expires. If you want to keep the name, then renew it before it expires.
- - <Link to="/docs/core/registration/name-lifecycle#grace-period"><b>Grace Period:</b></Link> This is a short window of time after an ENS name expires, in which the owner can still renew and retain the name. Currently this window is 90 days.
- - <Link to="/docs/core/registration/name-lifecycle#temporary-premium-auction"><b>Temporary Premium Auction:</b></Link> After a name's grace period ends, it gets automatically released into a public [Dutch auction](https://en.wikipedia.org/wiki/Dutch_auction) where a temporary premium is applied.
- - <Link to="/docs/core/records/primary-name"><b>Primary Name:</b></Link> The ENS name that you want a particular ETH account to be associated with. When set, it will be displayed instead of your 0x address on integrating websites/apps.
- - **Name:** This is a generic term for any individual ENS name. This can include a .eth second-level name like `name.eth`, DNS names like `name.xyz`, or even subnames like `sub.name.eth`.
- - **Subname:** A child name like `sub.name.eth`, whose parent is `name.eth`. Also referred to as a "subdomain". Every name (except for the root node) has a parent. For example, `name.eth` is a subname of `eth`.
- - **TLD:** Top-level domain. This refers to names like `eth`, `com`, `xyz` which lie at the "top" of the naming hierarchy.
- - **2LD:** Second-level domain. This refers to a subname/subdomain of a top-level domain. For example, `name.eth` and `name.com` are both second-level names.
- - <Link to="/docs/core/records/"><b>Record:</b></Link> A piece of information that an ENS name "resolves" to (points to). The most common record is the ETH Address record, which determines what ETH 0x address an ENS name points to.
- - <Link to="/docs/core/records/custom-records"><b>Text Record:</b></Link> This is a record that maps an ENS name to a particular text value. For example, you can use the `description` text record to set a description for your ENS name that can be displayed to the world (like a profile bio).
- - <Link to="/docs/core/records/avatar"><b>Avatar:</b></Link> This is a text record that sets an image or "avatar" for your ENS name.
- - <Link to="/docs/core/records/content-hash"><b>Contenthash:</b></Link> This record links your ENS name to a decentralized website. Supporting browsers can then resolve and load that website directly from your ENS name.
+| Term | Description |
+|-|-|
+| [**Registry**](/docs/core/design/how-ens-works#the-ens-registry) | The core contract at the heart of ENS that all lookups start from. |
+| **Registrar** | A contract that owns a name and issues subnames for it. |
+| **.eth Registrar:** | The owner of the `eth` name. This contract issues .eth second-level names (like `name.eth`) in the form of an ERC-721 NFT. |
+| **Owner** | The owner of a .eth second-level name. If the Owner is transferred to another account, then you lose ownership of the name. |
+| **Manager** | The account that can edit records for an ENS name. |
+| [**Resolver**](/docs/core/records/resolver) | A contract that determines how your ENS name "resolves" or "points to" records such as an ETH address. Usually this is done by storing the records on-chain. |
+| [**Expiration Date**](/docs/core/registration/name-lifecycle#expired) | The date and time at which a .eth ENS name expires. If you want to keep the name, then renew it before it expires. |
+| [**Grace Period**](/docs/core/registration/name-lifecycle#grace-period) | This is a short window of time after an ENS name expires, in which the owner can still renew and retain the name. Currently this window is 90 days. |
+| [**Temporary Premium Auction**](/docs/core/registration/name-lifecycle#temporary-premium-auction) | After a name's grace period ends, it gets automatically released into a public [Dutch auction](https://en.wikipedia.org/wiki/Dutch_auction) where a temporary premium is applied. |
+| [**Primary Name**](/docs/core/records/primary-name) | The ENS name that you want a particular ETH account to be associated with. When set, it will be displayed instead of your 0x address on integrating websites/apps. |
+| **Name** | This is a generic term for any individual ENS name. This can include a .eth second-level name like `name.eth`, DNS names like `name.xyz`, or even subnames like `sub.name.eth`. |
+| **Subname** | A child name like `sub.name.eth`, whose parent is `name.eth`. Also referred to as a "subdomain". Every name (except for the root node) has a parent. For example, `name.eth` is a subname of `eth`. |
+| **TLD** | Top-level domain. This refers to names like `eth`, `com`, `xyz` which lie at the "top" of the naming hierarchy. |
+| **2LD** | Second-level domain. This refers to a subname/subdomain of a top-level domain. For example, `name.eth` and `name.com` are both second-level names. |
+| [**Record**](/docs/core/records/) | A piece of information that an ENS name "resolves" to (points to). The most common record is the ETH Address record, which determines what ETH 0x address an ENS name points to. |
+| [**Text Record**](/docs/core/records/custom-records) | This is a record that maps an ENS name to a particular text value. For example, you can use the `description` text record to set a description for your ENS name that can be displayed to the world (like a profile bio). |
+| [**Avatar**](/docs/core/records/avatar) | This is a text record that sets an image or "avatar" for your ENS name. |
+| [**Content hash**](/docs/core/records/content-hash) | This record links your ENS name to a decentralized website. Supporting browsers can then resolve and load that website directly from your ENS name. |

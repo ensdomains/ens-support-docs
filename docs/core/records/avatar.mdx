@@ -13,15 +13,88 @@ description: Information about the Avatar record.
 
 # The Avatar Record
 
-## What does it do?
 The avatar record allows you to select a custom background image for your ENS name `metadata` to display in services that support it.  
 
-| Without avatar set                         | With avatar set                     |
-| ------------------------------------------ | ----------------------------------- |
-| ![Avatar not set](/img/avatar_notset.webp) | ![Avatar set](/img/avatar_set.webp) |
+<div class="container" style={{'background': '#f2f4f7', 'borderRadius': '8px'}}>
+  <div class="row">
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "25px 0px 0px 0px"}}>
+      <p align="center"><b>Without the Avatar set</b></p>
+      </div>
+    </div>
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "25px 0px 0px 0px"}}>
+      <p align="center"><b>With the Avatar set</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "0px 12.5px 25px 25px"}}>
+        <Image img="/img/avatar_notset.webp"/>
+      </div>
+    </div>
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "0px 25px 25px 12.5px"}}>
+        <Image img="/img/avatar_set.webp"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+## What does it look like?
+
+Here's how it looks in some popular services:
+<Tabs>
+<TabItem value="ENS Manager" default>
+
+The `ENS Manager App/Site` will show your Avatar in the top-right corner, along with your wallet address.
+
+<BrowserWindow url="app.ens.domains">
+<Image img="/img/howto/v3-set-avatar-services-ens.png"/>
+</BrowserWindow>
+
+If you click it, you'll get a sub-menu where you can go to your `Profile` which shows your avatar as well as
+other information set on your ENS name.
+
+<ImageWindow title="Go to your profile">
+<p align={"center"}>
+<Image img="/img/howto/v3-set-avatar-services-ens-2.png"/>
+</p>
+</ImageWindow>
+
+<BrowserWindow url="app.ens.domains">
+<p align={"center"}>
+<div style={{'background-color': "#f2f4f7", 'padding': "25px"}}>
+<Image img="/img/howto/v3-set-avatar-services-ens-3.png"/>
+</div>
+</p>
+</BrowserWindow>
+
+</TabItem>
+<TabItem value="Uniswap">
+
+Uniswap's App will show your Avatar in the top-right corner as well!
+
+<BrowserWindow url="app.uniswap.org">
+<Image img="/img/howto/v3-set-avatar-services-uniswap.png"/>
+</BrowserWindow>
+</TabItem>
+<TabItem value="OpenSea">
+
+OpenSea does _not_ show your avatar the same way other sites do, because they have their own profile picture-settings,
+_but_ they do show avatars set on ENS names if you go to the ENS name itself.
+
+This is useful if you want to make your ENS name stand out on OpenSea.
+
+<BrowserWindow url="opensea.io">
+<Image img="/img/howto/v3-set-avatar-services-opensea.png"/>
+</BrowserWindow>
+</TabItem>
+</Tabs>
 
 
-# How to set it
+## How to set it
 :::info how-to
 For more information on how to set an Avatar on your ENS name, see:
 - <Link to="/docs/howto/set-avatar"><b>How-To: Set an Avatar</b></Link>

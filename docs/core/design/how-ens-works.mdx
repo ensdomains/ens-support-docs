@@ -17,9 +17,11 @@ At the heart of the ENS protocol lies the Registry, which is where all ENS looku
 The Registry is a smart contract on Ethereum which keeps track of the `Manager` and the Resolver for all names.
 
 <p align="center">
+  <div style={{'width': '600px'}}>
 
 ![Docusaurus themed image](/img/how-ens-works-light-1.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-1.jpg#gh-dark-mode-only)
 
+  </div>
 </p>
 
 As you can see, the Registry can have entries not just for .eth names, but all DNS names (like domain.com or domain.xyz) and subnames too (like sub.name.eth or sub.domain.xyz).
@@ -27,8 +29,6 @@ As you can see, the Registry can have entries not just for .eth names, but all D
 The ``Manager``, as the name implies, is the account that controls that name. By interacting with the Registry contract, the `Manager` can update the Resolver, create or update subnames, or transfer the `Manager` to a new account.
 
 The first step in making an ENS lookup is to retrieve the resolver from the Registry.
-
------
 
 ## Resolvers
 A Resolver is a smart contract that “resolves” or “points” an ENS name to records. These records can include an ETH address, other coin addresses like BTC/LTC/etc., text records, and more. 
@@ -38,15 +38,13 @@ For more information on the various records that can be set, see:
  - <Link to="/docs/core/records/"><b>Core Concepts:</b> Records</Link>
 :::
 
+<br/>
 
 ![Docusaurus themed image](/img/how-ens-works-light-2.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-2.jpg#gh-dark-mode-only)
 
 So together, the Registry and the Resolver allow records to be looked up for an ENS name. It is a two-step process. For example, to look up the ETH address for “name.eth”:
 
- 1. Retrieve the Resolver from the Registry for node “name.eth”.
- 1. Call the Resolver contract to retrieve the ETH address record for node “name.eth”.
- 
-![Docusaurus themed image](/img/how-ens-works-light-3.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-3.jpg#gh-dark-mode-only)
+<p align='center'>
 
 ```mermaid
 sequenceDiagram
@@ -66,6 +64,8 @@ sequenceDiagram
     note over User Code,Resolver @ 0x1234...: 2. Call the Resolver contract to retrieve<br>the ETH address record for node “name.eth”
     end
 ```
+
+</p>
 
 If no Resolver is set in the Registry for the name, then it does not resolve or point to any records.
 

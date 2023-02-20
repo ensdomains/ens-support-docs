@@ -10,77 +10,38 @@ keywords: [ens avatar, set avatar, set ens avatar, avatar, update avatar, upload
 draft: true
 ---
 
-# How to set an Avatar on your ENS name
+# How to set an Avatar
 
 ## What does it do?
+
 The avatar record allows you to select a custom background image for your ENS name `metadata` to display in services that support it.  
 
-<table style={{borderRadius: '8px'}}>
-    <thead>
-        <tr>
-            <th width="500px"><p>Without avatar set</p></th>
-            <th width="500px"><p>With avatar set</p></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><p><Image img="/img/avatar_notset.webp"/></p></td>
-            <td><p><Image img="/img/avatar_set.webp"/></p></td>
-        </tr>
-    </tbody>
-</table>
-
-## What does it look like?
-Here's how it looks in some popular services:
-<Tabs>
-<TabItem value="ENS Manager" default>
-
-The `ENS Manager App/Site` will show your Avatar in the top-right corner, along with your wallet address.
-
-<BrowserWindow url="app.ens.domains">
-<Image img="/img/howto/v3-set-avatar-services-ens.png"/>
-</BrowserWindow>
-
-If you click it, you'll get a sub-menu where you can go to your `Profile` which shows your avatar as well as
-other information set on your ENS name.
-
-<ImageWindow title="Go to your profile">
-<p align={"center"}>
-<Image img="/img/howto/v3-set-avatar-services-ens-2.png"/>
-</p>
-</ImageWindow>
-
-<BrowserWindow url="app.ens.domains">
-<p align={"center"}>
-<div style={{'background-color': "#f2f4f7", 'padding': "25px"}}>
-<Image img="/img/howto/v3-set-avatar-services-ens-3.png"/>
+<div class="container" style={{'background': '', 'borderRadius': '8px'}}>
+  <div class="row">
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "25px 0px 0px 0px"}}>
+      <p align="center"><b>Without the Avatar set</b></p>
+      </div>
+    </div>
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "25px 0px 0px 0px"}}>
+      <p align="center"><b>With the Avatar set</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "0px 12.5px 25px 25px"}}>
+        <Image img="/img/avatar_notset.webp" style={{'borderRadius': '8px'}}/>
+      </div>
+    </div>
+    <div class="col">
+      <div style={{'margin': "auto", 'padding': "0px 25px 25px 12.5px"}}>
+        <Image img="/img/avatar_set.webp" style={{'borderRadius': '8px'}}/>
+      </div>
+    </div>
+  </div>
 </div>
-</p>
-</BrowserWindow>
-
-</TabItem>
-<TabItem value="Uniswap">
-
-Uniswap's App will show your Avatar in the top-right corner as well!
-
-<BrowserWindow url="app.uniswap.org">
-<Image img="/img/howto/v3-set-avatar-services-uniswap.png"/>
-</BrowserWindow>
-</TabItem>
-<TabItem value="OpenSea">
-
-OpenSea does _not_ show your avatar the same way other sites do, because they have their own profile picture-settings,
-_but_ they do show avatars set on ENS names if you go to the ENS name itself.
-
-This is useful if you want to make your ENS name stand out on OpenSea.
-
-<BrowserWindow url="opensea.io">
-<Image img="/img/howto/v3-set-avatar-services-opensea.png"/>
-</BrowserWindow>
-</TabItem>
-</Tabs>
-
----
 
 ## Set the Avatar
 Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and make sure to connect with with the wallet set as `Manager` for the ENS name you want to manage and click `Names` to bring up a list
@@ -103,7 +64,7 @@ Click the ENS name you want to set the Avatar on.
   </p>
 </BrowserWindow>
 
-Then click `Edit profile`
+Then click `Edit profile` to go to your profile settings.
 <BrowserWindow url="app.ens.domains">
   <p align="center">
     <div style={{'background-color': "#f2f4f7", 'padding': "25px"}}>
@@ -157,7 +118,6 @@ Then click `Sign and Upload` to start the upload process.
 </BrowserWindow>
 </TabItem>
 <TabItem value="Select an NFT from your wallet">
-<p>Navigate to the file folder and double-click the zip file</p>
 </TabItem>
 </Tabs>
 
@@ -165,6 +125,7 @@ Click `Save` to save the changes
 :::info
 Note that this only saves them locally, and the next steps are required to publish it to the blockchain
 :::
+
 <BrowserWindow url="app.ens.domains">
   <p align="center">
     <div style={{'background-color': "#f2f4f7", 'padding': "25px"}}>
@@ -215,6 +176,62 @@ Congratulations! Your avatar is now set and should be visible from the ENS name 
   </p>
 </BrowserWindow>
 
-## The image on the avatar doesn't cover the entire background
+## Try it out!
+Now try using a few different services to see your new avatar in action! Here's how it looks in a few popular services:
+
+<Tabs>
+<TabItem value="ENS Manager" default>
+
+The `ENS Manager App/Site` will show your Avatar in the top-right corner, along with your wallet address.
+
+<BrowserWindow url="app.ens.domains">
+<Image img="/img/howto/v3-set-avatar-services-ens.png"/>
+</BrowserWindow>
+
+<!--
+If you click it, you'll get a sub-menu where you can go to your `Profile` which shows your avatar as well as
+other information set on your ENS name.
+
+<ImageWindow title="Go to your profile">
+<p align={"center"}>
+<Image img="/img/howto/v3-set-avatar-services-ens-2.png"/>
+</p>
+</ImageWindow>
+
+<BrowserWindow url="app.ens.domains">
+<p align={"center"}>
+<div style={{'background-color': "#f2f4f7", 'padding': "25px"}}>
+<Image img="/img/howto/v3-set-avatar-services-ens-3.png"/>
+</div>
+</p>
+</BrowserWindow>
+-->
+
+</TabItem>
+<TabItem value="Uniswap">
+
+Uniswap's App will show your Avatar in the top-right corner as well!
+
+<BrowserWindow url="app.uniswap.org">
+<Image img="/img/howto/v3-set-avatar-services-uniswap.png"/>
+</BrowserWindow>
+</TabItem>
+<TabItem value="OpenSea">
+
+OpenSea does _not_ show your avatar the same way other sites do, because they have their own profile picture-settings,
+_but_ they do show avatars set on ENS names if you go to the ENS name itself.
+
+This is useful if you want to make your ENS name stand out on OpenSea.
+
+<BrowserWindow url="opensea.io">
+<Image img="/img/howto/v3-set-avatar-services-opensea.png"/>
+</BrowserWindow>
+</TabItem>
+</Tabs>
+
+## Troubleshooting
+If you're encountering problems you might find your issue addressed below!
+
+### The image on the avatar doesn't cover the entire background
 In order for the image set as the avatar to cover the entire background it needs to be square.
 If the image appears on your avatar with a border on sides or on the top, that's because you've set an image that isn't square (of equal width and height).

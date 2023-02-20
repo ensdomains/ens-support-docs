@@ -21,18 +21,30 @@ description: Explaining how Token IDs are created and used in ENS
 
 When working with ENS from a technical side, you'll almost certainly encounter one of these long decimal or hexadecimal numbers that represent different pieces of an ENS name:
 
-* **Namehash:** A <Link to="https://en.wikipedia.org/wiki/Hash_function">hash</Link> value that uniquely identifies a single ENS name.
-* **Labelhash:** A <Link to="https://en.wikipedia.org/wiki/Hash_function">hash</Link> value that identifies only a single part or "label" of an ENS name.
-* **Token ID:** This is a unique identifier for an ENS NFT.
+| | |
+|-|-|
+| **Namehash** | A <Link to="https://en.wikipedia.org/wiki/Hash_function">hash</Link> value that uniquely identifies a single ENS name. |
+| **Labelhash** | A <Link to="https://en.wikipedia.org/wiki/Hash_function">hash</Link> value that identifies only a single part or "label" of an ENS name. |
+| **Token ID** | This is a unique identifier for an ENS NFT. |
 
 For example, take the name `ens.eth`.
 
-* The **namehash** of `ens.eth` is:
-  * Decimal: `35373739037748002394990259860942348737703776167876918520233297406984196933343`
-  * Hexadecimal: `0x4e34d3a81dc3a20f71bbdf2160492ddaa17ee7e5523757d47153379c13cb46df`
-* The **labelhash** of `ens` is:
-  * Decimal: `42033647921836720708986079437023664695436352815832009766988496528855301124570`
-  * Hexadecimal: `0x5cee339e13375638553bdf5a6e36ba80fb9f6a4f0783680884d92b558aa471da`
+:::info ens.eth
+The **namehash** of `ens.eth` is:
+
+| | |
+|-|-|
+| Decimal | `35373739037748002394990259860942348737703776167876918520233297406984196933343` |
+| Hexadecimal | `0x4e34d3a81dc3a20f71bbdf2160492ddaa17ee7e5523757d47153379c13cb46df` |
+
+The **labelhash** of `ens.eth` is:
+
+| | |
+|-|-|
+| Decimal | `42033647921836720708986079437023664695436352815832009766988496528855301124570`
+| Hexadecimal | `0x5cee339e13375638553bdf5a6e36ba80fb9f6a4f0783680884d92b558aa471da` |
+
+:::
 
 For an unwrapped .eth 2LD (second-level domain), the **token ID** for the ERC-721 NFT is the same as the labelhash for the second-level part of the domain.
 
@@ -55,8 +67,7 @@ For a .eth 2LD, the label you're usually going to be concerned with is the first
 
 So for `ens.eth`, the label you care about is going to be `ens`. Take that value `ens` and plug it into the Keccak-256 function, and the output is the labelhash.
 
-Here's an example, using Node.js:
-```
+```js title="Here's an example using Node.js"
 '0x' + require('js-sha3').keccak_256('ens')
 ```
 
