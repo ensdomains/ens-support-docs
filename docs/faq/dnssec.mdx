@@ -1,0 +1,77 @@
+---
+last_update:
+  author: cthulu
+tags:
+  - dnssec
+  - dns
+  - domain
+  - domain name
+  - import dns
+  - import dns name
+  - import domain
+  - import domain name
+  - integrate dns
+  - integrate dns name
+  - integrate domain
+  - integrate domain name
+---
+
+# DNSSEC
+
+## What is DNSSEC?
+The Domain Name System Security Extensions are a suite of extension specifications by the Internet Engineering Task Force for securing data exchanged in the Domain Name System in Internet Protocol networks.
+
+## Pre-requisites for ENS
+There are two pre-requisite steps to making a DNS name work with ENS:
+
+The first step is to..
+### Enable DNSSEC
+   
+Most registrars have some kind of interface for enabling it, but not all of them sets key types that ENS supports.
+ENS supports two types of keys:
+	
+ - Elliptic Curve DSA keys usually referred to as just `ECDSA` keys, and
+ - 256 bit Rivest-Shamir-Adelman / Secure Hash Algorithm `RSA/SHA-256` keys
+
+Unfortunately not all registrars support DNSSEC, and some only support them as an additional paid service.
+If your registrar does not support DNSSEC you'll need to switch to one that does.
+
+### Recommended services
+Here's a list of some popular services, and the key types they support.
+
+If the registrar requires a manually set up of DNSSEC it's best to consult your registrars documentation or contact their customer service for help setting it up.
+
+The second step is to..
+### Create an _ens record
+
+ - This record must be of the type `TXT`, in other words a text record
+ - The record must be named underscore ens in lower capital letters
+ - The record data must be lower case a equals the user's wallet address
+
+All DNSSEC issues users have tend to be caused by these records either being set incorrectly, not having been propagated or their TLD not supporting DNSSEC.
+
+## How to troubleshoot it
+
+### Troubleshooting tools
+The best ways to troubleshoot the records and the DNSSEC configuration is by using two tools:
+
+:::info Google DNS DIG
+ 
+ https://toolbox.googleapps.com/apps/dig/
+
+ This is Google's web frontend for an older unix utility named dig. It can be used to look up records for names very easily.
+ If you run a unix-like operating system you can also use the terminal application dig if you'd like, which is much faster.
+
+:::
+
+:::info DNSViz
+
+ https://dnsviz.net/
+
+ This is also a web front-end for an older unix utility named dnsviz. It's used to generate graphical visualizations of domain names, records all the way from the root zone to the TLD to the 2LD domain name itself.
+
+ It's very useful to get a quick overview of what the issue is. Keep in mind that the warnings it shows don't always relate to what the issue with the DNSSEC configuration is for ENS. 
+:::
+
+### DNS Propagation delay
+Due to the way DNS is designed there's a delay in records being propagated that can range from minutes to several hours.

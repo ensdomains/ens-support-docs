@@ -4,7 +4,7 @@ last_update:
 tags:
   - homoglyph
   - fake name
-  - looks identical
+  - identical
 ---
 
 # Homoglyphs
@@ -14,7 +14,7 @@ than the common ones.
 
 For example, `vita‍lik.eth` is not the same name as `vitalik.eth`.
 
-Confusing? Let's look at what's going on behind the scene!
+Confusing? Let's take a look at what's going on behind the scenes!
 
 ## Analyzing Unicode
 :::info
@@ -50,10 +50,127 @@ _Click the Tab of each name to compare the two, can you spot the difference?_
 </Tabs>
 
 When analyzing both ENS names one can see that one of the names is fake, containing an invisible character.
-A so called `Zero-Width Joiner` or `ZJW`
+A so called `Zero-Width Joiner` or `ZWJ`
 
-## Zero-Width Joiners
+### Zero-Width Joiners
+
+:::info Emojipedia
+ - For more information, view the <Link to="https://emojipedia.org/zero-width-joiner/">Emojipedia article on Zero-Width Joiners</Link>
+:::
+
 Zero-Width Joiners are invisible characters intended to be used to glue emoji together to alter their properties.
+For example, by analyzing the burning heart emoji we can find out what characters it consists of: ❤️‍🔥
 
-Unfortunately, scammers have also used them to pass fake names off as real in order to trick people to send transactions to the wrong address, or to sell a fake name on secondary markets at a higher price to unsuspecting users.
+<BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+  <p align="center">
+    <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+      <Image img="/img/faq/homoglyphs-analyze-3.png"/>
+    </div>
+  </p>
+</BrowserWindow>
 
+As you can see the ❤️‍🔥 emoji actually consists of several different characters glued together by the use of a `Zero-Width Joiner` and a `Variation Selector`.
+
+### Variation Selectors
+:::info Emojipedia
+An invisible codepoint which specifies that the preceding character should be displayed with emoji presentation.
+Only required if the preceding character defaults to text presentation.
+
+Often used in Emoji ZWJ Sequences, where one or more characters in the sequence have text and emoji presentation, but otherwise default to text (black and white) display.
+
+ - For more information, view the <Link to="https://emojipedia.org/variation-selector-16/">Emojipedia article on Variation Selector-16</Link>
+:::
+
+:::caution
+In ENS name normalization the `Variation Selector` is stripped out of the name. Any ENS name containing a `Variation Selector` is **invalid**.
+:::
+
+## Warning signs
+Fortunately, there are many different types of warning signs you can look for. Services will often have indicators for name containing unusual characters,
+and fake homoglyph-names will often be priced _unusually_ low for the name it pretends to be.
+
+### Service indicators
+In spite of these characters being invisible, many services will warn or provide some kind of indicator that the name contains _uncommon_ symbols.
+
+<Tabs>
+  <TabItem value="OpenSea" default>
+    <div class="container" style={{'padding': '0'}}>
+      <div class="row">
+        <div class="col">
+          <ImageWindow title="OpenSea warning triangle">
+            <p align='center' style={{'fontSize': '64px'}}>⚠️</p>
+          </ImageWindow>
+        </div>
+        <div class="col">
+          <p>OpenSea shows a warning triangle next to any name with unicode symbols in them:</p>
+          <p><i>Note: This doesn't mean that the name is fraudulent, simply that it contains unicode symbols. Use a Unicode Analyzer to analyze the name to make sure.</i></p>
+        </div>
+      </div>
+    </div>
+    <BrowserWindow url="https://opensea.io">
+      <Image img="/img/faq/homoglyphs-warning-services-opensea.png"/>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="Etherscan">
+    <p>Etherscan shows an <i>asterisk</i>: <b>*</b> before any name that contains any characters other than <b>a-Z0-9</b></p>
+    <p><i>Note: This doesn't mean that the name is fraudulent, simply that it contains unicode symbols. Use a Unicode Analyzer to analyze the name to make sure.</i></p>
+    <BrowserWindow url="https://etherscan.io">
+      <Image img="/img/faq/homoglyphs-warning-services-etherscan.png"/>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="ENS.Vision">
+    <div class="container" style={{'padding': '0'}}>
+      <div class="row">
+        <div class="col">
+          <ImageWindow title="ENS.Vision warning triangle">
+            <p align='center' style={{'fontSize': '64px'}}>⚠️</p>
+          </ImageWindow>
+        </div>
+        <div class="col">
+          <p>ENS.Vision also shows a warning triangle next to any name with unicode symbols in them:</p>
+          <p><i>Note: This doesn't mean that the name is fraudulent, simply that it contains unicode symbols. Use a Unicode Analyzer to analyze the name to make sure.</i></p>
+        </div>
+      </div>
+    </div>
+    <BrowserWindow url="https://ens.vision">
+      <Image img="/img/faq/homoglyphs-warning-services-ensvision.png"/>
+    </BrowserWindow>
+  </TabItem>
+    <TabItem value="X2Y2">
+    <div class="container" style={{'padding': '0'}}>
+      <div class="row">
+        <div class="col">
+          <ImageWindow title="X2Y2 warning triangle">
+            <p align='center' style={{'fontSize': '64px'}}>⚠️</p>
+          </ImageWindow>
+        </div>
+        <div class="col">
+          <p>X2Y2 also shows a warning triangle next to any name with unicode symbols in them:</p>
+          <p><i>Note: This doesn't mean that the name is fraudulent, simply that it contains unicode symbols. Use a Unicode Analyzer to analyze the name to make sure.</i></p>
+        </div>
+      </div>
+    </div>
+    <BrowserWindow url="https://x2y2.io">
+      <Image img="/img/faq/homoglyphs-warning-services-x2y2.png"/>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="LooksRare">
+    <p>LooksRare does not offer any indicator or warning for names containing unicode symbols.</p>
+    <BrowserWindow url="https://looksrare.org">
+      <Image img="/img/faq/homoglyphs-warning-services-looksrare.png"/>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="Rarible">
+    <p>Rarible does not offer any indicator or warning for names containing unicode symbols.</p>
+    <BrowserWindow url="https://rarible.com">
+      <Image img="/img/faq/homoglyphs-warning-services-rarible.png"/>
+    </BrowserWindow>
+  </TabItem>
+</Tabs>
+
+### Unusual prices
+The type of names usually faked with homoglyphs are ones that would catch a _high_ price on secondary markets.
+It's part of common sense, but it's worth repeating: if it seems too good to be true, it usually is.
+
+If you see an ENS name on a secondary market that's very attractive but the price is unusually low, don't immediately
+rush to buy it, take some time to copy/paste the name into a `Unicode Analyzer` and _verify_ that the name is what it pretends to be.
