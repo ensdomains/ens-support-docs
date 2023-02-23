@@ -22,8 +22,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'cthulu-dot-eth', // Usually your GitHub org/user name.
-  projectName: 'ens-supportdocs', // Usually your repo name.
+  organizationName: 'ensdomains', // Usually your GitHub org/user name.
+  projectName: 'ens-support-docs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -40,13 +40,16 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          breadcrumbs: true,
           editUrl:
-            'https://github.com/cthulu-dot-eth/ens-supportdocs/tree/main/',
+            'https://github.com/ensdomains/ens-support-docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/cthulu-dot-eth/ens-supportdocs/tree/main/',
+            'https://github.com/ensdomains/ens-support-docs/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -148,7 +151,7 @@ const config = {
       'aria-label': 'Twitter link',
     },
     {
-      href: 'https://github.com/cthulu-dot-eth/ens-supportdocs',
+      href: 'https://github.com/ensdomains/ens-support-docs',
       position: 'right',
       className: 'header-github-link',
       'aria-label': 'GitHub  repository',
@@ -214,7 +217,7 @@ const config = {
         //copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/dracula'),
+        theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
       },
       colorMode: {

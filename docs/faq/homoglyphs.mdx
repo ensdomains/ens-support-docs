@@ -3,8 +3,24 @@ last_update:
   author: cthulu
 tags:
   - homoglyph
+  - homoglyphs
+  - homoglyphics
+  - fake
   - fake name
   - identical
+  - zwj
+  - zero-width
+  - zero width joiner
+  - zerowidthjoiner
+  - zerowidth
+  - zero-width-joiner
+  - variation-selector
+  - variation selector
+  - variationselector
+  - selector
+  - confusable
+  - confusables
+keywords: [homoglyph, homoglyphs, homoglyphics, fake, fake name, identical, zwj, zero-width, zero width joiner, zerowidthjoiner, zerowidth, zero-width-joiner, variation-selector, variation selector, variationselector, selector, confusable, confusables]
 ---
 
 # Homoglyphs
@@ -85,12 +101,72 @@ Often used in Emoji ZWJ Sequences, where one or more characters in the sequence 
 In ENS name normalization the `Variation Selector` is stripped out of the name. Any ENS name containing a `Variation Selector` is **invalid**.
 :::
 
+### Confusables
+`Confusables` are characters which can be easily confused with other characters either by appearing exactly the same, or by appearing _very similar_ to another character.
+
+For example, take a look at the following characters to get an idea of how similar some characters can be:
+
+<BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+  <p align="center">
+    <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+      <Image img="/img/faq/homoglyphs-confusables-1.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+For example: `ens.eth` and `еns.eth` are two different names, using two e's from different alphabets, _can you spot the difference?_
+
+<Tabs>
+  <TabItem value="Real ens.eth" default>
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-confusables-ens-real.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="Fake ens.eth">
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': '#ffffff', 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-confusables-ens-fake.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+</Tabs>
+
+As you can see the two names appear near identical to one another, in spite of one using a cyrillic `е` instead of a latin `e`:
+
+
+| Unicode Character | Description |
+|-|-|
+| е                 | Cyrillic e  |
+| e                 | Latin e     |
+
+This can be hard to spot, so employing a `unicode analyzer` is recommended as it will clearly show you what characters are in the name.
+
+So far we've reviewed a few confusable characters, but unicode contains *many* more. These are results only for the letters `e` `n` and `s`:
+
+<BrowserWindow url="https://util.unicode.org">
+  <Image img="/img/faq/homoglyphs-confusables-unicodeutility-1.png"/>
+</BrowserWindow>
+
+Try searching for a name in the unicode confusable utility below to get an idea of just how many confusable characters (and character combinations) that exist!
+
+:::info Links
+ - <Link to="https://util.unicode.org/UnicodeJsps/confusables.jsp">Unicode Utilities: Confusables</Link>
+:::
+
 ## Warning signs
-Fortunately, there are many different types of warning signs you can look for. Services will often have indicators for name containing unusual characters,
+Fortunately, there are many different types of warning signs you can look for. Services will often have indicators for names containing unusual characters,
 and fake homoglyph-names will often be priced _unusually_ low for the name it pretends to be.
 
 ### Service indicators
 In spite of these characters being invisible, many services will warn or provide some kind of indicator that the name contains _uncommon_ symbols.
+
+<div class="container tab-container" style={{'border': 'solid black 1px', 'borderRadius': '8px'}}>
 
 <Tabs>
   <TabItem value="OpenSea" default>
@@ -168,9 +244,11 @@ In spite of these characters being invisible, many services will warn or provide
   </TabItem>
 </Tabs>
 
+</div>
+
 ### Unusual prices
 The type of names usually faked with homoglyphs are ones that would catch a _high_ price on secondary markets.
 It's part of common sense, but it's worth repeating: if it seems too good to be true, it usually is.
 
 If you see an ENS name on a secondary market that's very attractive but the price is unusually low, don't immediately
-rush to buy it, take some time to copy/paste the name into a `Unicode Analyzer` and _verify_ that the name is what it pretends to be.
+rush to buy it, take some time to copy/paste the name into a `Unicode Analyzer` and _verify_ that the name is what it seems to be.
