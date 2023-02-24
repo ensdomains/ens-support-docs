@@ -1,0 +1,748 @@
+---
+title: Integrating ENS in your dApp
+last_update:
+  author: serenae
+tags:
+ - cheat sheet
+ - cheatsheet
+ - integrate
+ - integrate dapp
+ - dapp
+ - dev
+ - developer
+ - developer basics
+ - dev basics
+keywords: [cheat sheet, cheatsheet, integrate, integrate dapp, dapp, dev, developer, developer basics, dev basics]
+description: How to integrate ENS with your dApp / Website
+---
+
+# Integrating ENS in your dApp / Website
+
+## Starting from scratch with <Link to="https://create-react-app.dev/">Create React App</Link> and <Link to="https://github.com/ethers-io/ethers.js/">Ethers.js</Link>
+---
+
+### React Setup
+
+Let’s build a new app using <Link to="https://create-react-app.dev/">Create React App</Link>!
+
+To start, you need:
+ - Node.js and NPM. Installation instructions are <Link to="https://github.com/npm/cli">here</Link> if you need them.
+ - A browser with MetaMask installed
+
+In your terminal, navigate to the folder you want to create the app in, and then type:
+
+```
+npx create-react-app my-app
+```
+
+Then navigate into the new directory that was created, and start the app:
+
+```shell
+cd my-app
+npm start
+```
+
+The app server should be started, and you should see the default app in your browser:
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-1.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+### Creating a wallet connect button
+
+Let’s say we want to connect an Ethereum wallet to the app. First, let’s add a button to the page.
+
+Create a new `Wallet.js` file inside the `src` folder of your app:
+```shell
+src/
+// highlight-next-line
+├─ Wallet.js
+```
+
+ We’ll fill it out with some boilerplate code:
+
+```js title="Wallet.js"
+import './Wallet.css';
+
+function Wallet() {
+    const connect = async () => {
+        // TODO
+    };
+
+    return <button className="wallet-connect" onClick={connect}>Connect Wallet</button>;
+}
+
+export default Wallet;
+```
+
+You can also add some CSS styling if you want to make it look a bit nicer.  
+
+Create a `Wallet.css` file inside the `src` folder too:
+```shell
+src/
+// highlight-next-line
+├─ Wallet.css
+├─ Wallet.js
+```
+
+And add some CSS styling to it:
+
+```css title="Wallet.css"
+button.wallet-connect {
+    height: 50px;
+    font-size: 30px;
+    border-radius: 23px;
+    cursor: pointer;
+}
+```
+
+Finally, add that new Wallet component into your app by editing the `App.js` file:
+
+```js title="App.js"
+import logo from './logo.svg';
+import './App.css';
+import Wallet from './Wallet';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        // highlight-next-line
+        <Wallet/>
+        <img src={logo} className="App-logo" alt="logo" />
+        ...
+```
+
+That `<Wallet/>` line adds the component into your app.
+
+At this point, after saving everything, you should see the button appear!
+
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-2.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+---
+
+### Connect an Ethereum wallet with Ethers.js
+
+First let’s install Ethers in your app:
+
+```shell
+npm i ethers
+```
+
+To use it in your Wallet component, include this at the top:
+
+```js title="Wallet.js"
+import { useState } from 'react';
+import { ethers } from 'ethers';
+```
+
+Now, let’s actually do something when you click on the connect button.
+
+First off, we’ll use the `useState method` to store some stateful information in our Wallet component. For more information on this React feature, <Link to="https://reactjs.org/docs/hooks-state.html">see here</Link>.
+
+```js title="Wallet.js"
+function Wallet() {
+    const [provider, setProvider] = useState();
+    const [address, setAddress] = useState();
+    ...
+```
+
+Next, we’ll connect an Ethereum wallet using Ethers.js and MetaMask in your browser:
+
+```js title="Wallet.js"
+const connect = async () => {
+    let prov = provider;
+    if (!prov) {
+        prov = new ethers.providers.Web3Provider(window.ethereum);
+        setProvider(prov);
+    }
+
+    let address;
+    
+    await prov.send("eth_requestAccounts", []);
+    const signer = prov.getSigner();
+    if (signer) {
+        address = await signer.getAddress();
+    }
+
+    setAddress(address);
+};
+```
+
+<Link to="https://docs.ethers.org/v5/getting-started/#getting-started--connecting">See here</Link> for Ethers.js “Getting Started” documentation.<br/><br/>
+
+In the code above, we’re doing the same three steps:
+
+ 1. Connect an Ethers.js Provider using `window.ethereum`
+ 1. Request permission from MetaMask to connect the account, using `eth_requestAccounts`
+ 1. Get the Signer’s public address from the Provider
+
+We’ll also add some extra code so the wallet can be connected and disconnected:
+
+```js title="Wallet.js"
+const disconnect = () => {
+    setAddress('');
+};
+
+if (address) {
+    return <div className="wallet">
+        <span>{address}</span>
+        <button className="wallet-disconnect" onClick={disconnect}>✖</button>
+    </div>;
+} else {
+    return <button className="wallet-connect" onClick={connect}>Connect Wallet</button>;
+}
+```
+
+And perhaps a bit more styling for the component too:
+
+```css title="Wallet.css"
+button.wallet-disconnect {
+    border-radius: 50%;
+    height: 26px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+div.wallet {
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+}
+
+div.wallet span {
+    margin: -3px 7px 0px 7px;
+    font-size: 30px;
+}
+```
+
+Now when you click on `Connect Wallet`, it should open MetaMask and request to connect an account. If you allow the connection, then the page should automatically update with your account address:
+
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-3.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Here is the full `Wallet.js` code at this point:
+
+```js title="Wallet.js"
+import { useState } from 'react';
+import { ethers } from 'ethers';
+import './Wallet.css';
+
+function Wallet() {
+    const [provider, setProvider] = useState();
+    const [address, setAddress] = useState();
+    
+    const connect = async () => {
+        let prov = provider;
+        if (!prov) {
+            prov = new ethers.providers.Web3Provider(window.ethereum);
+            setProvider(prov);
+        }
+
+        let address;
+        
+        await prov.send("eth_requestAccounts", []);
+        const signer = prov.getSigner();
+        if (signer) {
+            address = await signer.getAddress();
+        }
+
+        setAddress(address);
+    };
+
+    const disconnect = () => {
+        setAddress('');
+    };
+
+    if (address) {
+        return <div className="wallet">
+            <span>{address}</span>
+            <button className="wallet-disconnect" onClick={disconnect}>✖</button>
+        </div>;
+    } else {
+        return <button className="wallet-connect" onClick={connect}>Connect Wallet</button>;
+    }
+}
+
+export default Wallet;
+```
+
+### Resolving the <Link to="/docs/core/records/primary-name">ENS Primary Name</Link>
+
+Now, instead of always showing an ugly hexadecimal address, let’s integrate with ENS!  
+Ethers.js makes this easy. <Link to="https://docs.ethers.org/v5/api/providers/provider/#Provider--ens-methods">Here’s their documentation page</Link> on it.
+
+You just call `provider.lookupAddress(address)`. Let’s add this to our app:
+
+```js title="Wallet.js"
+function Wallet() {
+    const [provider, setProvider] = useState();
+    const [address, setAddress] = useState();
+    const [ensName, setEnsName] = useState();
+    
+    const connect = async () => {
+        let prov = provider;
+        if (!prov) {
+            prov = new ethers.providers.Web3Provider(window.ethereum);
+            setProvider(prov);
+        }
+
+        let address, ensName;
+        
+        await prov.send("eth_requestAccounts", []);
+        const signer = prov.getSigner();
+        if (signer) {
+            address = await signer.getAddress();
+            // highlight-next-line
+            ensName = await prov.lookupAddress(address);
+        }
+
+        setAddress(address);
+        setEnsName(ensName);
+    };
+
+    const disconnect = () => {
+        setAddress('');
+        setEnsName('');
+    };
+
+    if (address) {
+        return <div className="wallet">
+            <span>{ensName || address}</span>
+            <button className="wallet-disconnect" onClick={disconnect}>✖</button>
+        </div>;
+    } else {
+        return <button className="wallet-connect" onClick={connect}>Connect Wallet</button>;
+    }
+}
+```
+
+Now in your app, it should display the ENS Primary Name for your connected account:
+
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-4.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+### Resolving the Avatar for an ENS name
+
+Now we have an ENS name for the connected account! So if they have records set on their ENS name, we can resolve those and display them in the app! Let’s start with a popular one – the <Link to="/docs/core/records/avatar">Avatar record</Link>.
+
+Per the <Link to="https://docs.ethers.org/v5/api/providers/provider/#Provider--ens-methods">Ethers.js documentation</Link>, resolving the avatar is as simple as calling `provider.getAvatar(name)`. Let’s add that:
+
+```js title="Wallet.js"
+function Wallet() {
+    const [provider, setProvider] = useState();
+    const [address, setAddress] = useState();
+    const [ensName, setEnsName] = useState();
+    const [avatar, setAvatar] = useState();
+    
+    const connect = async () => {
+        let prov = provider;
+        if (!prov) {
+            prov = new ethers.providers.Web3Provider(window.ethereum);
+            setProvider(prov);
+        }
+
+        let address, ensName, avatar;
+        
+        await prov.send("eth_requestAccounts", []);
+        const signer = prov.getSigner();
+        if (signer) {
+            address = await signer.getAddress();
+            ensName = await prov.lookupAddress(address);
+            if (ensName) {
+                // highlight-next-line
+                avatar = await prov.getAvatar(ensName);
+            }
+        }
+
+        setAddress(address);
+        setEnsName(ensName);
+        setAvatar(avatar);
+    };
+
+    const disconnect = () => {
+        setAddress('');
+        setEnsName('');
+        setAvatar('');
+    };
+
+    if (address) {
+        return <div className="wallet">
+            {avatar && (<img src={avatar} alt="avatar"></img>)}
+            <span>{ensName || address}</span>
+            <button className="wallet-disconnect" onClick={disconnect}>✖</button>
+        </div>;
+    } else {
+        return <button className="wallet-connect" onClick={connect}>Connect Wallet</button>;
+    }
+}
+```
+
+We can also add some more styling to make it look better:
+
+```css title="Wallet.css"
+div.wallet img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+```
+
+Now you should see both the ENS Primary Name and Avatar in the app!
+
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-5.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+### Resolving other ENS records
+
+:::info
+An ENS name can be used as your web3 profile too! There are many other <Link to="/docs/core/records">records</Link> you can set other than the Avatar, like:
+
+ - E-mail address
+ - URL to some web2 website
+ - Other social media links, like Twitter/etc
+ - <Link to="https://support.ens.domains/docs/howto/decentralized_website">Decentralized website</Link> (IPFS/Arweave/Tor/etc)
+ - Other coin addresses like BTC
+ - And much more!
+:::
+
+Let’s add a few of these into our app as well. In Ethers.js, you can resolve other records by:
+
+ 1. Get the resolver for the ENS name
+ 1. Call the appropriate method on the resolver to resolve a particular record
+
+In code this looks like:
+
+```js
+const resolver = await provider.getResolver('ens.eth');
+const urlRecord = await resolver.getText('url');
+```
+
+In our app, after we get the avatar, let’s add this:
+
+```js title="Wallet.js"
+const resolver = await prov.getResolver(ensName);
+if (resolver) {
+    otherRecords.email = await resolver.getText('email');
+    otherRecords.url = await resolver.getText('url');
+    otherRecords.twitter = await resolver.getText('com.twitter');
+}
+```
+
+Then we’ll add some `<p>` blocks for each record:
+
+```html title="Wallet.js"
+return <div>
+    <div className="wallet">
+        {avatar && (<img src={avatar} alt="avatar"></img>)}
+        <span>{ensName || address}</span>
+        <button className="wallet-disconnect" onClick={disconnect}>✖</button>
+    </div>
+    <div>
+        {otherRecords.email && (<p>Email: <a href={`mailto:${otherRecords.email}`}>{otherRecords.email}</a></p>)}
+        {otherRecords.url && (<p>Website: <a href={otherRecords.url}>{otherRecords.url}</a></p>)}
+        {otherRecords.twitter && (<p>Twitter: <a href={`https://twitter.com/${otherRecords.twitter}`}>@{otherRecords.twitter}</a></p>)}
+    </div>
+</div>;
+```
+
+We’re not doing it here for this simple example, but it’s probably a good idea to keep in mind input sanitization, and assume that any returned text values are untrusted input.
+
+Anyway, now those records will show up in the app if they’re set on the ENS name!
+
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-6.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+### Final code and live example
+
+You can find the final code we used for this demo up on GitHub! We only needed to add our `Wallet.js` and `Wallet.css` files, and then make a couple of small changes to `App.js` and `package.json`.
+
+ - <Link to="https://github.com/serenae-fansubs/react-ens-starter-app1/blob/main/src/Wallet.js">Wallet.js</Link>
+ - <Link to="https://github.com/serenae-fansubs/react-ens-starter-app1/blob/main/src/Wallet.css">Wallet.css</Link>
+ - <Link to="https://github.com/serenae-fansubs/react-ens-starter-app1/blob/main/src/App.js">App.js</Link>
+ - <Link to="https://github.com/serenae-fansubs/react-ens-starter-app1/blob/main/package.json">package.json</Link>
+
+And here’s a live example of the starter app!
+
+<BrowserWindow>
+  <div style={{'background':'#282c34'}}>
+    <iframe src="https://react-ens-starter-app1.vercel.app/" width="100%" height="500px"/>
+  </div>
+</BrowserWindow>
+
+## Using the <Link to="https://wagmi.sh/">wagmi React Hooks</Link>
+### Setup
+
+This time, instead of doing everything from scratch, let’s use the <Link to="https://wagmi.sh/">wagmi React Hooks</Link>!
+
+We’ll start out the same way as the first demo. In your terminal, navigate to the folder you want to create the app in, and then type:
+
+```shell
+npx create-react-app my-app
+```
+
+Then install `wagmi` and `ethers`:
+
+```shell
+cd my-app
+npm i wagmi ethers
+```
+
+### Basic Wagmi Start
+
+The <Link to="https://wagmi.sh/">wagmi website</Link> shows a starter example, so let’s use that.
+
+Create a new `Profile.js` file inside the `src` folder of your app.
+
+```shell
+src/
+├─ App.js
+├─ package.json
+// highlight-next-line
+├─ Profile.js
+├─ Wallet.css
+├─ Wallet.js
+
+```
+
+We’ll fill it out with the example code:
+
+```js title="Profile.js"
+import { useAccount, useConnect, useDisconnect } from 'wagmi';
+import { InjectedConnector } from 'wagmi/connectors/injected';
+
+function Profile() {
+  const { address, isConnected } = useAccount()
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  })
+  const { disconnect } = useDisconnect()
+ 
+  if (isConnected)
+    return (
+      <div>
+        Connected to {address}
+        <button onClick={() => disconnect()}>Disconnect</button>
+      </div>
+    )
+  return <button onClick={() => connect()}>Connect Wallet</button>
+}
+
+export default Profile;
+```
+
+Then we’ll edit `App.js` to include that new module:
+
+```js title="App.js"
+import { WagmiConfig, createClient } from 'wagmi';
+import { getDefaultProvider } from 'ethers';
+import Profile from './Profile';
+import logo from './logo.svg';
+import './App.css';
+
+const client = createClient({
+  autoConnect: true,
+  provider: getDefaultProvider(),
+})
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <WagmiConfig client={client}>
+          <Profile />
+        </WagmiConfig>
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Run this in your terminal to start the web server:
+
+```shell
+npm start
+```
+
+The app should pop up in your browser, and you’ll see that it already has some basic Connect / Disconnect functionality!
+
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-7.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+---
+
+### Adding ENS Integration with Wagmi
+
+Wagmi also has several examples <Link to="https://wagmi.sh/examples">here</Link>.  
+In their <Link to="https://wagmi.sh/examples/connect-wallet#step-3-display-connected-account">Connect Wallet example</Link> they show how to display the ENS name and Avatar.
+
+So let’s add that in:
+
+```js title="Profile.js"
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useEnsAvatar,
+  useEnsName,
+} from 'wagmi'
+ 
+function Profile() {
+  const { address, connector, isConnected } = useAccount()
+  const { data: ensAvatar } = useEnsAvatar({ address })
+  const { data: ensName } = useEnsName({ address })
+  const { connect, connectors, error, isLoading, pendingConnector } =
+    useConnect()
+  const { disconnect } = useDisconnect()
+ 
+  if (isConnected) {
+    return (
+      <div>
+        <img src={ensAvatar} alt="ENS Avatar" />
+        <div>{ensName ? `${ensName} (${address})` : address}</div>
+        <div>Connected to {connector.name}</div>
+        <button onClick={disconnect}>Disconnect</button>
+      </div>
+    )
+  }
+ 
+  return (
+    <div>
+      {connectors.map((connector) => (
+        <button
+          disabled={!connector.ready}
+          key={connector.id}
+          onClick={() => connect({ connector })}
+        >
+          {connector.name}
+          {!connector.ready && ' (unsupported)'}
+          {isLoading &&
+            connector.id === pendingConnector?.id &&
+            ' (connecting)'}
+        </button>
+      ))}
+ 
+      {error && <div>{error.message}</div>}
+    </div>
+  )
+}
+
+export default Profile;
+```
+
+Those hooks `useEnsName` and `useEnsAvatar` will automatically load the ENS primary name and avatar for you!
+
+<BrowserWindow>
+  <p align='center'>
+    <div style={{'background':'#282c34'}}>
+      <Image img="/img/dev-basics/integration/integrate-ens-cheatsheet-8.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Now you can get to styling and make it look however you want!
+
+## Quick Cheat Sheet
+
+### Getting started / Ethers.js setup
+
+1. **Install Ethers in your Node project**
+    - `npm i ethers`
+1. **Import Ethers in your code**
+    - `import { ethers } from 'ethers';`
+1. **Connect a Provider**
+    - `const provider = new ethers.providers.Web3Provider(window.ethereum);`
+    - Other methods <Link to="https://docs.ethers.org/v5/getting-started/#getting-started--connecting">here</Link>
+1. **Get currently connected wallet**
+    - For MetaMask, first do this: `await provider.send("eth_requestAccounts", []);`
+    - Then get the Signer: `const signer = prov.getSigner();`
+    - And finally, the public address: `const address = await signer.getAddress();`
+
+### Get ENS Primary Name
+
+```js
+const ensName = await provider.lookupAddress(address);
+```
+
+### Get ENS Avatar
+
+```js
+const avatar = await provider.getAvatar(ensName);
+```
+
+### Get Other ENS Text Records
+
+```js
+const resolver = await provider.getResolver(ensName);
+
+// Text Records
+const email = await resolver.getText('email');
+const url = await resolver.getText('url');
+const twitter = await resolver.getText('com.twitter');
+
+// Any other text record is the same, even custom text records
+const myCustomRecord = await resolver.getText('mycustomrecord');
+```
+
+### Get Coin Addresses
+
+```js
+// Easily get other coin types using this
+import { formatsByName } from '@ensdomains/address-encoder';
+
+const resolver = await provider.getResolver(ensName);
+
+// ETH Address
+const ethAddress = await resolver.getAddress();
+
+// Other Coin Addresses
+const btcAddress = await resolver.getAddress(formatsByName['BTC'].coinType);
+```

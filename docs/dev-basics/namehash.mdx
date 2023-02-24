@@ -1,5 +1,4 @@
 ---
-id: namehash
 title: Namehash, Labelhash, and Token IDs
 last_update:
   author: serenae
@@ -51,7 +50,7 @@ So the token ID for the NFT is the same as the labelhash listed above. It's the 
 
 For example, you will see that token ID in the URL of public explorers or marketplaces:
 
-<div class="container" style={{'border':'solid black 1px', 'borderRadius':'8px'}}>
+<div class="container tabContainer">
 
 <Tabs>
 <TabItem value="etherscan" default>
@@ -79,7 +78,9 @@ For a .eth 2LD, the label you're usually going to be concerned with is the first
 
 So for `ens.eth`, the label you care about is going to be `ens`. Take that value `ens` and plug it into the Keccak-256 function, and the output is the labelhash.
 
-```js title="Here's an example using Node.js"
+Here's an example using Node.js:
+
+```js
 '0x' + require('js-sha3').keccak_256('ens')
 ```
 
@@ -94,7 +95,7 @@ Enter the above code, and it'll spit out the labelhash in hexadecimal format:
 </BrowserWindow>
 
 To get the labelhash in decimal format, use this code:
-```
+```js
 require('big-integer')(require('js-sha3').keccak_256('ens'), 16).toString()
 ```
 
@@ -144,7 +145,7 @@ If you plug everything in above, you'll end up with the final namehash value:
 Luckily, you do **not** need to go through all those steps every time, as there are libraries that have this function built-in.
 
 For Node.js, you can use this code:
-```
+```js
 require("@ensdomains/eth-ens-namehash").hash('ens.eth')
 ```
 

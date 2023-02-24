@@ -184,6 +184,16 @@ const sidebars = {
             "dev-basics/namewrapper/wrappedstates",
            ],
         },
+	{
+		type: "category",
+		label: "Integration",
+		link: { type: "doc", id: "dev-basics/integration/index" },
+		collapsible: true,
+		collapsed: true,
+		items: [
+			"dev-basics/integration/integrate-ens-cheatsheet",
+		],
+	},
         "dev-basics/namehash",
       ],
     },
