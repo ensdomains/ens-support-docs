@@ -1,4 +1,5 @@
 ---
+draft: true
 last_update:
   author: cthulu
 tags:
@@ -21,6 +22,10 @@ tags:
 ## What is DNSSEC?
 
 DNSSEC strengthens authentication in DNS using digital signatures based on public key cryptography. With DNSSEC, it's not DNS queries and responses themselves that are cryptographically signed, but rather DNS data itself is signed by the owner of the data.
+
+<p align="center">
+  <Image img="/img/faq/dnssec-diagram-1.png"/>
+</p>
 
 :::info Learning resource
 For more information about DNSSEC, as well as a great introductory read about DNS, see ICANN's DNSSEC article:
@@ -79,5 +84,36 @@ The best ways to troubleshoot the records and the DNSSEC configuration is by usi
  It's very useful to get a quick overview of what the issue is. Keep in mind that the warnings it shows don't always relate to what the issue with the DNSSEC configuration is for ENS. 
 :::
 
+## Common issues
+
 ### DNS Propagation delay
-Due to the way DNS is designed there's a delay in records being propagated that can range from minutes to several hours.
+If you very recently made changes to your DNS name (such as creating the _ens record or enabling DNSSEC, or even registering the name itself)
+and find that the manager app isn't recognizing it, the DNSSEC setup or the record it could be due to DNS propagation delay.
+
+DNS changes are unfortunately not instant, and due to the way its designed it can take several hours before changes to a domain name is propagated
+to all DNS servers on the internet.
+
+Try waiting an hour or so, and see if it starts working. Technically speaking it can take up to 24 hours for DNS changes to propagate over the internet,
+though in practice today it's usually propagated in under a few hours.
+
+### Misnamed TXT-record
+Make sure that the TXT-record is named just `_ens` (all lower cap letters) and contains the string **a=**`yourwalletaddress`
+
+### Wrong DNSSEC key type
+ENS supports `RSA/SHA-256` and `ECDSA` keys, make sure that DNSSEC for your domain is set up to use either of those two key types.
+
+### DNSSEC Errors
+DNSSEC is fairly complex to set up, and it's easy to make mistakes. Try taking a look at DNSViz to see if it shows any DNSSEC warnings.
+
+### TLD doesn't support DNSSEC
+_Some_ TLD's doesn't support DNSSEC which means that even if you set it up, it won't work.
+
+### Registrar doesn't support DNSSEC for some TLD's
+Some registrars support DNSSEC but only for _some_ TLD's. Make sure that it's supported for the TLD you're using.
+
+#### Namecheap
+Namecheap does not support managing DNSSEC under the following TLD's:  
+`.africa` `.ai` `.cm` `.de` `.eu` `.nl` `.ph` `.sg` `.so` `.to` `.com.au` `.net.au` `.org.au`
+
+### The domain name doesn't exist
+Sometimes users try to import a domain name that doesn't exist into ENS, this doesn't work. The domain name must exist and be owned by the user importing it.
