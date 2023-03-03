@@ -92,6 +92,19 @@ const sidebars = {
       items: [
         {
           type: "category",
+          label: "Manager App/Site",
+          link: { type: "doc", id: "faq/manager/index" },
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "faq/manager/general",
+            "faq/manager/registering-names",
+            "faq/manager/managing-names",
+            "faq/manager/troubleshooting",
+          ],
+        },
+        {
+          type: "category",
           label: "Marketplaces",
           link: { type: "doc", id: "faq/marketplaces/index" },
           collapsible: true,
@@ -115,14 +128,23 @@ const sidebars = {
             "faq/wallets/trezor",
           ],
         },
+        {
+          type: "category",
+          label: "Normalization",
+          link: { type: "doc", id: "faq/normalization/index" },
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "faq/normalization/normalization-faq",
+            "faq/normalization/homoglyphs",
+          ],
+        },
         "faq/secondary_market",
         "faq/security",
         "faq/contributor-guidelines",
-	"faq/bug-bounty",
-        "faq/homoglyphs",
-	"faq/manager",
-	"faq/v3-manager",
-	"faq/dnssec",
+	      "faq/bug-bounty",
+	      "faq/v2-manager",
+	      "faq/dnssec",
       ]
     },
     {
@@ -178,10 +200,10 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            "dev-basics/namewrapper/wrapperoverview",
-            "dev-basics/namewrapper/wrapperexpiry",
+            "dev-basics/namewrapper/overview",
+            "dev-basics/namewrapper/expiry",
             "dev-basics/namewrapper/fuses",
-            "dev-basics/namewrapper/wrappedstates",
+            "dev-basics/namewrapper/states",
            ],
         },
 	{

@@ -20,11 +20,19 @@ tags:
 # DNSSEC
 
 ## What is DNSSEC?
+DNS was designed in the 1980s when the Internet was much smaller, and security was not a primary consideration in its design.  
 
-DNSSEC strengthens authentication in DNS using digital signatures based on public key cryptography. With DNSSEC, it's not DNS queries and responses themselves that are cryptographically signed, but rather DNS data itself is signed by the owner of the data.
+To mitigate this, the DNSSEC protocol was designed as an extension to strengthen authentication in DNS using digital signatures based on public key cryptography. 
 
 <p align="center">
   <Image img="/img/faq/dnssec-diagram-1.png"/>
+</p>
+
+With DNSSEC, it's not DNS queries and responses themselves that are cryptographically signed, but rather DNS data itself is signed by the owner of the data to ensure that the data has not been tampered with.
+This helps to protect against different types of DNS attacks including DNS spoofing and "Man In The Middle"-attacks.
+
+<p align="center">
+  <Image img="/img/faq/dnssec-dns-spoof-1.png"/>
 </p>
 
 :::info Learning resource
@@ -32,28 +40,51 @@ For more information about DNSSEC, as well as a great introductory read about DN
  - https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en
 :::
 
+## Why does ENS require DNSSEC?
+DNSSEC establishes a chain of trust through secure authentication from the root zone key all the way down to your domain name,
+ensuring that the ownership information for the domain can be trusted.
+
+DNSSEC publishes the domain's public key to the blockchain and uses it to verify domain ownership.
+
+<p align="center">
+  <Image img="/img/faq/dnssec-dnskeys-1.webp"/>
+</p>
+
 ## Pre-requisites for ENS
 There are two pre-requisite steps to making a DNS name work with ENS:
 
-The first step is to..
-### Enable DNSSEC
+### 1. Enable DNSSEC
    
 Most registrars have some kind of interface for enabling it, but not all of them sets key types that ENS supports.
 ENS supports two types of keys:
 	
- - Elliptic Curve DSA keys usually referred to as just `ECDSA` keys, and
- - 256 bit Rivest-Shamir-Adelman / Secure Hash Algorithm `RSA/SHA-256` keys
+| Name | Description |
+|-|-|
+| ECDSA | Elliptic Curve DSA keys usually referred to as just `ECDSA` keys |
+| RSA/SHA-256 | 256-bit Rivest-Shamir-Adelman / Secure Hash Algorithm `RSA/SHA-256` keys |
 
 Unfortunately not all registrars support DNSSEC, and some only support them as an additional paid service.
 If your registrar does not support DNSSEC you'll need to switch to one that does.
 
-### Recommended services
-Here's a list of some popular services, and the key types they support.
+#### Recommended services
+Here's a list of popular hosting providers and which DNSSEC key types they support[^1]
+
+[^1]: The key-types hosting providers support may have changed since this list was last verified on `June 22nd, 2022`.
+
+| Hosting providers | DNSSEC | RSA/SHA-256 | ECDSA | Details                                                        |
+| ----------------- | ------ | ----------- | ----- | -------------------------------------------------------------- |
+| easyDNS           | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://kb.easydns.com/knowledge/dnssec/)     |
+| Google Cloud DNS  | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide 1`](https://cloud.google.com/dns/docs/registrars) [`DNSSEC Guide 2`](https://cloud.google.com/dns/docs/dnssec) |
+| Bluehost          | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Information`](https://cp.cn.bluehost.com/kb/answer/1908) |
+| Hostinger         | `Yes`  | `Yes`       | `Yes` |                                                               |
+| Hostgator         | `Yes`  | `Yes`       | `Yes` |                                                                |
+| GoDaddy           | `Yes`  | `No`        | `Yes` | [`DNSSEC Guide`](https://uk.godaddy.com/help/turn-dnssec-on-or-off-6420) |
+| Wordpress         | `No`   | -           | -     |                                                                |
+| Namecheap         | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://www.namecheap.com/support/knowledgebase/article.aspx/9722/2232/managing-dnssec-for-domains-pointed-to-custom-dns/) |
 
 If the registrar requires a manually set up of DNSSEC it's best to consult your registrars documentation or contact their customer service for help setting it up.
 
-The second step is to..
-### Create an _ens record
+### 2. Create an _ens record
 
  - This record must be of the type `TXT`, in other words a text record
  - The record must be named underscore ens in lower capital letters
@@ -64,25 +95,36 @@ All DNSSEC issues users have tend to be caused by these records either being set
 ## How to troubleshoot it
 
 ### Troubleshooting tools
-The best ways to troubleshoot the records and the DNSSEC configuration is by using two tools:
+The best ways to troubleshoot the records and the DNSSEC configuration is by using a few different tools:
 
-:::info Google DNS DIG
- 
- https://toolbox.googleapps.com/apps/dig/
+<div class="tabContainer">
+<Tabs>
+<TabItem value="Google DNS DIG" default>
 
- This is Google's web frontend for an older unix utility named dig. It can be used to look up records for names very easily.
- If you run a unix-like operating system you can also use the terminal application dig if you'd like, which is much faster.
+This is Google's web frontend for an older unix utility named dig. It can be used to look up records for names very easily.
+If you run a unix-like operating system you can also use the terminal application dig if you'd like, which is much faster.
 
-:::
+ - https://toolbox.googleapps.com/apps/dig/
 
-:::info DNSViz
+</TabItem>
+<TabItem value="DNSViz">
 
- https://dnsviz.net/
+This is also a web front-end for an older unix utility named dnsviz. It's used to generate graphical visualizations of domain names, records all the way from the root zone to the TLD to the 2LD domain name itself.
 
- This is also a web front-end for an older unix utility named dnsviz. It's used to generate graphical visualizations of domain names, records all the way from the root zone to the TLD to the 2LD domain name itself.
+It's very useful to get a quick overview of what the issue is. Keep in mind that the warnings it shows don't always relate to what the issue with the DNSSEC configuration is for ENS. 
 
- It's very useful to get a quick overview of what the issue is. Keep in mind that the warnings it shows don't always relate to what the issue with the DNSSEC configuration is for ENS. 
-:::
+ - https://dnsviz.net/
+
+</TabItem>
+<TabItem value="Verisign DNSSEC Analyzer">
+
+Verisign Labs excellent DNSSEC Analyzer
+ - https://dnssec-analyzer.verisignlabs.com/
+
+</TabItem>
+</Tabs>
+</div>
+
 
 ## Common issues
 
@@ -96,6 +138,27 @@ to all DNS servers on the internet.
 Try waiting an hour or so, and see if it starts working. Technically speaking it can take up to 24 hours for DNS changes to propagate over the internet,
 though in practice today it's usually propagated in under a few hours.
 
+#### Signs of DNSSEC propagation issues
+When you first enable DNSSEC on your website, it will show your zone as "signed" but "insecure" (DS records are found, however, DNSKEY and RRSIG do not exist.
+
+<BrowserWindow url="https://dnssec-analyzer.verisignlabs.com/">
+  <p align="center">
+    <div style={{'padding':'25px'}}>
+      <Image img="/img/faq/dnssec-propagation-1.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Once your Registrar has published the DS records, which may be immediately or one or two days after you’ve added the DS record to your registrar, your records will be marked as "secure" ones: 
+
+<BrowserWindow url="https://dnssec-analyzer.verisignlabs.com/">
+  <p align="center">
+    <div style={{'padding':'25px'}}>
+      <Image img="/img/faq/dnssec-propagation-2.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
 ### Misnamed TXT-record
 Make sure that the TXT-record is named just `_ens` (all lower cap letters) and contains the string **a=**`yourwalletaddress`
 
@@ -106,14 +169,81 @@ ENS supports `RSA/SHA-256` and `ECDSA` keys, make sure that DNSSEC for your doma
 DNSSEC is fairly complex to set up, and it's easy to make mistakes. Try taking a look at DNSViz to see if it shows any DNSSEC warnings.
 
 ### TLD doesn't support DNSSEC
-_Some_ TLD's doesn't support DNSSEC which means that even if you set it up, it won't work.
+While gTLD's must support DNSSEC, the same isn't required of ccTLD's where TLD's can sometimes lack support for it.
+If your TLD does not support DNSSEC, it will not work with ENS.
 
-### Registrar doesn't support DNSSEC for some TLD's
+:::info
+For a list of TLD's that support DNSSEC
+
+ - https://support.openprovider.eu/hc/en-us/articles/216648838-List-of-TLDs-that-support-DNSSEC
+:::
+
+
+### Registrar support for DNSSEC is conditional
 Some registrars support DNSSEC but only for _some_ TLD's. Make sure that it's supported for the TLD you're using.
+<div class="tabContainer">
+<Tabs>
+<TabItem value="Namecheap" default>
 
-#### Namecheap
 Namecheap does not support managing DNSSEC under the following TLD's:  
 `.africa` `.ai` `.cm` `.de` `.eu` `.nl` `.ph` `.sg` `.so` `.to` `.com.au` `.net.au` `.org.au`
 
+_**NOTE:** Currently, there is no possibility to run DNSSEC on the Namecheap PremiumDNS nameservers for domain names that are not registered with Namecheap. Also, DNSSEC is not supported for the domains pointed to their Shared/Reseller packages._
+
+At the moment, you can run DNSSEC on the following nameservers:
+ - [x] Namecheap PremiumDNS
+ - [x] Namecheap BasicDNS
+ - [x] Custom DNS
+ - [ ] Namecheap Web Hosting DNS
+ - [ ] Namecheap BackupDNS
+ - [ ] Namecheap FreeDNS
+
+</TabItem>
+<TabItem value="GoDaddy">
+
+GoDaddy offers a fully-managed option for DNSSEC through their Premium DNS service. If your domain is using GoDaddy nameservers, you can enable DNSSEC on your domains.
+
+If your domain is registered with GoDaddy but isn't using GoDaddy nameservers, you'll need to set up self-managed DNSSEC through your DNS provider.  
+You'll need to digitally create private and public keys and generate a Declaration of Signing record during the domain signing process.
+
+The requirements and restrictions may vary based on your domain's registry and your DNS provider. Reach out to your DNS provider for more information, or switch to GoDaddy nameservers and Premium DNS to enable fully-managed DNSSEC.
+
+</TabItem>
+<TabItem value="Google DNS">
+</TabItem>
+<TabItem value="Bluehost">
+
+Bluehost currently supports DNSSEC for the following TLD's:
+ - https://cp.cn.bluehost.com/kb/answer/2998
+
+</TabItem>
+<TabItem value="Hostinger">
+</TabItem>
+<TabItem value="Hostgator">
+</TabItem>
+<TabItem value="easyDNS">
+</TabItem>
+</Tabs>
+</div>
+
 ### The domain name doesn't exist
 Sometimes users try to import a domain name that doesn't exist into ENS, this doesn't work. The domain name must exist and be owned by the user importing it.
+
+## FAQ
+
+### Can I register any DNS domain through the ENS app?
+Technically speaking, <Link to="https://medium.com/the-ethereum-name-service/upcoming-changes-to-the-ens-root-a1b78fd52b38">over 90% of domains</Link> can be supported.
+Some TLDs: `.ceo` `.art` `.club` `.luxe` and `.kred` are operated by each DNS registry.
+
+### If I own myname.xyz can I claim myname.eth?
+No. Under DNS integration, you can only claim the correspondent ENS name with the same top level domain (TLD).
+`.eth` is managed completely separately.
+
+### Once I register the domain, how can I transfer/delete ownership?
+Unlike .eth permanent registrar, there is no notion of registrant which can transfer the ownership of the controller.
+If you want to transfer the ownership to any address other than the currently registered address, please update the corresponding DNS record from your DNS manager and click `Transfer` from our ENS manager.
+
+We currently haven't enabled the ability to delete the ownership. Having said that, you can achieve the same effect if you set the owner record to `a=0x0000000000000000000000000000000000000000` then click `Transfer` from the ENS manager.
+
+### Can I register my DNS subdomain?
+No. DNSSEC registration is only enabled for the second level domain (eg: `yourname.xyz`). If you want to create `subdomain.yourname.xyz`, then click `Subdomains` tab of our manager and create it from ENS manager just like other subdomains under `.eth`.

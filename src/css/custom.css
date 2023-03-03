@@ -796,6 +796,17 @@ div.theme-admonition:nth-child(3) {
   background: linear-gradient(129deg, rgba(255,255,255,1) 35%, rgba(240,240,244,1) 100%);
 }
 
+.tabContainer {
+  border: solid black 1px;
+  border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+[data-theme='dark'] .tabContainer {
+  border: solid grey 1px;
+}
+
 .d-flex {
   display:flex!important;
 }

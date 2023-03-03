@@ -1,0 +1,58 @@
+---
+draft: true
+last_update:
+  author: cthulu
+tags:
+ - normalization
+ - normalization faq
+keywords: [normalization, normalization faq]
+---
+
+# Normalization FAQ
+
+## When will the new normalization rules be released?
+There isn't an ETA on when the new normalization rules will be released and we cannot give rough estimates as it depends on
+fluid circumstances where we may _think_ the rules are finalized, but then a new set of unicode conflicts are discovered which
+pushes the time table back.
+
+The normalization rules will be implemented as soon as it's possible to do so.
+
+## What happens after the name normalization rules are finalized?
+An `ENSIP` will be created and the `ENS DAO` will vote on whether to implement the rules or not.
+
+## What happens to names made invalid under the new rules?
+ENS names that becomes invalid under the new name normalization rules will have their registration fees refunded,
+provided that the name was registered using the official ENS Manager App.
+
+This will happen in a batch transaction sent automatically to affected users wallets and not on a case-by-case basis.
+After the normalization rules have been released and we can determine which names have been made invalid, there'll be
+a proposal in the `ENS DAO` to outline the details for the refund process.
+
+:::caution
+Invalid names registered by intentionally circumventing ENS normalization checks will likely _not_ have their registration fees refunded, such as:
+
+ - Names registered by interacting directly with ENS smart contracts.
+ - Names registered through a third-party service.
+:::
+
+## I registered an invalid name and I can't manage it
+
+:::caution
+Invalid names cannot be managed or renewed using the official `ENS Manager App` and are entirely unsupported.
+:::
+
+:::info
+Some third-party tools have limited functionality to manage them:
+
+ - [ENS.Vision](https://ens.vision)
+ - [Predomain](https://predomain.eth.limo)
+:::
+
+## Which characters will be allowed in the new normalization rules?
+
+:::caution
+The name normalization rules have not been finalized, which means that the rules can change due to emerging circumstances.
+:::
+
+You can test characters and words against the _current draft_ of the name normalization rules by using raffy's resolver tool:
+ - [Raffy's Resolver Tool](https://adraffy.github.io/ens-normalize.js/test/resolver.html#ADRaffy.eth)

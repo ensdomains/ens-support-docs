@@ -89,6 +89,100 @@ For example, by analyzing the burning heart emoji we can find out what character
 As you can see the ❤️‍🔥 emoji actually consists of several different characters glued together by the use of a `Zero-Width Joiner` and a `Variation Selector`.
 
 ### Variation Selectors
+Variation selectors are used in unicode to display _variants_ of an emoji.
+
+<div class="container" style={{'padding': '0'}}>
+<div class="row">
+<div class="col">
+<ImageWindow title="Emoji: Heavy Black Heart">
+<p align='center' style={{'fontSize': '64px'}}>❤</p>
+</ImageWindow>
+</div>
+<div class="col">
+<p>By default some emoji are displayed with black & white representations, such as the heavy black heart we talked about in the previous example.</p>
+<p><b>The full sequence looks like this:</b></p>
+
+ 1. `❤ Heavy Black Heart`
+
+</div>
+</div>
+</div>
+
+When analyzing the emoji in a `unicode analyzer` we see that it's quite simply a one character emoji:
+
+<BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+  <p align="center">
+    <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+      <Image img="/img/faq/homoglyphs-emoji-heart-1.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+<div class="container" style={{'padding': '0'}}>
+<div class="row">
+<div class="col">
+<ImageWindow title="Emoji: Red Heart">
+<p align='center' style={{'fontSize': '64px'}}>❤️</p>
+</ImageWindow>
+</div>
+<div class="col">
+
+Adding a `Variation Selector` to the sequence displays a colourful version of the emoji instead.
+
+ 1. `❤ Heavy Black Heart`
+ 1. `Variation Selector-16`
+
+</div>
+</div>
+</div>
+
+Emoji keyboards such as those found on phones usually produce emojis containing
+variation selectors for that purpose.
+
+<BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+  <p align="center">
+    <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+      <Image img="/img/faq/homoglyphs-emoji-heart-2.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+<div class="container" style={{'padding': '0'}}>
+<div class="row">
+<div class="col">
+<ImageWindow title="Emoji: Heart on Fire">
+<p align='center' style={{'fontSize': '64px'}}>❤️‍🔥</p>
+</ImageWindow>
+</div>
+<div class="col">
+
+By adding a `Zero-Width Joiner` and a `Fire Emoji` we get a `Heart on Fire` emoji.
+
+ 1. `❤ Heavy Black Heart`
+ 1. `Variation Selector-16`
+ 1. `Zero Width Joiner`
+ 1. `🔥 Fire`
+
+</div>
+</div>
+</div>
+
+As you can see the `Heart on Fire` emoji isn't a single character, but a combination of emoji and special characters.
+
+<BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+  <p align="center">
+    <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+      <Image img="/img/faq/homoglyphs-emoji-heart-3.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+
+
+In ENS names variation selectors are not allowed to be in the name, and the normalization strips those characters out when typed or pasted into the official ENS Manager App,
+however, when interacting directly with the contracts or when using third-party services to register ENS names that normalization process is missing, making it possible
+to register names with emoji sequences where the variation selectors aren't stripped out, making a name that's invalid in ENS systems.
+
 :::info Emojipedia
 An invisible codepoint which specifies that the preceding character should be displayed with emoji presentation.
 Only required if the preceding character defaults to text presentation.
@@ -102,7 +196,7 @@ Often used in Emoji ZWJ Sequences, where one or more characters in the sequence 
 In ENS name normalization the `Variation Selector` is stripped out of the name. Any ENS name containing a `Variation Selector` is **invalid**.
 :::
 
-### Confusables
+## Confusables
 `Confusables` are characters which can be easily confused with other characters either by appearing exactly the same, or by appearing _very similar_ to another character.
 
 For example, take a look at the following characters to get an idea of how similar some characters can be:
@@ -158,7 +252,63 @@ Try searching for a name in the unicode confusable utility below to get an idea 
 
 :::info Links
  - <Link to="https://util.unicode.org/UnicodeJsps/confusables.jsp">Unicode Utilities: Confusables</Link>
+
+Raffy's confusables tool can also be used to gain a better insight into confusable characters:
+ - <Link to="https://adraffy.github.io/ens-normalize.js/test/confused.html">ens-normalize.js test: confusables</Link>
 :::
+
+### Small Capitals
+:::caution notice
+In ENS name normalization upper case letters are normalized to their lower case counterparts. Any ENS name containing an upper case character is invalid.
+:::
+
+Small capital characters are often confused with their regular capital (upper case) counterparts. For example:
+
+<Tabs>
+  <TabItem value="Regular capitals" default>
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-confusables-smallcaps-1.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="Small capitals">
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': '#ffffff', 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-confusables-smallcaps-2.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+</Tabs>
+
+### Arabic numerals
+One common issue we've encountered in support tickets are confusables in arabic and persian digits.
+Several arabic and persian keyboard digits appear identical, which leads to confusing scenarios when arabic and persian digits are mixed in one ENS name.
+
+<Tabs>
+  <TabItem value="Arabic digits" default>
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-confusables-arabic-digits-1.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+  <TabItem value="Persian digits">
+    <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
+      <p align="center">
+        <div style={{'background-color': '#ffffff', 'padding': "25px"}}>
+          <Image img="/img/faq/homoglyphs-confusables-arabic-digits-2.png"/>
+        </div>
+      </p>
+    </BrowserWindow>
+  </TabItem>
+</Tabs>
 
 ## Warning signs
 Fortunately, there are many different types of warning signs you can look for. Services will often have indicators for names containing unusual characters,

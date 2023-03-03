@@ -77,6 +77,10 @@ const config = {
         typesenseSearchParameters: {},
       },
       */
+    tableOfContents: {
+	    minHeadingLevel: 2,
+	    maxHeadingLevel: 4,
+    },
     docs: {
       sidebar: {
         hideable: true,

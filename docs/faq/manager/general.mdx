@@ -1,0 +1,48 @@
+---
+last_update:
+  author: cthulu
+tags:
+  - faq
+  - manager faq
+  - manager
+  - v3 manager
+  - manager app
+  - ens manager
+keywords: [faq, manager, manager faq, v3, v3 manager, manager app, ens manager]
+---
+
+# General
+
+## What is the maximum length of a name I can register?
+Names cannot be less than 3 characters. Wrapped names can only have labels as long as 256 bytes
+
+## Can names have emojis?
+Yes!
+
+## What happens if a name expires?
+After a name expires, there is a 90 day grace period in which the owner can't edit the records, but can still re-register the name. After this grace period, the name is released for registration by anyone with a temporary premium, which decreases over a 21 days period.
+
+Expired names do not lose their records, so will continue resolving to their previous ETH address until a new owner overwrites it.
+
+## Where can I see the list of names to be released?
+You can find a list at the ENS Names to be released section of the [Dune Analytics dashboard](https://dune.xyz/makoto/ens-released-to-be-released-names).
+
+## What is an ENS profile?
+ENS profiles are a collection of pre-defined records, which are used by other dApps. Creating your profile in ENS allows you to have a single source for your profile information across Web3.
+
+## What is an ENS avatar?
+You can upload an image, or use an NFT as your ENS avatar. This will be pulled into dApps as your web3 avatar, while also updating your ENS NFT background.
+
+To add an avatar click Edit Profile from the Profile tab of any name you own. NFT avatars must be an ERC721/ERC1155 NFT and have a valid image URI.
+
+## Can I use an ENS name to point to my website?
+Though ENS can technically store anything, there aren't many third party tools and applications which resolve IP addresses attached to ENS.
+
+Instead, we suggest hosting your static html/css/images on IPFS and put the hash in your ENS name's Content record. Then it can be resolved by ENS-aware browsers (e.g. Opera), browser extensions (Metamask), or any browser with ".link" or ".limo" appended to the end (e.g. vitalik.eth.link or vitalik.eth.limo).
+
+If you want to redirect your ENS name to an existing website, you could write a html file containing JavaScript logic to redirect to your website, upload the file into ipfs using services like [IPFS Pinata](https://pinata.cloud/), then set the CID to your contenthash. See the source code of depositcontract.eth.limo as an example.
+
+## I bought my name on an NFT marketplace, how do I use it?
+When you purchase an existing name it may come with existing records from the previous owner. To use it as your primary name, make sure to update the ETH records to match your ETH address and then update your primary name from the settings page.
+
+Optionally, you can also remove or override existing records or create your own profile.
