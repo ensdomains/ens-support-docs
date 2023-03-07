@@ -1,0 +1,44 @@
+---
+title: Approved Operators
+last_update:
+  author: serenae
+tags:
+  - operators
+  - nft
+  - fuses
+  - permissions
+  - namewrapper fuses
+  - wrapper fuses
+  - namewrapper permissions
+  - wrapper permissions
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - wrapped name
+keywords: [operators, nft, nfts, fuses, permissions, namewrapper fuses, wrapper fuses, namewrapper permissions, wrapper permissions, namewrapper, name wrapper, wrapper, wrapped name]
+description: Explaining the different operator approvals on the Name Wrapper contract
+---
+
+# Full-Control Operator Batch Approvals
+
+Your wrapped name is an ERC-1155 NFT that supports the `setApprovalForAll` method. When you approve an address using this method, it will have **full control** over all wrapped ENS names that you own.
+
+This method is typically used by NFT marketplace contracts.
+
+# Name-Specific Subname Operator Approvals
+
+The Name Wrapper also supports the ERC-721 `approve` method. This method is used to approve a single "Subname Operator" for a specific name.
+
+The "Subname Operator" does not have full control over your wrapped name, it can only take actions on subnames:
+
+* Create / Replace subnames
+* Burn fuses on subnames
+* Set / Extend the expiry on subnames
+
+So for example, you can approve a subname registrar contract that can act on your behalf and allow users to register subnames.
+
+Further, if you burn the **CANNOT_APPROVE** fuse on your name, then the approved subname operator can no longer be changed. You can use this to "lock in" a subname registrar, similar to how the .eth Registrar works.
+
+And you can do all of this **without** needing to send your wrapped NFT to that contract.
+
+This approved subname operator will be reset if the wrapped NFT is burned or re-minted, which happens if you unwrap the name, or if an expired name gets re-registered. It will also be reset if the wrapped NFT is transferred, **unless** the **CANNOT_APPROVE** fuse is burned.
