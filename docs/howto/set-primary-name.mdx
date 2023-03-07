@@ -9,28 +9,132 @@ keywords: [ens primary, ens primary name, set primary name, set a primary name, 
 ---
 
 # Set a Primary name
-:::caution Pre-requisites
+
+The Primary name is your reverse record responsible for resolving your wallet address to your ENS name, effectively helping DApps and other services display your ENS name based on your *Ethereum* wallet address.
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-verify-ensmanager.png"/>
+  </div>
+</BrowserWindow>
+
+Setting a name as `Primary` in your wallet is usually a simple affair, but it can be a little complicated if:
+ - The name was registered using a third-party service that didn't set the `Resolver` and `ETH Address` records by default.
+ - The name was purchased on a secondary market and the `ETH Address` record is still set to the previous owner's wallet.
+
+If either of these applies to you, then you can solve it by following the [Prerequisites](#prerequisites) section below.
+
+## Prerequisites
+:::info prerequisites
+In order to set an ENS name as `Primary` there are two prerequisites:
+1. The Resolver record must be set to the `ENS Public Resolver` smart contract.
+1. The `ETH Address` record must be set to the wallet you're setting the `Primary` on.
+:::
+
+### 1. Set the Resolver
+Go to your ENS name in the [ENS Manager App](https://app.ens.domains) and scroll down to the bottom and expand `Advanced settings`.
+Make sure that the `Resolver` record there is set to the ENS Public Resolver contract: `0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41`
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-resolver-1.png"/>
+  </div>
+</BrowserWindow>
+
+If it's unset, or set to a different contract address, edit it and enter the ENS Public Resolver: `0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41`
+
+### 2. Set the ETH Address record
+Go to your ENS name in the [ENS Manager App](https://app.ens.domains) and scroll down to the `Addresses` section
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-ethaddress-1.png"/>
+  </div>
+</BrowserWindow>
+
+Click `Add/Edit Record` and enter your wallet address into the `ETH Address` record field.
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-ethaddress-2.png"/>
+  </div>
+</BrowserWindow>
+
+Then **_scroll down_** and click `Confirm` _at the **bottom** of the address section_.
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-ethaddress-3.png"/>
+  </div>
+</BrowserWindow>
+
+## Set the Primary Name
+:::caution Prerequisites
+ - The ENS name must be configured with a `Resolver` record for the `Addresses`-section to appear.
  - The `ETH Address` record of the ENS name must first point to the wallet you want to set the `Primary Name` on
 
-If you haven't set the `ETH Address` record to your ENS name, see
- - <Link to="/docs/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address <i>(ETH Address)</i></Link>
+If either of these aren't set, please follow the instructions in [Prerequisites](#prerequisites)
 :::
 
 Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and connect your wallet.
 
 Click `My Account` on the upper right hand side to go to your Account page. Select an ENS name from the Primary drop-down list, click `Save` and confirm the transaction in your wallet.
-<BrowserWindow>
-  <Image img="/img/howto/set-primary-name-1.png"/>
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-1.png"/>
+  </div>
 </BrowserWindow>
 
-:::tip
-If your ENS name doesn't show up in the Primary drop-down list, it's usually because the ENS name's `ETH Address` record doesn't point to your ENS name. To resolve it, see
- - <Link to="/docs/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address</Link>
-:::
 
 ## Verify that your Primary name works
-Look up your wallet address on <Link to="https://etherscan.io"><b>Etherscan</b></Link> to check that the `Primary Name` works correctly.
 
-<BrowserWindow url="etherscan.io">
-  <Image img="/img/howto/set-primary-name-2.png"/>
+Visit a few different services and verify that your `Primary name` is working correctly:
+
+<Tabs>
+<TabItem value="ENS Manager" default>
+
+The [ENS Manager App](https://app.ens.domains) will show your `Primary name` and the `Avatar` set on it in the top-right corner, along with your wallet address.
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-verify-ensmanager.png"/>
+  </div>
 </BrowserWindow>
+
+</TabItem>
+<TabItem value="Uniswap">
+
+[Uniswap](https://app.uniswap.org) will show your `Primary name` and its `Avatar` in the top-right corner as well!
+
+<BrowserWindow url="https://app.uniswap.org">
+<Image img="/img/howto/v3-set-avatar-services-uniswap.png"/>
+</BrowserWindow>
+</TabItem>
+<TabItem value="OpenSea">
+
+[OpenSea](https://opensea.io) shows your `Primary name` on your user's page next to your wallet address.
+:::caution note
+OpenSea's systems are _very_ slow to update to reflect any changes, please allow at least 24 hours for the `Primary name` to show.
+:::
+
+<BrowserWindow url="https://opensea.io">
+<Image img="/img/howto/set-primary-name-verify-opensea.png"/>
+</BrowserWindow>
+</TabItem>
+<TabItem value="etherscan">
+
+[Etherscan](https://etherscan.io) will show your `Primary name` in the to and from address sections in the transaction list:
+
+<BrowserWindow url="https://etherscan.io">
+<Image img="/img/howto/set-primary-name-verify-etherscan-1.png"/>
+</BrowserWindow>
+
+And also on top of the wallet overview:
+
+<BrowserWindow url="https://etherscan.io">
+<Image img="/img/howto/set-primary-name-verify-etherscan-2.png"/>
+</BrowserWindow>
+
+</TabItem>
+</Tabs>
+
