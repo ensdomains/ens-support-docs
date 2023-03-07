@@ -31,7 +31,7 @@ Only the owner of the parent name can burn one of these fuses on a name. These c
 |-|-|
 | **PARENT_CANNOT_CONTROL** | Allows a parent owner to **Emancipate** a child name. After this is burned, the parent will no longer be able to burn any further fuses, and will no longer be able to replace/delete the child name. This fuse must be burned in order for any owner-controlled fuses to be burned on the name. |
 | **IS_DOT_ETH** | This fuse cannot be burned by users of the Name Wrapper, it is only set internally when a .eth 2LD is wrapped. |
-| **CAN_EXTEND_EXPIRY** | The owner of the child name will be able to extend their own expiry. Normally, only the parent owner can extend the expiry of a child name. |
+| **CAN_EXTEND_EXPIRY** | The owner of the child name will be able to extend their own expiry. Normally, only the parent owner can extend the expiry of a child name. See the <Link to="/docs/dev-basics/namewrapper/expiry">Expiry</Link> section for more information. |
 | **Custom Fuses** | There are 13 other parent-controlled fuses that are not reserved, and can be used in any custom way you want! |
 
 ## Owner-Controlled Fuses
@@ -45,4 +45,5 @@ Either the owner of the name *or* the owner of the parent name can burn one of t
 | **CANNOT_SET_RESOLVER** | The resolver contract for the name can no longer be updated. |
 | **CANNOT_SET_TTL** | The TTL for the name can no longer be updated. |
 | **CANNOT_CREATE_SUBDOMAIN** | New subdomains can no longer be created. |
-| **Custom Fuses** | There are 10 other owner-controlled fuses that are not reserved, and can be used in any custom way you want! |
+| **CANNOT_APPROVE** | The approved subname operator for the name can no longer be updated. See the <Link to="/docs/dev-basics/namewrapper/approved-operators">Approved Operators</Link> section for more information. |
+| **Custom Fuses** | There are 9 other owner-controlled fuses that are not reserved, and can be used in any custom way you want! |
