@@ -201,9 +201,9 @@ const sidebars = {
           collapsed: true,
           items: [
             "dev-basics/namewrapper/overview",
-            "dev-basics/namewrapper/expiry",
-            "dev-basics/namewrapper/fuses",
             "dev-basics/namewrapper/states",
+            "dev-basics/namewrapper/fuses",
+            "dev-basics/namewrapper/expiry",
            ],
         },
 	{
