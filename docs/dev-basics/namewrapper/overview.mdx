@@ -17,7 +17,7 @@ description: Overview of the ENS Name Wrapper
 The **Name Wrapper** is a new contract for ENS that allows you to "wrap" any ENS name into a ERC-1155 NFT.
 
 
-## Without the namewrapper
+## Without the Name Wrapper
 Before the Name Wrapper, only .eth 2LDs (second-level domains, like `ens.eth`) had ERC-721 NFTs associated with them, unless the owner created a separate custom contract.
 
 <br/>
@@ -29,7 +29,7 @@ Before the Name Wrapper, only .eth 2LDs (second-level domains, like `ens.eth`) h
 </div>
 </p>
 
-## With the namewrapper
+## With the Name Wrapper
 
 <br/>
 <div className="container" style={{'padding':'0px'}}>
@@ -41,17 +41,31 @@ Before the Name Wrapper, only .eth 2LDs (second-level domains, like `ens.eth`) h
 </div>
 <div className="col">
 
+**Parent-Controlled Fuses:**
+ - <Link to="/docs/dev-basics/namewrapper/fuses#parent-controlled-fuses">Fuses</Link> that only the parent owner can burn
+ - "Perks" that can be given to the owner of a name
+    **Example:** By burning **CAN_EXTEND_EXPIRY**, you allow the owner to extend/renew their own subname
+
+**Owner-Controlled Fuses:**
+ - <Link to="/docs/dev-basics/namewrapper/fuses#owner-controlled-fuses">Fuses</Link> that either the owner or parent owner can burn
+ - "Permissions" that can be revoked on a name
+    **Example:** By burning **CANNOT_TRANSFER**, the wrapped NFT can no longer be transferred or sold.
+
+**Subname Fuses:**
+ - The parent owner has the power to burn fuses when creating subnames
+ - Decides what perks, permissions, or guarantees to give to subname owners
+
+</div>
+</div>
+</div>
+<br/>
+
 **With this new contract, you can wrap:**
  - Any .eth name or subname  
     **Examples:** `name.eth`, `sub.name.eth`
  
  - Any DNS name or subname  
     **Examples:** `name.com`, `sub.name.com`
-
-</div>
-</div>
-</div>
-<br/>
 
 Unwrapped .eth 2LDs have the concept of a separate `Owner` (Registrant) and `Manager` (Controller).  
 
