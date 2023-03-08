@@ -20,7 +20,11 @@ description: Explaining the various fuses for the Name Wrapper and what they do
 # Fuses
 
 A "fuse" is a permission or perk that can be granted/revoked on a name.
-As the name implies, once the fuse is "burned", it cannot be unburned. Fuses will only reset when the **expiry** is reached.
+As the name implies, once the fuse is "burned", it cannot be unburned. Fuses will only reset when the **expiry** is reached. In the ENS Manager UI, this is available in the "Permissions" section of the name.
+
+For example, by default when you wrap a name, you can transfer that NFT around freely, just as you can with other NFTs. However, if the **CANNOT_TRANSFER** fuse is burned, then the NFT becomes non-transferrable. In the ENS Manager UI, you would do this by revoking the "Can send this name" permission.
+
+In order to burn fuses on a name, the parent name must be **Locked** (meaning, you cannot unwrap the name). The reason is, if the parent name was not locked, then the owner of the parent name could simply get around the constraints of the Name Wrapper by unwrapping the name, and replacing/revoking subnames against the core ENS Registry.
 
 There are **parent-controlled** and **owner-controlled** fuses:
 
@@ -31,7 +35,7 @@ Only the owner of the parent name can burn one of these fuses on a name. These c
 |-|-|
 | **PARENT_CANNOT_CONTROL** | Allows a parent owner to **Emancipate** a child name. After this is burned, the parent will no longer be able to burn any further fuses, and will no longer be able to replace/delete the child name. This fuse must be burned in order for any owner-controlled fuses to be burned on the name. |
 | **IS_DOT_ETH** | This fuse cannot be burned by users of the Name Wrapper, it is only set internally when a .eth 2LD is wrapped. |
-| **CAN_EXTEND_EXPIRY** | The owner of the child name will be able to extend their own expiry. Normally, only the parent owner can extend the expiry of a child name. |
+| **CAN_EXTEND_EXPIRY** | The owner of the child name will be able to extend their own expiry. Normally, only the parent owner can extend the expiry of a child name. See the <Link to="/docs/dev-basics/namewrapper/expiry">Expiry</Link> section for more information. |
 | **Custom Fuses** | There are 13 other parent-controlled fuses that are not reserved, and can be used in any custom way you want! |
 
 ## Owner-Controlled Fuses
@@ -45,4 +49,40 @@ Either the owner of the name *or* the owner of the parent name can burn one of t
 | **CANNOT_SET_RESOLVER** | The resolver contract for the name can no longer be updated. |
 | **CANNOT_SET_TTL** | The TTL for the name can no longer be updated. |
 | **CANNOT_CREATE_SUBDOMAIN** | New subdomains can no longer be created. |
-| **Custom Fuses** | There are 10 other owner-controlled fuses that are not reserved, and can be used in any custom way you want! |
+| **CANNOT_APPROVE** | The approved subname operator for the name can no longer be updated. See the <Link to="/docs/dev-basics/namewrapper/approved-operators">Approved Operators</Link> section for more information. |
+| **Custom Fuses** | There are 9 other owner-controlled fuses that are not reserved, and can be used in any custom way you want! |
+
+## The Emancipated and Locked States
+This is also covered in the <Link to="/docs/dev-basics/namewrapper/states">Wrapped States</Link> section, but here is a quick recap:
+
+All .eth second-level names (like `name.eth`) are automatically placed into the Emancipated state when wrapped.
+
+**Emancipated** means that the parent no longer has control over the child name. It can no longer burn any fuses or replace the subname, up until the expiry.
+
+A name is Emancipated when the parent burns the **PARENT_CANNOT_CONTROL** (PCC) fuse. The parent must first be in the Locked state to be able to do this.
+
+**Locked** means that the name cannot be unwrapped. This provides assurance to subnames that the parent owner cannot unwrap and then, for example, start replacing subnames directly against the registry.
+
+An Emancipated name is Locked when the **CANNOT_UNWRAP** (CU) fuse is burned.
+
+Think of the special PCC / CU fuses recursively:
+
+* To burn owner-controlled or subname fuses, CU must be burned.
+* To burn CU, PCC must be burned.
+* Only the parent can burn PCC on the child name, and only if CU is first burned on the parent
+* To burn CU on the parent, PCC must be burned on the parent
+* Only the grandparent can burn PCC on the parent name, and only if CU is first burned on the grandparent
+* And so on...
+
+Follow that chain up until you hit a .eth second-level name like `name.eth`, since .eth second-level names will have PCC automatically burned when wrapping. The parent `eth` node is already in the Locked state.
+
+A parent name can burn all the fuses it needs to on a child name in one transaction. This can be done when the subname is created, or on an existing subname that has not yet been Emancipated.
+
+## DNS Domains and Fuses
+Currently, only .eth names support fuses, because only the `eth` node is on-chain native and completely locked beyond anyone's control.
+
+Technically speaking, the owner of a DNS TLD has the ability to burn fuses on that TLD in the Name Wrapper, and set it to the "Locked" state. And then from there, all subnames under that DNS TLD **will** be able to use fuses.
+
+However, this still does not have all the immutable guarantees that .eth names do. This is because for DNS names, the "source of truth" always lies not in the Ethereum network, but in the DNS network, and the DNS root zone governed by ICANN stakeholders.
+
+So even if the DNS TLD owner "Locks" that TLD in the ENS Name Wrapper, **if** that TLD were to ever change ownership on the DNS side, then (per the <Link to="https://docs.ens.domains/v/governance/ens-dao-constitution#iv.-ens-integrates-with-the-global-namespace">ENS DAO Constitution</Link>) the new owner would be able to override control of that TLD on the ENS side, unwrap it, and replace/revoke all 2LDs.
