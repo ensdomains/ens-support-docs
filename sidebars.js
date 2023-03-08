@@ -214,7 +214,7 @@ const sidebars = {
 		collapsible: true,
 		collapsed: true,
 		items: [
-			"dev-basics/integration/integrate-ens-cheatsheet",
+			"dev-basics/integration/quick-cheatsheet",
 		],
 	},
         "dev-basics/namehash",
