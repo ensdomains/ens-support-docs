@@ -21,26 +21,30 @@ description: Explaining the different operator approvals on the Name Wrapper con
 
 # Approved Operators
 
-# Full-Control Operator Batch Approvals
+## Full-Control Operator Batch Approvals
 
 Your wrapped name is an ERC-1155 NFT that supports the `setApprovalForAll` method. When you approve an address using this method, it will have **full control** over all wrapped ENS names that you own.
 
 This method is typically used by NFT marketplace contracts.
 
-# Name-Specific Subname Operator Approvals
+## Name-Specific Subname Renewal Approvals
 
-The Name Wrapper also supports the ERC-721 `approve` method. This method is used to approve a single "Subname Operator" for a specific name.
+The Name Wrapper also supports the ERC-721 `approve` method. This method is used to approve a single "Subname Extender" for a specific name.
 
-The "Subname Operator" does not have full control over your wrapped name, it can only take actions on subnames:
+The "Subname Extender" does not have full control over your wrapped name, it can only set / extend the expiry on subnames.
 
-* Create / Replace subnames
-* Burn fuses on subnames
-* Set / Extend the expiry on subnames
-
-So for example, you can approve a subname registrar contract that can act on your behalf and allow users to register subnames.
-
-Further, if you burn the **CANNOT_APPROVE** fuse on your name, then the approved subname operator can no longer be changed. You can use this to "lock in" a subname registrar, similar to how the .eth Registrar works.
-
-And you can do all of this **without** needing to send your wrapped NFT to that contract.
+Further, if you burn the **CANNOT_APPROVE** fuse on your name, then the approved subname extender can no longer be changed. You can use this to "lock in" that contract, so that you can guarantee to all subname owners that renewals/extensions can always be done.
 
 This approved subname operator will be reset if the wrapped NFT is burned or re-minted, which happens if you unwrap the name, or if an expired name gets re-registered. It will also be reset if the wrapped NFT is transferred, **unless** the **CANNOT_APPROVE** fuse is burned.
+
+## Example - Subname Registrar Contract
+
+You can use these operator approval methods to setup a separate contract that can take certain actions on your behalf. One example is setting up a "subname registrar" to allow users to register/renew subnames.
+
+That subname registrar contract would act on your behalf and allow users to register subnames. To allow this, you would call `setApprovalForAll` to give that contract full control over your name (and thus the ability to create subnames).
+
+Then, to enable "unruggable renewals", you could call `approve` on that same contract (or a separate one specific to renewals if you wish) and burn **CANNOT_APPROVE** to lock in subname renewals for that contract.
+
+If you need to later on, you would still be able to revoke with `setApprovalForAll`. So the contract would lose full control over your name (and the ability to create new subnames), but it would still be able to perpetually renew/extend existing subnames.
+
+And you can do all of this **without** needing to send your wrapped NFT to that contract.
