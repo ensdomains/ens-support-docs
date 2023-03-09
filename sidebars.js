@@ -205,6 +205,7 @@ const sidebars = {
             "dev-basics/namewrapper/fuses",
             "dev-basics/namewrapper/expiry",
             "dev-basics/namewrapper/approved-operators",
+            "dev-basics/namewrapper/use-cases",
            ],
         },
 	{
