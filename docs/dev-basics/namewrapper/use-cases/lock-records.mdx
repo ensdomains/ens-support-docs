@@ -1,0 +1,47 @@
+---
+title: Name Wrapper Use-Cases - Lock Resolved Records
+last_update:
+  author: serenae
+tags:
+  - fuses
+  - permissions
+  - namewrapper fuses
+  - wrapper fuses
+  - namewrapper permissions
+  - wrapper permissions
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - wrapped name
+  - NFT
+  - NFTs
+  - subnames
+  - subdomains
+  - resolver
+keywords: [fuses, permissions, namewrapper fuses, wrapper fuses, namewrapper permissions, wrapper permissions, namewrapper, name wrapper, wrapper, wrapped name, NFT, NFTs, subnames, subdomains, resolver]
+description: Name Wrapper Use-Case - Lock the resolved records for a name
+---
+
+# Lock the resolved records for a name
+
+By default, newly registered names will use the Public Resolver, which just allows the current manager/controller of the name to update any records.
+
+However, in some cases perhaps you want to make sure that a name resolves to specific records and **never** changes. You can accomplish this with the **CANNOT_SET_RESOLVER** fuse.
+
+Say you own `mycoolcontract.eth` representing a smart contract. You can use ENS subnames to refer to specific versions of that contract, like `1.mycoolcontract.eth`. And perhaps you want those versioned subnames to always point to:
+* The ETH address of that immutable contract
+* The ABI for that contract
+* The contenthash for some versioned documentation page
+* etc.
+
+One way to do this is just to make sure the name is **Locked**, all the records are set correctly, and then transfer the owner to some burn address so it can never be updated again.
+
+But of course this isn't ideal, because maybe there are some records that you *do* want to update in the future. Or maybe you still want to keep ownership of that subname for other reasons.
+
+Instead of essentially burning the name, you could create a custom resolver that locks in certain records forever. Then:
+1. Set the resolver of that name to your custom contract
+2. Set the records however you want and lock them into the resolver
+3. Burn these fuses on the name:
+   - `PARENT_CANNOT_CONTROL | CANNOT_UNWRAP | CANNOT_SET_RESOLVER`
+
+Now you can still keep ownership and even some limited management power over the name, while still guaranteeing that the ETH address, ABI, and whatever other records are completely immutable, as long as the expiry is set appropriately.

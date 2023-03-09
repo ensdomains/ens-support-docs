@@ -1,0 +1,70 @@
+---
+title: Name Wrapper Use-Cases - Give Subnames Out To NFT Holders
+last_update:
+  author: serenae
+tags:
+  - fuses
+  - permissions
+  - namewrapper fuses
+  - wrapper fuses
+  - namewrapper permissions
+  - wrapper permissions
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - wrapped name
+  - NFT
+  - NFTs
+  - subnames
+  - subdomains
+keywords: [fuses, permissions, namewrapper fuses, wrapper fuses, namewrapper permissions, wrapper permissions, namewrapper, name wrapper, wrapper, wrapped name, NFT, NFTs, subnames, subdomains]
+description: Name Wrapper Use-Case - I want to give subnames out to all of my DAO members / NFT holders!
+---
+
+# I want to give subnames out to all of my DAO members / NFT holders!
+
+Say you own the wrapped name `mycoolnft.eth`, representing a popular NFT project you created. You want to distribute subnames like `6529.mycoolnft.eth` to all holders.
+
+One option is to just bulk create the subnames and drop the wrapped NFTs into their wallets. This might be good at least as an initial drop, because then the holders don't need to interact with any contract or spend any gas, you're doing that for them!
+
+To create the subnames, you'd use the <Link to="https://github.com/ensdomains/ens-contracts/tree/master/contracts/wrapper#setsubnodeowner">setSubnodeOwner</Link> or <Link to="https://github.com/ensdomains/ens-contracts/tree/master/contracts/wrapper#setsubnoderecord">setSubnodeRecord</Link> methods.
+
+You must also decide:
+
+## How much control over the subnames do you want to relinquish?
+
+Do you want to be able to revoke subnames? Or do you want them to be completely outside your control?
+
+One thing to consider is whether you want the **current** holder of your NFT to always be able to claim/reclaim the corresponding ENS subname. If so, then you will **not** want to Emancipate those subnames (in other words, do not burn **PARENT_CANNOT_CONTROL**). If the subname is Emancipated, then the NFT holder could sell/transfer the NFT but keep the subname (up until the expiry).
+
+To make it easy for anyone to claim/reclaim a subname after your initial drop, you can set up a contract for this.
+
+## Setting up a subname claim contract
+
+The `claim` method of your contract could:
+
+1. Call `ownerOf` or `balanceOf` on your NFT contract to get or verify the current owner of the NFT
+2. Call `ownerOf` or `balanceOf` on the ENS Name Wrapper contract to get or verify the current owner of the wrapped subname
+   - If both owner addresses are the same, just return, nothing to do
+3. Call `setSubnodeOwner` or `setSubnodeRecord` on the ENS Name Wrapper:
+   - **owner:** The current owner of the NFT
+   - **fuses:** What fuses you want to burn (if any) on that subname. If you burn any fuses, you must also set an expiry.
+   - **expiry:** When the subname will expire.
+
+Then, to give that contract access to create subnames on your behalf, you would call `setApprovalForAll` on the Name Wrapper to approve your contract as an operator.
+
+Now, even if the NFT gets sold / transferred, the new owner will be able to claim their `mycoolnft.eth` subname at any time.
+
+In addition, if you expand your NFT collection in the future and there are new owners, then those new owners would be able to claim their subnames as well.
+
+If you are creating a new NFT contract, you could even bake this functionality **directly into the NFT contract** too, instead of needing a separate contract! By doing this, you wouldn't need a separate `claim` method either, your NFT contract would just **automatically transfer the wrapped ENS subname** whenever the NFT itself gets transferred!
+
+## Giving your subname owners perks
+
+If you decide to not Emancipate the subnames that you issue, you **will** still be able to burn any Parent-Controlled Fuses. There are 13 unreserved parent-controlled fuses that you can use however you wish!
+
+For example, perhaps you want to grant on-chain "perks" or "roles" to certain holders. You would call <Link to="https://github.com/ensdomains/ens-contracts/tree/master/contracts/wrapper#setchildfuses">setChildFuses</Link> on the Name Wrapper and pass in the fuses you want to burn, and the expiry.
+
+This means that those "perks" or "roles" can also be time-boxed if you want. Maybe a perk expires in 1 week or something, up to you.
+
+There is also the reserved **CAN_EXTEND_EXPIRY** parent-controlled fuse. If you burn this, then the subname owner will be able to extend their own expiry whenever they want.

@@ -205,7 +205,19 @@ const sidebars = {
             "dev-basics/namewrapper/fuses",
             "dev-basics/namewrapper/expiry",
             "dev-basics/namewrapper/approved-operators",
-            "dev-basics/namewrapper/use-cases",
+            {
+              type: "category",
+              label: "Use-Cases",
+              link: { type: "doc", id: "dev-basics/namewrapper/use-cases/index" },
+              collapsible: true,
+              collapsed: false,
+              items: [
+                "dev-basics/namewrapper/use-cases/nft-holders",
+                "dev-basics/namewrapper/use-cases/sell-rent-subnames",
+                "dev-basics/namewrapper/use-cases/issue-tickets",
+                "dev-basics/namewrapper/use-cases/lock-records",
+               ],
+            },
            ],
         },
 	{

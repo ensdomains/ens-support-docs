@@ -1,0 +1,79 @@
+---
+title: Name Wrapper Use-Cases - Sell Or Rent Subnames
+last_update:
+  author: serenae
+tags:
+  - fuses
+  - permissions
+  - namewrapper fuses
+  - wrapper fuses
+  - namewrapper permissions
+  - wrapper permissions
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - wrapped name
+  - NFT
+  - NFTs
+  - subnames
+  - subdomains
+keywords: [fuses, permissions, namewrapper fuses, wrapper fuses, namewrapper permissions, wrapper permissions, namewrapper, name wrapper, wrapper, wrapped name, NFT, NFTs, subnames, subdomains]
+description: Name Wrapper Use-Case - I want to sell / rent out subnames!
+---
+
+# I want to sell / rent out subnames!
+
+Say you own the wrapped name `verypopularname.eth`. Obviously you can just manually create wrapped subnames like `my.verypopularname.eth` and then sell them on an NFT marketplace. But that sure doesn't scale well.
+
+To accomplish this, you will want to create a **subname registrar**. This is a contract that will handle all the registration / renewal for you, and then users will be able to interact with that contract in order to register their own subnames.
+
+In fact, this is exactly how .eth 2LDs are registered. The owner of the `eth` TLD (the NFT contract) delegates registration / renewal to the ETHRegistrarController contract. It is acting as a subname registrar for the name `eth`.
+
+Your contract would expose a `register` method that anyone can call. Under the hood it will use the <Link to="https://github.com/ensdomains/ens-contracts/tree/master/contracts/wrapper#setsubnodeowner">setSubnodeOwner</Link> or <Link to="https://github.com/ensdomains/ens-contracts/tree/master/contracts/wrapper#setsubnoderecord">setSubnodeRecord</Link> methods to create subnames, passing in the **fuses** and **expiry** you want to set.
+
+## What fuses should I burn???
+
+First, note that if you want to burn any fuses on subnames, then your name must be **Locked** (meaning **CANNOT_UNWRAP** is burned).
+
+Assuming that you want your subnames to be "unruggable", such that you cannot replace / revoke them, then you will want to burn **PARENT_CANNOT_CONTROL** on the subnames. This will place them in the **Emancipated** state upon registration.
+
+If you want to sell "forever" subnames, where users register once and can then keep them for as long as they wish, then you can consider burning the **CAN_EXTEND_EXPIRY** fuse. This will allow the subname owner to extend their own expiry whenever they want. The max expiry is the expiry of the parent name, but the .eth Registrar allows *anyone* to renew/extend a .eth 2LD as well.
+
+If you just want to **rent** subnames, then do not burn **CAN_EXTEND_EXPIRY**. Instead, you could include a `renew` method on your contract that users can call for another fee.
+
+If you want to enable "unruggable renewals" for your registrar, to guarantee that users will always be able to renew, then you can call `approve` on the Name Wrapper and approve your registrar contract as the "subname renewal manager" for your name. Then, burn the **CANNOT_APPROVE** fuse on your name, to guarantee that you can never revoke that contract for subname renewals. See the <Link to="/docs/dev-basics/namewrapper/approved-operators">Approved Operators</Link> section above for more info.
+
+If you want to impose other restrictions on your registered subnames, then you can burn the **CANNOT_UNWRAP** fuse to Lock the subname, and also burn whatever other fuses you want.
+
+For example, if you want to prevent owners of your subnames (like `my.verypopularname.eth` from creating their own subnames (like `buy.my.verypopularname.eth`), then you would burn **CANNOT_UNWRAP** and **CANNOT_CREATE_SUBDOMAIN**.
+
+To recap on fuses…
+
+* Sell permanent names:
+   - `CAN_EXTEND_EXPIRY | PARENT_CANNOT_CONTROL`
+* Sell permanent names, but prevent them from creating their own subnames:
+   - `CAN_EXTEND_EXPIRY | PARENT_CANNOT_CONTROL | CANNOT_UNWRAP | CANNOT_CREATE_SUBDOMAIN`
+* Rent out names:
+   - `PARENT_CANNOT_CONTROL`
+* Rent out names, but prevent them from transferring or reselling them:
+   - `PARENT_CANNOT_CONTROL | CANNOT_UNWRAP | CANNOT_TRANSFER`
+
+And so on, it's up to you. You can also burn whatever custom parent-controlled or owner-controlled fuses you want to.
+
+## Can I customize my own rules and fees?
+
+Yes! It's your registrar contract, so you can impose whatever rules and fees you want.
+
+For example, the .eth Registrar imposes a 3-character minimum on all names, as well as a <Link to="/docs/core/registration/fees">custom fee structure</Link> and a <Link to="/docs/core/registration/temporary-premium">temporary premium auction</Link> upon expiration.
+
+By default there is no character limit on subnames, but your contract could have its own rules and fee structure or whatever you want. For example, you can:
+
+* Allow or disallow specific addresses from registering / renewing
+* Only allow registration based on some custom criteria like holding a specific NFT
+* Custom length restrictions like only 3+ characters or < 100 characters
+* Only allow names with characters `[a-z0-9]` and nothing else
+* Use a custom fee structure based on:
+   - The length of the name
+   - The specific characters that are in the name, like emojis
+   - A pre-curated list of "good" names like people's first names
+* And whatever other rules you want.
