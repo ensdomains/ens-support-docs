@@ -41,8 +41,8 @@ To make it easy for anyone to claim/reclaim a subname after your initial drop, y
 
 The `claim` method of your contract could:
 
-1. Call `ownerOf` or `balanceOf` on your NFT contract to get the current owner of the NFT
-2. Call `ownerOf` on the ENS Name Wrapper contract to get the current owner of the wrapped subname
+1. Call `ownerOf` or `balanceOf` on your NFT contract to get or verify the current owner of the NFT
+2. Call `ownerOf` or `balanceOf` on the ENS Name Wrapper contract to get or verify the current owner of the wrapped subname
    - If both owner addresses are the same, just return, nothing to do
 3. Call `setSubnodeOwner` or `setSubnodeRecord` on the ENS Name Wrapper:
    - **owner:** The current owner of the NFT
