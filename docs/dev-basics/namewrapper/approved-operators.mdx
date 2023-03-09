@@ -27,15 +27,15 @@ Your wrapped name is an ERC-1155 NFT that supports the `setApprovalForAll` metho
 
 This method is typically used by NFT marketplace contracts.
 
-## Name-Specific Subname Renewal Approvals
+## Name-Specific Subname Renewal Manager Approvals
 
-The Name Wrapper also supports the ERC-721 `approve` method. This method is used to approve a single "Subname Extender" for a specific name.
+The Name Wrapper also supports the ERC-721 `approve` method. This method is used to approve a single "Subname Renewal Manager" for a specific name.
 
-The "Subname Extender" does not have full control over your wrapped name, it can only set / extend the expiry on subnames.
+The "Renewal Manager" does not have full control over your wrapped name, it can only set / extend the expiry on subnames.
 
-Further, if you burn the **CANNOT_APPROVE** fuse on your name, then the approved subname extender can no longer be changed. You can use this to "lock in" that contract, so that you can guarantee to all subname owners that renewals/extensions can always be done.
+Further, if you burn the **CANNOT_APPROVE** fuse on your name, then the approved renewal manager can no longer be changed. You can use this to "lock in" that contract, so that you can guarantee to all subname owners that renewals/extensions can always be done.
 
-This approved subname operator will be reset if the wrapped NFT is burned or re-minted, which happens if you unwrap the name, or if an expired name gets re-registered. It will also be reset if the wrapped NFT is transferred, **unless** the **CANNOT_APPROVE** fuse is burned.
+This approved renewal manager will be reset if the wrapped NFT is burned or re-minted, which happens if you unwrap the name, or if an expired name gets re-registered. It will also be reset if the wrapped NFT is transferred, **unless** the **CANNOT_APPROVE** fuse is burned.
 
 ## Example - Subname Registrar Contract
 
