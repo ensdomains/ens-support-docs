@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<rect x="9.143" y="141.714" style="fill:#FFFFFF;" width="219.429" height="338.286"/>
+	<rect x="283.429" y="141.714" style="fill:#A4C2F7;" width="219.429" height="338.286"/>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-48.8311" y1="652.6635" x2="-47.9456" y2="651.5148" gradientTransform="matrix(438.8572 0 0 -338.2857 21491.5723 220903.2969)">
+		<stop  offset="0" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.1717" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2001" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.2007" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.2014" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.2023" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.205" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.2522" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.3974" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.42" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.4201" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.4207" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.4214" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.4223" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.425" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.4894" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#F9F2F4"/>
+		<stop  offset="0.5001" style="stop-color:#E8EBF4"/>
+		<stop  offset="0.5003" style="stop-color:#DDE5F4"/>
+		<stop  offset="0.5005" style="stop-color:#D6E2F4"/>
+		<stop  offset="0.501" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.7062" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.74" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.741" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.8346" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.85" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.851" style="stop-color:#D4E1F4"/>
+	</linearGradient>
+	<rect x="36.571" y="141.714" style="fill:url(#SVGID_1_);" width="438.857" height="338.286"/>
+	<g>
+		<path style="fill:#428DFF;" d="M502.857,361.143c-2.425,0.001-4.751-0.962-6.466-2.677c-1.715-1.715-2.678-4.041-2.677-6.466
+			V150.857H18.286v27.433c0,5.049-4.093,9.143-9.143,9.143S0,183.34,0,178.29v-36.576c-0.001-2.425,0.962-4.751,2.677-6.466
+			c1.715-1.715,4.041-2.678,6.466-2.677h493.714c2.425-0.001,4.751,0.962,6.466,2.677c1.715,1.715,2.678,4.041,2.677,6.466V352
+			c0.001,2.425-0.962,4.751-2.677,6.466C507.608,360.18,505.282,361.143,502.857,361.143z"/>
+		<path style="fill:#428DFF;" d="M502.857,489.143H9.143c-2.425,0.001-4.751-0.962-6.466-2.677C0.962,484.751-0.001,482.425,0,480
+			V251.429c0-5.049,4.093-9.143,9.143-9.143s9.143,4.093,9.143,9.143v219.429h475.429v-45.714c0-5.049,4.093-9.143,9.143-9.143
+			c5.049,0,9.143,4.093,9.143,9.143V480c0.001,2.425-0.962,4.751-2.677,6.466C507.608,488.18,505.282,489.143,502.857,489.143z"/>
+		<path style="fill:#428DFF;" d="M484.571,114.286H27.429c-5.049,0-9.143-4.093-9.143-9.143c0-5.049,4.093-9.143,9.143-9.143
+			h457.143c5.049,0,9.143,4.093,9.143,9.143C493.714,110.192,489.621,114.286,484.571,114.286z"/>
+		<path style="fill:#428DFF;" d="M457.143,77.714H54.857c-5.049,0-9.143-4.093-9.143-9.143s4.093-9.143,9.143-9.143h402.286
+			c5.049,0,9.143,4.093,9.143,9.143S462.192,77.714,457.143,77.714z"/>
+		<path style="fill:#428DFF;" d="M429.714,41.143H82.286c-5.049,0-9.143-4.093-9.143-9.143s4.093-9.143,9.143-9.143h347.429
+			c5.049,0,9.143,4.093,9.143,9.143S434.764,41.143,429.714,41.143z"/>
+		<circle style="fill:#428DFF;" cx="9.143" cy="214.857" r="9.143"/>
+		<circle style="fill:#428DFF;" cx="502.857" cy="388.571" r="9.143"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>

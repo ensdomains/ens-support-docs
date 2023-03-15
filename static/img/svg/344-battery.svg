@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<rect x="153.6" y="8.533" style="fill:#A4C2F7;" width="85.333" height="34.133"/>
+	<path style="fill:#FFFFFF;" d="M204.8,298.667l17.067-29.56V63.694c0-11.613-9.414-21.027-21.027-21.027H89.294
+		c-11.613,0-21.027,9.414-21.027,21.027v418.744c0,5.577,2.215,10.926,6.158,14.869c3.943,3.944,9.292,6.159,14.869,6.16H200.84
+		c5.577,0,10.925-2.216,14.869-6.16c3.943-3.944,6.159-9.292,6.158-14.869v-154.21L204.8,298.667z"/>
+	<path style="fill:#A4C2F7;" d="M307.2,298.667l17.067-29.56V63.694c0-11.613-9.414-21.027-21.027-21.027H191.694
+		c-11.613,0-21.027,9.414-21.027,21.027v418.744c0,5.577,2.215,10.926,6.158,14.869c3.943,3.944,9.292,6.159,14.869,6.16H303.24
+		c5.577,0,10.925-2.216,14.869-6.16c3.943-3.944,6.159-9.292,6.158-14.869v-154.21L307.2,298.667z"/>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-49.0432" y1="652.5461" x2="-47.4783" y2="651.8506" gradientTransform="matrix(204.8 0 0 -460.8 10080.0645 300806.0938)">
+		<stop  offset="0" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.1717" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2001" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.2007" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.2014" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.2023" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.205" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.2522" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.3974" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.42" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.4201" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.4207" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.4214" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.4223" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.425" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.4894" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#F9F2F4"/>
+		<stop  offset="0.5001" style="stop-color:#E8EBF4"/>
+		<stop  offset="0.5003" style="stop-color:#DDE5F4"/>
+		<stop  offset="0.5005" style="stop-color:#D6E2F4"/>
+		<stop  offset="0.501" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.7062" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.74" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.741" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.8346" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.85" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.851" style="stop-color:#D4E1F4"/>
+	</linearGradient>
+	<path style="fill:url(#SVGID_1_);" d="M277.64,42.667H114.894c-11.613,0-21.027,9.414-21.027,21.027v418.744
+		c0,5.577,2.215,10.926,6.158,14.869c3.943,3.944,9.292,6.159,14.869,6.16H277.64c5.577,0,10.925-2.216,14.869-6.16
+		c3.943-3.944,6.159-9.292,6.158-14.869V63.694C298.666,52.081,289.252,42.667,277.64,42.667z"/>
+	<g>
+		<path style="fill:#428DFF;" d="M238.933,51.2H153.6c-2.264,0.001-4.435-0.897-6.035-2.498s-2.499-3.772-2.498-6.035V8.533
+			c-0.001-2.264,0.897-4.435,2.498-6.035S151.336-0.001,153.6,0h85.333c2.264-0.001,4.435,0.897,6.035,2.498
+			s2.499,3.772,2.498,6.035v34.133c0.001,2.264-0.897,4.435-2.498,6.035S241.197,51.201,238.933,51.2z M162.133,34.133H230.4V17.067
+			h-68.267V34.133z"/>
+		<path style="fill:#428DFF;" d="M303.242,512H89.292c-16.319-0.021-29.542-13.248-29.558-29.567V63.692
+			c0.017-16.317,13.241-29.541,29.558-29.558h213.95c16.317,0.017,29.541,13.241,29.558,29.558v205.417
+			c0.001,1.498-0.393,2.969-1.142,4.267l-14.608,25.292l14.608,25.292c0.749,1.297,1.143,2.769,1.142,4.267v154.208
+			C332.783,498.752,319.561,511.979,303.242,512z M89.292,51.2c-6.897,0.005-12.486,5.595-12.492,12.492v418.742
+			c0.005,6.898,5.593,12.491,12.492,12.5h213.95c6.898-0.009,12.487-5.602,12.492-12.5V330.508l-15.925-27.575
+			c-1.525-2.64-1.525-5.893,0-8.533l15.925-27.575V63.692c-0.005-6.897-5.595-12.486-12.492-12.492H89.292z"/>
+		<path style="fill:#428DFF;" d="M307.2,307.2h-25.6c-4.713,0-8.533-3.82-8.533-8.533s3.82-8.533,8.533-8.533h25.6
+			c4.713,0,8.533,3.82,8.533,8.533S311.913,307.2,307.2,307.2z"/>
+		<path style="fill:#428DFF;" d="M281.6,307.2c-2.264,0.003-4.435-0.897-6.033-2.5l-25.6-25.6c-2.188-2.149-3.055-5.307-2.27-8.271
+			c0.785-2.965,3.1-5.28,6.065-6.065c2.965-0.785,6.122,0.082,8.271,2.27l25.6,25.6c2.44,2.44,3.169,6.11,1.849,9.298
+			C288.162,305.12,285.051,307.199,281.6,307.2z"/>
+		<path style="fill:#428DFF;" d="M255.991,349.867c-3.073-0.003-5.907-1.658-7.42-4.333c-1.513-2.675-1.47-5.957,0.112-8.592
+			l25.6-42.667c2.425-4.041,7.667-5.35,11.708-2.925c4.041,2.426,5.35,7.667,2.925,11.708l-25.6,42.667
+			C261.774,348.299,258.992,349.871,255.991,349.867L255.991,349.867z"/>
+		<path style="fill:#428DFF;" d="M256,281.6c-2.264,0.001-4.435-0.897-6.035-2.498c-1.601-1.601-2.499-3.772-2.498-6.035v-25.6
+			c0-4.713,3.821-8.533,8.533-8.533c4.713,0,8.533,3.821,8.533,8.533v25.6c0.001,2.264-0.897,4.435-2.498,6.035
+			C260.435,280.703,258.264,281.601,256,281.6z"/>
+		<path style="fill:#428DFF;" d="M256,281.6h-25.6c-4.713,0-8.533-3.82-8.533-8.533s3.82-8.533,8.533-8.533H256
+			c4.713,0,8.533,3.82,8.533,8.533S260.713,281.6,256,281.6z"/>
+		<path style="fill:#428DFF;" d="M256,366.933c-2.264,0.001-4.435-0.897-6.035-2.498c-1.601-1.601-2.499-3.772-2.498-6.035v-17.067
+			c0-4.713,3.821-8.533,8.533-8.533c4.713,0,8.533,3.82,8.533,8.533V358.4c0.001,2.264-0.897,4.435-2.498,6.035
+			C260.435,366.036,258.264,366.935,256,366.933L256,366.933z"/>
+		<path style="fill:#428DFF;" d="M256,349.867h-17.067c-4.713,0-8.533-3.821-8.533-8.533s3.821-8.533,8.533-8.533H256
+			c4.713,0,8.533,3.82,8.533,8.533S260.713,349.867,256,349.867z"/>
+		<circle style="fill:#428DFF;" cx="102.4" cy="196.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="76.8" cy="170.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="128" cy="170.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="76.8" cy="221.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="128" cy="221.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="153.6" cy="196.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="179.2" cy="221.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="102.4" cy="247.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="102.4" cy="298.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="76.8" cy="273.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="128" cy="273.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="76.8" cy="324.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="128" cy="324.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="153.6" cy="247.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="153.6" cy="298.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="204.8" cy="298.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="179.2" cy="273.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="358.4" cy="315.733" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="375.467" cy="375.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="375.467" cy="341.333" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="392.533" cy="401.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="401.067" cy="426.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="426.667" cy="460.8" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="409.6" cy="375.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="409.6" cy="341.333" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="426.667" cy="409.6" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="401.067" cy="460.8" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="443.733" cy="435.2" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="435.2" cy="494.933" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="230.4" cy="273.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="179.2" cy="324.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="256" cy="247.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="307.2" cy="298.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="102.4" cy="349.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="102.4" cy="401.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="76.8" cy="375.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="128" cy="375.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="76.8" cy="426.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="128" cy="426.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="153.6" cy="349.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="204.8" cy="349.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="153.6" cy="401.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="204.8" cy="401.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="179.2" cy="375.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="230.4" cy="375.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="179.2" cy="426.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="230.4" cy="426.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="256" cy="349.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="307.2" cy="349.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="256" cy="401.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="307.2" cy="401.067" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="281.6" cy="375.467" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="281.6" cy="426.667" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="102.4" cy="452.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="76.8" cy="477.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="128" cy="477.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="153.6" cy="452.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="204.8" cy="452.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="179.2" cy="477.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="230.4" cy="477.867" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="256" cy="452.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="307.2" cy="452.267" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="281.6" cy="477.867" r="8.533"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>

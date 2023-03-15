@@ -13,7 +13,25 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: '/img/enssite_logo.svg',
-  plugins: [require.resolve('docusaurus-plugin-image-zoom'), '@docusaurus/plugin-ideal-image'],
+  plugins: [
+    require.resolve('docusaurus-plugin-image-zoom'),
+    '@docusaurus/plugin-ideal-image',
+    /* Redirect tests
+    ['@docusaurus/plugin-client-redirects',
+      {
+        createRedirects(existingPath) {
+          if (existingPath.includes('/docs')) {
+            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+            return [
+              existingPath.replace('/', '/docs'),
+            ];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
+      }
+    ],
+    */
+  ],
   markdown: {
     mermaid: true,
   },
@@ -40,11 +58,15 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: "/docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           breadcrumbs: true,
           editUrl:
             'https://github.com/ensdomains/ens-support-docs/tree/main/',
+        },
+        pages: {
+          routeBasePath: "/",
         },
         blog: {
           showReadingTime: true,
@@ -162,6 +184,7 @@ const config = {
     },
         ],
       },
+      /*
       footer: {
         style: 'light',
         links: [
@@ -220,6 +243,7 @@ const config = {
         ],
         //copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
+      */
       prism: {
         theme: darkCodeTheme,
         darkTheme: darkCodeTheme,

@@ -1,0 +1,9 @@
+[data-theme='light'] .theme-admonition {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+  
+  /* Admonition test
+  div.theme-admonition:nth-child(3) {
+    background: linear-gradient(170deg, rgba(238,249,253,1) 35%, rgba(218,232,237,1) 100%);
+  }
+  */

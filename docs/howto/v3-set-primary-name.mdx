@@ -1,5 +1,5 @@
 ---
-title: Set a Primary Name (V3)
+title: Set a Primary Name
 last_update:
   author: cthulu
 tags:
@@ -7,7 +7,6 @@ tags:
   - identity
   - did
 keywords: [ens primary, ens primary name, set primary name, set a primary name, set a name on wallet, set wallet name, name my wallet, wallet naming]
-draft: true
 ---
 
 # Set a Primary name
@@ -40,8 +39,53 @@ If your ENS name doesn't show up in the Primary drop-down list, it's usually bec
 :::
 
 ## Verify that your Primary name works
-Look up your wallet address on <Link to="https://etherscan.io"><b>Etherscan</b></Link> to check that the `Primary Name` works correctly.
 
-<BrowserWindow url="etherscan.io">
-  <Image img="/img/howto/set-primary-name-2.png"/>
+Visit a few different services and verify that your `Primary name` is working correctly:
+
+<Tabs>
+<TabItem value="ENS Manager" default>
+
+The [ENS Manager App](https://app.ens.domains) will show your `Primary name` and the `Avatar` set on it in the top-right corner, along with your wallet address.
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-verify-ensmanager.png"/>
+  </div>
 </BrowserWindow>
+
+</TabItem>
+<TabItem value="Uniswap">
+
+[Uniswap](https://app.uniswap.org) will show your `Primary name` and its `Avatar` in the top-right corner as well!
+
+<BrowserWindow url="https://app.uniswap.org">
+<Image img="/img/howto/v3-set-avatar-services-uniswap.png"/>
+</BrowserWindow>
+</TabItem>
+<TabItem value="OpenSea">
+
+[OpenSea](https://opensea.io) shows your `Primary name` on your user's page next to your wallet address.
+:::caution note
+OpenSea's systems are _very_ slow to update to reflect any changes, please allow at least 24 hours for the `Primary name` to show.
+:::
+
+<BrowserWindow url="https://opensea.io">
+<Image img="/img/howto/set-primary-name-verify-opensea.png"/>
+</BrowserWindow>
+</TabItem>
+<TabItem value="etherscan">
+
+[Etherscan](https://etherscan.io) will show your `Primary name` in the to and from address sections in the transaction list:
+
+<BrowserWindow url="https://etherscan.io">
+<Image img="/img/howto/set-primary-name-verify-etherscan-1.png"/>
+</BrowserWindow>
+
+And also on top of the wallet overview:
+
+<BrowserWindow url="https://etherscan.io">
+<Image img="/img/howto/set-primary-name-verify-etherscan-2.png"/>
+</BrowserWindow>
+
+</TabItem>
+</Tabs>

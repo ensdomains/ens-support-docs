@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<rect x="298.667" y="179.2" style="fill:#A4C2F7;" width="204.8" height="273.067"/>
+	<rect x="128" y="179.2" style="fill:#FFFFFF;" width="204.8" height="273.067"/>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-48.8094" y1="652.5378" x2="-47.8884" y2="651.4441" gradientTransform="matrix(324.2667 0 0 -273.0667 15993.668 178352.75)">
+		<stop  offset="0" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.1717" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2001" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.2007" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.2014" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.2023" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.205" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.2522" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.3974" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.42" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.4201" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.4207" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.4214" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.4223" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.425" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.4894" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#F9F2F4"/>
+		<stop  offset="0.5001" style="stop-color:#E8EBF4"/>
+		<stop  offset="0.5003" style="stop-color:#DDE5F4"/>
+		<stop  offset="0.5005" style="stop-color:#D6E2F4"/>
+		<stop  offset="0.501" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.7062" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.74" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.741" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.8346" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.85" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.851" style="stop-color:#D4E1F4"/>
+	</linearGradient>
+	<rect x="153.6" y="179.2" style="fill:url(#SVGID_1_);" width="324.267" height="273.067"/>
+	<g>
+		<polygon style="fill:#A4C2F7;" points="68.267,119.467 68.267,332.8 25.6,332.8 25.6,59.733 384,59.733 384,119.467 		"/>
+		<rect x="128" y="119.467" style="fill:#A4C2F7;" width="315.733" height="59.733"/>
+	</g>
+	<polygon style="fill:#E3E7F2;" points="128,179.2 128,392.533 93.867,392.533 93.867,119.467 418.133,119.467 418.133,179.2 	"/>
+	<polygon style="fill:#FFFFFF;" points="76.8,392.533 76.8,119.467 93.867,119.467 93.867,179.2 93.867,392.533 	"/>
+	<polygon style="fill:#E3E7F2;" points="68.267,119.467 68.267,332.8 34.133,332.8 34.133,59.733 358.4,59.733 358.4,119.467 	"/>
+	<polygon style="fill:#FFFFFF;" points="17.067,332.8 17.067,59.733 34.133,59.733 34.133,119.467 34.133,332.8 	"/>
+	<g>
+		<path style="fill:#428DFF;" d="M503.467,460.8H128c-4.713,0-8.533-3.82-8.533-8.533V179.2c0-4.713,3.821-8.533,8.533-8.533
+			h375.467c4.713,0,8.533,3.821,8.533,8.533v162.133c0,4.713-3.82,8.533-8.533,8.533c-4.713,0-8.533-3.821-8.533-8.533v-153.6
+			h-358.4v256h358.4V409.6c0-4.713,3.821-8.533,8.533-8.533c4.713,0,8.533,3.821,8.533,8.533v42.667
+			C512,456.98,508.18,460.8,503.467,460.8z"/>
+		<path style="fill:#428DFF;" d="M68.267,341.333H8.533c-4.713,0-8.533-3.82-8.533-8.533V170.667c0-4.713,3.821-8.533,8.533-8.533
+			s8.533,3.821,8.533,8.533v153.6h42.667v-204.8c0-4.713,3.821-8.533,8.533-8.533h307.2V68.267h-358.4V102.4
+			c0,4.713-3.821,8.533-8.533,8.533S0,107.113,0,102.4V59.733C0,55.021,3.821,51.2,8.533,51.2H384c4.713,0,8.533,3.821,8.533,8.533
+			v59.733c0,4.713-3.82,8.533-8.533,8.533H76.8v204.8C76.8,337.513,72.98,341.333,68.267,341.333z"/>
+		<path style="fill:#428DFF;" d="M128,401.067H68.267c-4.713,0-8.533-3.82-8.533-8.533V119.467c0-4.713,3.821-8.533,8.533-8.533
+			h375.467c4.713,0,8.533,3.821,8.533,8.533V179.2c0,4.713-3.821,8.533-8.533,8.533h-307.2v204.8
+			C136.533,397.246,132.713,401.067,128,401.067z M76.8,384h42.667V179.2c0-4.713,3.821-8.533,8.533-8.533h307.2V128H76.8V384z"/>
+		<circle style="fill:#428DFF;" cx="8.533" cy="136.533" r="8.533"/>
+		<circle style="fill:#428DFF;" cx="503.467" cy="375.467" r="8.533"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>

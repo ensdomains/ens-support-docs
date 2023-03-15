@@ -10,6 +10,7 @@
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-lw);
   margin-bottom: var(--ifm-leading);
+  max-width: 1080px;
 }
 
 .browserWindowHeader {

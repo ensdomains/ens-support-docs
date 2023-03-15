@@ -1,0 +1,66 @@
+---
+last_update:
+  author: cthulu
+tags:
+ - twitter
+ - services
+ - social
+ - social media
+keywords: [twitter, services, social, social media]
+---
+
+# Twitter
+
+## Frequently Asked Questions
+
+### How do I set my ENS name as my username on Twitter?
+Twitter hasn't yet integrated support for ENS names, so you'd simply type them in as your profile name.
+
+:::info how-to
+For help on how to set the Twitter username, see
+ - [**How-To:** Set Twitter Name](/docs/howto/set-twitter-name)
+:::
+
+### Why are only some ENS names selectable as NFT Profile Pictures?
+
+<div className="container" style={{'padding':'0px'}}>
+<div className="row">
+<div className="col">
+<ImageWindow title="Old Avatar">
+<p align="center">
+<Image img="/img/faq/services/twitter-oldavatar-1.png" style={{'borderRadius':'8px'}}/>
+</p>
+</ImageWindow>
+</div>
+<div className="col">
+
+Twitter Blue recently rolled out support for NFT avatar's in their iOS apps.
+This feature is in a _beta phase_ and currently only supports NFT's linking to `.png` and `.jpg` `.jpeg` images.
+    
+In the old metadata service operated by OpenSea `.png` images were rendered for ENS names. These are the names you see in various colours.
+
+</div>
+</div>
+</div>
+
+<div className="container" style={{'padding':'0px'}}>
+<div className="row">
+<div className="col">
+<ImageWindow title="New Avatar">
+<p align="center">
+<Image img="/img/faq/services/twitter-newavatar-1.svg" style={{'borderRadius':'8px'}}/>
+</p>
+</ImageWindow>
+</div>
+<div className="col">
+
+In the new metadata service all names now show up with a blue background with a more modern design.
+
+In ENS new metadata service `.svg` (vector) images are rendered for previews with a rasterization end-point for `.png` images.
+
+Since Twitter grabs their NFT metadata from OpenSea instead of from ENS Metadata service, the rasterization end-point isn't used, so only
+ENS names that still has cached metadata from _OpenSea's Metadata Service_ are selectable.
+
+</div>
+</div>
+</div>
