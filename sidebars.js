@@ -170,16 +170,16 @@ const sidebars = {
       collapsible: false,
       collapsed: false,
       items: [
-        "howto/v3-add-custom-record",
-        "howto/v3-add-wallet-address",
-        "howto/v3-decentralized-website",
-        "howto/v3-integrate-dns",
-        "howto/v3-registration",
-	      "howto/v3-set-avatar",
-        "howto/v3-set-primary-name",
-	      "howto/v3-set-record",
+        "howto/add-custom-record",
+        "howto/add-wallet-address",
+        "howto/decentralized-website",
+        "howto/integrate-dns",
+        "howto/registration",
+	      "howto/set-avatar",
+        "howto/set-primary-name",
+	      "howto/set-record",
         "howto/test-v3-manager",
-        "howto/v3-transfer-name",
+        "howto/transfer-name",
         "howto/set-twitter-name",
         {
           type: "category",
@@ -251,6 +251,21 @@ const sidebars = {
 		],
 	},
         "dev-basics/namehash",
+      ],
+    },
+    {
+      type: "html",
+      className: "sidebar-divider",
+      value: "<div/>"
+    },
+    {
+      type: "category",
+      label: "DNS to ENS",
+      link: { type: "doc", id: "dnstoens/index" },
+      collapsible: false,
+      collapsed: false,
+      items: [
+        "dnstoens/test",
       ],
     },
     {
