@@ -271,21 +271,6 @@ const sidebars = {
       value: "<div/>"
     },
     {
-      type: "category",
-      label: "DNS to ENS",
-      link: { type: "doc", id: "dnstoens/index" },
-      collapsible: false,
-      collapsed: false,
-      items: [
-        "dnstoens/test",
-      ],
-    },
-    {
-      type: "html",
-      className: "sidebar-divider",
-      value: "<div/>"
-    },
-    {
       type: 'link',
       label: 'Developer Docs',
       href: 'https://docs.ens.domains',
