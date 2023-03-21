@@ -1,0 +1,99 @@
+---
+title: Wrap an existing subname or DNS name
+last_update:
+  author: serenae
+tags:
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - namewrapper contract
+  - wrapper contract
+keywords: [namewrapper, name wrapper, wrapper, namewrapper contract, wrapper contract]
+description: How to wrap an existing subname or DNS name with the ENS Manager App
+---
+
+# Wrap an existing subname or DNS name
+
+:::info
+ - This is only applicable to the new (v3) version of the ENS Manager App.
+:::
+
+In the ENS Manager App, browse to your name. You should see a banner at the top with an **Upgrade** button:
+
+<BrowserWindow url="app.ens.domains">
+  <div style={{'padding':'25px'}}>
+    <Image img="/img/namewrapper-howto-wrap-subname-1.png"/>
+  </div>
+</BrowserWindow>
+
+Click the **Upgrade** button, and a dialog will pop up showing you the necessary steps:
+
+<BrowserWindow url="app.ens.domains">
+  <div style={{'padding':'25px'}}>
+    <Image img="/img/namewrapper-howto-wrap-subname-2.png"/>
+  </div>
+</BrowserWindow>
+
+:::info
+ - The first "Approve NameWrapper" transaction will approve the Name Wrapper contract as an operator on the ENS registry for your account.
+   - If you have already done this in the past, then you will not see this step.
+ - The second "Migrate profile" step refers to copying all your profile records into the new resolver contract.
+   - If you don't have any profile records set on your name, then you will not see this step.
+ - The third "Wrap name" step will set the manager of your name to the Name Wrapper contract. You will be issued an ERC-1155 wrapped NFT in return.
+:::
+
+Click on **Start** to begin the process. You will see a confirm screen for the first transaction:
+
+<BrowserWindow url="app.ens.domains">
+  <div style={{'padding':'25px'}}>
+    <Image img="/img/namewrapper-howto-wrap-subname-3.png"/>
+  </div>
+</BrowserWindow>
+
+:::info
+ - You will only see this step if you have not already approved the Name Wrapper contract. If you have already done this step in the past, then skip to the next screenshot below.
+:::
+
+Click on **Open Wallet** to send the first transaction to your wallet for you to approve.
+
+Once the transaction is confirmed, click on **Next** to go to the next step:
+
+<BrowserWindow url="app.ens.domains">
+  <div style={{'padding':'25px'}}>
+    <Image img="/img/namewrapper-howto-wrap-subname-4.png"/>
+  </div>
+</BrowserWindow>
+
+:::info
+ - You will only see this step if you have any profile records set on your name. If you don't have any set, then skip to the next screenshot below.
+:::
+
+Click on **Open Wallet** to send the second transaction to your wallet for you to approve.
+
+Once the transaction is confirmed, click on **Next** to go to the next step:
+
+<BrowserWindow url="app.ens.domains">
+  <div style={{'padding':'25px'}}>
+    <Image img="/img/namewrapper-howto-wrap-subname-5.png"/>
+  </div>
+</BrowserWindow>
+
+Click on **Open Wallet** to send the third transaction to your wallet for you to approve.
+
+Once the transaction is confirmed, click on **Done**:
+
+<BrowserWindow url="app.ens.domains">
+  <div style={{'padding':'25px'}}>
+    <Image img="/img/namewrapper-howto-wrap-subname-6.png"/>
+  </div>
+</BrowserWindow>
+
+That's it! Now your name is wrapped!
+
+You'll be able to tell in the ENS Manager App, because there is no longer the "Upgrade" banner at the top. Also, you should now see the extra "Permissions" tab at the top.
+
+## Next Steps
+
+Now that your name is wrapped, any subnames you create under this name will now automatically be wrapped as well.
+
+Also, you will now have access to the Permissions (Fuses) section in the manager. Read the <Link to="/docs/dev-basics/namewrapper/fuses">Fuses</Link> page for more information, and the <Link to="/docs/dev-basics/namewrapper/how-to/change-permissions">Change Permissions</Link> page for instructions on how to change permissions on wrapped names.
