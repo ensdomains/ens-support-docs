@@ -89,9 +89,8 @@ html[data-theme='dark'] {
                                                             var(--ifm-color-emphasis-100) 100% );
 }
 
-.markdown > h2 {
-  --ifm-h2-font-size:           1.8rem;
-}
+.markdown > h2 {  --ifm-h2-font-size: 1.8rem;
+                  font-weight: 600; }
 
 article table { border-radius: var(--ifm-global-radius); }
 
