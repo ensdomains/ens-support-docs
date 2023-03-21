@@ -15,7 +15,7 @@
   --text-color:                 rgba(59,69,78,1.00);
   --ifm-color-black:            rgba(59,69,78,1.00);
   --ifm-link-color:             var(--ifm-color-primary-dark);
-  --ifm-heading-color:          rgba(59,69,78,1.00);
+  --ifm-heading-color:          rgba(59,69,78,1.00);      
   --ifm-code-font-size:         95%;
   --ifm-heading-font-weight:    400;
   --ifm-font-weight-bold:       700;
@@ -87,6 +87,10 @@ html[data-theme='dark'] {
   --docsearch-key-gradient:               linear-gradient(  -26.5deg,
                                                             var(--ifm-color-emphasis-200) 0%,
                                                             var(--ifm-color-emphasis-100) 100% );
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size:           1.8rem;
 }
 
 article table { border-radius: var(--ifm-global-radius); }
