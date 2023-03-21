@@ -58,7 +58,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: "/docs",
+          routeBasePath: "/",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           breadcrumbs: true,
@@ -66,7 +66,7 @@ const config = {
             'https://github.com/ensdomains/ens-support-docs/tree/main/',
         },
         pages: {
-          routeBasePath: "/",
+          routeBasePath: "/pages",
         },
         blog: {
           showReadingTime: true,

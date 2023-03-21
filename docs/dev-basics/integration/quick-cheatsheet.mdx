@@ -282,7 +282,7 @@ function Wallet() {
 export default Wallet;
 ```
 
-### Resolving the <Link to="/docs/core/records/primary-name">ENS Primary Name</Link>
+### Resolving the <Link to="/core/records/primary-name">ENS Primary Name</Link>
 
 Now, instead of always showing an ugly hexadecimal address, let’s integrate with ENS!  
 Ethers.js makes this easy. <Link to="https://docs.ethers.org/v5/api/providers/provider/#Provider--ens-methods">Here’s their documentation page</Link> on it.
@@ -344,7 +344,7 @@ Now in your app, it should display the ENS Primary Name for your connected accou
 
 ### Resolving the Avatar for an ENS name
 
-Now we have an ENS name for the connected account! So if they have records set on their ENS name, we can resolve those and display them in the app! Let’s start with a popular one – the <Link to="/docs/core/records/avatar">Avatar record</Link>.
+Now we have an ENS name for the connected account! So if they have records set on their ENS name, we can resolve those and display them in the app! Let’s start with a popular one – the <Link to="/core/records/avatar">Avatar record</Link>.
 
 Per the <Link to="https://docs.ethers.org/v5/api/providers/provider/#Provider--ens-methods">Ethers.js documentation</Link>, resolving the avatar is as simple as calling `provider.getAvatar(name)`. Let’s add that:
 
@@ -421,12 +421,12 @@ Now you should see both the ENS Primary Name and Avatar in the app!
 ### Resolving other ENS records
 
 :::info
-An ENS name can be used as your web3 profile too! There are many other <Link to="/docs/core/records">records</Link> you can set other than the Avatar, like:
+An ENS name can be used as your web3 profile too! There are many other <Link to="/core/records">records</Link> you can set other than the Avatar, like:
 
  - E-mail address
  - URL to some web2 website
  - Other social media links, like Twitter/etc
- - <Link to="https://support.ens.domains/docs/howto/decentralized_website">Decentralized website</Link> (IPFS/Arweave/Tor/etc)
+ - <Link to="/howto/decentralized_website">Decentralized website</Link> (IPFS/Arweave/Tor/etc)
  - Other coin addresses like BTC
  - And much more!
 :::
