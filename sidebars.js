@@ -238,6 +238,18 @@ const sidebars = {
                 "dev-basics/namewrapper/use-cases/lock-records",
                ],
             },
+            {
+              type: "category",
+              label: "How-To",
+              link: { type: "doc", id: "dev-basics/namewrapper/how-to/index" },
+              collapsible: true,
+              collapsed: false,
+              items: [
+                "dev-basics/namewrapper/how-to/wrap-eth-2ld",
+                "dev-basics/namewrapper/how-to/wrap-subname",
+                "dev-basics/namewrapper/how-to/change-permissions",
+               ],
+            },
            ],
         },
 	{
