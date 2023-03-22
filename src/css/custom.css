@@ -92,6 +92,8 @@ html[data-theme='dark'] {
 .markdown > h2 {  --ifm-h2-font-size: 1.8rem;
                   font-weight: 600; }
 
+.menu { }
+
 article table { border-radius: var(--ifm-global-radius); }
 
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
