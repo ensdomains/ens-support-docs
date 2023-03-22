@@ -183,6 +183,18 @@ const sidebars = {
         "howto/set-twitter-name",
         {
           type: "category",
+          label: "Namewrapper",
+          link: { type: "doc", id: "howto/namewrapper/index" },
+          collapsible: true,
+          collapsed: false,
+          items: [
+            "howto/namewrapper/wrap-eth-2ld",
+            "howto/namewrapper/wrap-subname",
+            "howto/namewrapper/change-permissions",
+           ],
+        },
+        {
+          type: "category",
           label: "V2 Manager App",
           link: { type: "doc", id: "howto/v2/index" },
           collapsible: true,
@@ -236,18 +248,6 @@ const sidebars = {
                 "dev-basics/namewrapper/use-cases/sell-rent-subnames",
                 "dev-basics/namewrapper/use-cases/issue-tickets",
                 "dev-basics/namewrapper/use-cases/lock-records",
-               ],
-            },
-            {
-              type: "category",
-              label: "How-To",
-              link: { type: "doc", id: "dev-basics/namewrapper/how-to/index" },
-              collapsible: true,
-              collapsed: false,
-              items: [
-                "dev-basics/namewrapper/how-to/wrap-eth-2ld",
-                "dev-basics/namewrapper/how-to/wrap-subname",
-                "dev-basics/namewrapper/how-to/change-permissions",
                ],
             },
            ],

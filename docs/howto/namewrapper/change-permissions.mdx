@@ -1,0 +1,236 @@
+---
+title: Change Name Wrapper Permissions
+last_update:
+  author: serenae
+tags:
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - namewrapper contract
+  - wrapper contract
+  - fuses
+  - permissions
+  - namewrapper fuses
+  - wrapper fuses
+  - namewrapper permissions
+  - wrapper permissions
+keywords: [namewrapper, name wrapper, wrapper, namewrapper contract, wrapper contract, fuses, permissions, namewrapper fuses, wrapper fuses, namewrapper permissions, wrapper permissions]
+description: How to change Name Wrapper permissions with the ENS Manager App
+---
+
+# Change Name Wrapper Permissions
+
+Revoking permissions is a `one-way` transaction that cannot be reversed (until the expiry is reached). Before changing any permissions on your name, please review these Name Wrapper sections to learn more:
+* <Link to="/dev-basics/namewrapper/overview">Overview</Link>
+* <Link to="/dev-basics/namewrapper/states">Wrapped States</Link>
+* <Link to="/dev-basics/namewrapper/fuses">Fuses</Link>
+* <Link to="/dev-basics/namewrapper/expiry">Expiry</Link>
+* <Link to="/dev-basics/namewrapper/approved-operators">Approved Operators</Link>
+
+## Permissions Tab
+
+Once your name is wrapped in the Name Wrapper, you will have access to the `Permissions` tab in the ENS Manager App:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-1.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Note that you can only change permissions on a name if it has been <Link to="/dev-basics/namewrapper/states#emancipated">Emancipated</Link> by the parent.
+
+Otherwise, you will see a warning like this:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px 25px 0px 25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-2.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+"Emancipation" means that the parent owner can no longer control the name. All .eth 2LDs (like `myname.eth`) are automatically emancipated when they are first wrapped.
+
+## Changing Permissions
+
+Click the `Change Permissions` button. A dialog will pop up to warn you about the changes you are about to make:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-3.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+If you agree, then click `I understand` to proceed.
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-4.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+As explained in the <Link to="/dev-basics/namewrapper/fuses">Fuses</Link> section, in order to burn owner-controlled fuses on a name, you must <Link to="/dev-basics/namewrapper/states#locked">Lock</Link> that name first. This means that you will no longer be able to unwrap the name.
+
+Click the "Revoke permission" button to select it, and then click `Next` to move to the next step:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-5.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+You will now be able to select other permissions to revoke as you see fit.
+
+For example, if you want to make the wrapped NFT non-transferrable, then you can revoke the "Send this name" permission.
+
+If you only want to Lock the name, then you can click `Skip`. Otherwise, select the permissions you want to revoke, and click `Revoke` to move to the next step:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-6.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+The dialog will show you the selections you made earlier. Click on `Open Wallet` to send the transaction to your wallet to approve.
+
+Once the transaction is confirmed, click on `Done`:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-7.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+The Permissions tab for your name will be updated to show which permissions you have revoked.
+
+You can click on `Change permissions` to burn additional fuses on your name.
+
+Or, if you want to completely "lock" the name so that no additional fuses can be burned, then click on `Revoke permission` in the top section. That will revoke the "permission to revoke permissions" itself, so that the permissions on your name can no longer be changed at all.
+
+## Changing Subname Permissions as the Parent Owner
+
+If you have not yet <Link to="/dev-basics/namewrapper/states#emancipated">Emancipated</Link> a subname, then as the owner of the parent, you will be able to delete the subname at any time:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-8.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Also, if your parent name is `Locked` (meaning that you cannot unwrap it), you will now be able to change permissions on any subnames underneath your name:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-9.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+For example, if you want the owner of the subname to be able to extend their own expiry, then you can click on `Change permissions` and burn that fuse.
+
+To <Link to="/dev-basics/namewrapper/states#emancipated">Emancipate</Link> a subname, click on `Give up parent control` in the top section. A dialog will pop up to warn you about the changes you are about to make:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-3.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+If you agree, then click `I understand` to proceed.
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-10.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Click the "Give up ownership" button to select it, and then click `Next` to move to the next step:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-11.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+As explained in the <Link to="/dev-basics/namewrapper/expiry">Expiry</Link> section, when you burn fuses on a name, you must also set an expiry for it at the same time.
+
+The maximum expiry you can set on a name is the expiry of the parent name. You can select `Max` to do this. Otherwise, you can select `Choose an earlier date` to set a different expiry.
+
+Once you've made your choice, click `Next` to move to the next step:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-12.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+In this step, select which other permissions you want to change on the subname, if any. Note that once you give up control over this subname, you will `no longer be able to change any permissions`.
+
+Some of the permissions are greyed-out in the dialog by default. That's because if you want to revoke them, you must also <Link to="/dev-basics/namewrapper/states#locked">Lock</Link> the subname at the same time. If you wish to do that, then click on "Revoke permission to: Unwrap this name", and then select any other permissions you want to change.
+
+If you only want to Emancipate the name, then you can click `Skip`. Otherwise, select the permissions you want to revoke, and click `Revoke` to move to the next step:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-13.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+The dialog will show you the selections you made earlier. Click on `Open Wallet` to send the transaction to your wallet to approve.
+
+Once the transaction is confirmed, click on `Done`:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+     <Image img="/img/namewrapper-howto-permissions-14.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+The Permissions tab for the subname will be updated to show which permissions you have revoked.
+
+For example in this case, the subname was Emancipated and Locked, meaning:
+* The parent owner can no longer control the subname
+* The subname can no longer be unwrapped
+
+The <Link to="/dev-basics/namewrapper/fuses#parent-controlled-fuses">Extend Expiry</Link> permission was also granted, meaning:
+* The owner of the subname can now extend their own Expiry
+
+Finally, the <Link to="/dev-basics/namewrapper/fuses#owner-controlled-fuses">Create Subnames</Link> permission was also revoked, meaning:
+* The owner of the subname cannot create further subnames underneath their name (like `further.sub.name.eth`).
+
+On the Profile tab for the subname, you'll also see that you no longer have the ability to delete the subname:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-permissions-15.png"/>
+    </div>
+  </p>
+</BrowserWindow>

@@ -1,0 +1,89 @@
+---
+title: Wrap an existing .eth 2LD
+last_update:
+  author: serenae
+tags:
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - namewrapper contract
+  - wrapper contract
+keywords: [namewrapper, name wrapper, wrapper, namewrapper contract, wrapper contract]
+description: How to wrap an existing .eth 2LD with the ENS Manager App
+---
+
+# Wrap an existing .eth 2LD
+
+In the ENS Manager App, browse to your name. You should see a banner at the top with an `Upgrade` button:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7",'padding':'25px 25px 0px 25px'}}>
+      <Image img="/img/namewrapper-howto-wrap-eth-2ld-1.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Click the `Upgrade` button, and a dialog will pop up showing you the necessary steps:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-wrap-eth-2ld-2.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+:::info
+ - The first "Migrate profile" step refers to copying all your profile records into the new resolver contract.
+   - If you don't have any profile records set on your name, then you will not see this step.
+ - The second "Wrap name" step will send your .eth ERC-721 NFT to the Name Wrapper contract. You will be issued the ERC-1155 wrapped NFT in return.
+:::
+
+Click on `Start` to begin the process. You will see a confirm screen for the first transaction:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color':'#f5f6f7','padding':'25px'}}>
+      <Image img="/img/namewrapper-howto-wrap-eth-2ld-3.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+:::info
+ - You will only see this step if you have any profile records set on your name. If you don't have any set, then skip to the next screenshot below.
+:::
+
+Click on `Open Wallet` to send the first transaction to your wallet for you to approve.
+
+Once the transaction is confirmed, click on `Next` to go to the next step:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-wrap-eth-2ld-4.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+Click on `Open Wallet` to send the second transaction to your wallet for you to approve.
+
+Once the transaction is confirmed, click on `Done`:
+
+<BrowserWindow url="https://app.ens.domains">
+  <p align="center">
+    <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
+      <Image img="/img/namewrapper-howto-wrap-eth-2ld-5.png"/>
+    </div>
+  </p>
+</BrowserWindow>
+
+That's it! Now your .eth 2LD is wrapped!
+
+You'll be able to tell in the ENS Manager App, because there is no longer the "Upgrade" banner at the top. Also, you should now see the extra "Permissions" tab at the top.
+
+## Next Steps
+
+Now that your .eth 2LD is wrapped, any subnames you create under this name will now automatically be wrapped as well.
+
+Also, you will now have access to the Permissions (Fuses) section in the manager. Read the <Link to="/dev-basics/namewrapper/fuses">Fuses</Link> page for more information, and the <Link to="/dev-basics/namewrapper/how-to/change-permissions">Change Permissions</Link> page for instructions on how to change permissions on wrapped names.
