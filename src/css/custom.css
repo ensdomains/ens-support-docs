@@ -92,8 +92,6 @@ html[data-theme='dark'] {
 .markdown > h2 {  --ifm-h2-font-size: 1.8rem;
                   font-weight: 600; }
 
-.menu { }
-
 article table { border-radius: var(--ifm-global-radius); }
 
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
@@ -118,11 +116,12 @@ div[class^=searchBox] button {  border-radius:      var(--ifm-global-radius);
                                   padding:            0 var(--ifm-pre-padding); }
 html[data-theme='dark'] .docusaurus-highlight-code-line { background-color: rgba(0, 0, 0, 0.3); }
 
-img.deep-dive-image { max-width: 200px; }
-b.navbar__title { font-size: 1.1rem;
-                  font-weight: 600; }
-.navbar__logo   { height: 36px; }
-.sidebarLogo_isFc b { font-weight: 600; font-size: 1.1rem; }
+img.deep-dive-image { max-width:    200px; }
+b.navbar__title     { font-size:    1.1rem;
+                      font-weight:  600; }
+.navbar__logo       { height:       36px; }
+.sidebarLogo_isFc b { font-weight:  600;
+                      font-size:    1.1rem; }
 
 .sidebarLogo_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module {
   font-size:      1.1rem;

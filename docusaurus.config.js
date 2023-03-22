@@ -10,23 +10,22 @@ const config = {
   tagline: 'ENS Support Documentation',
   url: 'https://support.ens.domains',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: '/img/enssite_logo.svg',
   plugins: [
     require.resolve('docusaurus-plugin-image-zoom'),
     '@docusaurus/plugin-ideal-image',
-    /* Redirect tests
+    /* Local redirect test, not needed now (using server-side cloudflare _redirect)
     ['@docusaurus/plugin-client-redirects',
       {
         createRedirects(existingPath) {
           if (existingPath.includes('/docs')) {
-            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
             return [
               existingPath.replace('/', '/docs'),
             ];
           }
-          return undefined; // Return a falsy value: no redirect created
+          return undefined;
         },
       }
     ],
