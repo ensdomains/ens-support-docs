@@ -31,7 +31,17 @@ const config = {
       }
     ],
     */
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'dnstoens',
+        path: 'dnstoens',
+        routeBasePath: 'dnstoens',
+        sidebarPath: require.resolve('./sidebarsDNStoENS.js'),
+      },
+    ],
   ],
+
   markdown: {
     mermaid: true,
   },
