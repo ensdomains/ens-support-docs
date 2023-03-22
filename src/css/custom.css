@@ -120,8 +120,9 @@ html[data-theme='dark'] .docusaurus-highlight-code-line { background-color: rgba
 
 img.deep-dive-image { max-width: 200px; }
 b.navbar__title { font-size: 1.1rem;
-                  font-weight: 300; }
+                  font-weight: 600; }
 .navbar__logo   { height: 36px; }
+.sidebarLogo_isFc b { font-weight: 600; font-size: 1.1rem; }
 
 .sidebarLogo_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module {
   font-size:      1.1rem;
