@@ -155,7 +155,6 @@ const sidebars = {
         "faq/contributor-guidelines",
 	      "faq/bug-bounty",
 	      "faq/dnssec",
-        "faq/everything-you-can-do",
       ]
     },
     {
