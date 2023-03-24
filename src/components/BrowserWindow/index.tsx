@@ -5,8 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/**
+ * This component is based on Facebook's BrowserWindow-components, with various modifications
+ * I've found useful along the way.
+ * - cthulu.eth [ rasmus@ens.domains ]
+ */
+
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
+import Image from '@theme/IdealImage';
 
 import styles from './styles.module.css';
 
@@ -15,17 +22,21 @@ interface Props {
   minHeight: number;
   url: string;
   padding: string;
+  bg: string;
+  img: string;
 }
 
 export default function BrowserWindow({
   children,
   minHeight,
-  padding = '25px 0px 25px 0px',
+  padding,
+  bg,
+  img,
   url = 'http://localhost:3000',
 }: Props): JSX.Element {
   return (
     <p align="center">
-      <div style={{'padding':padding}}>
+      <div style={{'padding':'25px 0px 25px 0px'}}>
         <div className={styles.browserWindow} style={{minHeight}}>
           <div className={styles.browserWindowHeader}>
             <div className={styles.buttons}>
@@ -45,7 +56,10 @@ export default function BrowserWindow({
             </div>
           </div>
 
-          <div className={styles.browserWindowBody}>{children}</div>
+          <div className={styles.browserWindowBody} style={{'padding':padding,'background':bg}}>
+            {img ? ( <Image img={img} /> ) : (null)}
+            {children}
+          </div>
         </div>
       </div>
     </p>
