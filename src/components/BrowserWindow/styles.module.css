@@ -13,6 +13,24 @@
   max-width: 1080px;
 }
 
+@media only screen and (max-width: 1910px) {
+  .browserWindow {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .browserWindow {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1921px) {
+  .browserWindow {
+    max-width: 80%;
+  }
+}
+
 .browserWindowHeader {
   align-items: center;
   background: var(--ifm-color-emphasis-200);
@@ -48,6 +66,7 @@
   padding: 5px 15px;
   font: 400 13px Arial, sans-serif;
   user-select: none;
+  text-align: left;
 }
 
 [data-theme='dark'] .browserWindowAddressBar {
