@@ -35,7 +35,6 @@ export default function BrowserWindow({
   url = 'http://localhost:3000',
 }: Props): JSX.Element {
   return (
-    <p align="center">
       <div style={{'padding':'25px 0px 25px 0px'}}>
         <div className={styles.browserWindow} style={{minHeight}}>
           <div className={styles.browserWindowHeader}>
@@ -62,6 +61,5 @@ export default function BrowserWindow({
           </div>
         </div>
       </div>
-    </p>
   );
 }
