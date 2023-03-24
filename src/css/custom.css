@@ -99,8 +99,14 @@ article.col:nth-child(n) > a:nth-child(n) { background: #fafafa;
 article table { border-radius: var(--ifm-global-radius); }
 
 .browserWindow_my1Q {
-  align-items: center;
+margin:auto;
 }
+
+div.browserWindow_src-components-BrowserWindow-styles-module {
+  margin:auto;
+}
+
+
 
 [data-theme='light'] img[src$='#gh-dark-mode-only'],
 [data-theme='dark']  img[src$='#gh-light-mode-only'] { display: none; }

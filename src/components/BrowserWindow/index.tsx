@@ -56,8 +56,10 @@ export default function BrowserWindow({
           </div>
 
           <div className={styles.browserWindowBody} style={{'padding':padding,'background':bg}}>
+            <p align="center">
             {img ? ( <Image img={img} /> ) : (null)}
             {children}
+            </p>
           </div>
         </div>
       </div>
