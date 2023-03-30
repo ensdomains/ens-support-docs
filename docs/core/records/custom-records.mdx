@@ -14,7 +14,7 @@ You can add custom text records to your ENS name outside of the standard fields 
 ## Service keys
 Service keys are made up of a reverse dot notation sequence. For example, the ENS Manager App already has fields for common services. There are 5 default service keys for storing key-value data.
 
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="https://app.ens.domains">
   <p align="center">
     <div style={{'background-color': "#f5f6f7", 'padding': "25px"}}>
       <Image img="/img/custom-records-1.png"/>
@@ -26,13 +26,6 @@ Service keys can be hierarchical. As an example, imagine the service key:
 com.example.shipping.vendor 
 
 The text value for this record might reference a public API key specific to a shipping vendor of example.com.
-
-## Global keys
-Global keys do not contain a reverse dot notation. For example, avatar is a global key. It is not specific to any service, but instead can be used to retrieve the text value of a global key. Any number of global keys can be created.
-
-<BrowserWindow url="app.ens.domains">
-  <Image img="/img/custom-records-2.png"/>
-</BrowserWindow>
 
 ## How to add a Custom Record
 :::info how-to
