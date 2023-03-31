@@ -14,12 +14,12 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.3.1",
-    "@docusaurus/plugin-client-redirects": "^2.3.1",
-    "@docusaurus/plugin-content-pages": "^2.3.1",
-    "@docusaurus/plugin-ideal-image": "^2.3.1",
-    "@docusaurus/preset-classic": "^2.3.1",
-    "@docusaurus/theme-mermaid": "^2.3.1",
+    "@docusaurus/core": "^2.4.0",
+    "@docusaurus/plugin-client-redirects": "^2.4.0",
+    "@docusaurus/plugin-content-pages": "^2.4.0",
+    "@docusaurus/plugin-ideal-image": "^2.4.0",
+    "@docusaurus/preset-classic": "^2.4.0",
+    "@docusaurus/theme-mermaid": "^2.4.0",
     "@mdx-js/react": "^1.6.22",
     "algoliasearch": "^4.14.2",
     "clsx": "^1.2.1",
@@ -31,7 +31,7 @@
     "react-instantsearch-hooks-web": "^6.38.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.3.1"
+    "@docusaurus/module-type-aliases": "^2.4.0"
   },
   "browserslist": {
     "production": [
