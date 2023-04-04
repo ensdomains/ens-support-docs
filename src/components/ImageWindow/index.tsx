@@ -13,6 +13,7 @@
 
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
+import Image from '@theme/IdealImage';
 
 import styles from './styles.module.css';
 
@@ -20,12 +21,14 @@ interface Props {
   children: ReactNode;
   minHeight: number;
   title: string;
+  img: string;
 }
 
 export default function ImageWindow({
   children,
   minHeight,
   title = 'image',
+  img,
 }: Props): JSX.Element {
   return (
     <div className={styles.imageWindow} style={{minHeight}}>
@@ -35,7 +38,11 @@ export default function ImageWindow({
         </div>
       </div>
 
-      <div className={styles.imageWindowBody}>{children}</div>
+      <div className={styles.imageWindowBody}>
+        <p align="center">
+          {img ? ( <Image img={img} /> ) : <div>{children}</div>}
+        </p>
+      </div>
     </div>
   );
 }

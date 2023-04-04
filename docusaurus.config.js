@@ -114,7 +114,7 @@ const config = {
     },
     docs: {
       sidebar: {
-        hideable: true,
+        hideable: false,
       },
     },
     metadata: [{
@@ -142,14 +142,18 @@ const config = {
           indexName: 'supportindex',
         },
       navbar: {
-        hideOnScroll: true,
+        hideOnScroll: false,
         title: 'ENS Support',
-        logo: {
+        /*logo: {
           alt: 'ENS Logo',
           src: 'img/enssite_logo.svg',
-          /* srcDark: 'img/newsite-logo-dark.svg', */
-        },
+          srcDark: 'img/newsite-logo-dark.svg',
+        },*/
         items: [
+          // {
+          //   type: 'html',
+          //   value: '<a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/enssite_logo.svg" alt="ENS Logo"></div>ENS Support<span>Docs<span></a>'
+          // },
         /*{
             type: 'doc',
             docId: 'intro',
@@ -161,7 +165,7 @@ const config = {
             label: 'Updates',
             position: 'left'
           }, */
-		/*
+    /*
 	  {
 	    href: 'https://docs.ens.domains',
 	    label: 'Developer Docs',
@@ -172,25 +176,34 @@ const config = {
 	    label: 'Governance Docs',
 	    position: 'left',
 	  },
-	  */
+    */
     {
-      href: 'https://chat.ens.domains',
+      type: 'search',
       position: 'right',
-      className: 'header-discord-link',
-      'aria-label': 'Discord link',
     },
-    {
-      href: 'https://twitter.com/ensdomains',
-      position: 'right',
-      className: 'header-twitter-link',
-      'aria-label': 'Twitter link',
-    },
-    {
-      href: 'https://github.com/ensdomains/ens-support-docs',
-      position: 'right',
-      className: 'header-github-link',
-      'aria-label': 'GitHub  repository',
-    },
+    // {
+    //   type: 'html',
+    //   position: 'right',
+    //   value: '<div className="container navbar__span">a</div>',
+    // },
+    // {
+    //   href: 'https://chat.ens.domains',
+    //   position: 'right',
+    //   className: 'header-discord-link',
+    //   'aria-label': 'Discord link',
+    // },
+    // {
+    //   href: 'https://twitter.com/ensdomains',
+    //   position: 'right',
+    //   className: 'header-twitter-link',
+    //   'aria-label': 'Twitter link',
+    // },
+    // {
+    //   href: 'https://github.com/ensdomains/ens-support-docs',
+    //   position: 'right',
+    //   className: 'header-github-link',
+    //   'aria-label': 'GitHub  repository',
+    // },
         ],
       },
       /*
