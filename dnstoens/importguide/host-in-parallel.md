@@ -35,7 +35,7 @@ To point your DNS domain to IPFS content using DNSLink, a TXT record will need t
 
 ![Alt text](https://dnstoens.com/images/dnslink-ipfs.png "DNSLink with IPFS CID")
 
-The DNSLink record could instead reference and IPNS link, `dnslink=/ipns/`, however we will use the immutable CID instead of an IPNS name for the purposes of this guide. To explore using IPNS, see: [Serve Dynamic Blockchain Content through DNS records](/importguide/4-index).
+The DNSLink record could instead reference and IPNS link, `dnslink=/ipns/`, however we will use the immutable CID instead of an IPNS name for the purposes of this guide. To explore using IPNS, see: [Serve Dynamic Blockchain Content through DNS records](/dnstoens/importguide/dynamic-blockchain-content).
 
 
 ### Step 3: Setup your ENS name’s records to point to IPFS Content
@@ -72,7 +72,7 @@ Since the DNSLink and ENS content record point to the same location, you can upd
 
 ## Related
 
-* [Cloudflare DNS and Web3](/importguide/3-index)
+* [Cloudflare DNS and Web3](/dnstoens/importguide/cloudflare-dns-and-web3)
 * [Support Docs - Create a Decentralized Website](https://support.ens.domains/docs/howto/decentralized_website)
 * [IPFS - DNSLink Docs](https://docs.ipfs.tech/concepts/dnslink/)
-* [DNS and ENS Further Development](/future-dns-ens)
+* DNS and ENS Further Development

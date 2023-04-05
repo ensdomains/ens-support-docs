@@ -4,7 +4,7 @@ description: "An Overview of Serving Dynamic Blockchain Content through DNS reco
 sidebar_position: 4
 ---
 
-One common question is how users can host a website on the blockchain. There are a variety of ways websites can be hosted using the blockchain. A common solution is to use the [InterPlanetary File System (IPFS)](https://ipfs.io/) which is a decentralized peer-to-peer file storage network. IPFS works off of *content identifiers*[(CID)](https://docs.ipfs.tech/concepts/content-addressing/#what-is-a-cid). These are labels based on the content's cryptographic hash. Since CIDs are based on the hash of the content, if the content changes, so does the CID. When pointing a DNS domain to IPFS content, it's important to consider how often the content will change. This guide will use IPNS (InterPlanetary Name System) to reference IPFS content instead of directly with a CID that would change once content is updates. To learn more about hosting unchanging content see: [Host in Parallel DNS and ENS static content from IPFS](/importguide/5-index)
+One common question is how users can host a website on the blockchain. There are a variety of ways websites can be hosted using the blockchain. A common solution is to use the [InterPlanetary File System (IPFS)](https://ipfs.io/) which is a decentralized peer-to-peer file storage network. IPFS works off of *content identifiers*[(CID)](https://docs.ipfs.tech/concepts/content-addressing/#what-is-a-cid). These are labels based on the content's cryptographic hash. Since CIDs are based on the hash of the content, if the content changes, so does the CID. When pointing a DNS domain to IPFS content, it's important to consider how often the content will change. This guide will use IPNS (InterPlanetary Name System) to reference IPFS content instead of directly with a CID that would change once content is updates. To learn more about hosting unchanging content see: [Host in Parallel DNS and ENS static content from IPFS](/dnstoens/importguide/host-in-parallel)
 
 ## How do DNS records point to website content?
 
@@ -107,6 +107,6 @@ You can also log directly into most pinning service platforms and specific a CID
 
 ## Related
 
-* [DNS + ENS Guide - Connect a DNS name to the ENS Protocol](/importguide/1-index)
-* [DNS + ENS Guide - Cloudflare DNS and Web3](/importguide/3-index)
+* [DNS + ENS Guide - Connect a DNS name to the ENS Protocol](/dnstoens/importguide/connect-dns-to-ens)
+* [DNS + ENS Guide - Cloudflare DNS and Web3](/dnstoens/importguide/cloudflare-dns-and-web3)
 * [ENS Documentation - DNS Registrar](https://docs.ens.domains/contract-api-reference/dns-registrar)
