@@ -1,0 +1,51 @@
+---
+title: "Mapping of DNS vs ENS"
+description: "An overview of Mapping of DNS vs ENS"
+last_updated:
+  author: zadok7.eth
+sidebar_position: 10
+---
+
+In the traditional DNS system, the DNS root zone file is managed by the Internet Assigned Numbers Authority ([IANA](https://iana.org)), which is part of the Internet Corporation for Assigned Names and Numbers ([ICANN](https://icann.org)). IANA is responsible for coordinating the assignment of unique identifiers on the Internet, including domain names to IP addresses mapping. The entire root zone file that IANA oversees can be viewed and downloaded here: https://www.iana.org/domains/root/files
+
+<div align="center">
+
+![Alt text](https://dnstoens.com/images/root-zone-file.png "DNS Query and Root Zone File")
+
+</div>
+
+Depending on DNS caching, ie. if the ISP already knows where to find the authoritative nameservers for a website, the DNS query might not need to check against the root zone file. The important thing to note here is that the root zone file is at the highest level of the Domain Name System architecture, and that zone file mapping is maintained by a single entity (IANA).
+
+## Blockchain and Immutable Data Storage on the Blockchain
+
+On the contrary, instead of relying on a single organization's authority to maintain the truth of mapping, the blockchain is a decentralized global database of information whose state is agreed on by the entire blockchain network. This is possible because the storage of this data is distributed among all of the validator nodes that secure the entire Ethereum Virtual Machine blockchain. The blockchain data is stored in an immutable ledger. This means ones the transactions are added to the blockchain, they cannot be reversed, altered or removed. Transaction data can be queried by services like  [Etherscan.io](https://etherscan.io). Below is an example of recent transactions found on Etherscan for wallets that have interacted with the [ETH Registrar Controller](https://etherscan.io/txs?a=0x283af0b28c62c092c9727f1ee09c02ca627eb7f5) which is the smart contract responsible for registering ENS names.
+
+<div align="center">
+
+![Alt text](https://dnstoens.com/images/etherscan-registrations.png "ETH Registrar Controller Transactions")
+
+</div>
+
+Data security for the Ethereum blockchain is afforded by network consensus, where multiple nodes must agree on the state of the data. In addition, access to update blockchain data is cryptographically secured. This means that only the authorized party with the cryptographic private keys are allowed to update or make changes to the data stored on the blockchain. In other words, only the user with the cryptographic private keys is allowed to make updates to the data stored on the blockchain associated with the wallet address they own. There are no credentials stored on central databases, SSO(Single sign on), or email logins to change data on the blockchain. Only a wallet can approve a transaction, which only that user should know the private keys for. The combination of these factors make the blockchain more secure compared to traditional centralized infrastructure, where a single point of failure can lead to data breaches and other security issues.
+
+## Adding or Updating Blockchain Data
+
+In order to add or change data on the blockchain, a user needs to interact with the smart contract(s) by cryptographic signing requests using their wallet. Since users own their own private key data, only they can authorize the transaction to be added to the blockchain. The smart contract is available globally because the blockchain is a global ledger of data that can contain more than data, but code that runs as programs in the form of these smart contracts. This means that many different dApps can be built to allow users to interact with the blockchain using their own wallets, relying on the user owning their own private keys in order to make those transactions. Private keys should never be shared, or stored in an insecure manner.
+
+## Decentralized Apps
+
+A dApp is also known as a Decentralized Application. These applications are built to interact with the blockchain. Because the data storage dApps interact with is the blockchain itself, it is by design transparent, secure, and autonomous, with no central authority controlling the user’s ability to update their own data. For instance, a user could not be blocked, or worse, have their email address hacked and unauthorized access gained to reconfigure what Ethereum blockchain address their ENS name points to. That can only be accessed through having the private keys of the cryptographic wallet that has permission to update such record. 
+
+<div align="center">
+
+![Alt text](https://dnstoens.com/images/dapp-design.png "Blockchain dapps")
+
+</div>
+
+A way to understand this concept is in the case of NFT(non-fungible token) marketplaces. NFTs are digital items stored on the blockchain. It’s important to understand that digital tokens like NFTs or crypto currency do not physically reside within a crypto wallet. Instead, the wallet’s address is noted in the public blockchain ledger as being the owner of that NFT. Because the NFT is not inside the wallet itself, but rather the blockchain, there can be many apps or interfaces that are able to interact with the token. An ERC-721 NFT exists on the Ethereum blockchain and would be able to appear on any market without the need to “add” it to each market. This is because the data (or database) is stored within the global EVM’s blockchain.
+
+## Related
+
+* [.eth Permanent Registrar](https://docs.ens.domains/contract-api-reference/.eth-permanent-registrar)
+* [Ethereum.org - Introduction to smart contracts](https://ethereum.org/en/smart-contracts/)
+* [Support Docs - Security](https://support.ens.domains/docs/faq/security)

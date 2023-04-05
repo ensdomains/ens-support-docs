@@ -1,0 +1,38 @@
+---
+title: "DNS Off-Chain Subname Issuance - Coinbase Wallet (cb.id)"
+description: "This is the meta description for this page"
+sidebar_position: 1
+---
+
+Coinbase owns the DNS name, cb.id. They have imported the name into the ENS protocol so that they can issue subnames to their users. 
+
+*For example*: **user.cb.id**
+
+These subnames that Coinbase allows their wallet users to claim is a free ENS name. Issuance of these names does not cost gas because they are using off-chain resolution. This means that cb.id stores and updates the records off-chain. This is possible because of both [`ENSIP-10: Wildcard Resolution`](https://docs.ens.domains/ens-improvement-proposals/ensip-10-wildcard-resolution) and [`EIP-3668: CCIP Read: Secure offchain data retrieval`](https://eips.ethereum.org/EIPS/eip-3668).
+
+## Wildcard Resolution and CCIP Read
+
+Wildcard resolution allows for the creation of subnames to be done off-chain, instead of on-chain which would cost gas each time a subname is created or deleted. In other words, Coinbase’s cb.id does not need to register each subname.cb.id it issues because *.cb.id wildcard resolution is supported to for ENS name lookups.
+
+The second component involved is CCIP Read which allows a contract to fetch external off-chain data. In terms of off-chain data, that data is not stored on Mainnet. It is stored in an off-chain location, which could be a private database server for instance. The data can also be on a Layer 2 like Optimism, which is also considered “off-chain” in the context of CCIP Read, even though the data is on a blockchain.
+
+
+## cb.id DNS to ENS
+
+You can see that cb.id has an Owner and Controller Ethereum address in the ENS Registry which you can view in the [ENS Manager App](https://app.ens.domains/name/cb.id/details). This means that cb.id is ready to be used in the blockchain, even though the name does not end in “.eth”, and DNS names are not blockchain native.
+
+![Alt text](https://dnstoens.com/images/cb-id-imported.png "DNS to ENS imported cb.id")
+
+## Custom Resolver
+
+Now that cb.id was imported into the ENS registry to be used within the naming service, the Resolver record can be pointed at a custom resolver contract that supported CCIP Read.
+
+![Alt text](https://dnstoens.com/images/cb-id-custom-resolver.png "ENS offchain resolver")
+
+The cb.id custom resolver contract and code can be viewed by looking up the address of [0x1934fc75ad10d7eed51dc7a92773cac96a06be56 on Etherscan](https://etherscan.io/address/0x1934fc75ad10d7eed51dc7a92773cac96a06be56#code). Anytime records for a *.cb.id ENS name are requested, the custom resolver contract that cb.id points to has implemented CCIP Read `(EIP 3668)` and ENS wildcard resolution `(ENSIP 10)`. It will then direct name lookups to a gateway server that implements CCIP Read (EIP 3668). Responses from the gateway server are verified by the resolver through authorized key signing to ensure responses are not forged.
+
+## DNS to ENS Implementation with Off-Chain Resolution
+
+The data storage for requests are by default stored in a JSON file, but the gateway server can be configured to lookup from a variety of backend options.
+
+If you are looking to deploy this configuration, you can visit the [ENS offchain-resolver repo](https://github.com/ensdomains/offchain-resolver). The repository has an example gateway server that uses node.js. An example of a custom [ENS Offchain Resolver contract](https://github.com/ensdomains/offchain-resolver/tree/main/packages/contracts) that supports `ENSIP 10` and `EIP 3668` is also included.

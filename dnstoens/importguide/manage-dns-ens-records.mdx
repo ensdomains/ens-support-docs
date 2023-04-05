@@ -1,0 +1,45 @@
+---
+title: "Manage ENS Records for a DNS Name"
+description: "An overview of How to Manage ENS Records for a DNS Name"
+sidebar_position: 2
+---
+
+ENS records are managed by interacting with the blockchain. In order to make changes to your ENS-enabled DNS domain's ENS records, you must authorize the transaction with your Ethereum wallet. ENS records associated with your domain are most easily managed through the [ENS Manager App](https://app.ens.domains).
+
+## Set Up Wallet Addresses
+
+After bridging a DNS domain with the ENS protocol, the wallet address that was indicated as the owner of the domain will have the permission to create and update blockchain records.
+
+![Alt text](https://dnstoens.com/images/dns-owner.png "DNS to ENS Owner")
+
+In the image above, the Ethereum wallet address, `0xeC6eD73295628fbDc31fd7ca98039084FA752325` was set to the DNS Owner within ENS. This was accomplished by setting up a DNS TXT record to indicate this wallet is the owner of the DNS domain to ENS name. To review this step, see the [Support Docs: Link a DNS name](https://support.ens.domains/docs/howto/link-dns-name) or [Connect a DNS name to the ENS Protocol](/importguide/1-index).
+
+This same address will be the default Ethereum receiving address. Any Ethereum tokens to the ENS-enabled domain name `showmehow.cool` will arrive in this wallet. Optionally, the receiving address could be changed, yet the DNS Owner(and Controller of records) could be set to a different wallet. The DNS domain name’s ENS records can be set to resolve to other cryptocurrency addresses like Bitcoin, Matic, Doge and hundreds others. For more information on multi-chain use, see [Support Docs - Supported Coin Types](https://support.ens.domains/docs/core/records/coin-types).
+
+
+## Set a Primary Name
+
+The Primary name selection allows users to log into dApps with their Ethereum wallet and display their Primary ENS name instead of the long Ethereum address. Having an ENS Primary name functions as a web3 identity, a human-readable name for a long hexadecimal blockchain address.
+
+The Ethereum wallet address that *receives* Ethereum tokens, otherwise known as the ETH Address, will only be able to select the ENS name as its Primary name. Primary name selection can be chosen by logging into the [ENS Manager App](https://app.ens.domains) with the wallet that is listed as the ETH Address and choosing the Primary ENS name under “My Account”. The drop down selector will populate any ENS names, both .eth and ENS-enabled domain names. For more information on setting up an ENS name as a Primary name, see [Support Docs - Set Primary Name](https://support.ens.domains/docs/howto/set-primary-name).
+
+## Set an Avatar
+
+![Alt text](https://dnstoens.com/images/primary-ens.png "Primary ENS Name")
+
+In the same way many dApps have integrated the ENS protocol to show a Primary name, one can also choose a universal avatar or PFP(Profile Picture). Any dApp that has integrated ENS will have the ability to display the avatar image that is resolved from the data stored in that ENS name's records. Avatars can point to http(s) image source links, IPFS content, as well as both ERC721 and ERC1155 NFTs. For instance, if you own a Doodle, Bored Ape, or any other ERC725/1155 NFT, the NFT token and contract address can be used to associate an NFT as your universal web3 profile image. For a detailed guide on selecting an avatar image, see [Support Docs - Set an Avatar](https://support.ens.domains/docs/howto/set-avatar).
+
+## Create Unlimited Subnames
+
+Both ENS .eth names, and bridged DNS domains to ENS have the ability to create unlimited subnames without incurring any registration fees. Once your DNS domains have been ENS enabled, you can manage the records and subname creation through the [ENS Manager App](https://app.ens.domains)
+
+![Alt text](https://dnstoens.com/images/subnames-dns-to-ens.png "Subname creation DNS to ENS")
+
+
+## Related
+
+* [Connect a DNS name to the ENS Protocol](/importguide/1-index)
+* [Support Docs - Add a Wallet Address](https://support.ens.domains/docs/howto/add-wallet-address)
+* [Support Docs - Set a Primary name](https://support.ens.domains/docs/howto/set-primary-name)
+* [Support Docs - How to set an Avatar on your ENS name](https://support.ens.domains/docs/howto/set-avatar)
+* [DNS Off-Chain Subname Issuance - Coinbase Wallet (cb.id)](/dns-ens-use-cases/2-index)

@@ -1,0 +1,32 @@
+---
+title: "DNS and ENS Further Development"
+description: "An overview of the Future of DNS and ENS"
+last_updated:
+  author: zadok7.eth
+sidebar_position: 5
+---
+
+The ENS protocol continues to embrace forward compatibility with DNS to allow for wider web3 and blockchain adoption. Enabling a DNS domain to be used within the ENS protocol has seen considerable development changes since first introduced in 2017.
+
+## Current DNS to ENS Process
+
+Currently importing a DNS name for blockchain usage through the ENS protocol requires a significant amount of gas to add the data to the blockchain. Gas is paid in [Ether](https://ethereum.org/en/developers/docs/intro-to-ether/) which is Ethereum’s native cryptocurrency token. One primary function of the token is that it is used for paying transaction fees to node validators to compute and add new data to the blockchain. Since the ENS protocol is built for public good usage, there **will never be registration fees** to use the ENS protocol with DNS domains. 
+
+## Gasless DNS to ENS Integration
+
+Currently, in order to use a DNS domain within the ENS protocol a DNSSEC proof must be submitted to the [DNSSEC Oracle smart contract](https://github.com/ensdomains/dnssec-oracle). The computational requirements are heavy to submit the proof of ownership of the DNS domain which results in users having to pay a large amount of gas to the Ethereum network to make their DNS domain compatible with the blockchain through ENS.
+
+Off-chain DNS Registrar support will soon be available to DNS domain owners. Instead of submitting DNSSEC proofs to the blockchain, a DNS owner can simply set a TXT record that points to an off-chain resolver contract using [ENSIP-10 Wildcard Resolution](https://docs.ens.domains/ens-improvement-proposals/ensip-10-wildcard-resolution). The result will be that a DNS domain owner will no longer need to pay gas fees to the Ethereum network to enable their DNS domain within the ENS protocol. Instead, the resolver address will be specified within a DNS TXT record containing its location. The result is that DNS domain name owners will save hundreds in transactional gas fees, while still leveraging their web2 domain within the blockchain.
+
+## Gasless ENS Records
+
+Once off-chain DNS registration permits gasless integration of DNS domains within ENS, record creation will continue to require Ethereum gas fees since the records will be set up on chain. Further implementation work is being done to allow secure off-chain record retrieval using [CCIP-read](https://eips.ethereum.org/EIPS/eip-3668). An advanced resolver is being developed that will be able to resolve a DNS to ENS name's records, entirely by its DNS text records. As a result, setting ENS records for ENS enabled DNS domains will not cost any gas since those records will be able to be resolved entirely through DNS TXT records.
+
+## Related
+
+* [DNS to ENS Import Guide](/importguide) - A guide to enable DNS domains in ENS.
+* [DNS Off-Chain Subname Issuance - Coinbase Wallet (cb.id)](/dns-ens-use-cases/2-index) - A look at Coinbase integration with ENS
+* [ENS Documentation - DNS Registrar](https://docs.ens.domains/contract-api-reference/dns-registrar) - About the DNS Registrar.
+* [Ethereum Gas](https://ethereum.org/en/developers/docs/gas/) - What is gas?
+* [ENSIP-10: Wildcard Resolution](https://docs.ens.domains/ens-improvement-proposals/ensip-10-wildcard-resolution) - A method to support wildcard resolution of ENS names.
+* [EIP-3668: CCIP Read: Secure offchain data retrieval](https://eips.ethereum.org/EIPS/eip-3668)

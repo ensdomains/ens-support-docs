@@ -1,0 +1,50 @@
+---
+title: "Imported DNS Compared to ENS Native .eth Name"
+description: "An overview of Imported DNS Compared to ENS Native .eth Name"
+last_updated:
+  author: zadok7.eth
+sidebar_position: 6
+---
+
+The following is a comparison of native  ENS .eth names with DNS names that have been imported to ENS protocol. Though by ENS it's possible to extend DNS functionality into the blockchain, there are some important differences that should be noted.
+
+## [DNS to ENS] VS [ENS .eth Names]
+
+<div align="center">
+
+| **Functionality**          | **DNS to ENS**            | **ENS .eth** |
+|----------------------------|:--------------------------:|:-----------:|
+| **Expires**                | ***No***                   | Yes         |
+| **Registration fee**       | ***No***                   | Yes         |
+| **Relies on DNS**          | Yes                        | ***No***    |
+| **Create subnames**        | Yes                        | Yes         |
+| **Fuse permissions**       | ***No***                   | Yes         |
+| **Tradeable (NFTs)**       | ***No***                   | Yes         |
+| **Blockhain Record Storage**| Yes                       | Yes         |
+| **Resolve dWeb content**   | Yes                        | Yes         |
+| **Universal Avatar (PFP)** | Yes                        | Yes         |
+| **Use as Web3 Identity**   | Yes                        | Yes         |
+| **Point to multiple coins**| Yes                        | Yes         |
+
+</div>
+
+
+* **Expires** - DNS names imported into ENS have no expiration date.
+* **Regisration fee** - 2LD (e.g. name.eth) names have a yearly registration fee. DNS names claimed within ENS do not have any registration fees.
+* **Relies on DNS** - Claiming a DNS name within the ENS protocol relies on a DNSSEC proof of domain ownership and a DNS TXT record to verify the Controlling wallet of the DNS name within ENS and the blockchain. Proof of ownership of the DNS name on ENS could be changed if the DNS provider is changed, or if the DNS domain expires and is registered by another. ENS .eth names do not rely on DNS for their functionality or existence.
+* **Fuse permissions** - DNS names within ENS will not be able to use advanced permissions with the [NameWrapper Contract](https://github.com/ensdomains/ens-contracts/tree/master/contracts/wrapper). 
+* **Create subnames** - Both ENS .eth names and DNS imported ENS names can create unlimited subnames. There are no registration fees for either.
+* **Tradeable (NFTs)** - Only ENS .eth and subnames will have the ability to be traded as [NFT (Non-fungible Token)](https://ethereum.org/en/nft/).A DNS name imported into ENS is not an NFT.
+* **Blockhain Record Storage** - DNS names imported to ENS will have their record storage data resolved from the blockchain just as ENS .eth records do.
+* **Resolve dWeb content** - DNS names within ENS are able to store a dWeb content hash record, the same record is availble to ENS .eth names.
+* **Universal Avatar (PFP)** - DNS to ENS, and ENS .eth names are able to choose an avatar or profile picture that will appear across the Internet.
+* **Use as Web3 Identity** - A DNS name imported into ENS can use set a Primary name which allows an Ethereum wallet to display as your ENS name instead of the long alphanumeric string. Any ENS .eth name can also be set as a Primary name, inlcuding subnames of the parent .eth 2LD (e.g. user1.name.eth).
+* **Point to multiple coins** - ENS records can point to blockchain addresses outside of Ethereum like Bitcoin, LTC, Polygon, and more. See [supported cryptocurrency addresses](https://support.ens.domains/docs/core/records/coin-types/#supported-cryptocurrency-addresses).
+
+## Related
+
+* [ENSIP-9: Multichain Address Resolution](https://docs.ens.domains/ens-improvement-proposals/ensip-9-multichain-address-resolution)
+* [Manage ENS Records for a DNS Name](/importguide/2-index)
+* [DNS Off-Chain Subname Issuance - Coinbase Wallet (cb.id)](/dns-ens-use-cases/2-index)
+* [Support Docs - Set a Primary name](https://support.ens.domains/docs/howto/set-primary-name)
+* [Support Docs - How to set an Avatar on your ENS name](https://support.ens.domains/docs/howto/set-avatar)

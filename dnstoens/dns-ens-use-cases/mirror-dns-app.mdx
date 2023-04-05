@@ -1,0 +1,42 @@
+---
+title: "Mirror DNS app to an ENS dApp - ENS App Manager (app.ens.domains)"
+description: "An Overview of Mirroring a DNS app to an ENS dApp - ENS App Manager (app.ens.domains)"
+sidebar_position: 3
+---
+
+The [ENS Manager App](https://app.ens.domains) is served from a traditional web server. The ENS Manager App can also be rendered using solely content hosted on the decentralized web through IPFS/IPNS.
+
+## The ENS Content Record Hash 
+
+The ENS content record is used to store the location of decentralized content. The content hash record supports multiple storage protocols including IPFS/IPNS, Arweave, Onion, Sia, and Swarm. For more information, please see [ENSIP-7: Contenthash field](https://docs.ens.domains/ens-improvement-proposals/ensip-7-contenthash-field)
+
+The ENS Manager App can be loaded from the IPNS location string saved in the content hash record for [app.ens.eth](https://app.ens.domains/name/app.ens.eth/details)
+
+![Alt text](https://dnstoens.com/images/ipns-dapp-1.png "ENS App Content Hash")
+
+Notice the location of the decentralized content: `ipns://k51qzi5uqu5diwpzjqae01738agaequoptq4pr5e5lzao2is57hqkffpf9r81q`
+
+The ENS content record location is saved to the blockchain. In this sense, it is immutable and can be trusted because `k51qzi5uqu5diwpzjqae01738agaequoptq4pr5e5lzao2is57hqkffpf9r81q` is saved within an ENS record that is stored on the blockchain and cannot be updated without the Controller wallet. This is the wallet that will need to log into the [ENS Manager App](https://app.ens.domains), and approve the signing signing request to set the content hash record.
+
+Additionally, the content without relying on a single point of failure since the content is distributed through the IPFS network onto many other peers.
+
+## Using the LIMO Resolver
+
+The [ETH.LIMO](https://eth.limo/) project is an ENS gateway that resolves ENS content records to their IPFS/IPNS/Skynet locations. The service operates as a public good to make resolving dWeb content hashes stored in ENS records to easily resolve and display their content.
+
+One notable user of this functionality is Vitalik Buterin the founder of Ethereum. His blog is located at [vitalik.ca](https://vitalik.ca). You can also reach his website by visiting [vitalik.eth.limo](https://vitalik.eth.limo)
+
+![Alt text](https://dnstoens.com/images/ipns-dapp-2.png "Vitalik.eth.limo")
+
+
+## Other IPFS/IPNS Gateways
+
+A few browsers like [Brave](#), and browsers using the [Metamask](#) extension can resolve .eth content records natively without using .LIMO. This is possible because the browser is configured to use an IPFS gateway to resolve decentralized content like IPFS locations.
+
+There are many external IPFS Gateways that can be used to resolve IPFS content. You can find more specifications about IPFS Gateways and a list of [Public Gateways](https://docs.ipfs.tech/concepts/ipfs-gateway/#gateway-providers).
+
+## Related
+
+* [Connect a DNS name to the ENS Protocol](/importguide/1-index)
+* [Serve Blockchain Content through DNS records](/importguide/4-index)
+* [ENSIP-7: Contenthash field](https://docs.ens.domains/ens-improvement-proposals/ensip-7-contenthash-field)

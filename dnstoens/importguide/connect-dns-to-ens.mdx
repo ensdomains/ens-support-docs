@@ -1,0 +1,39 @@
+---
+title: "Connect a DNS name to the ENS Protocol"
+description: "An Overview of Connecting a DNS name to the ENS Protocol"
+sidebar_position: 1
+---
+
+Other guides found on this site rely on using Cloudflare as the DNS host provider. Cloudflare offers a free-tier level of DNS Hosting that also comes with an optional IPFS gateway solution. The IPFS gateway feature is used in the [Host in Parallel DNS and ENS content from IPFS](/importguide/4-index) and [Query Blockchain Content through DNS Records](/importguide/3-index) guides. 
+
+`**Note: When changing DNS providers, be sure your records are set up correctly on the new DNS provider. Failing to do so could cause email routing to stop, or your website to not display. Please proceed after making necessary notes about your current DNS configuration.**`
+
+It is not necessary to change DNS providers to enable blockchain funcionality of a domain name in most cases. For more details about camptible DNS host providers, see [Support Docs - A Table of DNS Hosting Providers](https://support.ens.domains/docs/howto/link-dns-name#hosting-providers).
+
+## Step 1: Turn on DNSSEC
+
+Log into the control panel of your current DNS host provider. Look for the DNSSEC setting to make sure it is switched on. If you cannot locate where to turn on DNSSEC, you may need to inquire for support with your specific DNS provider.
+
+![Alt text](https://dnstoens.com/images/1-index-sc1.png "Turn on DNSSEC")
+
+## Step 2: Set a TXT record to your Ethereum Wallet Address
+
+Next, create a DNS TXT record entry. This record will prove domain ownership and allow you to specify which Ethereum wallet address will have Controller permissions of the DNS domain name that will be enabled for blockchain functionality.
+
+* The record type is: `TXT Record`
+* The host name is: `_ens`
+* The value is: `a=[your wallet address]`
+
+![Alt text](https://dnstoens.com/images/1-index-sc2.png "Set TXT Record")
+
+## Step 3: Connect the DNS domain to the ENS Protocol
+
+After DNSSEC is turned on and the the TXT record is create, your DNS domain will be ready for bridging to the ENS protocol. The [ENS Manager App](https://app.ens.domains) will indicate the domain is ready to register within ENS.
+
+![Alt text](https://dnstoens.com/images/1-index-sc3.png "DNS Ready for ENS Import")
+
+## Related
+
+* [DNS Visualizer Tool](https://dnsviz.net/) - A tool to help visual analysis of DNSSEC authentication.
+* [Verisign DNSSEC Analyszer](https://dnssec-debugger.verisignlabs.com/) - Test DNSSEC authentication and record resolution.
+* [DNS and ENS Further Development](/future-dns-ens) - Test DNSSEC authentication and record resolution.
