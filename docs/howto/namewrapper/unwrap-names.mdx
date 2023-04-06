@@ -1,0 +1,89 @@
+---
+title: Unwrapping Names
+last_update:
+  author: serenae
+tags:
+  - namewrapper
+  - name wrapper
+  - wrapper
+  - namewrapper contract
+  - wrapper contract
+keywords: [namewrapper, name wrapper, wrapper, namewrapper contract, wrapper contract]
+description: How to unwrap a previously wrapped name
+---
+
+# Unwrapping Names
+
+Currently the ENS Manager App doesn't yet have this feature. It's on the roadmap, but in the meantime you can use this guide if you want to unwrap any names.
+
+Note that you can only unwrap a name if it hasn't been <Link to="/dev-basics/namewrapper/states#locked">Locked</Link>. Or in other words, if you have not revoked the permission to unwrap it.
+
+## Using Unwrap Tool
+
+This is a small helper website we built on the side to address some edge-cases that may not make sense for the ENS Manager App (or are still on the roadmap):
+
+<BrowserWindow url="https://ens-misctools.vercel.app/unwrap/">
+  <div style={{'background':'#F7F7F7'}}>
+    <iframe src="https://ens-misctools.vercel.app/unwrap#embedded" width="100%" height="500px"/>
+  </div>
+</BrowserWindow>
+
+Enter the name you want to unwrap and it will automatically send the correct transaction to your wallet.
+
+## Using the contract directly
+
+If you want to invoke the unwrap contract methods directly, then follow the instructions in this section. The actual method to call will be different depending on whether it's a .eth second-level name, or any other name.
+
+### For .eth 2LDs
+
+You will need:
+ - The **labelhash** for your .eth name, in hexadecimal format. See here for instructions: <Link to="/dev-basics/namehash#generating-a-labelhash">Generating a Labelhash</Link>
+   - Example: If your name is `name.eth`, then you will calculate the labelhash for `name`.
+
+You can interact directly with the Name Wrapper contract on Etherscan: https://etherscan.io/address/0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401#writeContract#F23
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/etherscan-connect-wallet.jpg"/>
+</BrowserWindow>
+
+At the top, click on "Connect to Web3" to connect your wallet. Then scroll down and expand the `unwrapETH2LD` method:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/namewrapper-howto-unwrap1.jpg"/>
+</BrowserWindow>
+
+Enter the three fields:
+ - **labelhash:** The <Link to="/dev-basics/namehash#generating-a-labelhash">labelhash</Link> for the name.
+ - **registrant:** The owner of the name. Enter your address.
+ - **controller:** The manager of the name. Enter your address.
+
+Then click on "Write" to send the transaction to your wallet.
+
+### For any other name
+
+You will need:
+ - The **namehash** for the parent name, in hexadecimal format. See here for instructions: <Link to="/dev-basics/namehash#generating-a-namehash">Generating a Namehash</Link>
+   - Example: If your name is `sub.name.eth`, then you will calculate the namehash for `name.eth`.
+   - Example: If your name is `domain.xyz`, then you will calculate the namehash for `xyz`.
+ - The **labelhash** for your name, in hexadecimal format. See here for instructions: <Link to="/dev-basics/namehash#generating-a-labelhash">Generating a Labelhash</Link>
+   - Example: If your name is `sub.name.eth`, then you will calculate the labelhash for `sub`.
+   - Example: If your name is `domain.xyz`, then you will calculate the labelhash for `domain`.
+
+You can interact directly with the Name Wrapper contract on Etherscan: https://etherscan.io/address/0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401#writeContract#F22
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/etherscan-connect-wallet.jpg"/>
+</BrowserWindow>
+
+At the top, click on "Connect to Web3" to connect your wallet. Then scroll down and expand the `unwrap` method:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/namewrapper-howto-unwrap2.jpg"/>
+</BrowserWindow>
+
+Enter the three fields:
+ - **parentNode:** The <Link to="/dev-basics/namehash#generating-a-namehash">namehash</Link> for the parent name.
+ - **labelhash:** The <Link to="/dev-basics/namehash#generating-a-labelhash">labelhash</Link> for the name.
+ - **controller:** The manager of the name. Enter your address.
+
+Then click on "Write" to send the transaction to your wallet.
