@@ -10,7 +10,7 @@ ENS records are managed by interacting with the blockchain. In order to make cha
 
 After bridging a DNS domain with the ENS protocol, the wallet address that was indicated as the owner of the domain will have the permission to create and update blockchain records.
 
-![Alt text](https://dnstoens.com/images/dns-owner.png "DNS to ENS Owner")
+<BrowserWindow img="/img/dnstoens/dns-owner.png" title="https://app.ens.domains"/>
 
 In the image above, the Ethereum wallet address, `0xeC6eD73295628fbDc31fd7ca98039084FA752325` was set to the DNS Owner within ENS. This was accomplished by setting up a DNS TXT record to indicate this wallet is the owner of the DNS domain to ENS name. To review this step, see the [Support Docs: Link a DNS name](https://support.ens.domains/docs/howto/link-dns-name) or [Connect a DNS name to the ENS Protocol](/dnstoens/importguide/connect-dns-to-ens).
 
@@ -25,16 +25,23 @@ The Ethereum wallet address that *receives* Ethereum tokens, otherwise known as 
 
 ## Set an Avatar
 
-![Alt text](https://dnstoens.com/images/primary-ens.png "Primary ENS Name")
+<br/>
+<div align="center">
+    <Image img="/img/dnstoens/primary-ens.png" style={{borderRadius:'8px'}}/>
+</div>
+<br/>
 
-In the same way many dApps have integrated the ENS protocol to show a Primary name, one can also choose a universal avatar or PFP(Profile Picture). Any dApp that has integrated ENS will have the ability to display the avatar image that is resolved from the data stored in that ENS name's records. Avatars can point to http(s) image source links, IPFS content, as well as both ERC721 and ERC1155 NFTs. For instance, if you own a Doodle, Bored Ape, or any other ERC725/1155 NFT, the NFT token and contract address can be used to associate an NFT as your universal web3 profile image. For a detailed guide on selecting an avatar image, see [Support Docs - Set an Avatar](https://support.ens.domains/docs/howto/set-avatar).
+In the same way many dApps have integrated the ENS protocol to show a Primary name, one can also choose a universal avatar or PFP(Profile Picture).
+
+Any dApp that has integrated ENS will have the ability to display the avatar image that is resolved from the data stored in that ENS name's records. Avatars can point to http(s) image source links, IPFS content, as well as both ERC721 and ERC1155 NFTs.
+
+For instance, if you own a Doodle, Bored Ape, or any other ERC725/1155 NFT, the NFT token and contract address can be used to associate an NFT as your universal web3 profile image. For a detailed guide on selecting an avatar image, see [Support Docs - Set an Avatar](https://support.ens.domains/docs/howto/set-avatar).
 
 ## Create Unlimited Subnames
 
 Both ENS .eth names, and bridged DNS domains to ENS have the ability to create unlimited subnames without incurring any registration fees. Once your DNS domains have been ENS enabled, you can manage the records and subname creation through the [ENS Manager App](https://app.ens.domains)
 
-![Alt text](https://dnstoens.com/images/subnames-dns-to-ens.png "Subname creation DNS to ENS")
-
+<BrowserWindow url="https://app.ens.domains" img="/img/dnstoens/subnames-dns-to-ens.png"/>
 
 ## Related
 

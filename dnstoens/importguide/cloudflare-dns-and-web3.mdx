@@ -18,33 +18,33 @@ If you are migrating DNS from another provider, you should first backup and DNS 
 
 You will need to add your domain to the Cloudflare dashboard in order to use their DNS hosting service. For the purposes of this guide we will be using the free tier level DNS hosting service. This service level may not be suitable for high traffic production sites so if you are planning to use this setup in production be sure it meets your capacity expectations.
 
-*<mark>Note: Before changing DNS providers, if DNSSEC is turned on at the current DNS host, you should turn the feature off before migrating DNS hosts.</mark>*
+`*Note: Before changing DNS providers, if DNSSEC is turned on at the current DNS host, you should turn the feature off before migrating DNS hosts.*`
 
 ## Step 3: Update your Nameservers to Cloudflare
 
 Cloudflare will display the assigned nameservers for the domain you just added DNS hosting services for.
 
-![Alt text](https://dnstoens.com/images/cf-image1.png "Save new nameservers")
+<BrowserWindow img="/img/dnstoens/cf-image1.png"/>
 
 Next, update the Nameservers at your registrar. In this example, we are migrating from Namecheap DNS services to Cloudflare.
 
-![Alt text](https://dnstoens.com/images/cf-image4.png "Update nameservers")
+<BrowserWindow img="/img/dnstoens/cf-image4.png"/>
 
 ## Step 4: Enable DNSSEC in Cloudflare for your domain
 
-![Alt text](https://dnstoens.com/images/cf-image17.png "Enable DNSSEC")
+<BrowserWindow img="/img/dnstoens/cf-image17.png"/>
 
 ## Step 5: Copy the DS Record from Cloudflare
 
 In order for DNSSEC to work, you have to let your registrar know that Cloudflare DNS is now authoritative for your domain.
 
-![Alt text](https://dnstoens.com/images/cf-image6.png "DS Record")
+<BrowserWindow img="/img/dnstoens/cf-image6.png"/>
 
 ## Step 6: Add the DS Key to the Registrar
 
 Re-enable DNSSEC on the Namecheap registrar. Next, add the DS Record you saved from Cloudflare in the previous step.
 
-![Alt text](https://dnstoens.com/images/cf-image5.png "DS Key at Registrar")
+<BrowserWindow img="/img/dnstoens/cf-image5.png"/>
 
 Your DNS records are now hosted through Cloudflare. If you would like to test using Cloudflare’s IPFS Gateway, refer to: [Serve Blockchain Content through DNS records](/dnstoens/importguide/dynamic-blockchain-content)
 

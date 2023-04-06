@@ -21,15 +21,20 @@ The second component involved is CCIP Read which allows a contract to fetch exte
 
 You can see that cb.id has an Owner and Controller Ethereum address in the ENS Registry which you can view in the [ENS Manager App](https://app.ens.domains/name/cb.id/details). This means that cb.id is ready to be used in the blockchain, even though the name does not end in “.eth”, and DNS names are not blockchain native.
 
-![Alt text](https://dnstoens.com/images/cb-id-imported.png "DNS to ENS imported cb.id")
+<BrowserWindow url="https://app.ens.domains" img="/img/dnstoens/cb-id-imported.png"/>
 
 ## Custom Resolver
 
 Now that cb.id was imported into the ENS registry to be used within the naming service, the Resolver record can be pointed at a custom resolver contract that supported CCIP Read.
 
-![Alt text](https://dnstoens.com/images/cb-id-custom-resolver.png "ENS offchain resolver")
 
-The cb.id custom resolver contract and code can be viewed by looking up the address of [0x1934fc75ad10d7eed51dc7a92773cac96a06be56 on Etherscan](https://etherscan.io/address/0x1934fc75ad10d7eed51dc7a92773cac96a06be56#code). Anytime records for a *.cb.id ENS name are requested, the custom resolver contract that cb.id points to has implemented CCIP Read `(EIP 3668)` and ENS wildcard resolution `(ENSIP 10)`. It will then direct name lookups to a gateway server that implements CCIP Read (EIP 3668). Responses from the gateway server are verified by the resolver through authorized key signing to ensure responses are not forged.
+<BrowserWindow url="https://app.ens.domains" img="/img/dnstoens/cb-id-custom-resolver.png"/>
+
+The cb.id custom resolver contract and code can be viewed by looking up the address of [0x1934fc75ad10d7eed51dc7a92773cac96a06be56 on Etherscan](https://etherscan.io/address/0x1934fc75ad10d7eed51dc7a92773cac96a06be56#code).
+
+Anytime records for a *.cb.id ENS name are requested, the custom resolver contract that cb.id points to has implemented CCIP Read `(EIP 3668)` and ENS wildcard resolution `(ENSIP 10)`. It will then direct name lookups to a gateway server that implements CCIP Read (EIP 3668).
+
+Responses from the gateway server are verified by the resolver through authorized key signing to ensure responses are not forged.
 
 ## DNS to ENS Implementation with Off-Chain Resolution
 

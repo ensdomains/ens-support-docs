@@ -10,7 +10,11 @@ In this example, we will learn how to use the exact same IPFS location to host s
 
 IPNS is a naming system built on IPFS that creates what’s known as “mutable pointers” so that the address of the pointer can be shared once, yet the CIDs the pointer references can change. CIDs are immutable, meaning that they do not change once they are created.
 
-![Alt text](https://dnstoens.com/images/ipns-ipfs.png "IPNS and IPFS")
+<div align="center">
+
+![Docusaurus themed image](/img/dnstoens/light-ipns-ipfs.png#gh-light-mode-only)![Docusaurus themed image](/img/dnstoens/ipns-ipfs.png#gh-dark-mode-only)
+
+</div>
 
 Using a combination of DNSLink with the permanent IPFS content hash (CID), one can reliably host a decentralized website with both a mutable pointer on the DNS domain, and the immutable IPFS CID for the given content. In this way using the immutable CID ensures the integrity of the content because the CID is a permanent hash specifically derived from the content itself.
 
@@ -33,7 +37,11 @@ To point your DNS domain to IPFS content using DNSLink, a TXT record will need t
 
 `dnslink=/ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze`
 
-![Alt text](https://dnstoens.com/images/dnslink-ipfs.png "DNSLink with IPFS CID")
+<br/>
+<div align="center">
+    <Image img="/img/dnstoens/dnslink-ipfs.png"/>
+</div>
+<br/>
 
 The DNSLink record could instead reference and IPNS link, `dnslink=/ipns/`, however we will use the immutable CID instead of an IPNS name for the purposes of this guide. To explore using IPNS, see: [Serve Dynamic Blockchain Content through DNS records](/dnstoens/importguide/dynamic-blockchain-content).
 
@@ -47,8 +55,11 @@ This can be done by logging into the [ENS Manager App](https://app.ens.domains) 
 
 `ipfs://bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze`
 
-![Alt text](https://dnstoens.com/images/dweb-ipfs-ens.png "ENS with IPFS Content")
-
+<br/>
+<div align="center">
+    <Image img="/img/dnstoens/dweb-ipfs-ens.png"/>
+</div>
+<br/>
 
 For detailed instructions on setting a content hash record for an ENS name, see: [Support Docs - The Content Record](https://support.ens.domains/docs/core/records/content-hash)
 
@@ -60,11 +71,11 @@ The DNS domain is not truly decentralized even though the content the domain poi
 
 ## DNS Domain Pointing to IPFS using DNSLink
 
-![Alt text](https://dnstoens.com/images/dns-ipfs-dnslink.png "DNS with DNSLink to IPFS")
+<BrowserWindow img="/img/dnstoens/dns-ipfs-dnslink.png"/>
 
 ## ENS .eth Name Pointing to IPFS using ENS Records and .LIMO Resolver
 
-![Alt text](https://dnstoens.com/images/dns-ipfs-limo.png "ENS IPFS Limo Resolving")
+<BrowserWindow img="/img/dnstoens/dns-ipfs-limo.png"/>
 
 ## Updating your decentralized website
 

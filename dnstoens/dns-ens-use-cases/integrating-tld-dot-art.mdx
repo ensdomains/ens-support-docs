@@ -5,11 +5,19 @@ sidebar_position: 2
 ---
 
 ## .ART ENS Protocol Integration Overview
-One of the most exciting aspects of the ENS protocol is that it allows TLD owners to integrate their own blockchain naming system by leveraging the ENS protocol architecture and its existing smart contracts. TLD owners can now offer both traditional domain name registrations, as well as ENS-enabled DNS names on the blockchain using their very own top-level domain. The result is that TLD owners can create tradeable blockchain names that are NFTs (non-fungible tokens) similar to native .eth ENS names.
+One of the most exciting aspects of the ENS protocol is that it allows TLD owners to integrate their own blockchain naming system by leveraging the ENS protocol architecture and its existing smart contracts.
+
+TLD owners can now offer both traditional domain name registrations, as well as ENS-enabled DNS names on the blockchain using their very own top-level domain. The result is that TLD owners can create tradeable blockchain names that are NFTs (non-fungible tokens) similar to native .eth ENS names.
 
 ## DNS to ENS Parallel Use
 
-Top-level domain owners are able avoid name collision by offering parallel use ENS-enabled DNS names that will not conflict with the same DNS domain that's been integrated into the ENS protocol. These "hybrid" domains can resolve content in web browsers as well as content records on the Ethereum blockchain. For example, [protocol.art](https://protocol.art) permits usage of both the .art DNS domain and the .art ENS name. The "regular" .art DNS name is unable to name collide with the .art ENS name because the .ART domain registrar functionality restricts the ENS-enabled .art name from being traded on the blockchain. This makes it impossible for there to exist two different owners; one owner of the DNS domain, and a separate owner of the ENS-enabled DNS name that will exist on the blockchain. Only the owner of a .art DNS domain can mint the .art ENS-enabled name. The NFT will be minted for parallel use but will have no expiration or owner and the NFT cannot be traded. Though the DNS owner will not be the owner of the .art ENS NFT, they will be the Controller to set records for the ENS-enabled .art name.
+Top-level domain owners are able avoid name collision by offering parallel use ENS-enabled DNS names that will not conflict with the same DNS domain that's been integrated into the ENS protocol.
+
+These "hybrid" domains can resolve content in web browsers as well as content records on the Ethereum blockchain. For example, [protocol.art](https://protocol.art) permits usage of both the .art DNS domain and the .art ENS name.
+
+The "regular" .art DNS name is unable to name collide with the .art ENS name because the .ART domain registrar functionality restricts the ENS-enabled .art name from being traded on the blockchain. This makes it impossible for there to exist two different owners; one owner of the DNS domain, and a separate owner of the ENS-enabled DNS name that will exist on the blockchain.
+
+Only the owner of a .art DNS domain can mint the .art ENS-enabled name. The NFT will be minted for parallel use but will have no expiration or owner and the NFT cannot be traded. Though the DNS owner will not be the owner of the .art ENS NFT, they will be the Controller to set records for the ENS-enabled .art name.
 
 ## DNS Domains as Tradeable Blockchain ENS Names
 
@@ -17,4 +25,10 @@ The .ART TLD is able to issue NFTs on the blockchain for any name domain name th
 
 ## DNS ENS Bridging
 
-Any available .art domain name can be registered directly as an ENS-enabled name ending in .art. To avoid name collision, there will be a “bridge” to move names between DNS and ENS. The DNS .art name will be locked in a “DNS vault”, and the “owner” of the DNS name is the “Vault”. If someone owns the ENS .art, they can get the DNS .art name. In order to mint an ENS .art name, the DNS .art is taken from the DNS registry so it cannot be registered by a separate owner. After someone owns the ENS .art name, they can “unwrap” the .art DNS domain from the DNS registry and claim ownership. The ENS .art owner will get a transfer key and be able to decide who will register the DNS version of the .art domain that matches the name of the ENS-enabled .art NFT blockchain name. You can trade the ENS .art name since they will be an NFT. Avoiding name collision is possible because the DNS .art is interlocked with the ENS .art name.
+Any available .art domain name can be registered directly as an ENS-enabled name ending in .art. To avoid name collision, there will be a “bridge” to move names between DNS and ENS. The DNS .art name will be locked in a “DNS vault”, and the “owner” of the DNS name is the “Vault”.
+
+If someone owns the ENS .art, they can get the DNS .art name. In order to mint an ENS .art name, the DNS .art is taken from the DNS registry so it cannot be registered by a separate owner.
+
+After someone owns the ENS .art name, they can “unwrap” the .art DNS domain from the DNS registry and claim ownership. The ENS .art owner will get a transfer key and be able to decide who will register the DNS version of the .art domain that matches the name of the ENS-enabled .art NFT blockchain name.
+
+You can trade the ENS .art name since they will be an NFT. Avoiding name collision is possible because the DNS .art is interlocked with the ENS .art name.
