@@ -196,6 +196,7 @@ const sidebars = {
             "howto/namewrapper/wrap-eth-2ld",
             "howto/namewrapper/wrap-subname",
             "howto/namewrapper/change-permissions",
+            "howto/namewrapper/unwrap-names",
            ],
         },
         {
