@@ -155,6 +155,10 @@ div.codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlo
   background-color: #fafafa;
 }
 
+[data-theme='dark'] .alert--secondary {
+  background-color: #0e0e0f;
+}
+
 article.col:nth-child(n) > a:nth-child(n) {
   background: #fafafa!important;
   border: 1px solid var(--ifm-color-gray-400);
@@ -443,16 +447,31 @@ b.navbar__title     { font-size:    1.1rem;
 [data-theme='dark'] .docs-card-container h2 { color:      white; }
 
 .theme-admonition {
-  max-width: 90%;
   margin: auto;
-  margin-bottom: 25px;
-  margin-top: 25px;
+  margin-bottom: 25px!important;
+  margin-top: 25px!important;
+}
+@media only screen and (max-width: 1910px) {
+  .theme-admonition { max-width: 100%; }
+}
+
+@media only screen and (min-width: 1920px) {
+  .theme-admonition { max-width: 90%; }
+}
+
+@media only screen and (min-width: 1921px) {
+  .theme-admonition { max-width: 80%; }
 }
 
 [data-theme='light'] .theme-admonition {
   border-top:     1px solid lightgrey;
   border-right:   1px solid lightgrey;
   border-bottom:  1px solid lightgrey;
+}
+[data-theme='dark'] .theme-admonition {
+  border-top:     1px solid var(--ifm-color-gray-800);
+  border-right:   1px solid var(--ifm-color-gray-800);
+  border-bottom:  1px solid var(--ifm-color-gray-800);
 }
 
 .text-muted   { --bs-text-opacity: 1;
