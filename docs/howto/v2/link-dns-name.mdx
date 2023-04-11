@@ -12,13 +12,22 @@ keywords: [ens dns, ens domain name system, add dns, link dns, import dns, integ
 ---
 
 # Link a DNS name
+ENS supports importing DNS names into ENS, which makes it possible to use, for example, your .com .net or .org DNS name with ENS. Allowing you to use nearly all features of an ENS name with your DNS name.
+
+For example: Coinbase *.cb.id usernames are all issued under their `cb.id` DNS name that was imported into ENS!
+
+There are a few pre-requisites to importing a DNS name into ENS:
+
+ - **The DNS name must have DNSSEC enabled with RSA/SHA-256 or ECDSA keys**
+ - **An _ens TXT record must be created on the DNS name containing the wallet address to prove ownership of it.**
 
 ## Hosting providers
 A list of popular hosting providers and which DNSSEC key types they support[^1]
 
 [^1]: The key-types hosting providers support may have changed since this list was last verified on `June 22nd, 2022`.
 
-:::info Hosting providers
+<div align='center'>
+
 | Hosting providers | DNSSEC | RSA/SHA-256 | ECDSA | Details                                                        |
 | ----------------- | ------ | ----------- | ----- | -------------------------------------------------------------- |
 | easyDNS           | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://kb.easydns.com/knowledge/dnssec/)     |
@@ -29,7 +38,8 @@ A list of popular hosting providers and which DNSSEC key types they support[^1]
 | GoDaddy           | `Yes`  | `No`        | `Yes` |                                                                |
 | Wordpress         | `No`   | -           | -     |                                                                |
 | Namecheap         | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://www.namecheap.com/support/knowledgebase/article.aspx/9722/2232/managing-dnssec-for-domains-pointed-to-custom-dns/) |
-:::
+
+</div>
 
 ## Step 1: Enable DNSSEC
 
@@ -49,14 +59,16 @@ If they don’t, you’ll need to migrate to a DNS provider that does. See:
 ## Step 2: Add the TXT-record
 The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
 
-:::info TXT record
+<div align='center'>
+
 |          |                    |
 | -------- | -------------------|
 | Type     | `TXT`              |
 | Name     | `_ens`             |
 | Contents | `a=wallet address` |
 | TTL      | `36000`            |
-:::
+
+</div>
 
 To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
 <BrowserWindow url="support.ensmods.xyz">

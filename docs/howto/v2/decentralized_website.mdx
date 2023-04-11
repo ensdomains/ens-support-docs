@@ -9,10 +9,20 @@ keywords: [ens website, create decentralized website, decentralized website, add
 ---
 
 # Create a decentralized website
+
+---
+
 One of the most interesting and powerful features of ENS names is the ability to point them to webpages hosted on the decentralized web, creating a website where both the hosting and the domain name is *entirely* decentralized.
 
-In this tutorial we'll show you how to deploy a basic website to IPFS and point your ENS name to it.
-ENS supports several decentralized protocols apart from IPFS, but this tutorial only covers IPFS (for now).
+In this tutorial you will:
+ 1. [**Build a website**](#build-a-website)
+ 1. [**Set up a GitHub repository**](#set-up-a-github-repository)
+ 1. [**Upload it to a decentralized storage using IPFS**](#upload-to-ipfs)
+ 1. [**Point your ENS name to it**](#configure-your-ens-name)
+ 
+_ENS supports several decentralized protocols apart from IPFS, but this tutorial only covers IPFS (for now)._
+
+Anyhow, let's get started!
 
 ## Build a website
 In this section we'll create a basic website to deploy to IPFS using <Link to="http://heavens.tools"><b>Heaven's Tools</b></Link> excellent Web3 website builder.
@@ -21,18 +31,23 @@ If you already have a website you'd like to upload, proceed to [**Set up a GitHu
 :::
 
 ### Create the website
-Go to <Link to="http://heavens.tools"><b>Heaven's Tools</b></Link> website and use the drag and drop building blocks to create your site.
+Before we can upload a site to IPFS we have to first create it! There are many ways to do that, but in this guide we'll try to keep it simple by using Heaven's Tools which is a WYSIWYG, or "What You See Is What You Get", type editor where you don't have to know how to code.
+
+All you need to do is go to <Link to="http://heavens.tools"><b>Heaven's Tools</b></Link> website and drag blocks in the order you want them and Heaven's Tools will take care of the rest and build the site for you!
+
 <BrowserWindow url="heavens.tools">
   <Image img="/img/howto/decentralized_website_1.png" />
 </BrowserWindow>
 
 ### Download the website
-Once you're happy with the site you've created click the `Download` button to download a compressed `.zip` archive of your website. 
+Once you're happy with the site you've created click the `Download` button to download a compressed `.zip` archive of your website.
+This archive contains the files we're going to upload to GitHub in the next section!
 <BrowserWindow url="heavens.tools">
   <Image img="/img/howto/decentralized_website_2.png" />
 </BrowserWindow>
 
 ### Extract the compressed archive
+If you're unsure of how to extract the `.zip` archive, expand this section for help.
 <details>
   <summary>Extract compressed archive</summary>
     <Tabs>
@@ -69,6 +84,7 @@ Once you're happy with the site you've created click the `Download` button to do
 ---
 
 ## Set up a GitHub repository
+
 Go to <Link to="https://github.com"><b>GitHub</b></Link> and create an account.
 
 ### Create a repository
@@ -109,6 +125,10 @@ After that's done, scroll down and click `Commit`.
 ---
 
 ## Upload to IPFS
+IPFS, or the _InterPlanetary FileSystem_, is a decentralized storing protocol we'll use to store our website files in, and serve them from.
+For this tutorial we'll use a so called _"pinning service"_ to store our files on IPFS but it's also possible to pin files yourself using a local IPFS node.
+
+The benefit of using a pinning service is that you'll not need to run your own IPFS node to make sure that your website is accessible.
 
 ### Create an account with Fleek
 Go to <Link to="https://fleek.co"><b>Fleek's website</b></Link> and `Sign Up` for an account.
@@ -159,6 +179,8 @@ Select the `IPFS CID` *(marked in blue below)* and press `CTRL + C` to copy it i
   <Image img="/img/howto/create_website_fleek_9.png" />
 </BrowserWindow>
 
+---
+
 ## Configure your ENS name
 
 ### Go to the ENS Manager App
@@ -182,3 +204,5 @@ Go to your ENS name and click `Add/Edit Record`, scroll down and enter the `IPFS
 </BrowserWindow>
 
 Congratulations! That's it!
+
+---

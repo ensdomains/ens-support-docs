@@ -10,7 +10,9 @@ keywords: [ens primary, ens primary name, set primary name, set a primary name, 
 
 # Set a Primary name
 
-The Primary name is your reverse record responsible for resolving your wallet address to your ENS name, effectively helping DApps and other services display your ENS name based on your *Ethereum* wallet address.
+The Primary name is your reverse record responsible for resolving your wallet address to your ENS name, helping decentralized apps and services display your ENS name based on your *Ethereum* wallet address.
+
+In this guide we'll show you how to set up your Primary Name in just 3 steps.
 
 <BrowserWindow url="https://app.ens.domains">
   <div style={{'background':'#f0f6fa'}}>
@@ -24,14 +26,14 @@ Setting a name as `Primary` in your wallet is usually a simple affair, but it ca
 
 If either of these applies to you, then you can solve it by following the [Prerequisites](#prerequisites) section below.
 
-## Prerequisites
+## 1. Prerequisites {#prerequisites}
 :::info prerequisites
 In order to set an ENS name as `Primary` there are two prerequisites:
 1. The Resolver record must be set to the `ENS Public Resolver` smart contract.
 1. The `ETH Address` record must be set to the wallet you're setting the `Primary` on.
 :::
 
-### 1. Set the Resolver
+### 1.1. Set the Resolver {#1-set-the-resolver}
 Go to your ENS name in the [ENS Manager App](https://app.ens.domains) and scroll down to the bottom and expand `Advanced settings`.
 Make sure that the `Resolver` record there is set to either of these contract addresses:
 
@@ -49,7 +51,7 @@ Make sure that the `Resolver` record there is set to either of these contract ad
 
 If it's unset edit it and enter the ENS Public Resolver: `0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63`
 
-### 2. Set the ETH Address record
+### 1.2. Set the ETH Address record {#2-set-the-eth-address-record}
 Go to your ENS name in the [ENS Manager App](https://app.ens.domains) and scroll down to the `Addresses` section
 
 <BrowserWindow url="https://app.ens.domains">
@@ -74,7 +76,7 @@ Then **_scroll down_** and click `Confirm` _at the **bottom** of the address sec
   </div>
 </BrowserWindow>
 
-## Set the Primary Name
+## 2. Set the Primary Name {#set-the-primary-name}
 :::caution Prerequisites
  - The ENS name must be configured with a `Resolver` record for the `Addresses`-section to appear.
  - The `ETH Address` record of the ENS name must first point to the wallet you want to set the `Primary Name` on
@@ -92,7 +94,7 @@ Click `My Account` on the upper right hand side to go to your Account page. Sele
 </BrowserWindow>
 
 
-## Verify that your Primary name works
+## 3. Verify that your Primary name works {#verify-that-your-primary-name-works}
 
 Visit a few different services and verify that your `Primary name` is working correctly:
 

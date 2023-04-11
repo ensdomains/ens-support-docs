@@ -10,17 +10,83 @@ keywords: [ens primary, ens primary name, set primary name, set a primary name, 
 ---
 
 # Set a Primary name
-:::caution Pre-requisites
- - The `ETH Address` record of the ENS name must first point to the wallet you want to set the `Primary Name` on
+The Primary name is your reverse record responsible for resolving your wallet address to your ENS name, helping decentralized apps and services display your ENS name based on your *Ethereum* wallet address.
 
-If you haven't set the `ETH Address` record to your ENS name, see
- - <Link to="/howto/add-wallet-address#eth-address"><b>How-To: </b>Add a Wallet Address <i>(ETH Address)</i></Link>
+In this guide we'll show you how to set up your Primary Name.
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/v3-set-avatar-services-ens.png"/>
+  </div>
+</BrowserWindow>
+
+Setting a name as `Primary` in your wallet is usually a simple affair, but it can be a little complicated if:
+ - **The name was registered using a third-party service that didn't set the `Resolver` and `ETH Address` records by default.**
+ - **The name was purchased on a secondary market and the `ETH Address` record is still set to the previous owner's wallet.**
+
+If either of these applies to you, then you can solve it by following the [Prerequisites](#prerequisites) section below.
+
+## Prerequisites
+In order to set an ENS name as `Primary` there are two prerequisites:
+1. **The Resolver record must be set to the `ENS Public Resolver` smart contract.**
+1. **The `ETH Address` record must be set to the wallet you're setting the `Primary` on.**
+
+### 1. Set the **Resolver** {#set-the-resolver}
+
+<details>
+<summary>Set the Resolver Record</summary>
+
+Go to your ENS name in the [ENS Manager App](https://app.ens.domains) and scroll down to the bottom and expand `Advanced settings`.
+Make sure that the `Resolver` record there is set to either of these contract addresses:
+
+:::info
+ - The **new** ENS Public Resolver contract: `0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63`
+ - The **old** ENS Public Resolver contract: `0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41`  
+   _the old ENS Public Resolver contract will continue to work and should not cause any issues._
 :::
+
+<BrowserWindow url="https://app.ens.domains">
+  <div style={{'background':'#f0f6fa'}}>
+    <Image img="/img/howto/set-primary-name-resolver-1.png"/>
+  </div>
+</BrowserWindow>
+
+If it's unset edit it and enter the ENS Public Resolver: `0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63`
+
+</details>
+
+### 2. Set the **ETH Address**-record {#set-the-eth-address-record}
+
+<details>
+<summary>Set the ETH Address record</summary>
+
+Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> with the wallet set as `Manager` for the ENS name you want to manage and click `Names` to bring up a list
+of your ENS names *or* search for an ENS name you own directly from the main page.
+
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-add-wallet-address-1.png"/>
+
+Click the ENS name you want to add records to.
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-add-wallet-address-2.png"/>
+
+Go to the `Records` tab
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-add-wallet-address-3.png"/>
+
+Click `Edit Records`
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-add-wallet-address-4.png"/>
+
+Switch to the `Address` tab
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-add-wallet-address-5.png"/>
+
+Click `Add Address`
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-add-wallet-address-6.png"/>
 
 Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> with the wallet set as `Manager` for the ENS name you want to manage and click `Names` to bring up a list
 of your ENS names *or* search for an ENS name you own directly from the main page.
 <BrowserWindow url="https://app.ens.domains" bg="#f3f4f7" img="/img/howto/v3-set-primary-name-1.png"/>
 
+</details>
+
+## Set the Primary name
 Click the ENS name you want to set as `Primary` in your wallet.
 <BrowserWindow url="https://app.ens.domains" bg="#f3f4f7" img="/img/howto/v3-set-primary-name-2.png"/>
 

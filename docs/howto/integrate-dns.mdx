@@ -12,8 +12,14 @@ keywords: [ens dns, ens domain name system, add dns, link dns, import dns, integ
 ---
 
 # Integrate a DNS name
-Apart from using ENS names like `snowowl.eth`, ENS also allows you to integrate existing DNS domain names with ENS
-to supercharge them with ENS functionality.
+ENS supports importing DNS names into ENS, which makes it possible to use, for example, your .com .net or .org DNS name with ENS. Allowing you to use nearly all features of an ENS name with your DNS name.
+
+For example: Coinbase *.cb.id usernames are all issued under their `cb.id` DNS name that was imported into ENS!
+
+There are a few pre-requisites to importing a DNS name into ENS:
+
+ - **The DNS name must have DNSSEC enabled with RSA/SHA-256 or ECDSA keys**
+ - **An _ens TXT record must be created on the DNS name containing the wallet address to prove ownership of it.**
 
 :::info
 You can only integrate existing DNS domain names that you own with ENS. You *cannot* create new domain names with non-existing
@@ -27,8 +33,10 @@ Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link>, conn
 </BrowserWindow>
 
 ### 1. Enable DNSSEC
-Before you can integrate an existing DNS domain name with ENS you'll need to enable DNSSEC for the domain name.
+Before we can integrate an existing DNS domain name with ENS we'll need to enable DNSSEC for it to establish a chain of trust between the domain name and ENS.
+
 Not all registrars or hosting providers support DNSSEC, and some only support it as an additional paid service.
+
 <BrowserWindow url="app.ens.domains">
   <Image img="/img/howto/v3-integrate-dns-3.png"/>
 </BrowserWindow>
@@ -41,12 +49,14 @@ In order for your registrars or hosting providers DNSSEC to work with ENS it mus
 If they don’t, you’ll need to migrate to a DNS provider that does. See `Hosting providers` below.
 
 <details>
-  <summary>Hosting providers</summary>
+<summary>Hosting providers</summary>
 
 #### Hosting providers
-A list of popular hosting providers and which DNSSEC key types they support[^1]
+A list of popular hosting providers and which DNSSEC key types they support.[^1]
 
 [^1]: The key-types hosting providers support may have changed since this list was last verified on `June 22nd, 2022`.
+
+<div align='center'>
 
 | Hosting providers | DNSSEC | RSA/SHA-256 | ECDSA | Details                                                        |
 | ----------------- | ------ | ----------- | ----- | -------------------------------------------------------------- |
@@ -58,6 +68,8 @@ A list of popular hosting providers and which DNSSEC key types they support[^1]
 | GoDaddy           | `Yes`  | `No`        | `Yes` |                                                                |
 | Wordpress         | `No`   | -           | -     |                                                                |
 | Namecheap         | `Yes`  | `Yes`       | `Yes` | [`DNSSEC Guide`](https://www.namecheap.com/support/knowledgebase/article.aspx/9722/2232/managing-dnssec-for-domains-pointed-to-custom-dns/) |
+
+</div>
 
 </details>
 
@@ -73,12 +85,16 @@ In this step you'll need to add a TXT-record to your domain name to provide owne
 
 The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
 
+<div align='center'>
+
 |          |                    |
 | -------- | -------------------|
 | Type     | `TXT`              |
 | Name     | `_ens`             |
 | Contents | `a=wallet address` |
 | TTL      | `36000`            |
+
+</div>
 
 <Tabs>
   <TabItem value="Google DNS" default>

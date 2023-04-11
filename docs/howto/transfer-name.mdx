@@ -10,6 +10,13 @@ keywords: [transfer ens, transfer ens name, ens transfer, ens name transfer, sen
 
 # Transfer an ENS name
 
+In this tutorial you will learn how to transfer an ENS name to another wallet.
+
+When transferring an ENS name, only the `Owner` record is automatically updated to reflect the new owner wallet.
+Depending on your specific use-case it's therefore a good idea to take a moment and think about what additional records you want to transfer.
+
+There are three records we need to pay attention to when transferring a name:
+
 :::info
  1. **Owner:** *The owner of the ENS name, the wallet the ENS name NFT resides in.*
  1. **Manager:** *The manager of records, the wallet allowed to make changes to its records (but not transfer the name)*
@@ -23,9 +30,6 @@ keywords: [transfer ens, transfer ens name, ens transfer, ens name transfer, sen
     </div>
   </p>
 </BrowserWindow>
-
-When transferring an ENS name, only the `Owner` record is automatically updated to reflect the new owner wallet.
-Depending on your specific use-case it's therefore a good idea to take a moment and think about what additional records you want to transfer.
 
 ## Completely transfer a name
 If you want to completely transfer a name to a wallet you'll need to set three records to the new wallet in a specific order because only the wallet set as `Manager` is allowed to change the `ETH Address`.
