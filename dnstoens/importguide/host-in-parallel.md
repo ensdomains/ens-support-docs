@@ -86,4 +86,4 @@ Since the DNSLink and ENS content record point to the same location, you can upd
 * [Cloudflare DNS and Web3](/dnstoens/importguide/cloudflare-dns-and-web3)
 * [Support Docs - Create a Decentralized Website](https://support.ens.domains/docs/howto/decentralized_website)
 * [IPFS - DNSLink Docs](https://docs.ipfs.tech/concepts/dnslink/)
-* DNS and ENS Further Development
+* [DNS and ENS Further Development](/dnstoens/intro/future-dns-ens)
