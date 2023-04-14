@@ -117,6 +117,7 @@ const config = {
         hideable: false,
       },
     },
+    image: 'img/enslogo-small.png',
     metadata: [{
       name: 'keywords',
       content: 'ens, ens support, support docs, ens support docs, ens help, support, documentation, help, how-to, howto'
