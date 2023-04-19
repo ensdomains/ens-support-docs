@@ -180,6 +180,7 @@ const sidebars = {
         "howto/decentralized-website",
         "howto/integrate-dns",
         "howto/registration",
+        "howto/renew-names",
 	      "howto/set-avatar",
         "howto/set-primary-name",
 	      "howto/set-record",
