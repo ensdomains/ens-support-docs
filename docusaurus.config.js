@@ -16,20 +16,6 @@ const config = {
   plugins: [
     require.resolve('docusaurus-plugin-image-zoom'),
     '@docusaurus/plugin-ideal-image',
-    /* Local redirect test, not needed now (using server-side cloudflare _redirect)
-    ['@docusaurus/plugin-client-redirects',
-      {
-        createRedirects(existingPath) {
-          if (existingPath.includes('/docs')) {
-            return [
-              existingPath.replace('/', '/docs'),
-            ];
-          }
-          return undefined;
-        },
-      }
-    ],
-    */
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -57,7 +43,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'fr'],
   },
 
   presets: [
@@ -151,6 +137,10 @@ const config = {
           srcDark: 'img/newsite-logo-dark.svg',
         },*/
         items: [
+          {
+            type: 'localeDropdown',
+            position: 'left',
+          },
           // {
           //   type: 'html',
           //   value: '<a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/enssite_logo.svg" alt="ENS Logo"></div>ENS Support<span>Docs<span></a>'
@@ -165,7 +155,7 @@ const config = {
             to: '/blog',
             label: 'Updates',
             position: 'left'
-          }, */
+          },*/ 
     /*
 	  {
 	    href: 'https://docs.ens.domains',

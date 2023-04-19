@@ -24,6 +24,7 @@ interface Props {
   padding: string;
   bg: string;
   img: string;
+  embed: string;
 }
 
 export default function BrowserWindow({
@@ -32,6 +33,7 @@ export default function BrowserWindow({
   padding,
   bg,
   img,
+  embed,
   url = 'http://localhost:3000',
 }: Props): JSX.Element {
   return (

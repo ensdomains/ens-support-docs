@@ -21,12 +21,15 @@
 .imageWindowHeader {
   align-items: center;
   background: #ebedf0;
+  background: #f2f4f7;
   display: flex;
   padding: 0.1rem 1rem;
 }
 
 [data-theme='dark'] .imageWindowHeader {
   background: #282a36;
+  background-color: #111112;
+
 }
 
 .row::after {
@@ -64,7 +67,8 @@
 }
 
 [data-theme='dark'] .imageWindowBody {
-  background-color: var(--ifm-color-gray-800); 
+  background-color: var(--ifm-color-gray-800);
+  background-color: #111112;
 }
 
 .imageWindowBody img {
