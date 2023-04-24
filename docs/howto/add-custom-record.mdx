@@ -8,33 +8,33 @@ tags:
 keywords: [ens records, custom records, custom service key]
 ---
 
-# Add a Custom Service Key
+# Add a Custom Record
 To add a custom record to your ENS name, open the name’s profile editor by clicking `Edit profile`
 
-<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-1.png"/>
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-1-new1.png"/>
 
-In the ENS Manager app, there are common account service records you can add to your ENS name’s profile. For instance, GitHub, Twitter, and Discord can easily be added by clicking on the `Accounts` tab.
+Next, click on the `+ Add more to profile` button.
 
-<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-2.png"/>
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-2-new1.png"/>
 
-What if you want to create a custom record for an Account service not listed already?
-For example, you want to save your YouTube channel name into your ENS records. To set a custom record, click the tab named `Other`.
+On the "Add profile fields" window, click `other`. Then select the `Custom`, and click the `Add` button to create your custom record.
 
-<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-3.png"/>
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-3-new1.png"/>
 
-Since YouTube is not listed as an account service by default, we will need to save a custom service key and value pair. Service keys are in the reverse dot format.
+Type the name of the custom key into the first input box under `Custom`. Next to it, input the value you would like to save for the custom record and click `Save`.
 
-Therefore, click `+ Add Record` and type in the record name field as: `com.youtube`. Next, click `Add`  
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-4-new1.png"/>
 
-:::note
-Not every custom key should use the reverse dot format. Keys can be named anything, but account service keys should follow a standard reverse dot convention.
-:::
+On the next window click `Open Wallet` to confirm and sign the transaction. Your custom record will then be added to your ENS name!
 
-<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-4.png"/>
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-5-new1.png"/>
 
-After clicking `Add`, a new line to input the value for the record will show. In this field, type in your YouTube channel name or user.
+## Add a Custom Service Key
 
-<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-5.png"/>
+Some types of ENS records use a key name formatted in "reverse dot notation". These are known as "Service Keys" as specified in <Link to="https://docs.ens.domains/ens-improvement-proposals/ensip-5-text-records#service-keys"><b>ENSIP-5</b></Link>. For example, you want to save your YouTube channel name into your ENS records. To create a custom record for the YouTube account service, simply name the key `com.youtube` and set its value to your YouTube channel name.
 
-Finally, click `Save`. This will open a wallet request to save the data to the blockchain.
-Now a record for YouTube.com will exist under your ENS name! There is no limit to the amount or types of records you can use.
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-6-new1.png"/>
+
+On the next window click `Open Wallet` to confirm and save the custom Service Key and its value to your ENS records. Now a record for YouTube.com will exist for your ENS name! There is no limit to the number or types of records you can create for your ENS name.
+
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f2f4f7" img="/img/howto/v3-add-custom-record-7-new1.png"/>
