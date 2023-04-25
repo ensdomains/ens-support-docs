@@ -38,6 +38,18 @@ If the ENS name still doesn't show up correctly after 24 hours you need to conta
  - [**OpenSea:** Support](#support)
 :::
 
+## OpenSea shows two identical copies of my ENS name with one having a different owner!
+This is an on-going issue with the way OpenSea lists wrapped names. Wrapped names has their ERC-721 NFT sent to the Namewrapper contract and a new ERC-1155 NFT is issued to the user in its place.
+
+OpenSea currently shows both of those NFT's instead of just one which can lead to confusion, and the ERC-721 NFT will show up as having a different owner because it's owned by the namewrapper contract.
+
+We're working with OpenSea to try and resolve this issue to have wrapped names displayed in a more intuitive way, but the good news is that this shouldn't cause any issues apart from two names being visible simultaneously.
+
+:::info How-To
+In the event you do want to unwrap the name and instead be issued the ERC-721 NFT directly you can do so by following this guide:
+ - [**How-To:** Unwrapping names](/howto/namewrapper/unwrap-names)
+:::
+
 ## OpenSea shows a "Delisted" notice
 If the name does not exist at all on OpenSea, you will need to reach out to their [#Support](#support) to inquire why.
 

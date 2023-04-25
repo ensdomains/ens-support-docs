@@ -46,3 +46,11 @@ If you want to redirect your ENS name to an existing website, you could write a 
 When you purchase an existing name it may come with existing records from the previous owner. To use it as your primary name, make sure to update the ETH records to match your ETH address and then update your primary name from the settings page.
 
 Optionally, you can also remove or override existing records or create your own profile.
+
+## Why does my name have someone else as the owner?
+If you've registered a name in the V3 Manager App it will be automatically wrapped with the new namewrapper contract. This means that the name's ERC-721 NFT is by default owned by the ENS Namewrapper contract which will issue you an ERC-1155 NFT instead. This is done for technical reasons to enable namewrapper functionality and should not cause any issues.
+
+:::info How-To
+In the event you do want to unwrap the name and instead be issued the ERC-721 NFT directly you can do so by following this guide:
+ - [**How-To:** Unwrapping names](/howto/namewrapper/unwrap-names)
+:::
