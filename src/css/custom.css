@@ -324,7 +324,7 @@ img.deep-dive-image { max-width:    200px; }
 .navbar__brand {
   font-weight: 400;
   /* margin-bottom: 15px; */
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 
 .navbar--fixed-top {
