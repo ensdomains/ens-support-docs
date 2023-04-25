@@ -330,7 +330,21 @@ img.deep-dive-image { max-width:    200px; }
 .navbar--fixed-top {
   position: sticky;
   margin-left: auto;
-  width: calc(100vw - var(--doc-sidebar-width));
+  width: calc(99.2vw - var(--doc-sidebar-width));
+}
+
+/** Mozilla Firefox */
+@-moz-document url-prefix() {
+  .navbar--fixed-top {
+  width: calc(100vw - var(--doc-sidebar-width)); }
+}
+
+/* Chrome version 29 and above */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+and (min-resolution:.001dpcm) {
+selector{ .navbar--fixed-top {
+  width: calc(99.2vw - var(--doc-sidebar-width));
+} }
 }
 
 .navbar-sidebar--show {
