@@ -259,17 +259,18 @@ const sidebars = {
             },
            ],
         },
-	{
-		type: "category",
-		label: "Integration",
-		link: { type: "doc", id: "dev-basics/integration/index" },
-		collapsible: true,
-		collapsed: true,
-		items: [
-			"dev-basics/integration/quick-cheatsheet",
-		],
-	},
+        {
+          type: "category",
+          label: "Integration",
+          link: { type: "doc", id: "dev-basics/integration/index" },
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "dev-basics/integration/quick-cheatsheet",
+          ],
+        },
         "dev-basics/namehash",
+        "dev-basics/set-contract-primary",
       ],
     },
   ],

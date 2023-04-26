@@ -1,0 +1,117 @@
+---
+title: Set Primary Name For Contract
+last_update:
+  author: serenae
+tags:
+  - primary
+  - primary name
+  - primaryname
+  - identity
+keywords: [primary, primary name, primaryname, identity, did, wallet name, set primary]
+description: How to set the ENS Primary Name for a contract address
+---
+
+# Set Primary Name For Contract
+
+For most regular wallet accounts, you can just use the ENS Manager App to set the <Link to="/core/records/primary-name">Primary Name</Link>. Even if your address is technically a contract account, you may still be able to use the app to do this, if the contract allows arbitrary transactions (e.g. <Link to="https://safe.global/">Gnosis Safe</Link>).
+
+See here for a how-to guide for the Manager App: <Link to="/howto/set-primary-name">Set a Primary Name</Link>
+
+Otherwise, see below for additional methods.
+
+## Existing contracts
+
+If your contract has already been deployed, and it doesn't have any built-in methods to set its own primary name, then you may still be able to set it by other means, if:
+
+* Your contract inherits the <Link to="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol">Ownable</Link> module, and you are the owner
+
+Or:
+
+* You are an approved operator for the contract in the ENS Registry.
+
+### Using Set Primary Tool
+
+This is a small helper website we built on the side to address some edge-cases that may not make sense for the ENS Manager App (or are still on the roadmap):
+
+<BrowserWindow url="https://tools.ens.domains/setprimary/">
+  <div style={{'background':'#F7F7F7'}}>
+    <iframe src="https://tools.ens.domains/setprimary#embedded" width="100%" height="600px"/>
+  </div>
+</BrowserWindow>
+
+### Using the contract directly
+
+You can interact directly with the Reverse Registrar contract on Etherscan: https://etherscan.io/address/0xa58e81fe9b61b5c3fe2afd33cf304c454abfc7cb#writeContract#F8
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/etherscan-connect-wallet.jpg"/>
+</BrowserWindow>
+
+At the top, click on "Connect to Web3" to connect your wallet. Then scroll down and expand the `setNameForAddr` method:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/set-contract-primary-name1.jpg"/>
+</BrowserWindow>
+
+Enter the four fields:
+ - **addr:** The contract address you are setting the primary name for.
+ - **owner:** The owner of the reverse node in the ENS Registry. Enter your address.
+ - **resolver:** The resolver to use for the reverse node. Enter the default Public Resolver: `0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63`
+ - **name:** The primary name to set for the contract. This must be a name that already <Link to="/core/records/eth-address">forward-resolves</Link> to the contract address, otherwise Primary Name resolution will not work.
+
+Then click on "Write" to send the transaction to your wallet.
+
+## New Contracts
+
+If you a developing a new contract, and you want to be able to easily set the ENS Primary Name for it, then you can include this module: <Link to="https://github.com/ensdomains/ens-contracts/blob/master/contracts/reverseRegistrar/ReverseClaimer.sol">ReverseClaimer.sol</Link>
+
+Also include the interface for the core ENS registry: <Link to="https://github.com/ensdomains/ens-contracts/blob/master/contracts/registry/ENS.sol">ENS.sol</Link>
+
+Make sure your contract inherits ReverseClaimer:
+
+```
+contract MyContract is ReverseClaimer {
+  ...
+}
+```
+
+Then call it in your constructor:
+
+```
+constructor (
+  ENS ens,
+  ...
+) ReverseClaimer(ens, msg.sender) {
+  ...
+}
+```
+
+When you deploy that contract, it will automatically claim the reverse node for that contract address for you.
+
+Then, use the <Link to="#using-set-primary-tool">tool above</Link> to set the Primary Name whenever you want.
+
+If you want to do it manually via the contract, see below.
+
+## When you already own the reverse node
+
+If you already own the reverse node for a particular address, then you can update the Primary Name at any time.
+
+The "reverse node" is the <Link to="/dev-basics/namehash#generating-a-namehash">namehash</Link> for `<addr>.addr.reverse`, where `<addr>` is the address (all lowercase, and remove the `0x`).
+
+Example for address `0x481f50a5BdcCC0bc4322C4dca04301433dED50f0`
+* `namehash('481f50a5bdccc0bc4322c4dca04301433ded50f0.addr.reverse')`
+* `0x58354ffdde6ac279f3a058aafbeeb14059bcb323a248fb338ee41f95fa544c86`
+
+First, make sure a resolver is set on the reverse node: https://etherscan.io/address/0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e#readContract#F5
+
+If none is set, set the resolver to the default Public Resolver (`0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63`): https://etherscan.io/address/0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e#writeContract#F4
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/set-contract-primary-name2.jpg"/>
+</BrowserWindow>
+
+Then, call `setName` on the resolver:
+
+<BrowserWindow url="etherscan.io">
+  <Image img="/img/set-contract-primary-name3.jpg"/>
+</BrowserWindow>
