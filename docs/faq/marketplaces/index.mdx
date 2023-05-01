@@ -1,4 +1,24 @@
+---
+last_update:
+  author: cthulu
+tags:
+  - marketplaces
+  - secondary markets
+keywords: [marketplace, marketplaces, secondary markets]
+---
+
 # Marketplaces
+After purchasing an ENS name from a secondary marketplace it's important to keep a few things in mind:
+
+ * The registration period is *inherited* from the previous owner, so double-check the expiration date using the [ENS Manager App](https://app.ens.domains).
+  
+ * *Only* the `Owner` record is updated with your wallet address, all other records like the `Manager` and `ETH Address` records remain set to the old owner's address until you change it.
+
+:::warning
+Without updating the ETH Address, sending tokens to a name you've just purchased on a secondary market will most likely lead to a loss of funds. Be sure 
+the ENS name is not still pointing to the previous owner's wallet address.
+:::
+
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 

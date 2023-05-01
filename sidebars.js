@@ -156,7 +156,6 @@ const sidebars = {
             "faq/services/twitter",
           ],
         },
-        "faq/secondary_market",
         "faq/security",
         "faq/contributor-guidelines",
 	      "faq/bug-bounty",
