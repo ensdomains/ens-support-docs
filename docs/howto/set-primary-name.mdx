@@ -36,8 +36,10 @@ In order to set an ENS name as `Primary` there are two prerequisites:
 <details>
 <summary>Set the Resolver Record</summary>
 
-Go to your ENS name in the [ENS Manager App](https://app.ens.domains) and scroll down to the bottom and expand `Advanced settings`.
-Make sure that the `Resolver` record there is set to either of these contract addresses:
+Go to your ENS name in the [ENS Manager App](https://app.ens.domains) and click the `More`-tab.
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-set-resolver-1.png"/>
+
+On the `More`-tab make sure that the `Resolver` record there is set to either of these contract addresses:
 
 :::info
  - The **new** ENS Public Resolver contract: `0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63`
@@ -45,13 +47,11 @@ Make sure that the `Resolver` record there is set to either of these contract ad
    _the old ENS Public Resolver contract will continue to work and should not cause any issues._
 :::
 
-<BrowserWindow url="https://app.ens.domains">
-  <div style={{'background':'#f0f6fa'}}>
-    <Image img="/img/howto/set-primary-name-resolver-1.png"/>
-  </div>
-</BrowserWindow>
+If it's not set to one of the addresses above, click the `Edit`-button next to the Resolver.
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-set-resolver-2.png"/>
 
-If it's unset edit it and enter the ENS Public Resolver: `0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63`
+Select `Use Latest Resolver` and click `Update` and then approve the transaction in your wallet.
+<BrowserWindow url="https://app.ens.domains" padding="25px" bg="#f5f6f7" img="/img/howto/v3-set-resolver-3.png"/>
 
 </details>
 
@@ -102,7 +102,7 @@ Visit a few different services and verify that your `Primary name` is working co
 <TabItem value="ENS Manager" default>
 
 The [ENS Manager App](https://app.ens.domains) will show your `Primary name` and the `Avatar` set on it in the top-right corner, along with your wallet address.
-<BrowserWindow url="https://app.ens.domains" bg="#f0f6fa" img="/img/howto/set-primary-name-verify-ensmanager.png"/>
+<BrowserWindow url="https://app.ens.domains" bg="#f5f6f7" img="/img/howto/v3-set-primary-name-verify-ensmanager.png"/>
 
 </TabItem>
 <TabItem value="Uniswap">
