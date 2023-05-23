@@ -71,7 +71,51 @@ Unwrapped .eth 2LDs have the concept of a separate `Owner` (Registrant) and `Man
 
 This changes after you wrap the name, because there is only a single account that serves as both the `Owner` and `Manager` for the wrapped name.
 
-## Wrapping and Unwrapping
+## Should I Wrap My Name?
+
+If you have an ENS name registered with an older version of the Manager App, then it will not be wrapped by default. Instead, you will see this option on the "More" tab:
+
+<BrowserWindow url="https://app.ens.domains" bg="#f5f6f7" padding="10px" img="/img/namewrapper-overview-wrap-name-button.jpg"/>
+
+:::info
+Wrapping a name **is not permanent** (unless you intentionally <Link to="/howto/namewrapper/change-permissions">revoke permissions</Link>, which is a completely separate page in the Manager App).
+
+So don't worry if you already pressed that Wrap Name button, or if your name is already wrapped. You can unwrap your name at any time, see here for instructions: <Link to="/howto/namewrapper/unwrap-names">Unwrapping Names</Link>
+:::
+
+So you may be wondering "Do I want to press this button?"
+
+The answer may depend on the type of name:
+
+:::info
+If you don't need or want to take advantage of any of the below features, then **you do not need** to wrap your name.
+:::
+
+### I have an unwrapped .eth second-level name:
+ - Example: `name.eth`
+ - If you wrap this name:
+   - Your .eth 2LD is already an ERC-721 NFT, so you will just have a different NFT instead (an ERC-1155), representing the same name.
+   - You will be able to use the <Link to="/dev-basics/namewrapper/fuses">fuses/permissions system</Link> with your name and any subnames that you create.
+   - You will be able to create subnames that are "unruggable" NFTs.
+   - See this section for additional use-cases, like selling/renting subnames: <Link to="/dev-basics/namewrapper/use-cases">Name Wrapper Use-Cases</Link>
+   - Instead of separate "Owner" and "Manager" accounts, your wrapped name will only have a single "Owner" account.
+
+### I have an unwrapped .eth subname:
+ - Examples: `sub.name.eth`, `further.sub.name.eth`
+ - If you wrap this name:
+   - Your .eth subname will now be an actual NFT that will show up in your wallet and on marketplace websites.
+   - If the owner of the parent name <Link to="/dev-basics/namewrapper/states#emancipated">Emancipates</Link> your subname, then:
+     - Your subname NFT is "unruggable", meaning that the owner of the parent name cannot revoke or replace your subname.
+     - You will be able to use the <Link to="/dev-basics/namewrapper/fuses">fuses/permissions system</Link> with your subname and any sub-subnames that you create.
+     - You will be able to create subnames that are "unruggable" NFTs.
+     - See this section for additional use-cases, like selling/renting subnames: <Link to="/dev-basics/namewrapper/use-cases">Name Wrapper Use-Cases</Link>
+
+### I have an unwrapped DNS domain:
+ - Examples: `mydomain.com`, `sub.mydomain.com`
+ - If you wrap this name:
+   - Your DNS domain will now be an actual NFT that will show up in your wallet and on marketplace websites.
+
+## Contract Technical Details: Wrapping and Unwrapping
 
 When wrapping a .eth 2LD, you transfer the Owner (Registrant) of the ERC-721 NFT to the Name Wrapper contract.  
 The contract will then automatically take over the Manager (Controller) for the name as well.  
